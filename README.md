@@ -5,10 +5,10 @@ Table of Contents:
 
 1. [Overview](#overview)
 1. [Getting Started](#getting-started)
-1. [Linux Distribution](#linux-distribution)
-1. [SSHing into Solo](#sshing-into-solo)
+1. [Solo's Network](#solo-s-network)
 1. [Factory Reset](#factory-reset)
-1. [documentation license](#documentation-license)
+1. [(Advanced) Linux Distribution](#-advanced-linux-distribution)
+1. [Documentation License](#documentation-license)
 
 <!--/TOC-->
 
@@ -36,24 +36,11 @@ ssh root@10.1.1.10
 
 Contact a 3DR employee for the default SSH password.
 
-## Linux Distribution
+## Solo's Network
 
-The linux distribution used is 3DR Poky (based on Yocto Project Reference Distro)
-Documentation: http://www.yoctoproject.org/docs/1.8/mega-manual/mega-manual.html
-It does have a package manager “Smart”
+TODO: Here we describe how Solo's internal network looks like.
 
-```
-# uname -a
-Linux 3dr_solo 3.10.17-rt12-1.0.0_ga+g3f15a11 #3 SMP PREEMPT Thu Jun 4 04:07:49 UTC 2015 armv7l GNU/Linux
-```
-
-```
-# cat /etc/issue
-3DR Poky (based on Yocto Project Reference Distro) 1.5.1 \n \l
-```
-
-
-## SSHing into Solo
+### Using SSH
 
 To SSH into solo:
 
@@ -85,6 +72,23 @@ To factory reset your Solo to "Gold Master", follow the [Factory Reset Procedure
 
 There is also a programmatic way to reflash these. TODO: learn it
 
-## documentation license
+
+## (Advanced) Linux Distribution
+
+The linux distribution used is 3DR Poky (based on Yocto Project Reference Distro)
+Documentation: http://www.yoctoproject.org/docs/1.8/mega-manual/mega-manual.html
+It does have a package manager “Smart”
+
+```
+# uname -a
+Linux 3dr_solo 3.10.17-rt12-1.0.0_ga+g3f15a11 #3 SMP PREEMPT Thu Jun 4 04:07:49 UTC 2015 armv7l GNU/Linux
+```
+
+```
+# cat /etc/issue
+3DR Poky (based on Yocto Project Reference Distro) 1.5.1 \n \l
+```
+
+## Documentation License
 
 don't publish this yet!
