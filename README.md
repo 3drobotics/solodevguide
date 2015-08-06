@@ -3,12 +3,38 @@
 <!--TOC-->
 Table of Contents:
 
-* [Linux Distribution](#linux-distribution)
-* [SSHing into Solo](#sshing-into-solo)
-* [Factory Reset](#factory-reset)
-* [documentation license](#documentation-license)
+1. [Overview](#overview)
+1. [Getting Started](#getting-started)
+1. [Linux Distribution](#linux-distribution)
+1. [SSHing into Solo](#sshing-into-solo)
+1. [Factory Reset](#factory-reset)
+1. [documentation license](#documentation-license)
 
 <!--/TOC-->
+
+## Overview
+
+Solo is a Linux system (iMX.6 running Yocto Linux) connected to a Pixhawk autopilot.
+
+The Pixhawk controls flight modes, stabilization, and recovery in the case of an RTL event (return-to-launch). Pixhawk comminicates over the MAVLink telemetry protocol to both the onboard Linux computer and downstream devices like the Controller and mobile phone Solo apps.
+
+The Linux system controls high-level operation of the copter: smart shots, camera and gimbal control, mobile app communication, and accessory interaction are all implemented on this layer.
+
+## Getting Started
+
+Development for Solo encompasses both externally interfacing to Solo (for a mobile app, ground control station, or API) and controlling the onboard computer. To begin, let's look at gaining control of Solo's shell console over SSH..
+
+**NOTE:** We advise that you connect your computer to the Internet via ethernet while developing for Solo. When paired with Solo's WiFi network, you will not be able to access any webpages over your WiFi connection.
+
+Power your Controller and your Solo. Connect your computer to Solo's Wifi network using the password for your given network (default password: "sololink").
+
+To SSH into solo:
+
+```
+ssh root@10.1.1.10
+```
+
+Contact a 3DR employee for the default SSH password.
 
 ## Linux Distribution
 

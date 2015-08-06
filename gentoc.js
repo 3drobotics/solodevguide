@@ -15,7 +15,7 @@ file.filter(function (l) {
 });
 
 var toclist = '<!--TOC-->\nTable of Contents:\n\n' + toc.map(function (line) {
-	return '* [' + line[0] + '](#' + line[1] + ')'
+	return '1. [' + line[0] + '](#' + line[1] + ')'
 }).join('\n') + '\n\n<!--/TOC-->\n'
 
 file.splice(2, 0, toclist)
