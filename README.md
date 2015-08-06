@@ -1,5 +1,11 @@
 # solodevguide
 
+## Linux Distribution
+
+The linux distribution used is 3DR Poky (based on Yocto Project Reference Distro)
+Documentation: http://www.yoctoproject.org/docs/1.8/mega-manual/mega-manual.html
+It does have a package manager “Smart”
+
 ## SSHing into Solo
 
 To SSH into solo:
@@ -21,6 +27,10 @@ Host solo 10.1.1.10
     UserKnownHostsFile=/dev/null
     IdentityFile ~/.ssh/id_rsa
 ```
+
+### Controller
+
+The controller lives at `10.1.1.1`
 
 ## more
 
