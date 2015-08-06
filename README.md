@@ -5,7 +5,7 @@ Table of Contents:
 
 * [Linux Distribution](#linux-distribution)
 * [SSHing into Solo](#sshing-into-solo)
-* [more](#more)
+* [Factory Reset](#factory-reset)
 * [documentation license](#documentation-license)
 
 <!--/TOC-->
@@ -53,7 +53,11 @@ Host solo 10.1.1.10
 
 The controller lives at `10.1.1.1`
 
-## more
+## Factory Reset
+
+To factory reset your Solo to "Gold Master", follow the [Factory Reset Procedure](http://3drobotics.com/kb/factory-reset/).
+
+There is also a programmatic way to reflash these. TODO: learn it
 
 ## documentation license
 
