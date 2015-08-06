@@ -8,7 +8,7 @@ Table of Contents:
 1. [Solo's Network](#solo-s-network)
 1. [Factory Reset](#factory-reset)
 1. [(Advanced) Linux Distribution](#advanced-linux-distribution)
-1. [Documentation License](#documentation-license)
+1. [License](#license)
 
 <!--/TOC-->
 
@@ -38,7 +38,10 @@ Contact a 3DR employee for the default SSH password.
 
 ## Solo's Network
 
-TODO: Here we describe how Solo's internal network looks like.
+Solo's internal network has several endpoints:
+
+* `10.1.1.10` &mdash; Solo
+* `10.1.1.1` &mdash; the Controller
 
 ### Using SSH
 
@@ -62,22 +65,17 @@ Host solo 10.1.1.10
     IdentityFile ~/.ssh/id_rsa
 ```
 
-### Controller
-
-The controller lives at `10.1.1.1`
-
 ## Factory Reset
 
 To factory reset your Solo to "Gold Master", follow the [Factory Reset Procedure](http://3drobotics.com/kb/factory-reset/).
 
-There is also a programmatic way to reflash these. TODO: learn it
+**NOTE:** We are working on a programmatic way to [reflash Solo and the Controller](https://github.com/3drobotics/solodevguide/issues/5).
 
 
 ## (Advanced) Linux Distribution
 
 The linux distribution used is 3DR Poky (based on Yocto Project Reference Distro)
 Documentation: http://www.yoctoproject.org/docs/1.8/mega-manual/mega-manual.html
-It does have a package manager “Smart”
 
 ```
 # uname -a
@@ -89,6 +87,8 @@ Linux 3dr_solo 3.10.17-rt12-1.0.0_ga+g3f15a11 #3 SMP PREEMPT Thu Jun 4 04:07:49 
 3DR Poky (based on Yocto Project Reference Distro) 1.5.1 \n \l
 ```
 
-## Documentation License
+Yocto has a package manager "smart" that can be used to download packages if Solo is connected to the Internet.
 
-don't publish this yet!
+## License
+
+This document is Copyright &copy; 2015 3DRobotics.
