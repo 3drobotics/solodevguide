@@ -1,0 +1,10 @@
+Hi! Thanks for your interest in contributing to #solodevguide
+
+Until we have a proper structure, please follow these guidelines:
+
+1. If you think this is a core part of the development experience, please add content to README.md. This is easiest for us to consider and edit.
+1. If you have a long tutorial that is not part of the core development experience (let's say, a comprehensive guide on how to tune MAVProxy for running in an embedded platform) a separate Markdown file is fine.
+
+NOTE: Do not edit the Table of Contents, it is auto-generated. Submit linked items as a separate header in the README.md.
+
+Most of all, don't overthink it, we're still in the development phase and we will steward all new contributions to where they should be.
