@@ -1,5 +1,15 @@
 # solodevguide
 
+<!--TOC-->
+Table of Contents:
+
+* [Linux Distribution](#linux-distribution)
+* [SSHing into Solo](#sshing-into-solo)
+* [more](#more)
+* [documentation license](#documentation-license)
+
+<!--/TOC-->
+
 ## Linux Distribution
 
 The linux distribution used is 3DR Poky (based on Yocto Project Reference Distro)
