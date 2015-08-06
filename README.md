@@ -26,32 +26,46 @@ Development for Solo encompasses both externally interfacing to Solo (for a mobi
 
 **NOTE:** We advise that you connect your computer to the Internet via ethernet while developing for Solo. When paired with Solo's WiFi network, you will not be able to access any webpages over your WiFi connection.
 
-Power your Controller and your Solo. Connect your computer to Solo's Wifi network using the password for your given network (default password: "sololink").
-
-To SSH into solo:
-
-```
-ssh root@10.1.1.10
-```
-
-Contact a 3DR employee for the default SSH password.
+Power your Controller and your Solo. Connect your computer to Solo's Wifi network using the password for your given network.
 
 ## Solo's Network
 
-Solo's internal network has several endpoints:
+**TODO:** Here we describe how Solo's internal network looks like.
 
-* `10.1.1.10` &mdash; Solo
-* `10.1.1.1` &mdash; the Controller
+| Host | IP |
+|------|----|
+| Solo | 10.1.1.10 |
+| Controller | 10.1.1.1 |
 
-### Using SSH
+### Default Wi-Fi password:
 
-To SSH into solo:
+sololink
+
+### SSH
+
+**Solo:**
 
 ```
 ssh root@10.1.1.10
 ```
 
-You'll need the Solo root password. From there, you can use `ssh-copy-id -i ~/.ssh/id_rsa root@10.1.1.10` to have password-less access.
+**Controller:**
+
+```
+ssh root@10.1.1.1
+```
+
+### Default root password
+
+TjSDBkAu
+
+### Password-less access
+
+We recomend you copy your public key to Solo and Controller for a better SSH experience
+
+```bash
+ssh-copy-id -i ~/.ssh/id_rsa root@10.1.1.10
+````
 
 You can optimize this process by adding the following to your .ssh/config file
 
@@ -63,6 +77,12 @@ Host solo 10.1.1.10
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
     IdentityFile ~/.ssh/id_rsa
+```
+
+**Note:** OS X doesn't ship with `ssh-copy-id`, you can easily get it with [Homebrew](http://brew.sh/)
+
+```bash
+brew install ssh-copy-id
 ```
 
 ## Factory Reset
