@@ -10,7 +10,7 @@ var toc = []
 file.filter(function (l) {
 	if (l.match(/^\s*##(?!#)/)) {
 		var title = l.replace(/^\s*##\s*/, '').replace(/^\s*|\s*$/g, '');
-		toc.push([title, title.toLowerCase().replace(/[^a-z0-9_]+/g, '-')])
+		toc.push([title, title.toLowerCase().replace(/[^a-z0-9_]+/g, '-').replace(/^-+|-+$/g, '')])
 	}
 });
 

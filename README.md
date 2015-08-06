@@ -7,7 +7,7 @@ Table of Contents:
 1. [Getting Started](#getting-started)
 1. [Solo's Network](#solo-s-network)
 1. [Factory Reset](#factory-reset)
-1. [(Advanced) Linux Distribution](#-advanced-linux-distribution)
+1. [(Advanced) Linux Distribution](#advanced-linux-distribution)
 1. [Documentation License](#documentation-license)
 
 <!--/TOC-->
