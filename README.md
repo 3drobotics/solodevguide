@@ -26,9 +26,12 @@ The Linux system controls high-level operation of the copter: smart shots, camer
 
 Development for Solo encompasses both externally interfacing to Solo (for a mobile app, ground control station, or API) and controlling the onboard computer. To begin, let's look at gaining control of Solo's shell console over SSH..
 
-**NOTE:** We advise that you connect your computer to the Internet via ethernet while developing for Solo. When paired with Solo's WiFi network, you will not be able to access any webpages over your WiFi connection.
+When paired with Solo's WiFi network, you will not be able to access the Internet over your WiFi connection. We advise you do one of the following:
 
-Power your Controller and your Solo. Connect your computer to Solo's Wifi network using the password for your given network.
+1. **Recommended:** Connect your computer to Ethernet.
+2. Use a USB Wifi adapter to connect to Solo. This may work out of box on Windows or Linux. On OS X, you can [disable kext signing](http://apple.stackexchange.com/questions/163059/how-can-i-disable-kext-signing-in-mac-os-x-10-10-yosemite/163060#163060) and use [an adapter](http://www.amazon.com/Plugable-Wireless-802-11n-RTL8188CUS-Raspberry/dp/B00H28H8DU/ref=sr_1_1?ie=UTF8&qid=1438985201&sr=8-1&keywords=plugable+wifi+adapter) with [compatible drivers](http://www.realtek.com.tw/Downloads/downloadsView.aspx?Langid=1&PNid=21&PFid=48&Level=5&Conn=4&DownTypeID=3&GetDown=false&Downloads=true#2287), at your discretion.
+
+To access the console, first power on your Controller and then your Solo. Connect your computer to Solo's Wifi network using the password for your given network.
 
 ## Solo's Network
 
