@@ -12,6 +12,8 @@ Table of Contents:
 
 <!--/TOC-->
 
+solodevguide is a guide for internal 3DR use, partner use, and eventually public use on the topic of how to program Solo for custom applications. To build apps that talk to Solo from an external device, you may be interested in [DroneKit](http://dronekit.io). To run code on Solo or expand Solo's capabilities, read on.
+
 ## Overview
 
 Solo is a Linux system (iMX.6 running Yocto Linux) connected to a Pixhawk autopilot.
