@@ -4,7 +4,8 @@
   "plugins":[
     "scrollablecode",
     "anchors",
-    "-mathjax"
+    "-mathjax",
+    "image-captions"
   ],
   "links": {
     "sharing": {
