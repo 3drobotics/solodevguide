@@ -6,6 +6,7 @@ This is the summary of the solodevguide.
 * [Getting Started](getting-started.md)
 * [Solo's Network](network.md)
 * [Factory Reset](reset.md)
+* [Working with Video](video.md)
 * Advanced Topics
    * [Linux Distribution](linux.md)
    * [Accessory Bay](accessories.md)
