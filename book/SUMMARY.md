@@ -1,8 +1,8 @@
-# Summary
+# SystemSummary
 
-This is the summary of my book.
+This is the summary of the solodevguide.
 
-* [Overview](overview.md)
+* [System Overview](overview.md)
 * [Getting Started](getting-started.md)
 * [Solo's Network](network.md)
 * [Factory Reset](reset.md)
