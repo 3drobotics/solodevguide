@@ -3,8 +3,6 @@
   "description": "Development for Solo",
   "plugins":[
     "scrollablecode",
-    "toggle-chapters",
-    "jsbin",
     "anchors",
     "-mathjax"
   ],

@@ -4,6 +4,7 @@ To start editing, install gitbook (requires Node.js):
 
 ```
 npm install gitbook-cli -g
+gitbook install book
 ```
 
 Then view it locally:
