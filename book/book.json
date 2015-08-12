@@ -1,0 +1,19 @@
+{
+  "title": "Solodevguide",
+  "description": "Development for Solo",
+  "plugins":[
+    "scrollablecode",
+    "toggle-chapters",
+    "jsbin",
+    "anchors",
+    "-mathjax"
+  ],
+  "links": {
+    "sharing": {
+      "google": false,
+      "facebook": false,
+      "twitter": false,
+      "all": false
+    }
+  }
+}
