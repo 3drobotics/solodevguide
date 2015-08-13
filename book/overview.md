@@ -1,4 +1,4 @@
-# System Overview
+# Solo Overview
 
 Solo is a Linux system (iMX.6 running Yocto Linux) connected to a Pixhawk autopilot.
 

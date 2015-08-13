@@ -2,11 +2,16 @@
 
 This is the summary of the solodevguide.
 
-* [System Overview](overview.md)
 * [Getting Started](getting-started.md)
-* [Solo's Network](network.md)
-* [Factory Reset](reset.md)
-* [Working with Video](video.md)
+   * [Solo Overview](overview.md)
+   * [Internal Network](network.md)
+* Examples
+   * [Authoring a Smart Shot](smartshot.md)
+   * [Creating a Service](service.md)
+   * [Using Video Onboard](video.md)
+   * [Modifying Video Output](video-out.md)
 * Advanced Topics
-   * [Linux Distribution](linux.md)
+   * [Yocto Linux](linux.md)
    * [Accessory Bay](accessories.md)
+* Troubleshooting
+   * [Factory Reset](reset.md)

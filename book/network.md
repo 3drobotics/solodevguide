@@ -1,4 +1,4 @@
-## Solo's Network
+## Internal Network
 
 Solo's internal network has several endpoints:
 

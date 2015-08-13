@@ -1,4 +1,4 @@
-## (Advanced) Linux Distribution
+## (Advanced) Yocto Linux
 
 The linux distribution used is 3DR Poky (based on Yocto Project Reference Distro)
 Documentation: http://www.yoctoproject.org/docs/1.8/mega-manual/mega-manual.html

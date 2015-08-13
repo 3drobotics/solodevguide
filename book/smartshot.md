@@ -1,0 +1,1 @@
+# Authoring a Smart Shot

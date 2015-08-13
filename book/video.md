@@ -1,4 +1,4 @@
-# Working with Video
+# Using Video Onboard
 
 In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusively by Solo's video encoder (referred to as _Sculpture_). To gain access to the video device, we need to reconfigure Sculpture.
 
