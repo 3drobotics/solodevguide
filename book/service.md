@@ -64,11 +64,27 @@ We're going to add a web server to Solo.
 
 ```
 mkdir -p /etc/solo-services/webserver/static
-echo $'#!/bin/bash\npython -m SimpleHTTPServer -p 8000\n' > /etc/solo-services/webserver/run
+cat <<'EOF' | tee /etc/solo-services/webserver/run
+#!/bin/bash
+cd static && exec python -m SimpleHTTPServer 80
+EOF
 chmod +x /etc/solo-services/run
-echo $'<h1>Hello world!</h1>' < /etc/solo-services/webserver/static/index.html
+echo '<h1>Hello world!</h1>' > /etc/solo-services/webserver/static/index.html
 ```
 
-After ~5 seconds, `runit` will pick up this service and launch it. Go to <http://10.1.1.10:8000/> and see your service running.
+After ~5 seconds, `runit` will pick up this service and launch it. Go to <http://10.1.1.10/> and see your service running.
 
-(TODO: Kill the service, see it restart)
+Add more files to `/etc/solo-services/webserver/static` to see them update live. You can replace `python` in the previous example with any script of your choosing.
+
+To see that the service is working, you can even forcibly kill your process:
+
+```
+kill -9 $(ps | grep "[S]impleHTTPServer" | awk "{print \$1 }")
+```
+
+Refresh your web browser and you will see the service still running.
+
+You can run `sv [start|stop|restart] /etc/solo-services/webserver` to change the state of the service independently of all other services, for example after you make a change to the `run` file.
+
+Why do we use `exec python`? Because the supervisor tracks only the PID of the `run` script when it is launched, if you were to instead run `python`, and the process were stopped, only the bash script would stop. The webserver would keep going! `exec` replaces your current process (the bash script) with the result of 
+
