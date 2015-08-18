@@ -6,6 +6,7 @@ This is the summary of the solodevguide.
    * [Solo Overview](overview.md)
    * [Internal Network](network.md)
    * [Don'ts](donts.md)
+   * [Utilities](utils.md)
 * Concepts
    * [Authoring a Smart Shot](smartshot.md)
    * [Creating a Service](service.md)
