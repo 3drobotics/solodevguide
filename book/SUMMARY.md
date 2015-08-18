@@ -6,8 +6,9 @@ This is the summary of the solodevguide.
    * [Solo Overview](overview.md)
    * [Internal Network](network.md)
    * [Don'ts](donts.md)
-   * [Utilities](utils.md)
 * Concepts
+   * [The `sdg` Tool](utils.md)
+   * [Uploading Files and Code](uploading.md)
    * [Authoring a Smart Shot](smartshot.md)
    * [Creating a Service](service.md)
    * [Using Video Onboard](video.md)

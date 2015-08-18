@@ -5,3 +5,4 @@ There are several scripts that we will be using throughout this tutorial that ar
 * Resizing the root partition.
 * Installing `runit` to manage start processes.
 * Providing access to the video stream.
+* Tunnelling to the Internet through your host.
