@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sv once /opt/sdg/tunnel-service
+sv kill /opt/sdg/tunnel-service
