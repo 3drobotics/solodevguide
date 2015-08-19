@@ -22,43 +22,17 @@ init 4
 
 Solo should immediately reconnect, as though you had just turned on the Controller.
 
+## Installing `runit`
+
+To add a service, we first want to configure a more flexible way of launching services. For this, we'll use `runit` as our launch system.
+
+[After having installed the `sdg` tool](utils.html), from your Solo's shell, run:
+
+```
+sdg install-runit
+```
+
 ## Adding a new Service
-
-To add a service, we first want to configure a more flexible way of packaging your code. (**NOTE:** In the future, we may ship this configuration by default.)
-
-### Installing runit
-
-We are going to use `runit` as our launch system. Save this file as `/sbin/solo-services-start`:
-
-```
-#!/bin/sh
-
-PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin
-
-exec env - PATH=$PATH \
-runsvdir -P /etc/solo-services "log: $(printf '.%.0s' {1..395})"
-```
-
-Then run:
-
-```
-chmod +x /sbin/solo-services-start
-mkdir -p /etc/solo-services
-```
-
-Add this line to your inittab:
-
-```
-SSS:4:respawn:/sbin/solo-services-start
-```
-
-Then type:
-
-```
-init q
-```
-
-### Adding a new service
 
 We're going to add a web server to Solo.
 

@@ -6,3 +6,17 @@ There are several scripts that we will be using throughout this tutorial that ar
 * Installing `runit` to manage start processes.
 * Providing access to the video stream.
 * Tunnelling to the Internet through your host.
+
+## Installing `sdg`
+
+Clone this guide:
+
+```
+git clone https://github.com/3drobotics/solodevguide
+```
+
+You can install the tools from here:
+
+```
+./solodevguide/tools/install.sh
+```
