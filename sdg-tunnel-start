@@ -19,6 +19,13 @@ EOF
     ssh pc "echo 'setup succeeded!'" || { echo 'failed.' && exit 1; }
 fi
 
+# Make sure to overwrite /etc/resolv.conf with real nameservers
+cat <<'EOF' > /etc/resolv.conf
+options use-vc
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOF
+
 sv status /opt/sdg/tunnel-service 2>/dev/null
 if [ $? -ne 0 ]; then
     runsv /opt/sdg/tunnel-service >/dev/null 2>&1 &
