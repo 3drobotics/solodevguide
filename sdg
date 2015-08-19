@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$#" -eq 0 ]; then
+	ls /opt/sdg/sdg-*
+	exit 0
+fi
+
+arg=$1
+shift
+exec /opt/sdg/sdg-$arg $@
