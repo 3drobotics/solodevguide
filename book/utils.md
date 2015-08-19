@@ -20,3 +20,27 @@ You can install the tools from here:
 ```
 ./solodevguide/tools/install.sh
 ```
+
+## Connecting to the Internet
+
+```
+sdg tunnel-start
+```
+
+```
+sdg tunnel-stop
+```
+
+## Installing `runit`
+
+```
+sdg install-runit
+```
+
+## Expanding the Root Partition
+
+```
+sdg resize-fs
+```
+
+Resizes to ~90mb.

@@ -1,8 +1,42 @@
-# Uploading Files and Code
+# Installing Files and Code
 
-`rsync` is your tool.
+## Uploading Files
 
-## Uploading Python Code
+`rsync` is the preferred tool for synchronizing code and files between your desktop and Solo. e.g.
+
+```sh
+rsync -avz local/file/path/. root@10.1.1.10:/solo/path/. 
+```
+
+## Installing Packages
+
+Solo is an `rpm` based system. These packages can be managed by the `smart` package system, already installed on your Solo.
+
+[After having installed the `sdg` tool](utils.html), from your Solo's shell run:
+
+```sh
+sdg tunnel-start
+```
+
+This tunnels an Internet connection to Solo through your computer. Now we can configure the `smart` package manager to download packages from a dedicated package repository.
+
+Run this command to add the package repository:
+
+```sh
+smart channel --add solo https://sdg-packages.s3.amazonaws.com/
+```
+
+Now download the package list:
+
+```sh
+smart update
+```
+
+You can now use `smart search` and `smart install <package>` to install packages. You will see examples used throughout this guide.
+
+These packages are precompiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
+
+## Working with Python
 
 Python 2.7 is used throughout our system and in many of our examples. There are a few ways in which you can deploy Python code to Solo.
 
