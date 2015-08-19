@@ -48,6 +48,10 @@ TODO: Provide ways of compiling code directly for Solo in the "Advanced Topics" 
 
 Using `sdg tunnel`, you can install packages directly from pip.
 
+```sh
+python -c "import urllib2; print urllib2.urlopen('https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py').read()" | python
+```
+
 ### Installing using Solo's package manager
 
 Some Python libraries are provided by Solo's internal package manager. For example, `opencv` can be installed via `smart`, which provides its own Python library. After running:
