@@ -19,5 +19,9 @@ EOF
     ssh pc "echo 'setup succeeded!'" || { echo 'failed.' && exit 1; }
 fi
 
-runsv /opt/sdg/tunnel-service >/dev/null 2>&1 &
+sv status /opt/sdg/tunnel-service 2>/dev/null
+if [ $? -ne 0 ]; then
+    runsv /opt/sdg/tunnel-service >/dev/null 2>&1 &
+fi
+sv up /opt/sdg/tunnel-service
 echo 'tunnelling service started.'
