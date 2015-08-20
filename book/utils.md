@@ -21,6 +21,12 @@ You can install the tools from here:
 ./solodevguide/tools/install.sh
 ```
 
+Then run:
+
+```
+sdg install-runit
+```
+
 ## Connecting to the Internet
 
 ```
@@ -31,13 +37,9 @@ sdg tunnel-start
 sdg tunnel-stop
 ```
 
-## Installing `runit`
-
-```
-sdg install-runit
-```
-
 ## Expanding the Root Partition
+
+You'll need a few extra packages for this:
 
 ```
 sdg resize-fs
