@@ -1,12 +1,23 @@
 #!/bin/bash
 
-# TODO: WARNING
 which modprobe >/dev/null || { echo 'missing modprobe, cannot proceed'; exit 1; }
 which umount >/dev/null || { echo 'missing umount, cannot proceed'; exit 1; }
 which fdisk >/dev/null || { echo 'missing fdisk, cannot proceed'; exit 1; }
 which mkfs.ext3 >/dev/null || { echo 'missing mkfs.ext3, cannot proceed'; exit 1; }
 which resize2fs >/dev/null || { echo 'missing resize2fs, cannot proceed'; exit 1; }
-exit 1
+
+# Warn the user about their horrible mistakes.
+echo 'WARNING: This can break your Solo and require a factory reset.'
+echo 'Your Solo will turn off after and you will need to power cycle it.'
+read -p 'Continue (y/n)? ' answer
+case ${answer:0:1} in
+    y|Y )
+        echo 'Resizing partitions...'
+    ;;
+    * )
+        exit 1
+    ;;
+esac
 
 # Solo has four partitions:
 # /dev/mmcblk0p1
@@ -18,11 +29,14 @@ exit 1
 # or else we can't resize its filesystem.
 
 # Drop the runlevel to 3 (disabling Solo services)
-init 3
-# Then stop syslog.
-/etc/init.d/syslog stop
-# Finally, we can unmount /log
-umount /log
+init 2
+if [ -e /dev/mmcblk0p4 ]; then
+	# Then stop syslog.
+	/etc/init.d/syslog stop
+	sleep 1
+	# Finally, we can unmount /log
+	umount /log || { test $? -eq 32 || exit 1; }
+fi
 
 # We will DANGEROUSLY go ahead and resize the root
 # partition and shrink the log partition.
@@ -43,6 +57,8 @@ p
 w
 EOF
 
+sleep 3
+
 # After succeeding in changing our root partitions, we
 # tell the OS to re-read the parition list.
 partprobe /dev/mmcblk0
@@ -57,4 +73,6 @@ resize2fs /dev/mmcblk0p3
 
 # Finally we restart (for good measure?) and see that
 # Solo sees our changes on next bootup.
+echo 'Shutting down now...'
+sleep 5
 shutdown now
