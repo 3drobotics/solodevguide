@@ -31,10 +31,13 @@ chmod +x /sbin/solo-services-start
 
 # We add /sbin/solo-services-start as a startup script.
 lineinfile "/etc/inittab" "SSS:4:respawn:/sbin/solo-services-start"
-lineinfile "/home/root/.bashrc" "export SVDIR=/etc/solo-services"
+echo "export SVDIR=/etc/solo-services" > /etc/profile.d/solo-services
 
 # Tell the OS to re-read /etc/inittab and immediately
 # launch all services.
 init q
 
 echo 'runit installed.'
+
+# End with exported variables
+exec $SHELL -l
