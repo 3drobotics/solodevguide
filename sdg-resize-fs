@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# TODO: WARNING
+which modprobe >/dev/null || { echo 'missing modprobe, cannot proceed'; exit 1; }
+which umount >/dev/null || { echo 'missing umount, cannot proceed'; exit 1; }
+which fdisk >/dev/null || { echo 'missing fdisk, cannot proceed'; exit 1; }
+which mkfs.ext3 >/dev/null || { echo 'missing mkfs.ext3, cannot proceed'; exit 1; }
+which resize2fs >/dev/null || { echo 'missing resize2fs, cannot proceed'; exit 1; }
+exit 1
+
 # Solo has four partitions:
 # /dev/mmcblk0p1
 # /dev/mmcblk0p2
