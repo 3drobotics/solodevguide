@@ -16,6 +16,7 @@ This is the summary of the solodevguide.
 * Examples
    * [Stillframe Photo API](stillframe.md)
 * Advanced Topics
+   * [Licenses](licenses.md)
    * [Yocto Linux](linux.md)
    * [Accessory Bay](accessories.md)
 * Troubleshooting
