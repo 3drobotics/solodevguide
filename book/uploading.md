@@ -36,6 +36,14 @@ You can now use `smart search` and `smart install <package>` to install packages
 
 These packages are precompiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
 
+**NOTE:** If you want to restore your package manager state after it's been modified, you can reset it by brute force:
+
+```
+smart channel --show --remove-all
+yes | smart channel --add mydb type=rpm-sys name="RPM Database" 
+yes | smart channel --add solo type=rpm-md baseurl=http://solo-packages.s3-website-us-east-1.amazonaws.com/3.10.17-rt12/
+```
+
 ## Working with Python
 
 Python 2.7 is used throughout our system and in many of our examples. There are a few ways in which you can deploy Python code to Solo.
