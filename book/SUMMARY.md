@@ -4,8 +4,8 @@ This is the summary of the solodevguide.
 
 * [Getting Started](getting-started.md)
    * [Solo Overview](overview.md)
-   * [Internal Network](network.md)
-   * [Don'ts](donts.md)
+   * [Accessing Solo](network.md)
+   * [Rules and Advice](donts.md)
 * Concepts
    * [The sdg Tool](utils.md)
    * [Installing Files and Code](uploading.md)
