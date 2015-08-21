@@ -23,7 +23,7 @@ This tunnels an Internet connection to Solo through your computer. Now we can co
 Run this command to add the package repository:
 
 ```sh
-smart channel --add solo http://solo-packages.s3-website-us-east-1.amazonaws.com/3.10.17-rt12/
+smart channel --add solo type=rpm-md baseurl=http://solo-packages.s3-website-us-east-1.amazonaws.com/3.10.17-rt12/
 ```
 
 Now download the package list:
