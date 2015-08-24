@@ -8,10 +8,10 @@ You want to create a service if you want to talk to Solo's autopilot, log inform
 
 Disabling services is ideal when reconfiguring the system or installing packages, when you don't want Solo to arm or communicate aside from over SSH.
 
-Linux has a concept of "run levels" to express states like "shutting down" (runlevel 6). It leaves run levels 2-5 defined for normal operation. Solo by default boots into runlevel 4, which enables multi-user login and launches all of the services mentioned above. At any time, you can change into runlevel 3, which runs the Linux environment but disables these services. To switch into runlevel 3, type in your shell:
+Linux has a concept of "run levels" to express states like "shutting down" (runlevel 6). It leaves run levels 2-5 defined for normal operation. Solo by default boots into runlevel 4, which enables multi-user login and launches all of the services mentioned above. At any time, you can change into runlevel 2, which runs the Linux environment but disables these services. To switch into runlevel 2, type in your shell:
 
 ```
-init 3
+init 2
 ```
 
 Typing this, you should hear Solo make a "disconnected" sound and its lights start flashing red. This means that communication to Controller via services are disabled, but note that you can still use SSH and all other functions continue to work. To re-enable services:
