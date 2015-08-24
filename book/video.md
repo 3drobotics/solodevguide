@@ -4,7 +4,14 @@ In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusiv
 
 Theory: We will attach an intermediary gstreamer pipeline to `/dev/video0`.  Then we will pipe that info into two virtual devices, `/dev/video1` and `/dev/video2`.  We will instruct Sculpture to attach to `/dev/video1`, leaving device `/dev/video2` to use as we please.
 
-There are two pieces of software that are needed in order for this to work.  The first is `gst-plugins-good-video4linux2`.  This allows us to use `v4l2sink` with gstreamer.  The other part of that is install a kernel module called `v4l2loopback`.  This allows us to emulate a video device.  After placing the kernel module in `/lib/modules/$(uname -r)/extra/`, run `depmod -a`.
+There are two pieces of software that are needed in order for this to work.  The first is `gst-plugins-good-video4linux2`.  This allows us to use `v4l2sink` with gstreamer.  The other part of that is install a kernel module called `v4l2loopback`.  This allows us to emulate a video device. 
+
+```
+yes | smart install gst-plugins-good-video4linux2
+yes | smart install v4l2loopback
+```
+
+After placing the kernel module in `/lib/modules/$(uname -r)/extra/`, run `depmod -a`.
 
 ## Steps to Enable Multiple Video Outputs
 
