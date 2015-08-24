@@ -37,5 +37,5 @@ sv status /opt/sdg/tunnel-service >/dev/null 2>&1
 if [ $? -ne 0 ]; then
     runsv /opt/sdg/tunnel-service >/dev/null 2>&1 &
 fi
-sv up /opt/sdg/tunnel-service
+sv up /opt/sdg/tunnel-service >/dev/null
 echo 'tcp tunnelling service started.'
