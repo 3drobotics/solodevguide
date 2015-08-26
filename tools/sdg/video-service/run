@@ -1,0 +1,25 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
+FIFO=gst.fifo
+CONF=$(cat ./output-pipeline | xargs)
+
+modprobe mxc_v4l2_capture
+modprobe -r v4l2loopback
+modprobe v4l2loopback exclusive_caps=0,0 video_nr=1,2
+
+rm -f $FIFO
+mkfifo $FIFO
+
+gst-launch tvsrc device=/dev/video0 ! mfw_ipucsc ! \
+    "video/x-raw-yuv,width=1280,height=720,format=(fourcc)I420" ! tee name=vid \
+    vid. ! $CONF ! v4l2sink device=/dev/video1 \
+    vid. ! queue ! v4l2sink device=/dev/video2 2> $FIFO &
+
+TAIL_PID=$!
+cat $FIFO | while read LOGLINE; do
+    [[ "$LOGLINE" == *"CRITICAL"* ]] && kill -9 $TAIL_PID && break
+done
+
+echo 'killing video feed...'
