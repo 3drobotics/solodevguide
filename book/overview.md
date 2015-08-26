@@ -1,4 +1,4 @@
-# Solo Overview
+# Architectural Overview
 
 Solo is a Linux system (iMX.6 running Yocto Linux) connected to a Pixhawk autopilot.
 
@@ -8,4 +8,4 @@ The Linux system controls high-level operation of the copter: smart shots, camer
 
 <img src="images/system-diagram.png" alt="Solo System Diagram" width="400" style="margin: 0 auto; display: block">
 
-<img src="images/system-telemetry.svg" alt="Solo System Telemetry" width="400" style="margin: 0 auto; display: block">
+<!--<img src="images/system-telemetry.svg" alt="Solo System Telemetry" width="400" style="margin: 0 auto; display: block">-->

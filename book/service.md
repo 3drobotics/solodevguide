@@ -1,4 +1,4 @@
-# Creating a Service
+# System Services
 
 After Linux is instantiated, Solo launches a group of services that fulfill various roles. These include communication proxying, RSSI testing, video encoding, and the state manager for running Smart Shots and communicating with the Solo app. These services are considered "always on" during normal operation of Solo, and are restarted if they happen to crash or shut down.
 

@@ -1,4 +1,25 @@
-# Authoring a Smart Shot
+# Smart Shots
+
+Smart Shots consist of several important functions:
+
+```py
+import solo
+from dronekit.lib import VehicleMode, Location
+
+class FlipShot(solo.smartshot):
+    def __init__(self, vehicle, shotmgr):
+        self.vehicle = vehicle
+        self.shotmgr = shotmgr
+
+    def handle_rcs(self, channels):
+        pass
+
+    def handle_button(self, button, event):
+        pass
+
+    def resume_from_brake(self):
+        pass
+```
 
 TODO: Rebrand these probably, move out of /usr/bin
 
