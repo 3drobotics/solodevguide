@@ -19,9 +19,9 @@ os.chdir(os.path.join(os.path.dirname(__file__), 'static'))
 class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def do_POST(self):
         if self.path == '/index.html':
-            args = ['gst-launch', 'tvsrc', 'device=/dev/video0', 'num-buffers=1', '!', 'mfw_ipucsc',
-'!', 'jpegenc', '!', 'filesink', 'location=test.jpg']
-        print(args)
+            args = ['gst-launch', 'tvsrc', 'device=/dev/video2',
+                    'num-buffers=1', '!', 'mfw_ipucsc', '!',
+                    'jpegenc', '!', 'filesink', 'location=test.jpg']
         Popen(args).communicate()
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 

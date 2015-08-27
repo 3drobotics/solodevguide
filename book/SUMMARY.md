@@ -14,9 +14,12 @@ This is the summary of the solodevguide.
    * [System Services](service.md)
    * [Video Pipeline](video.md)
 * Examples
-   * [Stillframe Photo API](stillframe.md)
-   * [Alternative Video Output](video-out.md)
+   * [Using DroneKit](dronekit.md)
+   * [Using OpenCV](opencv.md)
+   * [Smart Shot: "Flip"](flip.md)
+   * [API: "Stillframe Photos"](stillframe.md)
    * [Dynamic Video Overlay](video-overlay.md)
+   * [Custom Video Output](video-out.md)
 * Advanced Topics
    * [Licenses](licenses.md)
    * [Yocto Linux](linux.md)
