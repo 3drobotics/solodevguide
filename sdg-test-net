@@ -1,0 +1,10 @@
+#!/bin/bash
+
+wget -O- -T 5 http://example.com/ >/dev/null 2>&1
+if [ $? == 0 ]; then
+	echo 'you are connected to the Internet.'
+else
+	echo 'error: you are NOT connected to the Internet!'
+	echo 'use "sdg tunnel-start" to connect.'
+	exit 1
+fi

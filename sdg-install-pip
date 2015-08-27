@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pip --version
+if [ $? == 0 ]; then
+	echo 'pip is installed.'
+	exit 1
+fi
+
+./sdg-test-net || ./sdg-tunnel-start
+python -c "import urllib2; print urllib2.urlopen('https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py').read()" | python
+pip install pip --upgrade
+
+echo ''
+pip --version
