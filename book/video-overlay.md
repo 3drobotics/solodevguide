@@ -1,7 +1,7 @@
 # Dynamic Video Overlay
 
 <aside class="note">
-This example requires you to install the packages `python-gst`
+This example requires you to [install the packages](uploading.html#installing-packages) `python-gst`
 </aside>
 
 We're going to overlay text onto Solo's video output. This will be visible in Solo's mobile app and any other video clients.
