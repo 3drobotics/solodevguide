@@ -16,6 +16,7 @@
       "all": false
     }
   },
+  "theme": "./localtheme",
   "pluginsConfig": {
     "addcssjs": {
       "js": [

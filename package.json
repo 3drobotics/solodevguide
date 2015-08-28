@@ -1,0 +1,30 @@
+{
+  "name": "solodevguide",
+  "version": "1.0.0",
+  "description": "This guide is published **privately** online at:",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3drobotics/solodevguide.git"
+  },
+  "devDependencies": {
+      "mocha": "2.2.1",
+      "should": "5.2.0",
+      "grunt": "~0.4.2",
+      "grunt-cli": "0.1.11",
+      "grunt-contrib-copy": "0.5.0",
+      "grunt-contrib-less": "~0.5.0",
+      "grunt-contrib-requirejs": "0.4.1",
+      "grunt-bower-install-simple": "0.9.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3drobotics/solodevguide/issues"
+  },
+  "homepage": "https://github.com/3drobotics/solodevguide#readme"
+}
