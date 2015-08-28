@@ -21,7 +21,7 @@ This is the summary of the solodevguide.
    * [Service: Dynamic Video Overlay](video-overlay.md)
    * [Service: Custom Video Output](video-out.md)
 * Hardware
-   * [Accessory Bay](accessories.md)
+   * [Accessory Bay](hardware-accessorybay.md)
 * Advanced Topics
    * [Licenses](licenses.md)
    * [Yocto Linux](linux.md)
