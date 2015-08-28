@@ -134,7 +134,7 @@ sdg install-pip
 This will install and update pip to the latest version. You can then install any packages you like:
 
 ```sh
-pip install virtualenv
+pip install requests
 ```
 
-This will install the package globally, so you may consider using `virtualenv` to create isolated environments of packages.
+This will install the package globally, so you may consider installing and using `virtualenv` to create isolated environments of packages.
