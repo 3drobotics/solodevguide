@@ -1,6 +1,6 @@
 {
-  "title": "Solodevguide",
-  "description": "Development for Solo",
+  "title": "3DR Developer Guide",
+  "description": "Guide for development of hardware and software for Solo.",
   "plugins":[
     "scrollablecode",
     "anchors",
