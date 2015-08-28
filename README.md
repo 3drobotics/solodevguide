@@ -1,4 +1,4 @@
-# solodevguide
+# 3DR Developer Guide
 
 This guide is published **privately** online at:
 
@@ -7,8 +7,16 @@ This guide is published **privately** online at:
 To start editing, install gitbook (requires Node.js):
 
 ```
+npm install grunt-cli -g
 npm install gitbook-cli -g
+npm install
 gitbook install book
+```
+
+Build once with grunt:
+
+```
+grunt
 ```
 
 Then view it locally:
