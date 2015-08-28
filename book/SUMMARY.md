@@ -17,9 +17,9 @@ This is the summary of the solodevguide.
    * [Using DroneKit](dronekit.md)
    * [Using OpenCV](opencv.md)
    * [Smart Shot: Flipper](flip.md)
-   * [Service: Stillframe Capture API](stillframe.md)
-   * [Service: Dynamic Video Overlay](video-overlay.md)
-   * [Service: Custom Video Output](video-out.md)
+   * [Service: Stillframe API](stillframe.md)
+   * [Service: Video Overlay](video-overlay.md)
+   * [Service: Custom Streaming](video-out.md)
 * Hardware
    * [Accessory Bay](hardware-accessorybay.md)
 * Advanced Topics
