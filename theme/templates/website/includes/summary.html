@@ -14,10 +14,14 @@
                         {{ item.title }}
                     </a>
             {% else %}
-            <span><b>{{ item.level }}.</b> {{ item.title }}</span>
+                {% if not item.path %}
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">{{ item.title }}</span>
+                {% else %}
+                    <span><b>{{ item.level }}.</b> {{ item.title }}</span>
+                {% endif %}
             {% endif %}
             {% if item.articles.length > 0 %}
-            <ul class="articles">
+            <ul class="articles" style="padding-left: 0">
                 {{ articles(item.articles) }}
             </ul>
             {% endif %}
