@@ -84,7 +84,15 @@ virtualenv env
 source ./env/bin/activate
 ```
 
-Now we can install Python packages using `pip install`. When you're ready to move code over to Solo, you want to create a `requirements.txt` file containing what packages you've installed:
+We want to configure our environment to not compile any C extensions. We can do this simply in our virtual environment with this incantation:
+
+```
+echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
+```
+
+Now you can install Python packages using `pip install`. When modules require a C extension, they will fail silently, so test your code.
+
+When you're ready to move code over to Solo, you want to create a `requirements.txt` file containing what packages you've installed:
 
 ```
 pip freeze > requirements.txt
@@ -93,10 +101,10 @@ pip freeze > requirements.txt
 Next, we want to download these packages on your host computer so they can be moved to Solo along with your code. You can do this using `pip wheel` to download them into a new folder, `./wheelhouse`. Run this command:
 
 ```
-CC=dummy pip wheel pytest -r ./requirements.txt --build-option="--plat-name=py27"
+pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 ```
 
-This installs all the dependencies in `requirements.txt` as Python wheel files, which are source code packages. The environment variable and platform options ensure we won't compile any host-only code, only source code.
+This installs all the dependencies in `requirements.txt` as Python wheel files, which are source code packages.
 
 Next, you can move this entire directory over to Solo using rsync:
 
