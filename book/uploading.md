@@ -78,7 +78,7 @@ This mechanism bundles Python code locally on your computer and expands it in a 
 
 Start in a new directory on your host computer. This will be the entire directoy we send to Solo, so create your Python scripts here. We'll start by creating a virtual environment for local use:
 
-```
+```sh
 pip install virtualenv
 virtualenv env
 source ./env/bin/activate
@@ -86,7 +86,7 @@ source ./env/bin/activate
 
 We want to configure our environment to not compile any C extensions. We can do this simply in our virtual environment with this incantation:
 
-```
+```sh
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
 ```
 
@@ -94,13 +94,13 @@ Now you can install Python packages using `pip install`. When modules require a 
 
 When you're ready to move code over to Solo, you want to create a `requirements.txt` file containing what packages you've installed:
 
-```
+```sh
 pip freeze > requirements.txt
 ```
 
 Next, we want to download these packages on your host computer so they can be moved to Solo along with your code. You can do this using `pip wheel` to download them into a new folder, `./wheelhouse`. Run this command:
 
-```
+```sh
 pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 ```
 
@@ -108,13 +108,13 @@ This installs all the dependencies in `requirements.txt` as Python wheel files, 
 
 Next, you can move this entire directory over to Solo using rsync:
 
-```
+```sh
 rsync -avz --exclude="*.pyc" --exclude="env" ./my_python_code solo:/opt/my_python_code
 ```
 
 SSH into Solo and navigate to the newly made directory (above `/opt/my_python_code`). Finally, run these commands:
 
-```
+```sh
 virtualenv env
 source ./env/bin/activate
 pip install --no-index --find-links=wheelhouse/ -r requirements.txt
@@ -129,13 +129,13 @@ You can install code directly from pip on Solo. Note that this is useful for dev
 
 Having installed the `sdg` utility, run:
 
-```
+```sh
 sdg install-pip
 ```
 
 This will install and update pip to the latest version. You can then install any packages you like:
 
-```
+```sh
 pip install virtualenv
 ```
 

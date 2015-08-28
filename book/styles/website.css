@@ -10,3 +10,7 @@ aside.note p::before {
 aside.note :last-child {
 	margin-bottom: 0 !important;
 }
+
+.lang-sh {
+	white-space: pre-wrap;
+}
