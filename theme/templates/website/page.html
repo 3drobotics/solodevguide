@@ -14,6 +14,10 @@
 {% block description %}{% if progress.current.level == "0" %}{{ description }}{% endif %}{% endblock %}
 
 {% block content %}
+    <div id="solo-header" style="background: #666; color: white; z-index: 100; position: absolute; top: 0; height: 40px; width: 100%">
+        <h1 style="margin: 0">3DR Developer Guide</h1>
+    </div>
+
     <div class="book" data-level="{{ progress.current.level }}" data-basepath="{{ basePath }}" data-revision="{{ revision }}">
     {% include "includes/summary.html" %}
     <div class="book-body">
@@ -30,6 +34,10 @@
                     </section>
                 {% endfor %}
                 {% endblock %}
+                
+                    <div class="page-inner-footer" style="color: #bbb; border-top: 1px solid #eee; margin: 6em 1em 4em; padding-top: 0.5em;">
+                        3DR Developer guide copyright &copy; 2015 3D Robotics.
+                    </div>
                 </div>
             </div>
         </div>
