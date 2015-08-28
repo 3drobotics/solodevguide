@@ -8,7 +8,7 @@ This is the summary of the solodevguide.
    * [Installing Files and Code](uploading.md)
    * [Troubleshooting](reset.md)
    * [Rules and Advice](donts.md)
-* Software Concepts
+* Concepts
    * [Architectural Overview](overview.md)
    * [Smart Shots](smartshot.md)
    * [System Services](service.md)
@@ -16,10 +16,10 @@ This is the summary of the solodevguide.
 * Software Examples
    * [Using DroneKit](dronekit.md)
    * [Using OpenCV](opencv.md)
-   * [Smart Shot: "Flip"](flip.md)
-   * [API: "Stillframe Photos"](stillframe.md)
-   * [Dynamic Video Overlay](video-overlay.md)
-   * [Custom Video Output](video-out.md)
+   * [Smart Shot: Flipper](flip.md)
+   * [Service: Stillframe Capture API](stillframe.md)
+   * [Service: Dynamic Video Overlay](video-overlay.md)
+   * [Service: Custom Video Output](video-out.md)
 * Hardware
    * [Accessory Bay](accessories.md)
 * Advanced Topics
