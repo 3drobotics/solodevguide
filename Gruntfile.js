@@ -12,7 +12,7 @@ module.exports = function (grunt) {
             options: {
                 color:       true,
                 production:  false,
-                directory:   "localtheme/vendors"
+                directory:   "theme/vendors"
             }
         },
         less: {
@@ -23,8 +23,8 @@ module.exports = function (grunt) {
                     optimization: 2
                 },
                 files: {
-                    "localtheme/assets/style.css": "localtheme/stylesheets/website.less",
-                    "localtheme/assets/print.css": "localtheme/stylesheets/ebook.less"
+                    "theme/assets/style.css": "theme/stylesheets/website.less",
+                    "theme/assets/print.css": "theme/stylesheets/ebook.less"
                 }
             }
         },
@@ -33,9 +33,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'localtheme/vendors/fontawesome/fonts/',
+                        cwd: 'theme/vendors/fontawesome/fonts/',
                         src: ['**'],
-                        dest: 'localtheme/assets/fonts/fontawesome/',
+                        dest: 'theme/assets/fonts/fontawesome/',
                         filter: 'isFile'
                     }
                 ]
