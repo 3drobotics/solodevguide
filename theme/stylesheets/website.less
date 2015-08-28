@@ -45,3 +45,22 @@ body {
     font-size: @font-size-base;
     letter-spacing: .2px;
 }
+
+/* Theme Custom */
+
+aside.note {
+    background: #fff8cc; color: #777233; padding: 0.5em 1em; margin: 1em 0;
+    font-size: 0.9em;
+}
+
+aside.note p::before {
+    font-weight: bold; content: "NOTE: ";
+}
+
+aside.note :last-child {
+    margin-bottom: 0 !important;
+}
+
+.lang-sh {
+    white-space: pre-wrap;
+}

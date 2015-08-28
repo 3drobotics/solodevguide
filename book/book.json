@@ -5,8 +5,7 @@
     "scrollablecode",
     "anchors",
     "-mathjax",
-    "image-captions",
-    "addcssjs"
+    "image-captions"
   ],
   "links": {
     "sharing": {
@@ -16,17 +15,5 @@
       "all": false
     }
   },
-  "theme": "./theme",
-  "pluginsConfig": {
-    "addcssjs": {
-      "js": [
-        "js/jquery.min.js",
-        "js/kramed.min.js",
-        "js/website.js"
-      ],
-      "css": [
-        "styles/website.css"
-      ]
-    }
-  }
+  "theme": "./theme"
 }
