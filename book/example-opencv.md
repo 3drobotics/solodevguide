@@ -4,6 +4,10 @@
 This example requires you to [install the package](uploading.html#installing-packages) `python-opencv`.
 </aside>
 
+<aside class="note">
+To run this example, run `sdg video-splice` first to get camera access.
+</aside>
+
 This example demonstrates connecting to a camera, capturing a frame, calculating the average color mean, and then displays it to the terminal in a loop. Try playing around with various colored objects to see the recognition happen in realtime.
 
 ```py
