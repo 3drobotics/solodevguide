@@ -63,8 +63,8 @@ smart install python-opencv
 You can see its Python library is installed:
 
 ```sh
-$ python -c "import cv; print cv.__name__"
-cv
+$ python -c "import cv2; print cv2.__version__"
+2.4.6.1
 ```
 
 ### Bundling Python code
