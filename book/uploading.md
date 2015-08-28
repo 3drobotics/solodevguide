@@ -56,17 +56,15 @@ TODO: Provide ways of compiling code directly for Solo in the "Advanced Topics" 
 
 Some Python libraries are provided by Solo's internal package manager. For example, `opencv` can be installed via `smart`, which provides its own Python library. After running:
 
-```
-smart install opencv
+```sh
+smart install python-opencv
 ```
 
 You can see its Python library is installed:
 
-```
-python
->>> import cv
->>> cv.__name__
-'cv'
+```sh
+$ python -c "import cv; print cv.__name__"
+cv
 ```
 
 ### Bundling Python code
