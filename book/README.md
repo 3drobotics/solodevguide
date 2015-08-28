@@ -1,6 +1,6 @@
-# Solo Development Guide
+# 3DR Development Guide
 
-This is a guide for working inside Solo's system architecture.
+This guide describes how to work inside Solo's system architecture and develop applications for Solo.
 
 The objective of this guide is to enable developers to:
 
@@ -9,3 +9,5 @@ The objective of this guide is to enable developers to:
 * Create custom smart shots
 * Run programs that run on boot
 * Restore Solo to factory settings
+
+Read on for more.
