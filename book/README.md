@@ -1,6 +1,6 @@
 <div style="text-align: center">
 <img src="http://3drobotics.com/wp-content/uploads/2015/01/solo-drone-spin-transparent-500px.png">
-<h1 style="border: none; font-size: 3em; margin-top: 0;">3DR Development Guide</h1>
+<h1 style="border: none; font-size: 3em; margin-top: 0;">Solo Development Guide</h1>
 </div>
 
 This guide describes how to work inside Solo's system architecture and develop applications for Solo.
