@@ -1,5 +1,13 @@
 # Stillframe Photo API
 
+<aside class="note">
+To run this example, run `sdg video-splice` first to get camera access.
+</aside>
+
+<aside class="alert">
+This example is being rewritten to use MJPEG streaming for purely in-memory image access and Flask.
+</aside>
+
 This example provides a RESTful API on port :8080 that can be accessed from Solo. When the HTTP endpoint is hit, it uses `gstreamer` to grab a frame from the video feed and provide it as a response. We also include an example app that runs on port :80 that allows you to grab a frame in your web browser.
 
 TODO: We're gonna move this into a git repository, no worries.
