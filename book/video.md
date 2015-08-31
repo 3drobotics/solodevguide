@@ -47,7 +47,7 @@ solo-utils video-splice
 
 This command creates a service that splits `/dev/video0` into two outputs, `/dev/video1` and `/dev/video2`. `sndast` will continue to pipe video from `/dev/video1` as normal, but `/dev/video2` is now available for scripts to take as input, e.g. OpenCV, saving video to disk, taking still shots, etc.
 
-If you are interested in modifying the video before it reaches `sndast`, you can modify the video pipeline. The file `/opt/sdg/video-service/output-pipeline` contains the default pipeline, which is just to queue data:
+If you are interested in modifying the video before it reaches `sndast`, you can modify the video pipeline. The file `/opt/solo-utils/video-service/output-pipeline` contains the default pipeline, which is just to queue data:
 
 ```
 queue
