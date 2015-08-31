@@ -1,0 +1,10 @@
+#!/bin/bash
+
+which sv >/dev/null || { echo 'error: first install an updated busybox with runit'; exit 1; }
+
+sv status /opt/sdg/video-service >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+    runsv /opt/sdg/video-service >/dev/null 2>&1 &
+fi
+sv up /opt/sdg/video-service >/dev/null
+echo 'video splicing service started.'
