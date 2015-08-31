@@ -15,7 +15,7 @@ Solo is an `rpm` based system. These packages can be managed by the `smart` pack
 [After having installed the `sdg` tool](utils.html), from your Solo's shell run:
 
 ```sh
-sdg tunnel-start
+solo-utils tunnel-start
 ```
 
 This tunnels an Internet connection to Solo through your computer. Now we can configure the `smart` package manager to download packages from a dedicated package repository.
@@ -128,7 +128,7 @@ You can install code directly from pip on Solo. Note that this is useful for dev
 Having installed the `sdg` utility, run:
 
 ```sh
-sdg install-pip
+solo-utils install-pip
 ```
 
 This will install and update pip to the latest version. You can then install any packages you like:

@@ -29,7 +29,7 @@ To add a service, we first want to configure a more flexible way of launching se
 [After having installed the `sdg` tool](utils.html), from your Solo's shell, run:
 
 ```
-sdg install-runit
+solo-utils install-runit
 ```
 
 ## Adding a new Service

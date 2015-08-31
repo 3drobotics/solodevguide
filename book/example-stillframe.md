@@ -1,7 +1,7 @@
 # Stillframe Photo API
 
 <aside class="note">
-To run this example, run `sdg video-splice` first to get camera access.
+To run this example, run `solo-utils video-splice` first to get camera access.
 </aside>
 
 <aside class="alert">

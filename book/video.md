@@ -28,7 +28,7 @@ Theory: We will attach an intermediary gstreamer pipeline to `/dev/video0`.  The
 
 There are two pieces of software that are needed in order for this to work.  The first is `gst-plugins-good-video4linux2`, which allows us to use the `v4l2sink` pipeline in gstreamer.  The second is a kernel module called `v4l2loopback`, wihch allows us to emulate a video device. 
 
-[After having installed the `sdg` tool](utils.html), connect Solo to the internet using `sdg tunnel-start`. Then, install these packages:
+[After having installed the `sdg` tool](utils.html), connect Solo to the internet using `solo-utils tunnel-start`. Then, install these packages:
 
 ```
 smart update
@@ -42,7 +42,7 @@ Next, modify `/usr/bin/video_send.sh` line 88 from `-g 0` to `-g 1`.  This will 
 From your Solo's shell, run:
 
 ```
-sdg video-splice
+solo-utils video-splice
 ```
 
 This command creates a service that splits `/dev/video0` into two outputs, `/dev/video1` and `/dev/video2`. `sndast` will continue to pipe video from `/dev/video1` as normal, but `/dev/video2` is now available for scripts to take as input, e.g. OpenCV, saving video to disk, taking still shots, etc.

@@ -15,7 +15,6 @@ if [[ $0 == *'install.sh'* ]] && [ -d ./solo-utils ]; then
     cd $(dirname $0)
     echo 'uploading local solo-utils...'
     rsync -avz --rsync-path="mkdir -p /opt/solo-utils && rsync" --progress ./solo-utils/. root@10.1.1.10:/opt/solo-utils/.
-    ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true" 2> /dev/null </dev/null
 else
     # Unpack solo-utils
     ssh root@10.1.1.10 "[[ -d /opt/solo-utils ]]" 2>/dev/null </dev/null
@@ -25,6 +24,7 @@ else
             ssh root@10.1.1.10 "tar -xvzf - -C /tmp && rm -rf /opt/solo-utils && mv /tmp/solodevguide-solo-utils-* /opt/solo-utils"
     fi
 fi
+ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true" 2> /dev/null </dev/null
 
 install_rpm () {
     name=$1

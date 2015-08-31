@@ -4,7 +4,7 @@ This is the summary of the solodevguide.
 
 * Getting Started
    * [Accessing Solo](network.md)
-   * [The "sdg" Utility](utils.md)
+   * [Installing "solo-utils"](utils.md)
    * [Installing Files and Code](uploading.md)
    * [Troubleshooting](reset.md)
    * [Rules and Advice](donts.md)

@@ -7,7 +7,7 @@ There are several scripts that we will be using throughout this tutorial that ar
 * Providing access to the video stream.
 * Tunnelling to the Internet through your host.
 
-## Installing `sdg`
+## Installing `solo-utils`
 
 Run this command on your *host* computer:
 
@@ -29,28 +29,40 @@ You can install the tools from here:
 ```
 -->
 
-Then run:
+### Optional Installs
+
+To add the init script daemon:
 
 ```
-sdg install-runit
+solo-utils install-runit
+```
+
+To install `pip` directly on Solo:
+
+```
+solo-utils install-pip
 ```
 
 ## Connecting to the Internet
 
-```
-sdg tunnel-start
-```
+Follow the prompts on first initialization to create a reverse SSH tunnel to your host computer, enabling direct Internet access from Solo:
 
 ```
-sdg tunnel-stop
+solo-utils tunnel-start
+```
+
+You can disable this tunnel by restarting Solo or running:
+
+```
+solo-utils tunnel-stop
 ```
 
 ## Expanding the Root Partition
 
-You'll need a few extra packages for this:
+To expand the root partition from 90Mb to 250Mb, you will delete and recreate your `/log` directory. Ensure you have any important data backed up. Then run:
 
 ```
-sdg resize-fs
+solo-utils resize-fs
 ```
 
-Resizes to ~90mb.
+You will have to physically reboot (power cycle) your drone after the script is complete.
