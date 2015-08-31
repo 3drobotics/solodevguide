@@ -11,18 +11,18 @@ fi
 
 # rsync
 echo 'checking for solo-utils...'
-if [[ $0 == *'install.sh'* ]] && [ -d ./sdg ]; then
+if [[ $0 == *'install.sh'* ]] && [ -d ./solo-utils ]; then
     cd $(dirname $0)
     echo 'uploading local solo-utils...'
-    rsync -avz --rsync-path="mkdir -p /opt/sdg && rsync" --progress ./sdg/. root@10.1.1.10:/opt/sdg/.
-    ssh root@10.1.1.10 "ln -s /opt/sdg/sdg /usr/bin/sdg || true" 2> /dev/null </dev/null
+    rsync -avz --rsync-path="mkdir -p /opt/solo-utils && rsync" --progress ./solo-utils/. root@10.1.1.10:/opt/solo-utils/.
+    ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true" 2> /dev/null </dev/null
 else
-    # Unpack sdg
-    ssh root@10.1.1.10 "[[ -d /opt/sdg ]]" 2>/dev/null </dev/null
+    # Unpack solo-utils
+    ssh root@10.1.1.10 "[[ -d /opt/solo-utils ]]" 2>/dev/null </dev/null
     if [ $? != 0 ]; then
         echo 'uploading solo-utils from source...'
-        curl -L https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@github.com/3drobotics/solodevguide/archive/solo-utils-0.1.0.tar.gz | \
-            ssh root@10.1.1.10 "tar -xvzf - -C /tmp && rm -rf /opt/sdg && mv /tmp/solodevguide-solo-utils-0.1.0 /opt/sdg"
+        curl -L https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@github.com/3drobotics/solodevguide/archive/solo-utils-1.0.0.tar.gz | \
+            ssh root@10.1.1.10 "tar -xvzf - -C /tmp && rm -rf /opt/solo-utils && mv /tmp/solodevguide-solo-utils-* /opt/solo-utils"
     fi
 fi
 
