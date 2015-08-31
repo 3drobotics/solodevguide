@@ -53,10 +53,16 @@ aside.note {
     font-size: 0.9em;
 }
 
-aside.note p::before {
-    font-weight: bold; content: "NOTE: ";
+aside.danger {
+    background: #ffcccc; color: #773333; padding: 0.5em 1em; margin: 1em 0;
+    font-size: 0.9em;
 }
 
+aside.note p::before { font-weight: bold; content: "NOTE: "; }
+
+aside.danger p::before { font-weight: bold; content: "CAREFUL: "; }
+
+aside.danger :last-child,
 aside.note :last-child {
     margin-bottom: 0 !important;
 }
