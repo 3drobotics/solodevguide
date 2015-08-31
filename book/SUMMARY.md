@@ -14,7 +14,7 @@ This is the summary of the solodevguide.
    * [System Services](service.md)
    * [Video Pipeline](video.md)
 * Software Examples
-   * [Using DroneKit](dronekit.md)
+   * [Using DroneKit](example-dronekit.md)
    * [Using OpenCV](example-opencv.md)
    * [Smart Shot: Flipper](flip.md)
    * [Service: Stillframe API](example-stillframe.md)
