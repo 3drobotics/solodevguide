@@ -24,4 +24,4 @@ Pin | Description | Pin | Description
 
 ## Connector
 
-The connector part number is [JAE SJ038252](https://jae-connectors.com/en/pdf_download_exec.cfm?param=SJ038252.pdf) and can be purchased on [DigiKey](https://www.digikey.com/product-search/en?keywords=TX24-30R-6ST-N1E).
+The connector part number is [JAE SJ038252](https://jae-connectors.com/en/pdf_download_exec.cfm?param=SJ038252.pdf) and can be purchased on [Digi-Key](https://www.digikey.com/product-search/en?keywords=TX24-30R-6ST-N1E).
