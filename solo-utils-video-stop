@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sv once /opt/sdg/video-service
-sv kill /opt/sdg/video-service
+sv once /opt/solo-utils/video-service
+sv kill /opt/solo-utils/video-service
