@@ -3,8 +3,9 @@
 cd $(dirname $0)
 
 # Unpack sshuttle
-if [ ! -d sdg/sshuttle ]; then
-    git clone https://github.com/apenwarr/sshuttle sdg/sshuttle --depth=1
+ssh root@10.1.1.10 "[[ -d /opt/sshuttle ]]"
+if [ $? != 0 ]; then
+    curl -L https://github.com/apenwarr/sshuttle/archive/master.tar.gz | ssh root@10.1.1.10 "tar -xvzf - -C /tmp && rm -rf /opt/sshuttle && mv /tmp/sshuttle-master /opt/sshuttle"
 fi
 
 # rsync
