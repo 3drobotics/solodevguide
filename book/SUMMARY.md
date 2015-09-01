@@ -21,5 +21,5 @@ This is the summary of the solodevguide.
 * Hardware
    * [Accessory Bay](hardware-accessorybay.md)
 * Advanced Topics
-   * [Licenses](licenses.md)
-   * [Yocto Linux](linux.md)
+   * [Licenses](advanced-licenses.md)
+   * [Yocto Linux](advanced-linux.md)
