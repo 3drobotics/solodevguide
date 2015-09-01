@@ -21,7 +21,8 @@ This is the summary of the solodevguide.
    * [Service: Stillframe API](example-stillframe.md)
    * [Service: Custom Streaming](video-out.md)
 * Hardware
-   * [Accessory Bay](hardware-accessorybay.md)
+   * [Accessory Port](hardware-accessorybay.md)
+   * [Gimbal Bay](hardware-gimbalbay.md)
 * Advanced Topics
    * [Licenses](advanced-licenses.md)
    * [Yocto Linux](advanced-linux.md)

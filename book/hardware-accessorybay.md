@@ -1,8 +1,8 @@
-# Accessory Bay
+# Accessory Port
 
 ## Pinout
 
-The pinout of the Accessory Bay port is:
+The pinout of the Accessory Port is:
 
 Pin | Description | Pin | Description
 --- | --- | --- | ---
