@@ -45,7 +45,7 @@ You can install the tools from here:
 
 ## Configure Tools
 
-To add the init script daemon (used to create new services):
+To add the runit script daemon (used to create new services):
 
 ```
 solo-utils install-runit
