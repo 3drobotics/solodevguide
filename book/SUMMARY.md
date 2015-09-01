@@ -16,9 +16,7 @@ This is the summary of the solodevguide.
 * Software Examples
    * [Using DroneKit](example-dronekit.md)
    * [Using OpenCV](example-opencv.md)
-   * [Smart Shot: Flipper](flip.md)
    * [Service: Stillframe API](example-stillframe.md)
-   * [Service: Video Overlay](video-overlay.md)
    * [Service: Custom Streaming](video-out.md)
 * Hardware
    * [Accessory Bay](hardware-accessorybay.md)
