@@ -30,7 +30,7 @@ Pin | Description | Pin | Description
 12. | CANH1 | 27. | 3DRID (USB ID)
 13. | CANL1 | 28. | GND
 14. | GND | 29. | GND
-15. | BATT | 30. | BATT
+15. | BATT (14.0-16.8V, 1.5A max) | 30. | BATT (14.0-16.8V, 1.5A max)
 
 ## Communication Protocol
 
