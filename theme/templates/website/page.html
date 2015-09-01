@@ -14,9 +14,9 @@
 {% block description %}{% if progress.current.level == "0" %}{{ description }}{% endif %}{% endblock %}
 
 {% block content %}
-    <div id="solo-header" style="background: #666; color: white; z-index: 100; position: absolute; top: 0; height: 40px; width: 100%">
-        <h1 style="margin: 0">3DR Developer Guide</h1>
-    </div>
+    <h1 id="solo-header">
+        <a href="/"><img src="/images/3dr.svg" height="20"> <span>Developer Portal</span></a>
+    </h1>
 
     <div class="book" data-level="{{ progress.current.level }}" data-basepath="{{ basePath }}" data-revision="{{ revision }}">
     {% include "includes/summary.html" %}
