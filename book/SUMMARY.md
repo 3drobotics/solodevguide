@@ -6,7 +6,7 @@ This is the summary of the solodevguide.
    * [Accessing Solo](network.md)
    * [Installing "solo-utils"](utils.md)
    * [Installing Files and Code](uploading.md)
-   * [Troubleshooting](reset.md)
+   * [Troubleshooting](starting-troubleshooting.md)
    * [Rules and Advice](donts.md)
    * [Contributing](starting-contributing.md)
    * [External Resources](starting-resources.md)
