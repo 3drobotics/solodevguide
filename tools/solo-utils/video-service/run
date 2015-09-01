@@ -12,12 +12,17 @@ modprobe v4l2loopback exclusive_caps=0,0 video_nr=1,2
 rm -f $FIFO
 mkfifo $FIFO
 
-gst-launch tvsrc device=/dev/video0 ! mfw_ipucsc ! \
-    "video/x-raw-yuv,width=1280,height=720,format=(fourcc)I420" ! tee name=vid \
+gst-launch tvsrc device=/dev/video0 ! mfw_ipucsc ! tee name=vid \
     vid. ! $CONF ! v4l2sink device=/dev/video1 \
     vid. ! queue ! v4l2sink device=/dev/video2 2> $FIFO &
 
 TAIL_PID=$!
+
+# Rewrite and restart video_send.sh
+sed -i.bak 's/-g 0/-g "$(if [ -e \/dev\/video1 ]; then echo 1; else echo 0; fi)"/g' /usr/bin/video_send.sh
+killall video_send.sh
+
+# Poll video output
 cat $FIFO | while read LOGLINE; do
     [[ "$LOGLINE" == *"CRITICAL"* ]] && kill -9 $TAIL_PID && break
 done
