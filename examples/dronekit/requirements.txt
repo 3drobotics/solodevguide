@@ -1,0 +1,5 @@
+protobuf==3.0.0a1
+requests==2.5.1
+wheel==0.24.0
+git+https://github.com/tcr3dr/mavlink@tcr-pymavlink
+git+https://github.com/dronekit/dronekit-python@tcr-nomp
