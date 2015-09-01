@@ -24,7 +24,12 @@ else
             ssh root@10.1.1.10 "tar -xvzf - -C /tmp && rm -rf /opt/solo-utils && mv /tmp/solodevguide-solo-utils-* /opt/solo-utils"
     fi
 fi
-ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true" 2> /dev/null </dev/null
+ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true" 2>/dev/null </dev/null
+
+# Patch smart to allow --remove-all
+# See http://lists.openembedded.org/pipermail/openembedded-core/2014-July/095090.html
+# But ather than reinstall smart, just patch the Python code
+ssh root@10.1.1.10 "sed -i.bak 's/, \"remove-all\",/, \"remove_all\",/g' /usr/lib/python2.7/site-packages/smart/commands/channel.py" 2>/dev/null </dev/null
 
 install_rpm () {
     name=$1
