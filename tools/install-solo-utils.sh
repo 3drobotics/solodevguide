@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SOLO_UTILS_VERSION="1.0.2"
+
 # Unpack sshuttle
 echo 'checking for sshuttle....'
 ssh root@10.1.1.10 "[[ -d /opt/sshuttle ]]" 2>/dev/null </dev/null
@@ -20,7 +22,7 @@ else
     ssh root@10.1.1.10 "[[ -d /opt/solo-utils ]]" 2>/dev/null </dev/null
     if [ $? != 0 ]; then
         echo 'uploading solo-utils from source...'
-        curl -L https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@github.com/3drobotics/solodevguide/archive/solo-utils-1.0.1.tar.gz | \
+        curl -L https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@github.com/3drobotics/solodevguide/archive/solo-utils-$SOLO_UTILS_VERSION.tar.gz | \
             ssh root@10.1.1.10 "tar -xvzf - -C /tmp && rm -rf /opt/solo-utils && mv /tmp/solodevguide-solo-utils-* /opt/solo-utils"
     fi
 fi
