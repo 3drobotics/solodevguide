@@ -11,7 +11,11 @@ Solo's internal network has several endpoints:
 
 ## Using SSH
 
-SSH is the primary mechanism by which you can access Solo's internals. You can SSH into either Solo or the Controller. **Note:** We do not recommend modifying the Controller, and all examples in this guide will be focused on modifying Solo.
+SSH is the primary mechanism by which you can access Solo's internals. You can SSH into either Solo or the Controller. 
+
+<aside class="note">
+We do not recommend modifying the Controller, and all examples in this guide will be focused on modifying Solo.
+</aside>
 
 To SSH into Solo, ensure you have an SSH-capable machine that is connected to the Controller's private network. From your terminal, type:
 
@@ -51,4 +55,6 @@ From then on, any Solo device can be accessed by this shorthand:
 ssh solo
 ```
 
-**Note:** We will be using the explicit address `root@10.1.1.10` throughout this guide.
+<aside class="note">
+We will be using the explicit address `root@10.1.1.10` throughout this guide.
+</aside>

@@ -36,13 +36,15 @@ You can now use `smart search` and `smart install <package>` to install packages
 
 These packages are pre-compiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
 
-**NOTE:** If you want to restore your package manager state after it's been modified, you can reset it by brute force:
+<aside class="note">
+If you want to restore your package manager state after it's been modified, you can reset it by brute force:
 
 ```
 yes | smart channel --remove-all
 yes | smart channel --add mydb type=rpm-sys name="RPM Database" 
 yes | smart channel --add solo type=rpm-md baseurl=http://solo-packages.s3-website-us-east-1.amazonaws.com/3.10.17-rt12/
 ```
+</aside>
 
 ## Working with Python
 
@@ -123,7 +125,11 @@ This requires no Internet connection. Instead, it installs from all the download
 
 ### Installing packages directly with pip
 
-You can install code directly from pip on Solo. Note that this is useful for development, but not recommended for distributing code.
+You can install code directly from pip on Solo. 
+
+<aside class="note">
+Note that this is useful for development, but not recommended for distributing code.
+</aside>
 
 Having installed the `solo-utils` utility, run:
 

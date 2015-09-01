@@ -61,7 +61,10 @@ In order to have Solo control a gimbal, Ardupilot must know how to communicate w
 
 SToRM32 is recommended as it features the most straightforward communication protocol. You can find more information about this type of gimbal controller here and Ardupilot integration can be found here.
 
-Important Note: For development purposes, a Pixhawk 1 and Copter 3.3 Ardupilot firmware are recommended. The Solo development stack is not yet ready to integrate multiple types of gimbals so it will not work on Solo. 
+<aside class="warning">
+For development purposes, a Pixhawk 1 and Copter 3.3 Ardupilot firmware are recommended. The Solo development stack is not yet ready to integrate multiple types of gimbals so it will not work on Solo. 
+</aside>
+
 
 ### Common Gimbal Camera Control
 There are a set of camera functions that are common amongst all gimbal/camera systems. These functions include START RECORDING/STOP RECORDING, POWER ON/OFF, & CHANGE MODES.
@@ -70,7 +73,10 @@ However, 3rd party developers cannot currently take advantage of the pre-set cam
 
 ### Custom Gimbal Camera Control
 
+<aside class="note">
 History Note: MAVLink was designed several years ago when there were only a few hundred people using UAVs in academia. As such, the protocol has a number of design flaws primarily caused by the maintenance of a central repository of commands and supported devices. For example, some camera-related commands include a CAMERA_ID param but others don’t - this consistency can’t be easily changed because there are already other codebases depending on this packet format. As another example, multiple developers may try to use the same previously unused component or system id at the same time and come into conflict with each other.
+</aside>
+
 
 As a workaround for many of the protocol’s inadequacies, COMMAND_LONG was created and it’s the recommended command for any unique, custom camera or gimbal functionality:
 
