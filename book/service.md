@@ -1,6 +1,6 @@
 # System Services
 
-After Linux is instantiated, Solo launches a group of services that fulfill various roles. These include communication proxying, RSSI testing, video encoding, and the state manager for running Smart Shots and communicating with the Solo app. These services are considered "always on" during normal operation of Solo, and are restarted if they happen to crash or shut down.
+After Linux is instantiated, Solo launches a group of services that fulfil various roles. These include communication proxying, RSSI testing, video encoding, and the state manager for running Smart Shots and communicating with the Solo app. These services are considered "always on" during normal operation of Solo, and are restarted if they happen to crash or shut down.
 
 You want to create a service if you want to talk to Solo's autopilot, log information while flying, set up a server for routing data, creating a new video output, etc. We'll first describe how services are implemented, then how to add your own to run on boot.
 
@@ -26,7 +26,7 @@ Solo should immediately reconnect, as though you had just turned on the Controll
 
 To add a service, we first want to configure a more flexible way of launching services. For this, we'll use `runit` as our launch system.
 
-[After having installed the `sdg` tool](utils.html), from your Solo's shell, run:
+[After having installed the `solo-utils` tool](utils.html), from your Solo's shell, run:
 
 ```
 solo-utils install-runit

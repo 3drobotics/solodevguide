@@ -10,7 +10,7 @@ In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusiv
 
 To view live video as it is being recorded by Solo, you can use VLC on your computer.
 
-First, we need to create a connection to Solo to enable video output. Either ensure the Solo App is open on your phone, or create a TCP connection from your commandline as follows:
+First, we need to create a connection to Solo to enable video output. Either ensure the Solo App is open on your phone, or create a TCP connection from your command line as follows:
 
 ```
 nc 10.1.1.1 5502
@@ -24,11 +24,11 @@ TODO: Screenshot of this working
 
 Because `sndast` has exclusive access to Solo's video input, we need to reconfigure it by splitting the video device via an intermediary.
 
-Theory: We will attach an intermediary gstreamer pipeline to `/dev/video0`.  Then we will pipe that info into two virtual devices, `/dev/video1` and `/dev/video2`.  We will instruct Sculpture to attach to `/dev/video1`, leaving device `/dev/video2` for use as we please.
+Theory: We will attach an intermediary GStreamer pipeline to `/dev/video0`.  Then we will pipe that info into two virtual devices, `/dev/video1` and `/dev/video2`.  We will instruct Sculpture to attach to `/dev/video1`, leaving device `/dev/video2` for use as we please.
 
-There are two pieces of software that are needed in order for this to work.  The first is `gst-plugins-good-video4linux2`, which allows us to use the `v4l2sink` pipeline in gstreamer.  The second is a kernel module called `v4l2loopback`, wihch allows us to emulate a video device. 
+There are two pieces of software that are needed in order for this to work.  The first is `gst-plugins-good-video4linux2`, which allows us to use the `v4l2sink` pipeline in GStreamer.  The second is a kernel module called `v4l2loopback`, wihch allows us to emulate a video device. 
 
-[After having installed the `sdg` tool](utils.html), connect Solo to the internet using `solo-utils tunnel-start`. Then, install these packages:
+[After having installed the `solo-utils` tool](utils.html), connect Solo to the internet using `solo-utils tunnel-start`. Then, install these packages:
 
 ```
 smart update
@@ -77,7 +77,7 @@ Internally, the `sndast` video driver uses GStreamer to begin a video pipeline u
 gst-launch tvsrc device=/dev/video0 ! mfw_ipucsc ! ... <h246 encoder>
 ```
 
-The `mfw_ipucsc` pipeline leverages iMX6 drivers to transform the video into a planer (YUV) colorspace, making it suitable for encoding as h264 or further processing.
+The `mfw_ipucsc` pipeline uses iMX6 drivers to transform the video into a planer (YUV) colorspace, making it suitable for encoding as h264 or further processing.
 
 Creating multiple video processing endpoints requires the kernel-level driver `v4l2loopback`, which creates video devices that echo their video input as video output. To activate this driver:
 

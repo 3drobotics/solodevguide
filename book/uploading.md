@@ -12,7 +12,7 @@ rsync -avz local/file/path/. root@10.1.1.10:/solo/path/.
 
 Solo is an `rpm` based system. These packages can be managed by the `smart` package system, already installed on your Solo.
 
-[After having installed the `sdg` tool](utils.html), from your Solo's shell run:
+[After having installed the `solo-utils` tool](utils.html), from your Solo's shell run:
 
 ```sh
 solo-utils tunnel-start
@@ -34,7 +34,7 @@ smart update
 
 You can now use `smart search` and `smart install <package>` to install packages. You will see examples used throughout this guide.
 
-These packages are precompiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
+These packages are pre-compiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
 
 **NOTE:** If you want to restore your package manager state after it's been modified, you can reset it by brute force:
 
@@ -74,7 +74,7 @@ This mechanism bundles Python code locally on your computer and expands it in a 
 1. No Internet connection or reliance on package management on Solo is needed.
 2. Packages are installed in a virtual environment, so they don't collide with the global Solo namespace.
 
-Start in a new directory on your host computer. This will be the entire directoy we send to Solo, so create your Python scripts here. We'll start by creating a virtual environment for local use:
+Start in a new directory on your host computer. This will be the entire directory we send to Solo, so create your Python scripts here. We'll start by creating a virtual environment for local use:
 
 ```sh
 pip install virtualenv
@@ -118,14 +118,14 @@ source ./env/bin/activate
 pip install --no-index ./wheelhouse/* -UI
 ```
 
-This requires no Internet connection. Instead, it installs from all the downloaded dependencies you transferred from your computer. You can now run your Python scripts with any pacakges you depended on, without having impacted any of Solo's own Python dependencies.
+This requires no Internet connection. Instead, it installs from all the downloaded dependencies you transferred from your computer. You can now run your Python scripts with any packages you depended on, without having impacted any of Solo's own Python dependencies.
 
 
 ### Installing packages directly with pip
 
 You can install code directly from pip on Solo. Note that this is useful for development, but not recommended for distributing code.
 
-Having installed the `sdg` utility, run:
+Having installed the `solo-utils` utility, run:
 
 ```sh
 solo-utils install-pip
