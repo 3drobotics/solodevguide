@@ -28,7 +28,7 @@ The Gimbal Cable has three primary responsibilities:
 
 ### Control over MAVLink with Serial
 
-The Gimbal TX and Gimbal RX lines send MAVLink data over a serial connection between the Pixhawk flight controller and the gimbal. This connection is used to both control the pitch, roll, and yaw of the gimbal motors as well as send commands over to the camera (start recording, stop recording, change modes, etc.). More details on camera control can be found in the Software Interface section.
+The Gimbal TX and Gimbal RX lines send [MAVLink](http://qgroundcontrol.org/mavlink/start) data over a serial connection between the Pixhawk flight controller and the gimbal. This connection is used to both control the pitch, roll, and yaw of the gimbal motors as well as send commands over to the camera (start recording, stop recording, change modes, etc.). More details on camera control can be found in the Software Interface section.
 
 ### Coprocessing with USB
 
@@ -44,7 +44,7 @@ The 5V source should only be used to power the camera. The battery voltage is us
 
 ### HDMI Mini 
 
-The HDMI Mini connection is responsible for transferring video from the camera on the Solo to the first person view in the 3DR app. The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
+The [HDMI] (https://en.wikipedia.org/wiki/HDMI) Mini connection is responsible for transferring video from the camera on the Solo to the first person view in the 3DR app. The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
 Suuported resolutions:
 1280x720p60
 1280x720p30
@@ -55,4 +55,38 @@ Suuported resolutions:
 1280x720p25(PAL)
 720x480p25(PAL)
 
+## Software Interface
+
+In order to have Solo control a gimbal, Ardupilot must know how to communicate with the gimbal. Fortunately, Ardupilot already has the ability to communicate with several types of pre-existing gimbal controllers including SToRM32 and Alexmos. The custom Solo Gimbal protocol is not yet supported by any released versions of Ardupilot. 
+
+SToRM32 is recommended as it features the most straightforward communication protocol. You can find more information about this type of gimbal controller here and Ardupilot integration can be found here.
+
+Important Note: For development purposes, a Pixhawk 1 and Copter 3.3 Ardupilot firmware are recommended. The Solo development stack is not yet ready to integrate multiple types of gimbals so it will not work on Solo. 
+
+### Common Gimbal Camera Control
+There are a set of camera functions that are common amongst all gimbal/camera systems. These functions include START RECORDING/STOP RECORDING, POWER ON/OFF, & CHANGE MODES.
+
+However, 3rd party developers cannot currently take advantage of the pre-set camera-related buttons on the Solo controller because they are sent as GoPro specific commands.In addition, there is not yet a way for 3rd party developers to capture any button events on the Solo coprocessor or Ardupilot.
+
+### Custom Gimbal Camera Control
+
+History Note: MAVLink was designed several years ago when there were only a few hundred people using UAVs in academia. As such, the protocol has a number of design flaws primarily caused by the maintenance of a central repository of commands and supported devices. For example, some camera-related commands include a CAMERA_ID param but others don’t - this consistency can’t be easily changed because there are already other codebases depending on this packet format. As another example, multiple developers may try to use the same previously unused component or system id at the same time and come into conflict with each other.
+
+As a workaround for many of the protocol’s inadequacies, COMMAND_LONG was created and it’s the recommended command for any unique, custom camera or gimbal functionality:
+
+Byte index | Value Size (bytes) | Value Description | Value
+--- | --- | --- | ---
+0 | 4 | Param 1 | {DEPENDENDENT ON COMMAND}
+4 | 4 | Param 2 | {DEPENDENDENT ON COMMAND}
+8 | 4 | Param 3 | {DEPENDENDENT ON COMMAND}
+12 | 4 | Param 4 | {DEPENDENDENT ON COMMAND}
+16 | 4 | Param 5 | {DEPENDENDENT ON COMMAND}
+20 | 4 | Param 6 | {DEPENDENDENT ON COMMAND}
+24 | 4 | Param 7 | {DEPENDENDENT ON COMMAND}
+28 | 2 | MAV_COMMAND (User defined command) | {DEPENDENDENT ON USE CASE}
+30 | 1 | Target System | 0
+31 | 1 | Target Component | MAV_COMP_ID_GIMBAL
+32 | 1 | Confirmation Number | Nth time packet was sent
+
+COMMAND_LONG essentially gives MAVLink consumers the ability to define their own commands without worrying about whether it already exists in the MAVLink spec or if other developers are writing a conflicting spec. It is essentially a packet within a packet. 3rd party developers can define their own commands (MAV_COMMAND, byte 28 above) and up to 7 parameters to send along with that command. Their application can capture the COMMAND_LONG packet header and then parse the custom MAV_COMMAND identifier to route the packet to the appropriate handler.
 
