@@ -39,7 +39,7 @@ These packages are pre-compiled and provided by 3DR for your use. To compile oth
 **NOTE:** If you want to restore your package manager state after it's been modified, you can reset it by brute force:
 
 ```
-smart channel --show --remove-all
+yes | smart channel --remove-all
 yes | smart channel --add mydb type=rpm-sys name="RPM Database" 
 yes | smart channel --add solo type=rpm-md baseurl=http://solo-packages.s3-website-us-east-1.amazonaws.com/3.10.17-rt12/
 ```
