@@ -18,7 +18,17 @@ This command address work on Solo or from an external device on the network.
 
 ## Running DroneKit
 
-Package up Python...
+Using this `requirements.txt` file:
+
+```
+protobuf==3.0.0a1
+requests==2.5.1
+wheel==0.24.0
+git+https://github.com/tcr3dr/mavlink@tcr-pymavlink
+git+https://github.com/dronekit/dronekit-python@tcr-nomp
+```
+
+We can run this script on Solo (or when connected to Solo's wifi):
 
 ```py
 from droneapi import connect
@@ -27,7 +37,7 @@ from pymavlink import mavutil
 import time
 
 # First get an instance of the API endpoint
-api = connect('127.0.0.1:15555')
+api = connect('udpout:10.1.1.10:14560')
 # Get the connected vehicle (currently only one vehicle can be returned).
 vehicle = api.get_vehicles()[0]
 

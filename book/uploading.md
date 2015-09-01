@@ -107,7 +107,7 @@ This installs all the dependencies in `requirements.txt` as Python wheel files, 
 Next, you can move this entire directory over to Solo using rsync:
 
 ```sh
-rsync -avz --exclude="*.pyc" --exclude="env" ./my_python_code solo:/opt/my_python_code
+rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/my_python_code
 ```
 
 SSH into Solo and navigate to the newly made directory (above `/opt/my_python_code`). Finally, run these commands:
@@ -115,7 +115,7 @@ SSH into Solo and navigate to the newly made directory (above `/opt/my_python_co
 ```sh
 virtualenv env
 source ./env/bin/activate
-pip install --no-index --find-links=wheelhouse/ -r requirements.txt
+pip install --no-index ./wheelhouse/* -UI
 ```
 
 This requires no Internet connection. Instead, it installs from all the downloaded dependencies you transferred from your computer. You can now run your Python scripts with any pacakges you depended on, without having impacted any of Solo's own Python dependencies.
