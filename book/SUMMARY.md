@@ -8,6 +8,8 @@ This is the summary of the solodevguide.
    * [Installing Files and Code](uploading.md)
    * [Troubleshooting](reset.md)
    * [Rules and Advice](donts.md)
+   * [Contributing](starting-contributing.md)
+   * [External Resources](starting-resources.md)
 * Concepts
    * [Architectural Overview](overview.md)
    * [Smart Shots](smartshot.md)
