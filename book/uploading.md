@@ -74,7 +74,7 @@ $ python -c "import cv2; print cv2.__version__"
 
 ### Bundling Python code
 
-This section shows how to bundle Python code locally on your computer and expand it in a virtual environment on Solo. This approach has two benefits:
+This section shows how to bundle Python code locally on your computer and expand it in a virtual environment ([virtualenv](https://virtualenv.pypa.io/en/latest/)) on Solo. This approach has two benefits:
 
 1. No Internet connection or reliance on package management on Solo is needed.
 2. Packages are installed in a virtual environment, so they don't collide with the global Solo namespace.
