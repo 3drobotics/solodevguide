@@ -2,10 +2,11 @@
 
 There are several scripts that we will be using throughout this tutorial that are packaged as a folder of shell scripts.
 
+* Enables direct Internet access from Solo through the host (required to install packages on Solo).
 * Resizing the root partition.
 * Installing `runit` to manage start processes.
 * Providing access to the video stream.
-* Tunnelling to the Internet through your host.
+
 
 All of these can be performed using the `solo-utils` command. To install, run this command on your *host* computer (you must be running OS X or Linux):
 
@@ -45,7 +46,7 @@ You can install the tools from here:
 
 ## Configure Tools
 
-To add the runit script daemon (used to create new services):
+To add the *runit* script daemon (used to create new services):
 
 ```
 solo-utils install-runit
@@ -71,7 +72,11 @@ You can disable this tunnel by restarting Solo or running:
 solo-utils tunnel-stop
 ```
 
-Enabling the tunnel is a prerequisite for installing software packages on your drone using `smart`.
+<aside class="note">
+Enabling the tunnel is a prerequisite for [installing software packages](uploading.html#installing-packages) on Solo using *smart*.
+</aside>
+
+
 
 ## Expanding the Root Partition
 
