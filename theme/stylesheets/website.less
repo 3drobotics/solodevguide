@@ -48,29 +48,20 @@ body {
 
 /* Theme Custom */
 
-aside.todo {
-    background: #fff8cc; color: #777233; padding: 0.5em 1em; margin: 1em 0;
-    font-size: 0.9em;
-}
-
-aside.note {
-    background: #ddf8ff; color: #226267; padding: 0.5em 1em; margin: 1em 0;
-    font-size: 0.9em;
-}
-
-aside.danger {
-    background: #ffcccc; color: #773333; padding: 0.5em 1em; margin: 1em 0;
-    font-size: 0.9em;
-}
+aside.todo { background: #fff8cc; color: #777233; }
+aside.note { background: #e3f8ff; color: #226267; }
+aside.danger { background: #ffcccc; color: #773333; }
 
 aside.todo p::before { font-weight: bold; content: "TODO: "; }
 aside.note p::before { font-weight: bold; content: "NOTE: "; }
 aside.danger p::before { font-weight: bold; content: "CAREFUL: "; }
 
-aside.todo :last-child,
-aside.danger :last-child,
-aside.note :last-child {
-    margin-bottom: 0 !important;
+aside.todo, aside.danger, aside.note {
+    :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    padding: 0.5em 1em; margin: 1em 0; font-size: 0.9em;
 }
 
 .lang-sh {
