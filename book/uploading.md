@@ -54,8 +54,9 @@ Python 2.7 is used throughout our system and in many of our examples. There are 
 Some Python libraries are "binary" dependencies. Solo does not ship a compiler (by design) and so cannot install code that requires C extensions. Trial and error is adequate to discovering which packages are usable.
 </aside>
 
-
-TODO: Provide ways of compiling code directly for Solo in the "Advanced Topics" section.
+<aside class="todo">
+Provide ways of compiling code directly for Solo in the "Advanced Topics" section.
+</aside>
 
 ### Installing using Solo's package manager
 
