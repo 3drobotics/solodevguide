@@ -2,7 +2,7 @@
 
 ## Uploading Files
 
-`rsync` is the preferred tool for synchronizing code and files between your desktop and Solo. e.g.
+[rsync](https://en.wikipedia.org/wiki/Rsync) is the preferred tool for synchronizing code and files between your desktop and Solo. To copy a file from the local filesystem to Solo:
 
 ```sh
 rsync -avz local/file/path/. root@10.1.1.10:/solo/path/. 
@@ -10,15 +10,15 @@ rsync -avz local/file/path/. root@10.1.1.10:/solo/path/.
 
 ## Installing Packages
 
-Solo is an `rpm` based system. These packages can be managed by the `smart` package system, already installed on your Solo.
+Solo is an [rpm](http://www.rpm.org/) based system. These packages can be managed by the [Smart](http://labix.org/smart/) package manager, already installed on your Solo.
 
-[After having installed the `solo-utils` tool](utils.html), from your Solo's shell run:
+[After having installed the *solo-utils* tool](utils.html), from your Solo's shell run:
 
 ```sh
 solo-utils tunnel-start
 ```
 
-This tunnels an Internet connection to Solo through your computer. Now we can configure the `smart` package manager to download packages from a dedicated package repository.
+This tunnels an Internet connection to Solo through your computer. Now we can configure the *Smart* package manager to download packages from a dedicated package repository.
 
 Run this command to add the package repository:
 
@@ -32,7 +32,7 @@ Now download the package list:
 smart update
 ```
 
-You can now use `smart search` and `smart install <package>` to install packages. You will see examples used throughout this guide.
+You can then use `smart search` and `smart install <package>` to install packages. You will see examples used throughout this guide.
 
 These packages are pre-compiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
 
@@ -50,13 +50,16 @@ yes | smart channel --add solo type=rpm-md baseurl=http://solo-packages.s3-websi
 
 Python 2.7 is used throughout our system and in many of our examples. There are a few ways in which you can deploy Python code to Solo.
 
-Be aware: some Python libraries are "binary" dependencies. Solo does not ship a compiler (by design) and so cannot install code that requires C extensions. Trial and error is adequate to discovering which packages are usable.
+<aside class="note">
+Some Python libraries are "binary" dependencies. Solo does not ship a compiler (by design) and so cannot install code that requires C extensions. Trial and error is adequate to discovering which packages are usable.
+</aside>
+
 
 TODO: Provide ways of compiling code directly for Solo in the "Advanced Topics" section.
 
 ### Installing using Solo's package manager
 
-Some Python libraries are provided by Solo's internal package manager. For example, `opencv` can be installed via `smart`, which provides its own Python library. After running:
+Some Python libraries are provided by Solo's internal package manager. For example, `opencv` can be installed via *Smart*, which provides its own Python library. After running:
 
 ```sh
 smart install python-opencv
@@ -84,7 +87,7 @@ virtualenv env
 source ./env/bin/activate
 ```
 
-We want to configure our environment to not compile any C extensions. We can do this simply in our virtual environment with this incantation:
+We want to configure our environment to not compile any C extensions. We can do this simply in our virtual environment with this command:
 
 ```sh
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
@@ -125,22 +128,23 @@ This requires no Internet connection. Instead, it installs from all the download
 
 ### Installing packages directly with pip
 
-You can install code directly from pip on Solo. 
+You can install code directly from *pip* on Solo. 
 
 <aside class="note">
-Note that this is useful for development, but not recommended for distributing code.
+This approach will install the package globally. While this is useful for development it is not recommended for distributing code. You may instead consider installing and using [virtualenv](#bundling-python-code) to create isolated environments of packages.
 </aside>
 
-Having installed the `solo-utils` utility, run:
+Having installed the *solo-utils* utility, run:
 
 ```sh
 solo-utils install-pip
 ```
 
-This will install and update pip to the latest version. You can then install any packages you like:
+This will install and update *pip* to the latest version. You can then install any packages you like:
 
 ```sh
 pip install requests
 ```
 
-This will install the package globally, so you may consider installing and using `virtualenv` to create isolated environments of packages.
+
+
