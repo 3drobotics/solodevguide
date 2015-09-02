@@ -48,8 +48,13 @@ body {
 
 /* Theme Custom */
 
-aside.note {
+aside.todo {
     background: #fff8cc; color: #777233; padding: 0.5em 1em; margin: 1em 0;
+    font-size: 0.9em;
+}
+
+aside.note {
+    background: #ddf8ff; color: #226267; padding: 0.5em 1em; margin: 1em 0;
     font-size: 0.9em;
 }
 
@@ -58,10 +63,11 @@ aside.danger {
     font-size: 0.9em;
 }
 
+aside.todo p::before { font-weight: bold; content: "TODO: "; }
 aside.note p::before { font-weight: bold; content: "NOTE: "; }
-
 aside.danger p::before { font-weight: bold; content: "CAREFUL: "; }
 
+aside.todo :last-child,
 aside.danger :last-child,
 aside.note :last-child {
     margin-bottom: 0 !important;
