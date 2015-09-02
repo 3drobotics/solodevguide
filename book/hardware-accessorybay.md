@@ -34,7 +34,7 @@ Pin | Description | Pin | Description
 
 ## Communication Protocol
 
-The two primary interfaces to the Accessory Bay will be the CAN bus for direct integration with the flight controller and the USB port for higher-level interactions with Smart shots, DroneKit, and interactions with Artoo.
+The two primary interfaces to the Accessory Bay will be the CAN bus for direct integration with the flight controller and the USB port for higher-level interactions with Smart shots, DroneKit, and interactions with The Controller.
 
 CAN - Uses the [UAVCAN](http://uavcan.org/UAVCAN) protocol and interfaces directly with the Pixhawk. 
 
