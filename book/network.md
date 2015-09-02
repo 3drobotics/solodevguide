@@ -1,6 +1,6 @@
 # Accessing Solo
 
-When Solo and its controller are booted, it creates a private network between the two devices over WiFi. Any computer or smartphone can connect to this network and access these devices by their IP address.
+When Solo and its Controller are booted, the Controller creates a private network between the two devices over WiFi. Any computer or smartphone can connect to this network and access these devices by their IP address.
 
 Solo's internal network has several endpoints:
 
@@ -23,11 +23,12 @@ To SSH into Solo, ensure you have an SSH-capable machine that is connected to th
 ssh root@10.1.1.10
 ```
 
-This will prompt you for Solo's root password. This is the default root password on all Solo devices:
+This will prompt you for Solo's root password. The default root password on all Solo devices is:
 
 > TjSDBkAu
 
-This will place you in a terminal running on Solo itself.
+Your SSH client will then have direct terminal access to Solo.
+
 
 ### Optimizing SSH
 
@@ -37,7 +38,7 @@ If you do not want to be prompted for a password each time you SSH into Solo, yo
 ssh-copy-id -i ~/.ssh/id_rsa root@10.1.1.10
 ```
 
-You can optimize this process further by adding the following to your ~/.ssh/config:
+You can optimize this process further by adding the following to your `~/.ssh/config`:
 
 ```
 Host solo 10.1.1.10
