@@ -74,12 +74,14 @@ $ python -c "import cv2; print cv2.__version__"
 
 ### Bundling Python code
 
-This mechanism bundles Python code locally on your computer and expands it in a virtual environment on Solo. This has two benefits:
+This section shows how to bundle Python code locally on your computer and expand it in a virtual environment on Solo. This approach has two benefits:
 
 1. No Internet connection or reliance on package management on Solo is needed.
 2. Packages are installed in a virtual environment, so they don't collide with the global Solo namespace.
 
-Start in a new directory on your host computer. This will be the entire directory we send to Solo, so create your Python scripts here. We'll start by creating a virtual environment for local use:
+Create and navigate to a new directory on your host computer. This directory will be populated with your own Python scripts and all their dependencies. The entire directory will then be sent to Solo. 
+
+Start by creating a virtual environment for local use:
 
 ```sh
 pip install virtualenv
@@ -101,7 +103,7 @@ When you're ready to move code over to Solo, you want to create a `requirements.
 pip freeze > requirements.txt
 ```
 
-Next, we want to download these packages on your host computer so they can be moved to Solo along with your code. You can do this using `pip wheel` to download them into a new folder, `./wheelhouse`. Run this command:
+Next, we want to download these packages on your host computer so they can be moved to Solo along with your code. You can do this using [pip wheel](https://pip.pypa.io/en/latest/reference/pip_wheel.html) to download them into a new folder (`./wheelhouse`). Run this command:
 
 ```sh
 pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
@@ -109,7 +111,7 @@ pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 
 This installs all the dependencies in `requirements.txt` as Python wheel files, which are source code packages.
 
-Next, you can move this entire directory over to Solo using rsync:
+Next, you can move this entire directory over to Solo using *rsync*:
 
 ```sh
 rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/my_python_code
