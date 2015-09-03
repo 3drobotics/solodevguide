@@ -1,4 +1,4 @@
-# Python bundles
+# Bundling Python
 
 This guide shows how to bundle Python code locally on your computer and expand it in a virtual environment ([virtualenv](starting-installing.html#installing-packages-into-a-virtualenv)) on Solo. This approach has two benefits:
 
