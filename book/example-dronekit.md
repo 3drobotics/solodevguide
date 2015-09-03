@@ -76,13 +76,7 @@ Next, and every time we make changes to Python, we can sync our code to Solo usi
 rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/dkexample
 ```
 
-Now SSH into Solo. Split the video feed:
-
-```sh
-solo-utils video-splice
-```
-
-Navigate to the example directory and install packages:
+Now SSH into Solo. Navigate to the example directory and install packages:
 
 ```sh
 cd /opt/dkexample
