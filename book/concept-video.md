@@ -4,7 +4,7 @@
 GoPro -> HDMI cable -> HDMI encoder -> i.MX6 (h.264 encode/gstreamer) -> WiFi (UDP) -> Controller (h.264 decode/hdmi output/UDP relay to phone) -> WiFi (UDP) -> App
 ```
 
-In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusively by Solo's video encoder (referred to as _Sculpture_). 
+In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusively by Solo's video encoder (referred to as *sndast*). 
 
 ## Viewing Live Video
 
@@ -16,15 +16,17 @@ First, we need to create a connection to Solo to enable video output. Either ens
 nc 10.1.1.1 5502
 ```
 
-You can leave this open (there is no need to type into this prompt). Then, you can open the `sololink.sdp` using VLC. This describes the RTP stream configuration that enables VLC to interpret Solo's video stream.
+You can leave this open (there is no need to type into this prompt). Then, you can open `[sololink.sdp](https://github.com/3drobotics/solodevguide/blob/master/tools/video/sololink.sdp)` using VLC. This describes the RTP stream configuration that enables VLC to interpret Solo's video stream.
 
-TODO: Screenshot of this working
+<aside class="todo">
+Show a screenshot of this working in VLC.
+</aside>
 
 ## Configuring Solo's Video Output
 
-Because `sndast` has exclusive access to Solo's video input, we need to reconfigure it by splitting the video device via an intermediary.
+Because *sndast* has exclusive access to Solo's video input, we need to reconfigure it by splitting the video device via an intermediary.
 
-Theory: We will attach an intermediary GStreamer pipeline to `/dev/video0`.  Then we will pipe that info into two virtual devices, `/dev/video1` and `/dev/video2`.  We will instruct Sculpture to attach to `/dev/video1`, leaving device `/dev/video2` for use as we please.
+Overview: We will attach an intermediary GStreamer pipeline to `/dev/video0`.  Then we will pipe that info into two virtual devices, `/dev/video1` and `/dev/video2`.  We will instruct *sndast* to attach to `/dev/video1`, leaving device `/dev/video2` for use as we please.
 
 There are two pieces of software that are needed in order for this to work.  The first is `gst-plugins-good-video4linux2`, which allows us to use the `v4l2sink` pipeline in GStreamer.  The second is a kernel module called `v4l2loopback`, wihch allows us to emulate a video device. 
 
@@ -45,9 +47,9 @@ From your Solo's shell, run:
 solo-utils video-splice
 ```
 
-This command creates a service that splits `/dev/video0` into two outputs, `/dev/video1` and `/dev/video2`. `sndast` will continue to pipe video from `/dev/video1` as normal, but `/dev/video2` is now available for scripts to take as input, e.g. OpenCV, saving video to disk, taking still shots, etc.
+This command creates a service that splits `/dev/video0` into two outputs, `/dev/video1` and `/dev/video2`. *sndast* will continue to pipe video from `/dev/video1` as normal, but `/dev/video2` is now available for scripts to take as input, e.g. OpenCV, saving video to disk, taking still shots, etc.
 
-If you are interested in modifying the video before it reaches `sndast`, you can modify the video pipeline. The file `/opt/solo-utils/video-service/output-pipeline` contains the default pipeline, which is just to queue data:
+If you are interested in modifying the video before it reaches *sndast*, you can modify the video pipeline. The file `/opt/solo-utils/video-service/output-pipeline` contains the default pipeline, which is just to queue data:
 
 ```
 queue
@@ -71,7 +73,7 @@ modprobe mxc_v4l2_capture
 
 This initiates the capture of the HDMI device (the GoPro camera) as a v4l2 (Video4Linux2) device loaded at `/dev/video0`. All scripts which parse video manually require this.
 
-Internally, the `sndast` video driver uses GStreamer to begin a video pipeline using `tvsrc`:
+Internally, the *sndast* video driver uses GStreamer to begin a video pipeline using `tvsrc`:
 
 ```
 gst-launch tvsrc device=/dev/video0 ! mfw_ipucsc ! ... <h246 encoder>

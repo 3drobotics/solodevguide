@@ -2,7 +2,7 @@
 
 ## Uploading Files
 
-[rsync](https://en.wikipedia.org/wiki/Rsync) is the preferred tool for synchronizing code and files between your desktop and Solo. To copy a file from the local filesystem to Solo:
+*[rsync](https://en.wikipedia.org/wiki/Rsync)* is the preferred tool for synchronizing code and files between your desktop and Solo. To copy a file from the local filesystem to Solo:
 
 ```sh
 rsync -avz local/file/path/. root@10.1.1.10:/solo/path/. 
@@ -23,7 +23,7 @@ smart update
 
 The first command tunnels an Internet connection to Solo through your computer. (Linux and OS X only.) The second command updates the package repository list from the server.
 
-You can then now `smart search` and `smart install <package>` to install packages. You will see examples used throughout this guide.
+You can then now `smart search` and `smart install <packagename>` to install packages. You will see examples used throughout this guide.
 
 These packages are pre-compiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
 

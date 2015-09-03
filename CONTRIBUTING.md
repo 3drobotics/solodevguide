@@ -1,3 +1,5 @@
+# Contributing
+
 Hi! Thanks for your interest in contributing to #solodevguide
 
 If you would like to add new content, please consider these guidelines:
@@ -12,3 +14,9 @@ Do not edit the Table of Contents, it is auto-generated. Add linked items under 
 Most importantly, don't overthink where your content should go. We're still in the development phase and we will steward all new contributions to where they should be.
 
 Ping @tcr3dr on an issue with any questions.
+
+## Style Guide
+
+* Tool names should be in italics. (in Markdown, use asterisks.) Example: Use *rsync* to transfer files to Solo.
+* Paths should be in code. (in Markdown, use backticks.) Example: Navigate to `/opt/solo-utils`.
+* Ports should be bare. Example: The server will be launched on port 5000.
