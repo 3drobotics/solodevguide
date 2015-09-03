@@ -4,10 +4,9 @@ from pymavlink import mavutil
 import time
 
 # First get an instance of the API endpoint
-api = connect('udpout:10.1.1.10:14560')
-# Get the connected vehicle (currently only one vehicle can be returned).
-vehicle = api.get_vehicles()[0]
+vehicle = connect('udpout:10.1.1.10:14560')
 
+# Await.
 time.sleep(5)
 
 # Get all vehicle attributes (state)

@@ -93,12 +93,6 @@ This will install and update *pip* to the latest version. You can then install a
 pip install requests
 ```
 
-Many examples will require you to install directly from packages in _git_, so we also recommend you install this using _smart_:
-
-```sh
-smart install git
-```
-
 ### Installing packages into a _virtualenv_
 
 _virtualenv_ is a tool for managing the environment in which Python code executes in. A common goal is to isolate packages needed for one application from those used elsewhere in the system. In particular, Solo uses many globally installed packages that may be out of date (in particular, _droneapi_) and for which you want to use updated versions without disturbing native Solo code.
