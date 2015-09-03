@@ -101,7 +101,7 @@ smart install git
 
 ### Installing packages into a _virtualenv_
 
-This section shows how to install and run packages in [virtualenv](https://virtualenv.pypa.io/en/latest/), a tool for creating isolated Python environments.
+This section shows how to install and run packages in an isolated Python environment using  [virtualenv](https://virtualenv.pypa.io/en/latest/).
 
 <aside class="note">
 Solo uses many globally installed packages that may be out of date (in particular, [DroneKit](example-dronekit.html)). Using _virtualenv_ means that you don't need to update the global versions; potentially disturbing native Solo code.
