@@ -1,6 +1,8 @@
 #!/bin/bash
 
-pip --version
+cd $(dirname $0)
+
+pip --version 2>/dev/null
 if [ $? == 0 ]; then
 	echo 'pip is installed.'
 	exit 1

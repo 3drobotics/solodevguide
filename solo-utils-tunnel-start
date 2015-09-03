@@ -39,3 +39,12 @@ if [ $? -ne 0 ]; then
 fi
 sv up /opt/solo-utils/tunnel-service >/dev/null
 echo 'tcp tunnelling service started.'
+
+while true; do
+    sleep 1
+    /opt/solo-utils/solo-utils-test-net
+    if [[] $? == 0 ]]; then
+        break
+    fi
+done
+
