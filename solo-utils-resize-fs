@@ -1,13 +1,23 @@
 #!/bin/bash
 
-which modprobe >/dev/null || { echo 'missing modprobe, cannot proceed'; exit 1; }
-which umount >/dev/null || { echo 'missing umount, cannot proceed'; exit 1; }
-which fdisk >/dev/null || { echo 'missing fdisk, cannot proceed'; exit 1; }
-which mkfs.ext3 >/dev/null || { echo 'missing mkfs.ext3, cannot proceed'; exit 1; }
-which resize2fs >/dev/null || { echo 'missing resize2fs, cannot proceed'; exit 1; }
+need() {
+    for var in "$@"; do
+        which "$var" >/dev/null
+        if [ $? != 0 ]; then
+            return 1
+        fi
+    done
+}
+
+need "modprobe" "umount" "fdisk" "mkfs.ext3" "resize2fs" || {
+    echo 'error: missing packages. Please run:'
+    echo '   solo-utils tunnel-start'
+    echo '   smart install parted libss2 e2fsprogs e2fsprogs-badblocks e2fsprogs-mke2fs lsof'
+    exit 1
+}
 
 # Warn the user about their horrible mistakes.
-echo 'WARNING: This can break your Solo and require a factory reset.'
+echo 'WARNING: This can break your Solo and require a factory reset!'
 echo 'Your Solo will turn off after and you will need to power cycle it.'
 read -p 'Continue (y/n)? ' answer
 case ${answer:0:1} in
