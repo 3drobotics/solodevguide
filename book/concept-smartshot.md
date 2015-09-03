@@ -1,6 +1,14 @@
 # Smart Shots
 
-Smart Shots consist of several important functions:
+Smart Shots consist of several functions that provide a high-level interface for controlling the drone. The most important methods they provide:
+
+* *Handling RC input.* Remapping the control sticks to do alternate functions is used, for example, in Cable Cam to allow the right stick to be 
+* *Buttons.* A and B can be mapped to provide shortcuts like setting fixed waypoints or recording a position.
+* *Resume from brake.* When the pause button is pressed, the drone goes into BRAKE mode and the flight state is lost. This function is called shortly afterward to restore the flight state and prepare the shot to continue.
+
+<aside class="todo">
+This guide does not yet document how to author your own Smart Shots, though this is being worked on. A conceptual API is shown below for how this will work. `vehicle` refers to a DroneKit API interface.
+</aside>
 
 ```py
 import solo
@@ -20,59 +28,3 @@ class FlipShot(solo.smartshot):
     def resume_from_brake(self):
         pass
 ```
-
-TODO: Rebrand these probably, move out of /usr/bin
-
-```py
-from __future__ import print_function
-from droneapi.lib import VehicleMode
-from droneapi.lib import Location
-from pymavlink import mavutil
-import os
-from os import sys, path
-import math
-import struct
-import time
-
-sys.path.append(os.path.realpath(''))
-import app_packet
-import camera
-import location_helpers
-import pathHandler
-import roi
-import shotLogger
-import shots
-from shotManagerConstants import *
-import yawPitchOffsetter
-# on host systems these files are located here
-sys.path.append(os.path.realpath('../../flightcode/stm32'))
-import btn_msg
-
-class MyController():
-    def __init__(self, vehicle, shotmgr):
-        self.vehicle = vehicle
-        self.shotmgr = shotmgr
-
-    def handleRCs( self, channels ):
-    	pass
-
-    def handleButton(self, button, event):
-        pass
-
-    def handleOptions(self, options):
-        pass
-
-    def setButtonMappings(self):
-        pass
-
-    def updateAppOptions(self):
-        pass
-
-    def resumeFromBrake(self):
-        pass
-
-    def setupTargeting(self):
-        pass
-```
-
-Then use [DroneKit Python](https://python.dronekit.io/).
