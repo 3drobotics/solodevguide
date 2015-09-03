@@ -8,7 +8,7 @@ To run this example, run `solo-utils video-splice` first to get camera access.
 This example requires you to [install the packages](uploading.html#installing-packages) `gst-plugins-good-jpeg gst-plugins-base-tcp`.
 </aside>
 
-This example provides a RESTful API on port `8080` that can be accessed from Solo.When the HTTP endpoint is hit, it uses `gstreamer` to grab a frame from the video feed and provide it as a response. We also include an example app that allows you to grab a frame in your web browser.
+This example provides a RESTful API on port `8080` that can be accessed from Solo. When the HTTP endpoint is hit, it uses `gstreamer` to grab a frame from the video feed and provide it as a response. We also include an example app that allows you to grab a frame in your web browser.
 
 Our API definition is simple: every request to the `/jpeg` endpoint fetches a new frame from the video feed.
 
@@ -28,18 +28,18 @@ See [Bundling Python](advanced-python.html) for an explanation of the following 
 
 Clone the [solodevguide](https://github.com/3drobotics/solodevguide) repository and cd into the [examples/stillframe](https://github.com/3drobotics/solodevguide/tree/master/examples/stillframe) directory.
 
-In this folder, run:
+In this folder, prepare your environment by running:
 
 ```sh
 virtualenv env
-source ./env/bin/activate
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
-pip install -r requirements.txt
 ```
 
-Package the required modules for Solo:
+Install the Python dependencies locally, and then package them for Solo:
 
 ```sh
+source ./env/bin/activate
+pip install -r requirements.txt
 pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 ```
 
