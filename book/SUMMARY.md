@@ -19,7 +19,6 @@ This is the summary of the solodevguide.
    * [Using DroneKit](example-dronekit.md)
    * [Using OpenCV](example-opencv.md)
    * [Service: Stillframe API](example-stillframe.md)
-   * [Service: Custom Streaming](example-vidoutput.md)
 * Hardware
    * [Accessory Port](hardware-accessorybay.md)
    * [Gimbal Bay](hardware-gimbalbay.md)
