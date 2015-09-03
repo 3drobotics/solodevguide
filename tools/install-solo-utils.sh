@@ -45,13 +45,4 @@ install_rpm () {
     fi
 }
 
-echo 'checking rpms...'
-install_rpm "sv" "busybox-1.21.1-r1.cortexa9hf_vfp_neon.rpm"
-install_rpm "parted" "parted-3.1-r1.cortexa9hf_vfp_neon.rpm"
-install_rpm "resize2fs" "libss2-1.42.8-r0.cortexa9hf_vfp_neon.rpm"
-install_rpm "resize2fs" "e2fsprogs-1.42.8-r0.cortexa9hf_vfp_neon.rpm"
-install_rpm "resize2fs" "e2fsprogs-badblocks-1.42.8-r0.cortexa9hf_vfp_neon.rpm"
-install_rpm "mkfs.ext3" "e2fsprogs-mke2fs-1.42.8-r0.cortexa9hf_vfp_neon.rpm"
-install_rpm "lsof" "lsof-4.87-r0.cortexa9hf_vfp_neon.rpm"
-
 echo 'done. solo-utils is installed and up to date.'
