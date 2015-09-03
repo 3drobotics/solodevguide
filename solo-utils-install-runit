@@ -12,7 +12,7 @@ need() {
     done
 }
 
-need "sv" "glit" || {
+need "sv" || {
     echo 'error: missing packages. Please run:'
     echo '   solo-utils tunnel-start'
     echo '   smart reinstall busybox'
