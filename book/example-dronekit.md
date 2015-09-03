@@ -2,23 +2,25 @@
 
 *[DroneKit](http://dronekit.io/)* is a library that can interact with Solo via telemetry, flight modes, or positional control. Solo uses *DroneKit-Python* internally to develop its [Smart Shots](concept-smartshot.html). In this example, we'll install and use 
 
-<aside class="danger">
-This uses a branch of DroneKit Python that is not yet stable.
-</aside>
-
 ## Connecting to Solo externally
 
-MAVLink is served from Solo on UDP port 14560. In this configuration, you can set up downstream applications to connect as a UDP client to this address. For example:
+MAVLink, the telemetry protocol used to control and communicate with Solo, is served on UDP port 14560. When connected to Solo's network, you can set up downstream applications to connect as a UDP client to this address. For example, using the *[MAVProxy](http://dronecode.github.io/MAVProxy)* command line tool:
 
 ```
 mavproxy.py --master udpout:10.1.1.10:14560
 ```
 
-This command address work on Solo or from an external device on the network.
+You're able to connect to `10.1.1.10:14560` both from Solo's terminal as well as on an external device on its network.
 
-## Running DroneKit
+## Using DroneKit on Solo
 
-Using this `requirements.txt` file:
+<aside class="danger">
+This example a forthcoming release of DroneKit-Python that is not yet stable. Please [file any issues](https://github.com/dronekit/dronekit-python/issues) you have while using it.
+</aside>
+
+Our example will use DroneKit-Python 2.0, a standalone Python library that is able to communicate with Solo's autopilot and retrieve information about its position, speed, battery life, and current flight mode.
+
+The most important consideration is the libraries. We will be using this `requirements.txt` file for this example:
 
 ```
 protobuf==3.0.0a1
@@ -28,34 +30,65 @@ git+https://github.com/tcr3dr/mavlink@tcr-pymavlink
 git+https://github.com/dronekit/dronekit-python@tcr-nomp
 ```
 
-We can run this script on Solo (or when connected to Solo's wifi):
+Note that we are installing a particular version of `pymavlink` and a particular branch of `dronekit-python`.
+
+From Python, it's simple to connect to Solo and retrieve parameters:
 
 ```py
 from droneapi import connect
-from droneapi.lib import VehicleMode
-from pymavlink import mavutil
-import time
 
-# First get an instance of the API endpoint
-api = connect('udpout:10.1.1.10:14560')
-# Get the connected vehicle (currently only one vehicle can be returned).
-vehicle = api.get_vehicles()[0]
-
+# Connect to UDP endpoint.
+vehicle = connect('udpout:10.1.1.10:14560')
+# Wait for parameters to accumulate.
 time.sleep(5)
 
-# Get all vehicle attributes (state)
-print "\nGet all vehicle attribute values:"
-print " Location: %s" % vehicle.location
-print " Attitude: %s" % vehicle.attitude
-print " Velocity: %s" % vehicle.velocity
-print " GPS: %s" % vehicle.gps_0
-print " Groundspeed: %s" % vehicle.groundspeed
-print " Airspeed: %s" % vehicle.airspeed
-print " Mount status: %s" % vehicle.mount_status
-print " Battery: %s" % vehicle.battery
-print " Rangefinder: %s" % vehicle.rangefinder
-print " Rangefinder distance: %s" % vehicle.rangefinder.distance
-print " Rangefinder voltage: %s" % vehicle.rangefinder.voltage
-print " Mode: %s" % vehicle.mode.name    # settable
-print " Armed: %s" % vehicle.armed    # settable
+# Print our location and attitude.
+print "Location: %s" % vehicle.location
+print "Attitude: %s" % vehicle.attitude
 ```
+
+## Installing _dkexample_
+
+<aside class="note">
+See [Bundling Python](advanced-python.html) for an explanation of the following steps.
+</aside>
+
+Clone the [solodevguide](https://github.com/3drobotics/solodevguide) repository and cd into the [examples/dkexample](https://github.com/3drobotics/solodevguide/tree/master/examples/dkexample) directory.
+
+In this folder, prepare your environment by running:
+
+```sh
+virtualenv env
+echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
+```
+
+Install the Python dependencies locally, and then package them for Solo:
+
+```sh
+source ./env/bin/activate
+pip install -r requirements.txt
+pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
+```
+
+Next, and every time we make changes to Python, we can sync our code to Solo using *rsync*:
+
+```sh
+rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/dkexample
+```
+
+Now SSH into Solo. Split the video feed:
+
+```sh
+solo-utils video-splice
+```
+
+Navigate to the example directory and install packages:
+
+```sh
+cd /opt/dkexample
+virtualenv env
+source ./env/bin/activate
+pip install --no-index ./wheelhouse/* -UI
+```
+
+Then you can run `python example.py` to see Solo's telemetry output in realtime to the console.
