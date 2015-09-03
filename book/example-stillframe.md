@@ -20,7 +20,7 @@ This API is implemented as three processes/threads launched from `server.py`:
 
 The server is implemented using _[flask](http://flask.pocoo.org/)_, and should be very straightforward to modify.
 
-## Installing _stillframe_.
+## Installing _stillframe_
 
 <aside class="note">
 See [Bundling Python](advanced-python.html) for an explanation of the following steps.
