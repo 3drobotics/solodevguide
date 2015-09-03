@@ -1,10 +1,10 @@
 # Using DroneKit
 
+*[DroneKit](http://dronekit.io/)* is a library that can interact with Solo via telemetry, flight modes, or positional control. Solo uses *DroneKit-Python* internally to develop its [Smart Shots](concept-smartshot.html). In this example, we'll install and use 
+
 <aside class="danger">
 This uses a branch of DroneKit Python that is not yet stable.
 </aside>
-
-Do you like dronekits?
 
 ## Connecting to Solo externally
 
