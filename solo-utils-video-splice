@@ -2,9 +2,28 @@
 
 which sv >/dev/null || { echo 'error: first install an updated busybox with runit'; exit 1; }
 
+echo 'disabling output of video...'
+init 2
+
 sv status /opt/solo-utils/video-service >/dev/null 2>&1
 if [ $? -ne 0 ]; then
     runsv /opt/solo-utils/video-service >/dev/null 2>&1 &
 fi
 sv up /opt/solo-utils/video-service >/dev/null
-echo 'video splicing service started.'
+echo 'video splicing service starting...'
+
+echo 'patching sn_master_snd...'
+echo '(use solo-utils video-stop to reset this.)'
+hexdump -ve '1/1 "%.2X"' /usr/bin/sn_master_snd |
+	sed "s/$(hexdump -ve '1/1 "%.2X"' <(printf "   v4l2src device="))/$(hexdump -ve '1/1 "%.2X"' <(printf "mfw_v4lsrc device="))/" |
+	xxd -r -p > /usr/bin/sn_master_snd.original
+hexdump -ve '1/1 "%.2X"' /usr/bin/sn_master_snd |
+	sed "s/$(hexdump -ve '1/1 "%.2X"' <(printf "mfw_v4lsrc device="))/$(hexdump -ve '1/1 "%.2X"' <(printf "   v4l2src device="))/" |
+	xxd -r -p > /usr/bin/sn_master_snd.patched
+
+cp /usr/bin/sn_master_snd.patched /usr/bin/sn_master_snd
+
+sleep 10
+
+echo 'restarting video.'
+init 4

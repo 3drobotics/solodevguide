@@ -1,4 +1,15 @@
 #!/bin/bash
 
+echo 'disabling output of video...'
+init 2
+
 sv once /opt/solo-utils/video-service
 sv kill /opt/solo-utils/video-service
+
+echo 'restoring video patch...'
+cp /usr/bin/sn_master_snd.original /usr/bin/sn_master_snd
+
+sleep 10
+
+echo 'restarting video.'
+init 4
