@@ -1,32 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 35 13.7" enable-background="new 0 0 35 13.7" xml:space="preserve">
+	 viewBox="0 0 150 60" enable-background="new 0 0 150 60" xml:space="preserve">
 <g>
+	<polygon fill="#75E500" points="-0.1,16.2 -0.1,0.6 15.5,0.6 	"/>
 	<g>
 		<g>
-			<g>
-				<polygon fill="#FFFFFF" points="24.9,10 24.9,13.7 28.6,13.7 				"/>
-			</g>
-			<g>
-				<path fill="#FFFFFF" d="M35,13.7l-4.5-4.5C32.9,9,34.9,7,34.9,4.6c0-2.5-2-4.6-4.6-4.6h-5.3v2.3h5.3c1.3,0,2.3,1,2.3,2.3
-					c0,1.3-1,2.3-2.3,2.3h-5.3l6.8,6.8H35z"/>
-			</g>
+			<polygon fill="#75E500" points="106.8,43.8 106.8,59.4 122.4,59.4 			"/>
+			<path fill="#FFFFFF" d="M150.1,59.4l-19.5-19.5c10.5-0.4,18.9-9,18.9-19.6c0-10.8-8.8-19.6-19.6-19.6h-23v9.8h23
+				c5.4,0,9.8,4.4,9.8,9.8c0,5.4-4.4,9.8-9.8,9.8h-23l29.4,29.4H150.1z"/>
+			<path fill="#FFFFFF" d="M43.2,0.6L23.6,20.2c10.5,0.4,18.9,9,18.9,19.6c0,10.8-8.8,19.6-19.6,19.6h-23v-9.8h23
+				c5.4,0,9.8-4.4,9.8-9.8c0-5.4-4.4-9.8-9.8-9.8h-23L29.2,0.6H43.2z"/>
+			<path fill="#FFFFFF" d="M69.7,0.7H54v9.8h15.7c10.8,0,19.5,8.7,19.5,19.5c0,10.8-8.7,19.5-19.5,19.5h-7.4V30.2h-9.8l0,29.1h17.2
+				C85.9,59.4,99,46.2,99,30C99,13.9,85.9,0.7,69.7,0.7z"/>
 		</g>
 	</g>
-	<g>
-		<g>
-			<g>
-				<polygon fill="#FFFFFF" points="0,3.6 0,0 3.6,0 				"/>
-			</g>
-			<g>
-				<path fill="#FFFFFF" d="M10.1,0L5.5,4.5C8,4.6,9.9,6.6,9.9,9.1c0,2.5-2,4.6-4.6,4.6H0v-2.3h5.3c1.3,0,2.3-1,2.3-2.3
-					c0-1.3-1-2.3-2.3-2.3H0L6.8,0H10.1z"/>
-			</g>
-		</g>
-	</g>
-	<path fill="#FFFFFF" d="M15.8,0h-3.6v2.3h3.6c2.5,0,4.5,2,4.5,4.5c0,2.5-2,4.5-4.5,4.5h-1.3V6.8h-2.3v6.8h3.6
-		c3.8,0,6.8-3.1,6.8-6.8C22.7,3.1,19.6,0,15.8,0z"/>
 </g>
 </svg>
