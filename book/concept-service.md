@@ -60,5 +60,5 @@ Refresh your web browser and you will see the service still running.
 
 You can run `sv [start|stop|restart] /etc/solo-services/webserver` to change the state of the service independently of all other services, for example after you make a change to the `run` file.
 
-Why do we use `exec python`? Because the supervisor tracks only the PID of the `run` script when it is launched, if you were to instead run `python`, and the process were stopped, only the bash script would stop. The webserver would keep going! `exec` replaces your current process (the bash script) with the result of 
+Why do we use `exec python`? Because the supervisor tracks only the PID of the `run` script when it is launched, if you were to instead run `python`, and the process were stopped, only the bash script would stop. The webserver would keep going! `exec` replaces your current process (the bash script) with the specified process so that it can be killed by a script knowing its PID.
 
