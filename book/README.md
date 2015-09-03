@@ -3,6 +3,10 @@
 <h1 style="border: none; font-size: 2.8em; margin-top: 0;">Solo Development Guide <small style="background: #6cd; padding: 0 5px; font-style: italic">BETA</small></h1>
 </div>
 
+<aside class="danger">
+Developers only! This guide is under active development and not guaranteed to work for consumer use. Some modifications will require you to factory reset your Solo in order to return it to working state.
+</aside>
+
 This guide describes how to work inside Solo's system architecture and develop applications for Solo.
 
 The objective of this guide is to enable developers to:
@@ -13,9 +17,5 @@ The objective of this guide is to enable developers to:
 * Run services that run on boot
 * Process video as it’s being streamed to and from Solo
 * Troubleshoot Solo
-
-<aside class="note">
-Developers only! This guide is under active development and not guaranteed to work for consumer use. Some modifications will require you to factory reset your Solo in order to return it to working state.
-</aside>
 
 Navigate using the sidebar or the "next page" arrows to begin.
