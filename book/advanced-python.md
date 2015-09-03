@@ -1,11 +1,11 @@
 # Python bundles
 
-This guide shows how to bundle Python code locally on your computer and expand it in a virtual environment ([virtualenv](https://virtualenv.pypa.io/en/latest/)) on Solo. This approach has two benefits:
+This guide shows how to bundle Python code locally on your computer and expand it in a virtual environment ([virtualenv](starting-installing.html#installing-packages-into-a-virtualenv) on Solo. This approach has two benefits:
 
 1. No Internet connection or reliance on package management on Solo is needed.
 2. Packages are installed in a virtual environment, so they don't collide with the global Solo namespace.
 
-Create and navigate to a new directory on your host computer. This directory will be populated with your own Python scripts and all their dependencies. The entire directory will then be sent to Solo. 
+First create and navigate to a new directory on your host computer. This directory will be populated with your own Python scripts and all their dependencies. The entire directory will then be sent to Solo. 
 
 Start by creating a virtual environment on your host computer:
 
@@ -21,15 +21,19 @@ We want to configure our environment to not compile any C extensions. We can do 
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
 ```
 
-Now you can install Python packages using `pip install`. When modules require a C extension, they will fail silently, so test your code.
+Now you can install Python packages using `pip install`. 
 
-When you're ready to move code over to Solo, you want to create a `requirements.txt` file containing what packages you've installed:
+<aside class="warning">
+When modules require a C extension, they will fail silently. Test your code!
+</aside>
+
+When you're ready to move code over to Solo, create a `requirements.txt` file containing what packages you've installed:
 
 ```sh
 pip freeze > requirements.txt
 ```
 
-Next, we want to download these packages on your host computer so they can be moved to Solo along with your code. You can do this using [pip wheel](https://pip.pypa.io/en/latest/reference/pip_wheel.html) to download them into a new folder (`./wheelhouse`). Run this command:
+Next, download these packages on your host computer so they can be moved to Solo along with your code. You can do this by using [pip wheel](https://pip.pypa.io/en/latest/reference/pip_wheel.html) to download them into a new folder (`./wheelhouse`). Run this command:
 
 ```sh
 pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
