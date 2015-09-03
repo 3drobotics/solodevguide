@@ -96,7 +96,7 @@ pip install requests
 Many examples will require you to install directly from packages in _git_, so we also recommend you install this using _smart_:
 
 ```sh
-smart install git-core
+smart install git
 ```
 
 ### Installing packages into a _virtualenv_
