@@ -4,6 +4,10 @@
 To run this example, run `solo-utils video-splice` first to get camera access.
 </aside>
 
+<aside class="note">
+This example requires you to [install the packages](uploading.html#installing-packages) `gst-plugins-good-jpeg gst-plugins-base-tcp`.
+</aside>
+
 <aside class="danger">
 This example is being rewritten to use MJPEG streaming for purely in-memory image access and Flask.
 </aside>

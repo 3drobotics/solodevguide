@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>JPEG stillframe example</title>
+  </head>
+  <body>
+    <p><button id="refresh" style="font-size: 2em">FETCH NEW FRAME</button></p>
+    <div id="target"><img src="/jpeg"></div>
+  </body>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script>
+
+// On click, refresh the image.
+$(function () {
+  var i = 0;
+  $('#refresh').on('click', function () {
+    var img = new Image();
+    img.onload = function () {
+      $('#target').html('').append(img);  
+    }
+    img.src = '/jpeg?' + (i++);
+  })
+})
+
+  </script>
+</html>
