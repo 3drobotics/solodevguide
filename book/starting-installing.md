@@ -30,7 +30,7 @@ These packages are pre-compiled and provided by 3DR for your use. To compile oth
 <aside class="note">
 If you want to restore your package manager state to its initial state, run the following commands:
 
-```
+```sh
 yes | smart channel --remove-all
 yes | smart channel --add rpmsys type=rpm-sys name='RPM Database'
 ```
