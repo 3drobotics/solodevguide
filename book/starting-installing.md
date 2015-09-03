@@ -12,37 +12,27 @@ rsync -avz local/file/path/. root@10.1.1.10:/solo/path/.
 
 Solo is an [rpm](http://www.rpm.org/) based system. These packages can be managed by the [Smart Package Manager](http://labix.org/smart/) (*Smart*), already installed on your Solo.
 
-After having [installed the *solo-utils* tool](utils.html), from your Solo's shell run:
+First, [install the *solo-utils* tool](utils.html). This allows us to access the Internet, and also configures *Smart* to use the Solo package repository.
+
+From your shell, run the following commands:
 
 ```sh
 solo-utils tunnel-start
-```
-
-This tunnels an Internet connection to Solo through your computer. Now we can configure *Smart* to download packages from a dedicated package repository.
-
-Run this command to add the package repository:
-
-```sh
-smart channel --add solo type=rpm-md baseurl=http://solo-packages.s3-website-us-east-1.amazonaws.com/3.10.17-rt12/
-```
-
-Now download the package list:
-
-```sh
 smart update
 ```
 
-You can then use `smart search` and `smart install <package>` to install packages. You will see examples used throughout this guide.
+The first command tunnels an Internet connection to Solo through your computer. (Linux and OS X only.) The second command updates the package repository list from the server.
+
+You can then now `smart search` and `smart install <package>` to install packages. You will see examples used throughout this guide.
 
 These packages are pre-compiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
 
 <aside class="note">
-If you want to restore your package manager state after it's been modified, you can reset it by brute force:
+If you want to restore your package manager state to its initial state, run the following commands:
 
 ```
 yes | smart channel --remove-all
-yes | smart channel --add mydb type=rpm-sys name="RPM Database" 
-yes | smart channel --add solo type=rpm-md baseurl=http://solo-packages.s3-website-us-east-1.amazonaws.com/3.10.17-rt12/
+yes | smart channel --add rpmsys type=rpm-sys name='RPM Database'
 ```
 </aside>
 
