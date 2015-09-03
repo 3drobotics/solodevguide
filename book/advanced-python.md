@@ -1,6 +1,6 @@
 # Python bundles
 
-This guide shows how to bundle Python code locally on your computer and expand it in a virtual environment ([virtualenv](starting-installing.html#installing-packages-into-a-virtualenv) on Solo. This approach has two benefits:
+This guide shows how to bundle Python code locally on your computer and expand it in a virtual environment ([virtualenv](starting-installing.html#installing-packages-into-a-virtualenv)) on Solo. This approach has two benefits:
 
 1. No Internet connection or reliance on package management on Solo is needed.
 2. Packages are installed in a virtual environment, so they don't collide with the global Solo namespace.
