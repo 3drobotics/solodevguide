@@ -14,4 +14,8 @@ The objective of this guide is to enable developers to:
 * Process video as it’s being streamed to and from Solo
 * Troubleshoot Solo
 
+<aside class="note">
+Developers only! This guide is under active development and not guaranteed to work for consumer use. Some modifications will require you to factory reset your Solo in order to return it to working state.
+</aside>
+
 Navigate using the sidebar or the "next page" arrows to begin.
