@@ -13,7 +13,7 @@ fi
 
 # rsync
 echo 'checking for solo-utils...'
-if [[ $0 == *'install.sh'* ]] && [ -d ./solo-utils ]; then
+if [[ $0 == *'install-solo-utils.sh'* ]] && [ -d $(dirname $0)/solo-utils ]; then
     cd $(dirname $0)
     echo 'uploading local solo-utils...'
     rsync -avz --rsync-path="mkdir -p /opt/solo-utils && rsync" --progress ./solo-utils/. root@10.1.1.10:/opt/solo-utils/.
