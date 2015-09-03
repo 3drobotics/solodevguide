@@ -33,7 +33,7 @@ define([
         dropdown.init();
 
         // Init navigation
-        // navigation.init();
+        navigation.init();
 
         //Init font settings
         fontSettings.init(config.fontSettings || {});
