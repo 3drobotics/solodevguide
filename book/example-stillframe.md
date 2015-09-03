@@ -52,6 +52,7 @@ rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/stillframe
 Now SSH into Solo and run the following commands:
 
 ```sh
+cd /opt/stillframe
 virtualenv env
 source ./env/bin/activate
 pip install --no-index ./wheelhouse/* -UI
