@@ -33,4 +33,17 @@ ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true
 # But ather than reinstall smart, just patch the Python code
 ssh root@10.1.1.10 "sed -i.bak 's/, \"remove-all\",/, \"remove_all\",/g' /usr/lib/python2.7/site-packages/smart/commands/channel.py" 2>/dev/null </dev/null
 
+# PACKAGE_URL="https://d3isakvpuvm54a.cloudfront.net"
+PACKAGE_URL="http://solo-packages.s3-website-us-east-1.amazonaws.com"
+
+# Adds smart repositories.
+ssh root@10.1.1.10 <<EOF
+yes | smart channel --remove-all
+yes | smart channel --add rpmsys type=rpm-sys name='RPM Database'
+yes | smart channel --add all type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/all/
+yes | smart channel --add cortexa9hf_vfp_neon type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/cortexa9hf_vfp_neon/
+yes | smart channel --add imx6solo_3dr_1080p type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/imx6solo_3dr_1080p/
+yes | smart channel --add cortexa9hf_vfp_neon_mx6 type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/cortexa9hf_vfp_neon_mx6/
+EOF
+
 echo 'done. solo-utils is installed and up to date.'
