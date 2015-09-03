@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOLO_UTILS_VERSION="1.0.4"
+SOLO_UTILS_VERSION="1.1.0"
 
 # Unpack sshuttle
 echo 'checking for sshuttle....'
@@ -32,17 +32,5 @@ ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true
 # See http://lists.openembedded.org/pipermail/openembedded-core/2014-July/095090.html
 # But ather than reinstall smart, just patch the Python code
 ssh root@10.1.1.10 "sed -i.bak 's/, \"remove-all\",/, \"remove_all\",/g' /usr/lib/python2.7/site-packages/smart/commands/channel.py" 2>/dev/null </dev/null
-
-install_rpm () {
-    name=$1
-    file=$2
-
-    echo "checking for $name..."
-
-    ssh -o "StrictHostKeyChecking no" -q root@10.1.1.10 "which $name >/dev/null" </dev/null
-    if [ $? -ne 0 ]; then
-        curl https://s3.amazonaws.com/solo-packages/3.10.17-rt12/$file | ssh -o "StrictHostKeyChecking no" -q root@10.1.1.10 "cat > /tmp/install.rpm; rpm --replacepkgs -i /tmp/install.rpm && echo installed $file"
-    fi
-}
 
 echo 'done. solo-utils is installed and up to date.'

@@ -1,5 +1,21 @@
 #!/bin/bash
 
+need() {
+    for var in "$@"; do
+        which "$var" >/dev/null
+        if [ $? != 0 ]; then
+            return 1
+        fi
+    done
+}
+
+need "sv" || {
+    echo 'error: missing packages. Please run:'
+    echo '   solo-utils tunnel-start'
+    echo '   smart reinstall busybox'
+    exit 1
+}
+
 if [ ! -f ~/.ssh/id_rsa ]; then
     echo 'Creating private key for the first time...'
     cat /dev/zero | ssh-keygen -q -N ""
@@ -31,21 +47,23 @@ nameserver 8.8.8.8
 nameserver 8.8.4.4
 EOF
 
-which sv >/dev/null || { echo 'error: first install an updated busybox with runit'; exit 1; }
-
 sv status /opt/solo-utils/tunnel-service >/dev/null 2>&1
 if [ $? -ne 0 ]; then
     runsv /opt/solo-utils/tunnel-service >/dev/null 2>&1 &
 fi
 sv up /opt/solo-utils/tunnel-service >/dev/null
 echo 'tcp tunnelling service started.'
+echo 'waiting 30s, then attempting a connection.'
+sleep 30
+echo 'attempting to connect.'
+echo 'if connecting takes longer than a minute, try restarting solo.'
 
 while true; do
-    sleep 2
+    sleep 1
     echo 'waiting for connection...'
     /opt/solo-utils/solo-utils-test-net >/dev/null
     if [[ $? == 0 ]]; then
         break
     fi
 done
-echo 'connected.'
+echo 'connected. TCP tunneling now enabled.'
