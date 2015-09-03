@@ -73,75 +73,12 @@ $ python -c "import cv2; print cv2.__version__"
 2.4.6.1
 ```
 
-### Bundling Python code
-
-This section shows how to bundle Python code locally on your computer and expand it in a virtual environment ([virtualenv](https://virtualenv.pypa.io/en/latest/)) on Solo. This approach has two benefits:
-
-1. No Internet connection or reliance on package management on Solo is needed.
-2. Packages are installed in a virtual environment, so they don't collide with the global Solo namespace.
-
-Create and navigate to a new directory on your host computer. This directory will be populated with your own Python scripts and all their dependencies. The entire directory will then be sent to Solo. 
-
-Start by creating a virtual environment for local use:
-
-```sh
-pip install virtualenv
-virtualenv env
-source ./env/bin/activate
-```
-
-We want to configure our environment to not compile any C extensions. We can do this simply in our virtual environment with this command:
-
-```sh
-echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
-```
-
-Now you can install Python packages using `pip install`. When modules require a C extension, they will fail silently, so test your code.
-
-When you're ready to move code over to Solo, you want to create a `requirements.txt` file containing what packages you've installed:
-
-```sh
-pip freeze > requirements.txt
-```
-
-Next, we want to download these packages on your host computer so they can be moved to Solo along with your code. You can do this using [pip wheel](https://pip.pypa.io/en/latest/reference/pip_wheel.html) to download them into a new folder (`./wheelhouse`). Run this command:
-
-```sh
-pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
-```
-
-This installs all the dependencies in `requirements.txt` as Python wheel files, which are source code packages.
-
-Next, you can move this entire directory over to Solo using *rsync*:
-
-```sh
-rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/my_python_code
-```
-
-SSH into Solo and navigate to the newly made directory (above `/opt/my_python_code`). Make sure you have _pip_ and _virtualenv_ installed:
-
-```
-solo-utils install-pip
-pip install virtualenv
-```
-
-Finally, run these commands in your Solo code directory:
-
-```sh
-virtualenv env
-source ./env/bin/activate
-pip install --no-index ./wheelhouse/* -UI
-```
-
-This requires no Internet connection. Instead, it installs from all the downloaded dependencies you transferred from your computer. You can now run your Python scripts with any packages you depended on, without having impacted any of Solo's own Python dependencies.
-
-
-### Installing packages directly with pip
+### Installing packages directly with _pip_
 
 You can install code directly from *pip* on Solo. 
 
 <aside class="note">
-This approach will install the package globally. While this is useful for development it is not recommended for distributing code. You may instead consider installing and using [virtualenv](#bundling-python-code) to create isolated environments of packages.
+Using _pip_ on Solo installs package globally by default. Read the section below about _[virtualenv](#installing-packages-into-a-virtualenv)_ to create isolated environments of packages.
 </aside>
 
 Having installed the *solo-utils* utility, run:
@@ -156,5 +93,42 @@ This will install and update *pip* to the latest version. You can then install a
 pip install requests
 ```
 
+Many examples will require you to install directly from packages in _git_, so we also recommend you install this using _smart_:
 
+```sh
+smart install git-core
+```
 
+### Installing packages into a _virtualenv_
+
+_virtualenv_ is a tool for managing the environment in which Python code executes in. A common goal is to isolate packages needed for one application from those used elsewhere in the system. In particular, Solo uses many globally installed packages that may be out of date (in particular, _droneapi_) and for which you want to use updated versions without disturbing native Solo code.
+
+To launch a _virtualenv_, first install the tool on Solo using _pip_:
+
+```sh
+pip install virtualenv
+```
+
+Next, navigate or create the directory in which your Python code will be run. Run the following command:
+
+```sh
+virtualenv env
+```
+
+This creates an environment in the local `env/` directory. To "activate" this environment, run this command:
+
+```sh
+source ./env/bin/activate
+```
+
+You will notice your shell prompt changes to read `(env)root@3dr_solo:`, indicating you are working in a _virtualenv_.
+
+Now all commands you run from your shell, including launching scripts and installing packages, will only effect this local environment. For example, you can now install a different version of _droneapi_ without impacting the global version:
+
+```sh
+pip install droneapi
+```
+
+<aside class="note">
+The _smart_ tool is written in Python. While you are working in a _virtualenv_, you will notice that _smart_ no longer works! Run `deactivate` at any time to leave the environment.
+</aside>
