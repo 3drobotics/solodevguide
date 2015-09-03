@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOLO_UTILS_VERSION="1.1.0"
+SOLO_UTILS_VERSION="1.2.0"
 
 # Unpack sshuttle
 echo 'checking for sshuttle....'
@@ -36,14 +36,15 @@ ssh root@10.1.1.10 "sed -i.bak 's/, \"remove-all\",/, \"remove_all\",/g' /usr/li
 # PACKAGE_URL="https://d3isakvpuvm54a.cloudfront.net"
 PACKAGE_URL="http://solo-packages.s3-website-us-east-1.amazonaws.com"
 
+exit
 # Adds smart repositories.
 ssh root@10.1.1.10 <<EOF
-yes | smart channel --remove-all
-yes | smart channel --add rpmsys type=rpm-sys name='RPM Database'
-yes | smart channel --add all type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/all/
-yes | smart channel --add cortexa9hf_vfp_neon type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/cortexa9hf_vfp_neon/
-yes | smart channel --add imx6solo_3dr_1080p type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/imx6solo_3dr_1080p/
-yes | smart channel --add cortexa9hf_vfp_neon_mx6 type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/cortexa9hf_vfp_neon_mx6/
+smart channel --remove-all -y
+smart channel --add rpmsys type=rpm-sys name='RPM Database' -y
+smart channel --add all type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/all/ -y
+smart channel --add cortexa9hf_vfp_neon type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/cortexa9hf_vfp_neon/ -y
+smart channel --add imx6solo_3dr_1080p type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/imx6solo_3dr_1080p/ -y
+smart channel --add cortexa9hf_vfp_neon_mx6 type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/cortexa9hf_vfp_neon_mx6/ -y
 EOF
 
 echo 'done. solo-utils is installed and up to date.'

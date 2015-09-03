@@ -44,7 +44,7 @@ Next, modify `/usr/bin/video_send.sh` line 88 from `-g 0` to `-g 1`.  This will 
 From your Solo's shell, run:
 
 ```
-solo-utils video-splice
+solo-utils video-start
 ```
 
 This command creates a service that splits `/dev/video0` into two outputs, `/dev/video1` and `/dev/video2`. *sndast* will continue to pipe video from `/dev/video1` as normal, but `/dev/video2` is now available for scripts to take as input, e.g. OpenCV, saving video to disk, taking still shots, etc.

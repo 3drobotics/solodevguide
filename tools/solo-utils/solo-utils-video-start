@@ -21,7 +21,11 @@ hexdump -ve '1/1 "%.2X"' /usr/bin/sn_master_snd |
 	sed "s/$(hexdump -ve '1/1 "%.2X"' <(printf "mfw_v4lsrc device="))/$(hexdump -ve '1/1 "%.2X"' <(printf "   v4l2src device="))/" |
 	xxd -r -p > /usr/bin/sn_master_snd.patched
 
+# Rewrite and restart video_send.sh
+sed -i.bak 's/-g 0/-g "$(if [ -e \/dev\/video1 ]; then echo 1; else echo 0; fi)"/g' /usr/bin/video_send.sh
+
 cp /usr/bin/sn_master_snd.patched /usr/bin/sn_master_snd
+chmod +x /usr/bin/sn_master_snd
 
 sleep 10
 
