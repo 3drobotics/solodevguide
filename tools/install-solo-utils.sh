@@ -36,7 +36,6 @@ ssh root@10.1.1.10 "sed -i.bak 's/, \"remove-all\",/, \"remove_all\",/g' /usr/li
 # PACKAGE_URL="https://d3isakvpuvm54a.cloudfront.net"
 PACKAGE_URL="http://solo-packages.s3-website-us-east-1.amazonaws.com"
 
-exit
 # Adds smart repositories.
 ssh root@10.1.1.10 <<EOF
 smart channel --remove-all -y
