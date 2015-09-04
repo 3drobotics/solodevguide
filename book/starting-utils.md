@@ -7,8 +7,12 @@ There are several scripts that we will be using throughout this tutorial that ar
 * Installing `runit` to manage start processes.
 * Providing access to the video stream.
 
+All of these can be performed using the `solo-utils` command.
 
-All of these can be performed using the `solo-utils` command. To install, run this command on your *host* computer (you must be running OS X or Linux):
+<aside class="note">
+To install *solo-utils*, you must be connected to the Internet and Solo simultaneously.</aside>
+
+To install, run this command on your *host* computer (you must be running OS X or Linux):
 
 ```sh
 curl -fsSL -H "Accept: application/vnd.github.raw" https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@api.github.com/repos/3drobotics/solodevguide/contents/tools/install-solo-utils.sh | sh
