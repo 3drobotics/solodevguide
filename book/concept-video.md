@@ -1,10 +1,14 @@
 # Video Pipeline
 
+In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusively by Solo's video encoder (*sndast*). This topic explains how you can split the video device and use it as needed. It also shows how to view the live video from Solo on your computer.
+
+Video pipeline:
+
 ```
 GoPro -> HDMI cable -> HDMI encoder -> i.MX6 (h.264 encode/gstreamer) -> WiFi (UDP) -> Controller (h.264 decode/hdmi output/UDP relay to phone) -> WiFi (UDP) -> App
 ```
 
-In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusively by Solo's video encoder (*sndast*). 
+
 
 ## Viewing Live Video
 
