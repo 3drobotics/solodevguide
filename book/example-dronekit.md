@@ -55,7 +55,7 @@ The `connect()` method returns a Vehicle class with attributes initially set to 
 
 ## Retrieve parameters
 
-The vehicle object can then be used to access attributes, as shown:
+The vehicle attributes can then be read, as shown:
 
 ```py
 # Get all vehicle attributes (state)
