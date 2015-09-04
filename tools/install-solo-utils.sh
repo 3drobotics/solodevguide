@@ -46,4 +46,20 @@ smart channel --add imx6solo_3dr_1080p type=rpm-md baseurl=$PACKAGE_URL/3.10.17-
 smart channel --add cortexa9hf_vfp_neon_mx6 type=rpm-md baseurl=$PACKAGE_URL/3.10.17-rt12/cortexa9hf_vfp_neon_mx6/ -y
 EOF
 
+install_rpm () {
+    name=$1
+    file=$2
+
+    echo "checking for $name..."
+
+    ssh -o "StrictHostKeyChecking no" -q root@10.1.1.10 "which $name >/dev/null" </dev/null
+    if [ $? -ne 0 ]; then
+        curl "$PACKAGE_URL/3.10.17-rt12/$file" | ssh -o "StrictHostKeyChecking no" -q root@10.1.1.10 "cat > /tmp/install.rpm; rpm --replacepkgs -i /tmp/install.rpm && echo installed $file"
+    fi
+}
+
+# Manual installation of certain pacakges.
+echo 'checking rpms...'
+install_rpm "sv" "busybox-1.21.1-r1.cortexa9hf_vfp_neon.rpm"
+
 echo 'done. solo-utils is installed and up to date.'
