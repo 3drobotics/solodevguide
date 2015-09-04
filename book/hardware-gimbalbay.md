@@ -82,7 +82,7 @@ History Note: MAVLink was designed several years ago when there were only a few 
 </aside>
 
 
-As a workaround for many of the protocol’s inadequacies, COMMAND_LONG was created and it’s the recommended command for any unique, custom camera or gimbal functionality:
+As a workaround for many of the protocol’s inadequacies, `COMMAND_LONG` was created and it’s the recommended command for any unique, custom camera or gimbal functionality:
 
 Byte index | Value Size (bytes) | Value Description | Value
 --- | --- | --- | ---
