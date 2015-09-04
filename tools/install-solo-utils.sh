@@ -54,7 +54,7 @@ install_rpm () {
 
     ssh -o "StrictHostKeyChecking no" -q root@10.1.1.10 "which $name >/dev/null" </dev/null
     if [ $? -ne 0 ]; then
-        curl "$PACKAGE_URL/3.10.17-rt12/$file" | ssh -o "StrictHostKeyChecking no" -q root@10.1.1.10 "cat > /tmp/install.rpm; rpm --replacepkgs -i /tmp/install.rpm && echo installed $file"
+        curl "$PACKAGE_URL/3.10.17-rt12/cortexa9hf_vfp_neon/$file" | ssh -o "StrictHostKeyChecking no" -q root@10.1.1.10 "cat > /tmp/install.rpm; rpm --replacepkgs -i /tmp/install.rpm && echo installed $file"
     fi
 }
 
