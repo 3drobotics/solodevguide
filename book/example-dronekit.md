@@ -15,7 +15,7 @@ You're able to connect to `10.1.1.10:14560` both from Solo's terminal as well as
 ## Using DroneKit on Solo
 
 <aside class="danger">
-This example a forthcoming release of DroneKit-Python that is not yet stable. Please [file any issues](https://github.com/dronekit/dronekit-python/issues) you have while using it.
+This example uses a forthcoming release of DroneKit-Python that is not yet stable. Please [file any issues](https://github.com/dronekit/dronekit-python/issues) you have while using it.
 </aside>
 
 Our example will use DroneKit-Python 2.0, a standalone Python library that is able to communicate with Solo's autopilot and retrieve information about its position, speed, battery life, and current flight mode.
