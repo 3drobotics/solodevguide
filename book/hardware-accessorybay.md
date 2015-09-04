@@ -2,11 +2,11 @@
 
 ## Mechanical
 
-The Accessory Bay is considered to be the area behind the gimbal under the Solo that does not interfere with the 3DR Gimbal. It is roughly 3" wide x 5.25" long x 4" deep. 
+The *Accessory Bay* is considered to be the area behind the gimbal under the Solo that does not interfere with the 3DR Gimbal. It is roughly 3" wide x 5.25" long x 4" deep. 
 
 Maximum payload of the system is 700g, the 3DR Gimbal + GoPro weigh approximately 390g, leaving 310g for accessories that are meant to be used with the 3DR Gimbal.
 
-The Accessory Bay hole pattern is M2 screws in a 1.655" x 1.15" rectanglar pattern. Beware that the rectangle is intersected by the path of the gimbal.
+The Accessory Bay hole pattern is M2 screws in a 1.655" x 1.15" rectanglar pattern. Ensure that the rectangle is not intersected by the path of the gimbal.
 
 ## Electrical
 
@@ -34,7 +34,7 @@ Pin | Description | Pin | Description
 
 ## Communication Protocol
 
-The two primary interfaces to the Accessory Bay will be the CAN bus for direct integration with the flight controller and the USB port for higher-level interactions with Smart shots, DroneKit, and interactions with The Controller.
+The two primary interfaces to the *Accessory Bay* will be the CAN bus for direct integration with the flight controller and the USB port for higher-level interactions with Smart shots, DroneKit, and interactions with the Controller.
 
 CAN - Uses the [UAVCAN](http://uavcan.org/UAVCAN) protocol and interfaces directly with the Pixhawk. 
 
