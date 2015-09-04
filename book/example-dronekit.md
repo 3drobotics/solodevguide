@@ -1,26 +1,25 @@
 # Using DroneKit
 
-*[DroneKit](http://dronekit.io/)* is a library that can interact with Solo via telemetry, flight modes, or positional control. Solo uses *DroneKit-Python* internally to develop its [Smart Shots](concept-smartshot.html). In this example, we'll install and use 
+*[DroneKit](http://dronekit.io/)* is a library that can be used to monitor and control a connected vehicle. Solo uses [DroneKit-Python v1.1](http://python.dronekit.io/) internally to develop its [Smart Shots](concept-smartshot.html). 
 
-## Connecting to Solo externally
+This example shows how to install the *latest* version of DroneKit into a virtual environment and run a basic script to retrieve vehicle information including position, speed, battery life, current flight mode etc.
 
-MAVLink, the telemetry protocol used to control and communicate with Solo, is served on UDP port 14560. When connected to Solo's network, you can set up downstream applications to connect as a UDP client to this address. For example, using the *[MAVProxy](http://dronecode.github.io/MAVProxy)* command line tool:
+The full source code for the example is [available on Github here](https://github.com/3drobotics/solodevguide/tree/master/examples/dkexample).
 
-```
-mavproxy.py --master udpout:10.1.1.10:14560
-```
-
-You're able to connect to `10.1.1.10:14560` both from Solo's terminal as well as on an external device on its network.
-
-## Using DroneKit on Solo
-
-<aside class="danger">
-This example uses a forthcoming release of DroneKit-Python that is not yet stable. Please [file any issues](https://github.com/dronekit/dronekit-python/issues) you have while using it.
+<aside class="note">
+The latest version of *DroneKit-Python* includes many useful features and bug fixes that may not be present in Solo's default installation. The virtual environment approach used here means that you can use whatever DroneKit release you like (and don't have to risk affecting system stability by upgrading Solo).
 </aside>
 
-Our example will use DroneKit-Python 2.0, a standalone Python library that is able to communicate with Solo's autopilot and retrieve information about its position, speed, battery life, and current flight mode.
+<aside class="danger">
+This example uses *DroneKit-Python 2.0*, a standalone Python library. *DroneKit-Python 2.0* is not yet stable! Please [report issues](https://github.com/dronekit/dronekit-python/issues) you discover when using it.
+</aside>
 
-The most important consideration is the libraries. We will be using this `requirements.txt` file for this example:
+
+## Installing DroneKit on Solo
+
+The process for bundling the example (including DroneKit) is described below in [Installing _dkexample_](#installing-dkexample) (and more generally in [Bundling Python](advanced-python.html)). 
+
+The libraries that are bundled are defined in the example `requirements.txt` file:
 
 ```
 protobuf==3.0.0a1
@@ -32,19 +31,48 @@ git+https://github.com/dronekit/dronekit-python@tcr-nomp
 
 Note that we are installing a particular version of `pymavlink` and a particular branch of `dronekit-python`.
 
-From Python, it's simple to connect to Solo and retrieve parameters:
+
+
+## Connecting to Solo
+
+The MAVLink telemetry protocol (used to communicate with Solo) is served on UDP port 14560. You can set up downstream applications to connect as a UDP client to `10.1.1.10:14560` from any external device connected to its network (or from Solo's terminal).
+
+From Python, you connect to Solo on this port using the `connect()` method as shown:
 
 ```py
 from droneapi import connect
 
 # Connect to UDP endpoint.
 vehicle = connect('udpout:10.1.1.10:14560')
+
 # Wait for parameters to accumulate.
 time.sleep(5)
+```
 
-# Print our location and attitude.
-print "Location: %s" % vehicle.location
-print "Attitude: %s" % vehicle.attitude
+The `connect()` method returns a Vehicle class with attributes initially set to `None`. We normally wait a few seconds after connecting to allow these to be populated from recieved MAVLink messages.
+
+
+
+## Retrieve parameters
+
+The vehicle object can then be used to access attributes, as shown:
+
+```py
+# Get all vehicle attributes (state)
+print "\nGet all vehicle attribute values:"
+print " Location: %s" % vehicle.location
+print " Attitude: %s" % vehicle.attitude
+print " Velocity: %s" % vehicle.velocity
+print " GPS: %s" % vehicle.gps_0
+print " Groundspeed: %s" % vehicle.groundspeed
+print " Airspeed: %s" % vehicle.airspeed
+print " Mount status: %s" % vehicle.mount_status
+print " Battery: %s" % vehicle.battery
+print " Rangefinder: %s" % vehicle.rangefinder
+print " Rangefinder distance: %s" % vehicle.rangefinder.distance
+print " Rangefinder voltage: %s" % vehicle.rangefinder.voltage
+print " Mode: %s" % vehicle.mode.name    # settable
+print " Armed: %s" % vehicle.armed    # settable
 ```
 
 ## Installing _dkexample_
@@ -86,3 +114,4 @@ pip install --no-index ./wheelhouse/* -UI
 ```
 
 Then you can run `python example.py` to see Solo's telemetry output in realtime to the console.
+
