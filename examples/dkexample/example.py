@@ -3,10 +3,10 @@ from droneapi.lib import VehicleMode
 from pymavlink import mavutil
 import time
 
-# First get an instance of the API endpoint
+# Connect to UDP endpoint
 vehicle = connect('udpout:10.1.1.10:14560')
 
-# Await.
+# Wait for parameters to accumulate.
 time.sleep(5)
 
 # Get all vehicle attributes (state)
