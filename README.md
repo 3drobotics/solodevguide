@@ -1,8 +1,6 @@
 # 3DR Developer Guide
 
-This guide is published **privately** online at:
-
-<http://ffc6904fed514b42b88f87926328069c5c8149f4.s3-website-us-east-1.amazonaws.com>
+This guide is published online at: http://dev.3dr.com/
 
 To start editing, install [GitBook](https://www.gitbook.com/) (requires Node.js):
 
