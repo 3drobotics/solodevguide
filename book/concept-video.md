@@ -48,7 +48,7 @@ Solo's default video output through *sndast* should continue as normal. If you w
 solo-utils video-stop
 ```
 
-Video is now available on `/dev/video2` for script use. For an example of this in action, see [Using OpenCV](example-opencv.html). For a more complex example of modifying the video pipeline, see [how to write a dynamic video overlay](video-overlay.html).
+Video is now available on `/dev/video2` for script use. For an example of this in action, see [Using OpenCV](example-opencv.html). <!--For a more complex example of modifying the video pipeline, see [how to write a dynamic video overlay](video-overlay.html).-->
 
 ## Video Pipeline Internals
 
