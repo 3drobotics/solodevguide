@@ -16,6 +16,9 @@ need "sv" || {
     exit 1
 }
 
+HOST_IP=$(echo $SSH_CLIENT | awk '{ print $1}')
+echo "$HOST_IP" > /opt/solo-utils/tunnel-service/host-ip
+
 if [ ! -f ~/.ssh/id_rsa ]; then
     echo 'Creating private key for the first time...'
     cat /dev/zero | ssh-keygen -q -N ""
@@ -32,7 +35,7 @@ if [ $? -ne 0 ]; then
 
     cat <<EOF > ~/.ssh/config
 Host pc
-    HostName 10.1.1.100
+    HostName $HOST_IP
     Port 22
     User $username
 EOF
@@ -53,17 +56,25 @@ if [ $? -ne 0 ]; then
 fi
 sv up /opt/solo-utils/tunnel-service >/dev/null
 echo 'tcp tunnelling service started.'
-echo 'waiting 30s, then attempting a connection.'
-sleep 30
-echo 'attempting to connect.'
-echo 'if connecting takes longer than a minute, try restarting solo.'
+echo 'waiting 10s to connect...'
+sleep 10
 
-while true; do
-    sleep 1
-    echo 'waiting for connection...'
+COUNT=60
+while [[ $COUNT -ge 10 ]]; do
+    echo "checking if we are connected... ($COUNTs)"
     /opt/solo-utils/solo-utils-test-net >/dev/null
     if [[ $? == 0 ]]; then
         break
     fi
+    sleep 10
+    (( COUNT = COUNT - 10 ))
 done
-echo 'connected. TCP tunneling now enabled.'
+/opt/solo-utils/solo-utils-test-net >/dev/null
+if [[ $? == 0 ]]; then
+    echo 'connected. TCP tunneling now enabled.'
+else
+    /opt/solo-utils/solo-utils-tunnel-stop
+    echo 'error: could not start TCP tunnel.'
+    echo 'try re-running "solo-utils tunnel-start"'
+    echo 'or resetting solo.'
+fi

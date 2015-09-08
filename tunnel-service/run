@@ -1,5 +1,3 @@
 #!/bin/bash
 
-SEEDS=$({ cat ~/.seed-hosts 2>/dev/null || echo '3dr.com'; } | tr '\n' ',' | sed 's/,$//')
-echo $SEEDS
-exec /opt/sshuttle/sshuttle -H --dns -r pc 0/0 -vv -x 10.1.1.100/24 --seed-hosts $SEEDS 2>&1
+exec /opt/sshuttle/sshuttle --dns -r pc 0/0 -vv -x $(cat /opt/solo-utils/tunnel-service/host-ip | xargs)/24 2>&1

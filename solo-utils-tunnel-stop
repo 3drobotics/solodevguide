@@ -2,3 +2,5 @@
 
 sv once /opt/solo-utils/tunnel-service
 sv kill /opt/solo-utils/tunnel-service
+
+echo 'tunnel stopped.'
