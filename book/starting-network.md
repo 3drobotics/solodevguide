@@ -6,8 +6,7 @@ Solo's internal network has several endpoints:
 
 * `10.1.1.1` &mdash; Controller
 * `10.1.1.10` &mdash; Solo
-* `10.1.1.100` &mdash; First computer or phone on the network
-* `10.1.1.101` &mdash; Second device, etc...
+* `10.1.1.100`&ndash;`10.1.1.255` &mdash; Computers or phones on the network
 
 ## Using SSH
 
