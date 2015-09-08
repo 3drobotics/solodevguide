@@ -1,6 +1,6 @@
 # Rules and Advice
 
-<aside class="danger">
+<aside class="caution">
 Safety must be your top concern when developing for Solo. 
 </aside>
 

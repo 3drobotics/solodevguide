@@ -3,7 +3,7 @@
 <h1 style="border: none; font-size: 2.8em; margin-top: 0;">Solo Development Guide <small style="background: #6cd; padding: 0 5px; font-style: italic">BETA</small></h1>
 </div>
 
-<aside class="danger">
+<aside class="caution">
 Developers only! This guide is under active development and not intended for consumers. Some modifications may require you to factory reset your Solo in order to return it to a working (and flying) state.
 </aside>
 

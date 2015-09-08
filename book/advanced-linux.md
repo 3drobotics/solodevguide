@@ -1,6 +1,6 @@
 ## Yocto Linux
 
-<aside class="danger">
+<aside class="caution">
 We do not support rebuilding Solo's kernel or compiling binary packages. This documentation is incomplete and will be modified over time.
 </aside>
 

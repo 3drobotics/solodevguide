@@ -10,7 +10,7 @@ The full source code for the example is [available on Github here](https://githu
 The latest version of *DroneKit-Python* includes many useful features and bug fixes that may not be present in Solo's default installation. The virtual environment approach used here means that you can use whatever DroneKit release you like (and don't have to risk affecting system stability by upgrading Solo).
 </aside>
 
-<aside class="danger">
+<aside class="caution">
 This example uses *DroneKit-Python 2.0*, a standalone Python library. *DroneKit-Python 2.0* is not yet stable! Please [report issues](https://github.com/dronekit/dronekit-python/issues) you discover when using it.
 </aside>
 

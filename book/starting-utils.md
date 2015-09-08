@@ -80,7 +80,7 @@ You can disable this tunnel by restarting Solo or running:
 solo-utils tunnel-stop
 ```
 
-<aside class="note">
+<aside class="tip">
 Enabling the tunnel is a prerequisite for [installing software packages](uploading.html#installing-packages) on Solo using *smart*.
 </aside>
 

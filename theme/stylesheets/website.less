@@ -50,13 +50,15 @@ body {
 
 aside.todo { background: #fff8cc; color: #777233; }
 aside.note { background: #e3f8ff; color: #226267; }
-aside.danger { background: #ffcccc; color: #773333; }
+aside.caution { background: #ffcccc; color: #773333; }
+aside.tip { background: #ccffcc; color: #337733; }
 
 aside.todo p:first-of-type::before { content: "TODO: "; }
 aside.note p:first-of-type::before { content: "NOTE: "; }
-aside.danger p:first-of-type::before { content: "CAUTION: "; }
+aside.caution p:first-of-type::before { content: "CAUTION: "; }
+aside.tip p:first-of-type::before { content: "TIP: "; }
 
-aside.todo, aside.danger, aside.note {
+aside.todo, aside.caution, aside.note, aside.tip {
     :last-child {
         margin-bottom: 0 !important;
     }
