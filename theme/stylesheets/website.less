@@ -52,14 +52,16 @@ aside.todo { background: #fff8cc; color: #777233; }
 aside.note { background: #e3f8ff; color: #226267; }
 aside.danger { background: #ffcccc; color: #773333; }
 
-aside.todo p::before { font-weight: bold; content: "TODO: "; }
-aside.note p::before { font-weight: bold; content: "NOTE: "; }
-aside.danger p::before { font-weight: bold; content: "CAUTION: "; }
+aside.todo p:first-of-type::before { content: "TODO: "; }
+aside.note p:first-of-type::before { content: "NOTE: "; }
+aside.danger p:first-of-type::before { content: "CAUTION: "; }
 
 aside.todo, aside.danger, aside.note {
     :last-child {
         margin-bottom: 0 !important;
     }
+
+    p:first-of-type::before { font-weight: bold; }
 
     padding: 0.5em 1em; margin: 1em 0; font-size: 0.9em;
 }

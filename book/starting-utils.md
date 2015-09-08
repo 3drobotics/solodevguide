@@ -64,6 +64,10 @@ solo-utils install-pip
 
 ## Connecting to the Internet
 
+<aside class="note">
+If you are on OS X, you must first [enable remote sharing](https://support.apple.com/kb/PH13759?locale=en_US). If you are on Windows, you will need to install an SSH server.
+</aside>
+
 Follow the prompts on first initialization to create a reverse SSH tunnel to your host computer, enabling direct Internet access from Solo:
 
 ```

@@ -1,7 +1,7 @@
 function redoMarkdown () {
   $('aside').each(function () {
     var $el = $(this);
-    $el.html(kramed($el.text()));
+    $el.html(kramed($el.html(), { sanitize: false, gfm: true }));
   });
 }
 
