@@ -9,9 +9,9 @@ We are working on a programmatic way to [reflash Solo and the Controller](https:
 
 ## Fetching System Logs
 
-On both Solo and the Controller, system logs live in the `/log` directory. (This folder is actually a dedicated partition and separate from the system partition.) These are files ending in the suffix `.log`. These roll over every boot, such that the current log is always `.log`, next is `.log.1`, `.log.2`, etc. Only 20 logs are saved in total, so filling up the log partition will not be an issue.
+On both Solo and the Controller, system logs live in the `/log` directory and have the suffix `.log[.n]` (this folder is actually a dedicated partition and separate from the system partition). These logs roll over at every boot, such that the current log is always `.log`, the previous log is renamed to `.log.1`, `.log.1` is renamed to `.log.2`, and so on. Only 20 logs are saved in total, so filling up the log partition will not be an issue.
 
-_**ShotManager**_ logs are named `shotlog.log.n`. and contain various high level events triggered by the shots, such as received input and which mode Pixhawk is transitioning into. If *ShotManager* happens to crash, in most cases the Python exception and callstack will be written to this log as the last event.
+_**ShotManager**_ logs are named `shotlog.log.n`. and contain various high level events triggered by the shots, such as received input and which mode Pixhawk is transitioning into. If *ShotManager* happens to crash, in most cases the Python stack trace will be written to the log.
 
 <aside class="todo">
 Explain what the other files found in this directory are.
