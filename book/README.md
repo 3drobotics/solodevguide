@@ -4,7 +4,7 @@
 </div>
 
 <aside class="danger">
-Developers only! This guide is under active development and not guaranteed to work for consumer use. Some modifications will require you to factory reset your Solo in order to return it to working state.
+Developers only! This guide is under active development and not intended for consumers. Some modifications may require you to factory reset your Solo in order to return it to a working (and flying) state.
 </aside>
 
 This guide describes how to work inside Solo's system architecture and develop applications for Solo.
