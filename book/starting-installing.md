@@ -12,7 +12,7 @@ rsync -avz local/file/path/. root@10.1.1.10:/solo/path/.
 
 Solo is an [rpm](http://www.rpm.org/) based system. These packages can be managed by the [Smart Package Manager](http://labix.org/smart/) (*Smart*), already installed on your Solo.
 
-First, [install the *solo-utils* tool](utils.html). This allows us to access the Internet, and also configures *Smart* to use the Solo package repository.
+First, [install the *solo-utils* tool](starting-utils.html). This allows us to access the Internet, and also configures *Smart* to use the Solo package repository.
 
 From your shell, run the following commands:
 

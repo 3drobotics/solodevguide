@@ -35,6 +35,7 @@ module.exports = function (grunt) {
         options: {
           maxConcurrency: 20,
           initialPort: 4000,
+          supportedMimeTypes: [/html/i],
         }
       }
     },

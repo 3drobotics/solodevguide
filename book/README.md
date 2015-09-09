@@ -1,6 +1,6 @@
 <div style="text-align: center">
 <img src="http://3drobotics.com/wp-content/uploads/2015/01/solo-drone-spin-transparent-500px.png">
-<h1 style="border: none; font-size: 2.8em; margin-top: 0;">Solo Development Guide <small style="background: #6cd; padding: 0 5px; font-style: italic">BETA</small></h1>
+<h1 style="border: none; font-size: 2.8em; margin-top: 0;" id="solo-development-guide">Solo Development Guide <small style="background: #6cd; padding: 0 5px; font-style: italic">BETA</small></h1>
 </div>
 
 <aside class="caution">
