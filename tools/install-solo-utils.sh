@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOLO_UTILS_VERSION="1.2.1"
+SOLO_UTILS_VERSION="1.2.2"
 
 # Unpack sshuttle
 echo 'checking for sshuttle....'
