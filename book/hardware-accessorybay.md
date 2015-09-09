@@ -6,7 +6,7 @@ The *Accessory Bay* is considered to be the area behind the gimbal under the Sol
 
 Maximum payload of the system is 700g, the 3DR Gimbal + GoPro weigh approximately 390g, leaving 310g for accessories that are meant to be used with the 3DR Gimbal.
 
-The Accessory Bay hole pattern is M2 screws in a 1.655" x 1.15" rectanglar pattern. Ensure that the rectangle is not intersected by the path of the gimbal.
+The Accessory Bay hole pattern is M2 screws in a 1.655" x 1.15" rectangular pattern. Ensure that the rectangle is not intersected by the path of the gimbal.
 
 ## Electrical
 
@@ -38,4 +38,4 @@ The two primary interfaces to the *Accessory Bay* will be the CAN bus for direct
 
 CAN - Uses the [UAVCAN](http://uavcan.org/UAVCAN) protocol and interfaces directly with the Pixhawk. 
 
-USB - USB Host device to the IMX co-processor.
+USB - USB Host device to the iMX6 co-processor.

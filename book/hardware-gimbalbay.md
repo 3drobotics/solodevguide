@@ -32,9 +32,9 @@ The Gimbal Cable has three primary responsibilities:
 
 The Gimbal TX and Gimbal RX lines send [MAVLink](http://qgroundcontrol.org/mavlink/start) data over a serial connection between the Pixhawk flight controller and the gimbal. This connection is used to both control the pitch, roll, and yaw of the gimbal motors as well as send commands over to the camera (start recording, stop recording, change modes, etc). More details on camera control can be found in the [Software Interface](#software-interface) section.
 
-### Coprocessing with USB
+### Co-processing with USB
 
-The Gimbal Cable provides a USB 2.0 interface with the i.MX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target. Communication between the Solo coprocessor and the gimbal is not yet available for 3rd party developers.
+The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target. Communication between the Solo co-processor and the gimbal is not yet available for 3rd party developers.
 
 ### Powering the Gimbal
 
@@ -77,7 +77,7 @@ For development purposes, a Pixhawk 1 and Copter 3.3 Ardupilot firmware are reco
 ### Common Gimbal Camera Control
 There are a set of camera functions that are common amongst all gimbal/camera systems. These functions include START RECORDING/STOP RECORDING, POWER ON/OFF, & CHANGE MODES.
 
-However, 3rd party developers cannot currently take advantage of the pre-set camera-related buttons on the Solo controller because they are sent as GoPro specific commands.In addition, there is not yet a way for 3rd party developers to capture any button events on the Solo coprocessor or Ardupilot.
+However, 3rd party developers cannot currently take advantage of the pre-set camera-related buttons on the Solo controller because they are sent as GoPro specific commands.In addition, there is not yet a way for 3rd party developers to capture any button events on the Solo co-processor or Ardupilot.
 
 ### Custom Gimbal Camera Control
 
@@ -85,14 +85,14 @@ However, 3rd party developers cannot currently take advantage of the pre-set cam
 
 Byte index | Value Size (bytes) | Value Description | Value
 --- | --- | --- | ---
-0 | 4 | Param 1 | {DEPENDENDENT ON COMMAND}
-4 | 4 | Param 2 | {DEPENDENDENT ON COMMAND}
-8 | 4 | Param 3 | {DEPENDENDENT ON COMMAND}
-12 | 4 | Param 4 | {DEPENDENDENT ON COMMAND}
-16 | 4 | Param 5 | {DEPENDENDENT ON COMMAND}
-20 | 4 | Param 6 | {DEPENDENDENT ON COMMAND}
-24 | 4 | Param 7 | {DEPENDENDENT ON COMMAND}
-28 | 2 | MAV_COMMAND (User defined command) | {DEPENDENDENT ON USE CASE}
+0 | 4 | Param 1 | {DEPENDENT ON COMMAND}
+4 | 4 | Param 2 | {DEPENDENT ON COMMAND}
+8 | 4 | Param 3 | {DEPENDENT ON COMMAND}
+12 | 4 | Param 4 | {DEPENDENT ON COMMAND}
+16 | 4 | Param 5 | {DEPENDENT ON COMMAND}
+20 | 4 | Param 6 | {DEPENDENT ON COMMAND}
+24 | 4 | Param 7 | {DEPENDENT ON COMMAND}
+28 | 2 | MAV_COMMAND (User defined command) | {DEPENDENT ON USE CASE}
 30 | 1 | Target System | 0
 31 | 1 | Target Component | MAV_COMP_ID_GIMBAL
 32 | 1 | Confirmation Number | Nth time packet was sent
