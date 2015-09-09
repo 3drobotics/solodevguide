@@ -39,10 +39,14 @@ The Gimbal Cable provides a USB 2.0 interface with the i.MX6 co-processor on-boa
 ### Powering the Gimbal
 
 The Gimbal Cable provides two different voltage source to the Gimbal Bay:
-VCC Battery (13.5 - 16.8V, 2A)
-VCC 5V (Regulated, 5A)
+VCC Battery (13.5&ndash;16.8V, 2A)
+VCC 5.35V (Regulated, ~1A)
 
-The 5V source should only be used to power the camera. The battery voltage is used for any other purposes.
+The 5.35V source should only be used to power the camera. The battery voltage is used for any other purposes.
+
+<aside class="note">
+The continuous current draw is limited by the gimbal cable despite the actual supply being capable of 25W (5A). This supply is also shared with some other functions on the copter.
+</aside>
 
 ### HDMI Mini 
 
@@ -77,12 +81,7 @@ However, 3rd party developers cannot currently take advantage of the pre-set cam
 
 ### Custom Gimbal Camera Control
 
-<aside class="note">
-History Note: MAVLink was designed several years ago when there were only a few hundred people using UAVs in academia. As such, the protocol has a number of design flaws primarily caused by the maintenance of a central repository of commands and supported devices. For example, some camera-related commands include a `CAMERA_ID` param but others don’t - this consistency can’t be easily changed because there are already other codebases depending on this packet format. As another example, multiple developers may try to use the same previously unused component or system id at the same time and come into conflict with each other.
-</aside>
-
-
-As a workaround for many of the protocol’s inadequacies, `COMMAND_LONG` was created and it’s the recommended command for any unique, custom camera or gimbal functionality:
+`COMMAND_LONG` is the recommended MAVLink command for any unique, custom camera or gimbal functionality:
 
 Byte index | Value Size (bytes) | Value Description | Value
 --- | --- | --- | ---
