@@ -49,7 +49,7 @@ vehicle = connect('udpout:10.1.1.10:14560')
 time.sleep(5)
 ```
 
-The `connect()` method returns a Vehicle class with attributes initially set to `None`. We normally wait a few seconds after connecting to allow these to be populated from recieved MAVLink messages.
+The `connect()` method returns a Vehicle class with attributes initially set to `None`. We normally wait a few seconds after connecting to allow these to be populated from received MAVLink messages.
 
 
 

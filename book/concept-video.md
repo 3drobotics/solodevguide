@@ -5,7 +5,7 @@ In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusiv
 Video pipeline:
 
 ```
-GoPro -> HDMI cable -> HDMI encoder -> i.MX6 (h.264 encode/gstreamer) -> WiFi (UDP) -> Controller (h.264 decode/hdmi output/UDP relay to phone) -> WiFi (UDP) -> App
+GoPro -> HDMI cable -> HDMI encoder -> iMX6 (h.264 encode/gstreamer) -> WiFi (UDP) -> Controller (h.264 decode/hdmi output/UDP relay to phone) -> WiFi (UDP) -> App
 ```
 
 
@@ -69,7 +69,7 @@ gst-launch tvsrc device=/dev/video0 ! mfw_ipucsc ! ... <h246 encoder>
 The `mfw_ipucsc` pipeline uses iMX6 drivers to transform the video into a planer (YUV) colorspace, making it suitable for encoding as h264 or further processing.
 
 
-The package `gst-plugins-good-video4linux2` allows us to use the `v4l2sink` pipeline in *GStreamer*.  The second package is a kernel module called `v4l2loopback`, wihch allows us to emulate a video device. Creating multiple video processing endpoints requires the kernel-level driver `v4l2loopback`, which creates video devices that echo their video input as video output. To activate this driver:
+The package `gst-plugins-good-video4linux2` allows us to use the `v4l2sink` pipeline in *GStreamer*.  The second package is a kernel module called `v4l2loopback`, which allows us to emulate a video device. Creating multiple video processing endpoints requires the kernel-level driver `v4l2loopback`, which creates video devices that echo their video input as video output. To activate this driver:
 
 ```
 modprobe v4l2loopback exclusive_caps=0,0 video_nr=1,2
