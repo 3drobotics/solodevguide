@@ -29,7 +29,7 @@ Show a screenshot of this working in VLC.
 
 Because *sndast* has exclusive access to Solo's video input, we need to reconfigure it by splitting the video device via an intermediary. As a result of this configuration, *sndast* will have exclusive access to `/dev/video1`, and the video will be available for scripts to connect to on `/dev/video2`.
 
-[After having installed the `solo-utils` tool](utils.html), connect Solo to the internet using `solo-utils tunnel-start`. Then, install these packages:
+[After having installed the `solo-utils` tool](starting-utils.html), connect Solo to the internet using `solo-utils tunnel-start`. Then, install these packages:
 
 ```sh
 smart update
@@ -85,7 +85,9 @@ vid. ! queue ! v4l2sink device=/dev/video2
 
 The *solo-utils* command to start the custom video pipeline starts a service that splits `/dev/video0` into two outputs, `/dev/video1` and `/dev/video2`. *sndast* will continue to pipe video from `/dev/video1` as normal, but `/dev/video2` is now available for scripts to take as input, e.g. OpenCV, saving video to disk, taking still shots, etc.
 
+<!--
 ## Further Reading
 
-* [How to write a dynamic video overlay](video-overlay.html)
-* [Custom video output](video-out.html)
+* [How to write a dynamic video overlay](example-vidoverlay.html)
+* [Custom video output](example-vidoutput.html)
+-->
