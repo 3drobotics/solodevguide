@@ -26,7 +26,7 @@ Solo should immediately reconnect, as though you had just turned on the Controll
 
 To add a service, we first want to configure a more flexible way of launching services. For this, we'll use `runit` as our launch system.
 
-[After having installed the `solo-utils` tool](utils.html), from your Solo's shell, run:
+[After having installed the `solo-utils` tool](starting-utils.html), from your Solo's shell, run:
 
 ```
 solo-utils install-runit
