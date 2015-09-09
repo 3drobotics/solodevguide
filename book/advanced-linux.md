@@ -1,7 +1,7 @@
 ## Yocto Linux
 
 <aside class="caution">
-We do not support rebuilding Solo's kernel or compiling binary packages. This documentation is incomplete and will be modified over time.
+This guide does not yet support rebuilding Solo's kernel or compiling binary packages. This documentation is incomplete and will be modified over time.
 </aside>
 
 The Linux distribution used is 3DR Poky (based on [Yocto Project Reference Distro](http://www.yoctoproject.org/docs/1.8/mega-manual/mega-manual.html))
