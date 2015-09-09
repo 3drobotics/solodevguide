@@ -65,7 +65,7 @@ In order to have Solo control a gimbal, Ardupilot must know how to communicate w
 
 *SToRM32* is recommended as it features the most straightforward communication protocol. You can find more information about [this type of gimbal controller here](http://www.olliw.eu/storm32bgc-wiki/Main_Page) and Ardupilot integration can be [found here](http://copter.ardupilot.com/wiki/common-storm32-gimbal/).
 
-<aside class="warning">
+<aside class="caution">
 For development purposes, a Pixhawk 1 and Copter 3.3 Ardupilot firmware are recommended. The Solo development stack is not yet ready to integrate multiple types of gimbals so it will not work on Solo. 
 </aside>
 

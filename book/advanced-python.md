@@ -23,7 +23,7 @@ echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.cor
 
 Now you can install Python packages using `pip install`. 
 
-<aside class="warning">
+<aside class="caution">
 When modules require a C extension, they will fail silently. Test your code!
 </aside>
 
