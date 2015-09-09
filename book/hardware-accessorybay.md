@@ -39,7 +39,3 @@ The two primary interfaces to the *Accessory Bay* will be the CAN bus for direct
 CAN - Uses the [UAVCAN](http://uavcan.org/UAVCAN) protocol and interfaces directly with the Pixhawk. 
 
 USB - USB Host device to the IMX co-processor.
-
-SERIAL 2 - A direct MAVLink connection to the PixHawk.
-
-SERIAL 5 - Shell access to the Pixhawk for debug access. We will not actively encourage developers to use this bus.
