@@ -42,7 +42,7 @@ cat <<'EOF' | tee /etc/solo-services/webserver/run
 #!/bin/bash
 cd static && exec python -m SimpleHTTPServer 80
 EOF
-chmod +x /etc/solo-services/run
+chmod +x /etc/solo-services/webserver/run
 echo '<h1>Hello world!</h1>' > /etc/solo-services/webserver/static/index.html
 ```
 
