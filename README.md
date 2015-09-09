@@ -1,4 +1,4 @@
-# 3DR Developer Guide
+# Solo Developer Guide
 
 This guide is published online at: http://dev.3dr.com/
 
