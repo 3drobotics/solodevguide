@@ -61,7 +61,7 @@ sleep 10
 
 COUNT=60
 while [[ $COUNT -ge 10 ]]; do
-    echo "checking if we are connected... ($COUNTs)"
+    echo "checking if we are connected... (${COUNT}s)"
     /opt/solo-utils/solo-utils-test-net >/dev/null
     if [[ $? == 0 ]]; then
         break
