@@ -29,4 +29,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to submit to this 
 
 ## License
 
-Don't publish or copy information from this repository. Yet.
+CC BY-SA 4.0
