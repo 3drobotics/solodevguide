@@ -44,28 +44,6 @@ The `solo-utils` are run from the Solo terminal. Instructions on how to set up a
 Specific examples of how the utils are called are given in the following sections.
 
 
-
-## Configure Tools
-
-This section shows how to call the `solo-utils` to install other important development tools. 
-
-
-### Install runit
-
-To add the *runit* script daemon (used to create new services):
-
-```
-solo-utils install-runit
-```
-
-### Install pip
-
-To install `pip` directly on Solo:
-
-```
-solo-utils install-pip
-```
-
 ## Connecting to the Internet
 
 <aside class="note">
@@ -85,8 +63,31 @@ solo-utils tunnel-stop
 ```
 
 <aside class="tip">
-Enabling the tunnel is a prerequisite for [installing software packages](uploading.html#installing-packages) on Solo using *smart*.
+Enabling the tunnel is a prerequisite for [installing software packages](starting-installing.html#installing-packages) on Solo using *smart*.
 </aside>
+
+
+
+## Configure Tools
+
+This section shows how to call the `solo-utils` to install other important development tools.  You must first connect to the Internet, as demonstrated in the previous section.
+
+
+### Install runit
+
+To add the *runit* script daemon (used to create new services):
+
+```
+solo-utils install-runit
+```
+
+### Install pip
+
+To install `pip` directly on Solo:
+
+```
+solo-utils install-pip
+```
 
 
 
