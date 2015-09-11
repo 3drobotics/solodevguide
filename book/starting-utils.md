@@ -1,24 +1,27 @@
-# Installing "solo-utils"
+# Development Tools ("solo-utils")
 
-There are several scripts that we will be using throughout this tutorial that are packaged as a folder of shell scripts.
+The `solo-utils` tools perform several tasks that are essential for development on Solo. These include:
 
-* Enables direct Internet access from Solo through the host (required to install packages on Solo).
+* Enabling direct Internet access from Solo through the host (required to install packages on Solo).
 * Resizing the root partition.
-* Installing `runit` to manage start processes.
+* Installing `runit` (which manages automatic process execution).
 * Providing access to the video stream.
 
-All of these can be performed using the `solo-utils` command.
 
+## Installing solo-utils
+
+To install `solo-utils` onto Solo, your host PC must be running OS X or Linux and be connected to both Solo and the Internet. 
 <aside class="note">
-To install *solo-utils*, you must be connected to the Internet and Solo simultaneously.</aside>
+The installation need only be performed once, though you can repeat the process in case of failure or if you wish to update your utils.
+</aside>
 
-To install, run this command on your *host* computer (you must be running OS X or Linux):
+Run this command on your *host* computer:
 
 ```sh
 curl -fsSL -H "Accept: application/vnd.github.raw" https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@api.github.com/repos/3drobotics/solodevguide/contents/tools/install-solo-utils.sh | sh
 ```
 
-This command needs to be run only once, though you can run it again in case of failure or wanting to update your utils. A successful install will resemble the following output:
+A successful install will resemble the following output:
 
 ```
 checking for sshuttle....
@@ -34,27 +37,28 @@ checking for lsof...
 done. solo-utils is installed and up to date.
 ```
 
-<!--
-Clone this guide:
+## Running solo-utils
 
-```
-git clone https://github.com/3drobotics/solodevguide
-```
+The `solo-utils` are run from the Solo terminal. Instructions on how to set up an SSH session with Solo are provided in [Accessing Solo](starting-network.html).
 
-You can install the tools from here:
+Specific examples of how the utils are called are given in the following sections.
 
-```
-./solodevguide/tools/install.sh
-```
--->
+
 
 ## Configure Tools
+
+This section shows how to call the `solo-utils` to install other important development tools. 
+
+
+### Install runit
 
 To add the *runit* script daemon (used to create new services):
 
 ```
 solo-utils install-runit
 ```
+
+### Install pip
 
 To install `pip` directly on Solo:
 
