@@ -47,8 +47,10 @@ Specific examples of how the utils are called are given in the following section
 ## Connecting to the Internet
 
 <aside class="note">
-If you are on OS X, you must first [enable remote sharing](https://support.apple.com/kb/PH13759?locale=en_US). If you are on Windows, you will need to install an SSH server.
+* If you are on OS X, you must first [enable remote sharing](https://support.apple.com/kb/PH13759?locale=en_US). If you are on Windows, you will need to install an SSH server.
+* Connect the host computer to the Internet using an Ethernet cable or other spare network adapter (your wifi adapter will be attached to the Solo network!) 
 </aside>
+
 
 Follow the prompts on first initialization to create a reverse SSH tunnel to your host computer, enabling direct Internet access from Solo:
 
