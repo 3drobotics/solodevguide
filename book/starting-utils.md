@@ -45,6 +45,10 @@ done. solo-utils is installed and up to date.
 
 The `solo-utils` are run from the Solo terminal. Instructions on how to set up an SSH session with Solo are provided in [Accessing Solo](starting-network.html).
 
+<aside class="note">
+You should [connect to the Internet](#connecting-to-the-internet) and call `smart update` before [configuring other tools](#configure-tools) and [resizing the partition](#expanding-the-root-partition).
+</aside>
+
 Specific examples of how the utils are called are given in the following sections.
 
 
@@ -60,6 +64,7 @@ Follow the prompts on first initialization to create a reverse SSH tunnel to you
 
 ```
 solo-utils tunnel-start
+smart update
 ```
 
 You can disable this tunnel by restarting Solo or running:
