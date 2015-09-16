@@ -19,12 +19,12 @@ if [[ $0 == *'install-solo-utils.sh'* ]] && [ -d $(dirname $0)/solo-utils ]; the
     rsync -avz --rsync-path="mkdir -p /opt/solo-utils && rsync" --progress ./solo-utils/. root@10.1.1.10:/opt/solo-utils/.
 else
     # Unpack solo-utils
-    ssh root@10.1.1.10 "[[ -d /opt/solo-utils ]]" 2>/dev/null </dev/null
-    if [ $? != 0 ]; then
+    # ssh root@10.1.1.10 "[[ -d /opt/solo-utils ]]" 2>/dev/null </dev/null
+    # if [ $? != 0 ]; then
         echo 'uploading solo-utils from source...'
-        curl -L https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@github.com/3drobotics/solodevguide/archive/solo-utils-$SOLO_UTILS_VERSION.tar.gz | \
+        curl -L https://github.com/3drobotics/solodevguide/archive/solo-utils-$SOLO_UTILS_VERSION.tar.gz | \
             ssh root@10.1.1.10 "tar -xvzf - -C /tmp && rm -rf /opt/solo-utils && mkdir -p /opt && cp -rf /tmp/solodevguide-solo-utils-* /opt/solo-utils"
-    fi
+    # fi
 fi
 ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true" 2>/dev/null </dev/null
 
@@ -60,6 +60,17 @@ install_rpm () {
 
 # Manual installation of certain pacakges.
 echo 'checking rpms...'
+
+# sv is needed for tunnel-start
 install_rpm "sv" "busybox-1.21.1-r1.cortexa9hf_vfp_neon.rpm"
+
+# by the time you need resize-fs, you don't want to need
+# to install another megabyte of packages. do it now
+install_rpm "parted" "parted-3.1-r1.cortexa9hf_vfp_neon.rpm"
+install_rpm "resize2fs" "libss2-1.42.8-r0.cortexa9hf_vfp_neon.rpm"
+install_rpm "resize2fs" "e2fsprogs-1.42.8-r0.cortexa9hf_vfp_neon.rpm"
+install_rpm "resize2fs" "e2fsprogs-badblocks-1.42.8-r0.cortexa9hf_vfp_neon.rpm"
+install_rpm "mkfs.ext3" "e2fsprogs-mke2fs-1.42.8-r0.cortexa9hf_vfp_neon.rpm"
+install_rpm "lsof" "lsof-4.87-r0.cortexa9hf_vfp_neon.rpm"
 
 echo 'done. solo-utils is installed and up to date.'
