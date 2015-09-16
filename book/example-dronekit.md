@@ -21,6 +21,8 @@ The process for bundling the example (including DroneKit) is described below in 
 
 The libraries that are bundled are defined in the example `requirements.txt` file:
 
+<div class="any-code"></div>
+
 ```
 protobuf==3.0.0a1
 requests==2.5.1
@@ -39,6 +41,8 @@ The MAVLink telemetry protocol (used to communicate with Solo) is served on UDP 
 
 From Python, you connect to Solo on this port using the `connect()` method as shown:
 
+<div class="any-code"></div>
+
 ```py
 from droneapi import connect
 
@@ -56,6 +60,8 @@ The `connect()` method returns a Vehicle class with attributes initially set to 
 ## Retrieve parameters
 
 The vehicle attributes can then be read, as shown:
+
+<div class="any-code"></div>
 
 ```py
 # Get all vehicle attributes (state)
@@ -85,12 +91,16 @@ Clone the [solodevguide](https://github.com/3drobotics/solodevguide) repository 
 
 In this folder, prepare your environment by running:
 
+<div class="host-code"></div>
+
 ```sh
 virtualenv env
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
 ```
 
 Install the Python dependencies locally, and then package them for Solo:
+
+<div class="host-code"></div>
 
 ```sh
 source ./env/bin/activate
@@ -99,6 +109,8 @@ pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 ```
 
 Next, and every time we make changes to Python, we can sync our code to Solo using *rsync*:
+
+<div class="host-code"></div>
 
 ```sh
 rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/dkexample

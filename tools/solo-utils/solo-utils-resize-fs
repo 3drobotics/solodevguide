@@ -40,12 +40,13 @@ esac
 
 # Drop the runlevel to 3 (disabling Solo services)
 init 2
+killall runsv
 if [ -e /dev/mmcblk0p4 ]; then
 	# Then stop syslog.
 	/etc/init.d/syslog stop
 	sleep 1
 	# Finally, we can unmount /log
-	umount /log || { test $? -eq 32 || exit 1; }
+	umount /log || { { umount /log | grep "not mounted"; } && exit 1; }
 fi
 
 # We will DANGEROUSLY go ahead and resize the root

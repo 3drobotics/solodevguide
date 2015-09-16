@@ -30,12 +30,16 @@ Clone the [solodevguide](https://github.com/3drobotics/solodevguide) repository 
 
 In this folder, prepare your environment by running:
 
+<div class="host-code"></div>
+
 ```sh
 virtualenv env
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
 ```
 
 Install the Python dependencies locally, and then package them for Solo:
+
+<div class="host-code"></div>
 
 ```sh
 source ./env/bin/activate
@@ -44,6 +48,8 @@ pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 ```
 
 Next, and every time we make changes to Python, we can sync our code to Solo using *rsync*:
+
+<div class="host-code"></div>
 
 ```sh
 rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/stillframe

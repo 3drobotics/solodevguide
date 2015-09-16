@@ -10,6 +10,8 @@ To run this example, run `solo-utils video-start` first to get camera access.
 
 This example demonstrates connecting to a camera, capturing a frame, calculating the average color mean, and then displays it to the terminal in a loop. Try playing around with various colored objects to see the recognition happen in realtime.
 
+<div class="any-code"></div>
+
 ```py
 from __future__ import print_function
 import cv2

@@ -12,16 +12,21 @@ The `solo-utils` tools perform several tasks that are essential for development 
 
 To install `solo-utils` onto Solo, your host PC must be running OS X or Linux and be connected to both Solo and the Internet. 
 <aside class="note">
-The installation need only be performed once, though you can repeat the process in case of failure or if you wish to update your utils.
+* The installation need only be performed once, though you can repeat the process in case of failure or if you wish to update your utils.
+* Connect the host computer to the Internet using an Ethernet cable or other spare network adapter (your wifi adapter will be attached to the Solo network!) 
 </aside>
 
 Run this command on your *host* computer:
+
+<div class="host-code"></div>
 
 ```sh
 curl -fsSL -H "Accept: application/vnd.github.raw" https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@api.github.com/repos/3drobotics/solodevguide/contents/tools/install-solo-utils.sh | sh
 ```
 
 A successful install will resemble the following output:
+
+<div class="host-code"></div>
 
 ```
 checking for sshuttle....
@@ -41,6 +46,10 @@ done. solo-utils is installed and up to date.
 
 The `solo-utils` are run from the Solo terminal. Instructions on how to set up an SSH session with Solo are provided in [Accessing Solo](starting-network.html).
 
+<aside class="note">
+You should [connect to the Internet](#connecting-to-the-internet) and call `smart update` before [configuring other tools](#configure-tools) and [resizing the partition](#expanding-the-root-partition).
+</aside>
+
 Specific examples of how the utils are called are given in the following sections.
 
 
@@ -56,6 +65,7 @@ Follow the prompts on first initialization to create a reverse SSH tunnel to you
 
 ```
 solo-utils tunnel-start
+smart update
 ```
 
 You can disable this tunnel by restarting Solo or running:

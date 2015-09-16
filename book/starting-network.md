@@ -18,6 +18,8 @@ We do not recommend modifying the Controller, and all examples in this guide wil
 
 To SSH into Solo, ensure you have an SSH-capable machine that is connected to the Controller's private network. From your terminal, type:
 
+<div class="host-code"></div>
+
 ```
 ssh root@10.1.1.10
 ```
@@ -33,11 +35,15 @@ Your SSH client will then have direct terminal access to Solo.
 
 If you do not want to be prompted for a password each time you SSH into Solo, you can run `ssh-copy-id` to copy your password to Solo (installed via `sudo apt-get install ssh-copy-id`, `brew install ssh-copy-id`, etc.):
 
+<div class="host-code"></div>
+
 ```
 ssh-copy-id -i ~/.ssh/id_rsa root@10.1.1.10
 ```
 
 You can optimize this process further by adding the following to your `~/.ssh/config`:
+
+<div class="host-code"></div>
 
 ```
 Host solo 10.1.1.10
@@ -50,6 +56,8 @@ Host solo 10.1.1.10
 ```
 
 From then on, any Solo device can be accessed by this shorthand:
+
+<div class="host-code"></div>
 
 ```
 ssh solo
