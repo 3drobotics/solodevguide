@@ -105,10 +105,21 @@ solo-utils install-pip
 
 ## Expanding the Root Partition
 
-To expand the root partition from 90Mb to 250Mb, you will delete and recreate your `/log` directory. Ensure you have any important data backed up. Then run:
+Solo minimizes the root partition size in order to maximize the space available for logs. In order to install more packages you will need to use the `resize-fs` option to expand the root partition from 90Mb to 250Mb.
+
+<aside class="tip">
+Resizing the partition will delete and recreate your `/log` directory. Ensure you have any important data backed up first! 
+</aside>
+
+To expand the root partition run:
 
 ```
 solo-utils resize-fs
 ```
 
 You will have to physically reboot (power cycle) your drone after the script is complete.
+
+<aside class="warning">
+Resizing the partition may occasionally fail. The solution is simply to re-run `solo-utils resize-fs`. 
+</aside>
+
