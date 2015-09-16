@@ -4,6 +4,8 @@
 
 *[rsync](https://en.wikipedia.org/wiki/Rsync)* is the preferred tool for synchronizing code and files between your desktop and Solo. To copy a file from the local filesystem to Solo:
 
+<div class="host-code"></div>
+
 ```sh
 rsync -avz local/file/path/. root@10.1.1.10:/solo/path/. 
 ```
@@ -14,7 +16,7 @@ Solo is an [rpm](http://www.rpm.org/) based system. These packages can be manage
 
 First, [install the *solo-utils* tool](starting-utils.html). This allows us to access the Internet, and also configures *Smart* to use the Solo package repository.
 
-From your shell, run the following commands:
+From Solo's shell, run the following commands:
 
 ```sh
 solo-utils tunnel-start
