@@ -40,6 +40,7 @@ esac
 
 # Drop the runlevel to 3 (disabling Solo services)
 init 2
+killall runsv
 if [ -e /dev/mmcblk0p4 ]; then
 	# Then stop syslog.
 	/etc/init.d/syslog stop
