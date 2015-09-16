@@ -4,9 +4,14 @@ In normal operation, the GoPro video device (`/dev/video0`) is acquired exclusiv
 
 Video pipeline:
 
-```
-GoPro -> HDMI cable -> HDMI encoder -> iMX6 (h.264 encode/gstreamer) -> WiFi (UDP) -> Controller (h.264 decode/hdmi output/UDP relay to phone) -> WiFi (UDP) -> App
-```
+* GoPro ->
+* HDMI cable ->
+* HDMI encoder ->
+* iMX6 (h.264 encode/gstreamer) ->
+* WiFi (UDP) ->
+* Controller (h.264 decode/hdmi output/UDP relay to phone) ->
+* WiFi (UDP) ->
+* App
 
 
 ## Viewing Live Video
@@ -14,6 +19,8 @@ GoPro -> HDMI cable -> HDMI encoder -> iMX6 (h.264 encode/gstreamer) -> WiFi (UD
 You can use VLC on your computer to view live video as it is being recorded by Solo.
 
 First, we need to create a connection to Solo to enable video output. Either ensure the Solo App is open on your phone, or create a TCP connection from your command line as follows:
+
+<div class="host-code"></div>
 
 ```
 nc 10.1.1.1 5502
