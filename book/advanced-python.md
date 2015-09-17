@@ -9,6 +9,8 @@ First create and navigate to a new directory on your host computer. This directo
 
 Start by creating a virtual environment on your host computer:
 
+<div class="host-code"></div>
+
 ```sh
 pip install virtualenv
 virtualenv env
@@ -16,6 +18,8 @@ source ./env/bin/activate
 ```
 
 We want to configure our environment to not compile any C extensions. We can do this simply in our virtual environment with this command:
+
+<div class="host-code"></div>
 
 ```sh
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
@@ -29,11 +33,15 @@ When modules require a C extension, they will fail silently. Test your code!
 
 When you're ready to move code over to Solo, create a `requirements.txt` file containing what packages you've installed:
 
+<div class="host-code"></div>
+
 ```sh
 pip freeze > requirements.txt
 ```
 
 Next, download these packages on your host computer so they can be moved to Solo along with your code. You can do this by using [pip wheel](https://pip.pypa.io/en/latest/reference/pip_wheel.html) to download them into a new folder (`./wheelhouse`). Run this command:
+
+<div class="host-code"></div>
 
 ```sh
 pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
@@ -42,6 +50,8 @@ pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 This installs all the dependencies in `requirements.txt` as Python wheel files, which are source code packages.
 
 Next, you can move this entire directory over to Solo using *rsync*:
+
+<div class="host-code"></div>
 
 ```sh
 rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/my_python_code

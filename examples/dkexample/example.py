@@ -4,7 +4,7 @@ from pymavlink import mavutil
 import time
 
 # Connect to UDP endpoint
-vehicle = connect('udpout:10.1.1.10:14560')
+vehicle = connect('udpin:0.0.0.0:14550')
 
 # Wait for parameters to accumulate.
 time.sleep(5)
