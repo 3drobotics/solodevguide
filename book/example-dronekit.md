@@ -45,6 +45,7 @@ From Python, you connect to Solo on this port using the `connect()` method as sh
 
 ```py
 from droneapi import connect
+import time
 
 # Connect to UDP endpoint.
 vehicle = connect('udpin:0.0.0.0:14550')
