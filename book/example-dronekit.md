@@ -37,7 +37,7 @@ Note that we are installing a particular version of `pymavlink` and a particular
 
 ## Connecting to Solo
 
-The MAVLink telemetry protocol (used to communicate with Solo) is served on UDP port 14560. You can set up downstream applications to connect as a UDP client to `10.1.1.10:14560` from any external device connected to its network (or from Solo's terminal).
+The MAVLink telemetry protocol (used to communicate with Solo) is served on UDP port 14560. You can set up downstream applications to connect as a UDP client to `udpin:0.0.0.0:14550` from any external device connected to its network (or from Solo's terminal).
 
 From Python, you connect to Solo on this port using the `connect()` method as shown:
 
@@ -47,7 +47,7 @@ From Python, you connect to Solo on this port using the `connect()` method as sh
 from droneapi import connect
 
 # Connect to UDP endpoint.
-vehicle = connect('udpout:10.1.1.10:14560')
+vehicle = connect('udpin:0.0.0.0:14550')
 
 # Wait for parameters to accumulate.
 time.sleep(5)
