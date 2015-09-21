@@ -23,7 +23,7 @@ else
     # if [ $? != 0 ]; then
         echo 'uploading solo-utils from source...'
         curl -L https://github.com/3drobotics/solodevguide/archive/solo-utils-$SOLO_UTILS_VERSION.tar.gz | \
-            ssh root@10.1.1.10 "tar -xvzf - -C /tmp && mkdir -p /opt && cp -rf /tmp/solodevguide-solo-utils-${SOLO_UTILS_VERSION}/* /opt/solo-utils"
+            ssh root@10.1.1.10 "tar -xvzf - -C /tmp && mkdir -p /opt/solo-utils && cp -rf /tmp/solodevguide-solo-utils-${SOLO_UTILS_VERSION}/* /opt/solo-utils"
     # fi
 fi
 ssh root@10.1.1.10 "ln -s /opt/solo-utils/solo-utils /usr/bin/solo-utils || true" 2>/dev/null </dev/null
