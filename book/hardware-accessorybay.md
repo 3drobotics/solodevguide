@@ -8,6 +8,8 @@ Maximum payload of the system is 700g, the 3DR Gimbal + GoPro weigh approximatel
 
 The Accessory Bay hole pattern is M2 screws in a 1.655" x 1.15" rectangular pattern. Ensure that the rectangle is not intersected by the path of the gimbal.
 
+![Accessory Bay Hole Pattern]((https://cloud.githubusercontent.com/assets/2678765/10022128/e05706dc-6110-11e5-8dbc-fdcbf3c65459.png "Accessory Bay Hole Pattern")
+
 ## Electrical
 
 The connector part number is [JAE SJ038252](https://jae-connectors.com/en/pdf_download_exec.cfm?param=SJ038252.pdf) and can be purchased on [Mouser](http://www.mouser.com/ProductDetail/JAE-Electronics/TX24-30R-6ST-N1E/?qs=%2fha2pyFaduiqgba8kBa6TtehVWNIeLFx3lhQ48lSxiSCqywLxSV2eg%3d%3d).
