@@ -3,4 +3,5 @@
 cd $(dirname $0)/..
 
 gitbook build book
-rsync -avz book/_book/. 52.6.232.204:/var/www/html
+ssh-keyscan -t rsa 52.6.232.204 >> ~/.ssh/known_hosts
+rsync -avz book/_book/. tim@52.6.232.204:/var/www/html

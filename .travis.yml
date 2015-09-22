@@ -5,6 +5,12 @@ node_js:
 before_script:
   - npm install -g grunt-cli gitbook-cli
   - gitbook install book
+after_success:
+  - |
+    if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+        echo "$SSH_KEY" > ~/.ssh/id_rsa
+        ./scripts/publish-pages.sh
+    fi
 matrix:
   fast_finish: true
 notifications:
