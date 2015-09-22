@@ -7,7 +7,7 @@ before_script:
   - gitbook install book
 after_success:
   - |
-    if [ "$TRAVIS_BRANCH" == "master" ]; then
+    if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
         echo "$SSH_KEY" > ~/.ssh/id_rsa
         ./scripts/publish-pages.sh
     fi
