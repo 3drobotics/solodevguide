@@ -1,3 +1,0 @@
-#!/bin/bash
-
-exec /opt/sshuttle/sshuttle --dns -r pc 0/0 -vv -x $(cat /opt/solo-utils/tunnel-service/host-ip | xargs)/24 2>&1
