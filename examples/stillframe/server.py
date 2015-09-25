@@ -21,7 +21,7 @@ def launch_mjpegserver():
     """
     Start gstreamer pipeline to launch mjpeg server.
     """
-    mjpegserver = Popen(['gst-launch', 'v4l2src', 'device=/dev/video1', '!',
+    mjpegserver = Popen(['gst-launch', 'v4l2src', 'device=/dev/video0', '!',
         'jpegenc', '!',
         'tcpserversink', 'port=5000', 'sync=false'])
     def mjpegserver_cleanup():

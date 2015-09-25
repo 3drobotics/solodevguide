@@ -5,7 +5,7 @@ This example requires you to [install the packages](uploading.html#installing-pa
 </aside>
 
 <aside class="note">
-To run this example, run `solo-utils video-start` first to get camera access.
+To run this example, run `solo video acquire` first to get camera access.
 </aside>
 
 This example provides a RESTful API on port `8080` that can be accessed from Solo. When the HTTP endpoint is hit, it uses `gstreamer` to grab a frame from the video feed and provide it as a response. We also include an example app that allows you to grab a frame in your web browser.

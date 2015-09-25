@@ -4,7 +4,7 @@ This is the summary of the solodevguide.
 
 * Getting Started
    * [Accessing Solo](starting-network.md)
-   * [Development Tools ("solo-utils")](starting-utils.md)
+   * ["solo" Command Line Tool](starting-utils.md)
    * [Installing Files and Code](starting-installing.md)
    * [Troubleshooting](starting-troubleshooting.md)
    * [Rules and Advice](starting-rules.md)
