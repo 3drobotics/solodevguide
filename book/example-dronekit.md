@@ -45,16 +45,12 @@ From Python, you connect to Solo on this port using the `connect()` method as sh
 
 ```py
 from droneapi import connect
-import time
 
 # Connect to UDP endpoint.
-vehicle = connect('udpin:0.0.0.0:14550')
-
-# Wait for parameters to accumulate.
-time.sleep(5)
+vehicle = connect('udpin:0.0.0.0:14550', await_params=True)
 ```
 
-The `connect()` method returns a Vehicle class with attributes initially set to `None`. We normally wait a few seconds after connecting to allow these to be populated from received MAVLink messages.
+The `connect()` method returns a `Vehicle` object that can be used to observe and control the drone.
 
 
 
