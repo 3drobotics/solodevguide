@@ -12,7 +12,7 @@ The Accessory Bay hole pattern is M2 screws in a 1.655" x 1.15" rectangular patt
 
 ## Electrical
 
-The connector part number is [JAE SJ038252](https://jae-connectors.com/en/pdf_download_exec.cfm?param=SJ038252.pdf) and can be purchased on [Mouser](http://www.mouser.com/ProductDetail/JAE-Electronics/TX24-30R-6ST-N1E/?qs=%2fha2pyFaduiqgba8kBa6TtehVWNIeLFx3lhQ48lSxiSCqywLxSV2eg%3d%3d).
+The mating connector part number is [JAE SJ038252](https://jae-connectors.com/en/pdf_download_exec.cfm?param=SJ038252.pdf) and can be purchased on [Mouser](http://www.mouser.com/ProductDetail/JAE-Electronics/TX24-30R-6ST-N1E/?qs=%2fha2pyFaduiqgba8kBa6TtehVWNIeLFx3lhQ48lSxiSCqywLxSV2eg%3d%3d).
 
 The pinout of the Accessory Port is:
 
