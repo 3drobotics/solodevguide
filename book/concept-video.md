@@ -32,6 +32,7 @@ You can leave this open (there is no need to type into this prompt). Then, you c
 Show a screenshot of this working in VLC.
 </aside>
 
+<!--
 ## Configuring Solo's Video Output
 
 Because *sndast* has exclusive access to Solo's video input, we need to reconfigure it by splitting the video device via an intermediary. As a result of this configuration, *sndast* will have exclusive access to `/dev/video1`, and the video will be available for scripts to connect to on `/dev/video2`.
@@ -55,7 +56,8 @@ Solo's default video output through *sndast* should continue as normal. If you w
 solo-utils video-stop
 ```
 
-Video is now available on `/dev/video2` for script use. For an example of this in action, see [Using OpenCV](example-opencv.html). <!--For a more complex example of modifying the video pipeline, see [how to write a dynamic video overlay](video-overlay.html).-->
+Video is now available on `/dev/video2` for script use. For an example of this in action, see [Using OpenCV](example-opencv.html). For a more complex example of modifying the video pipeline, see [how to write a dynamic video overlay](video-overlay.html).
+-->
 
 ## Video Pipeline Internals
 

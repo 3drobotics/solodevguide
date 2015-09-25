@@ -1,6 +1,6 @@
 {
   "name": "solodevguide",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This guide is published **privately** online at:",
   "main": "Gruntfile.js",
   "scripts": {
