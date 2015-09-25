@@ -1,4 +1,4 @@
-# "solo" Command Line Tool]
+# "solo" Command Line Tool
 
 The *Solo CLI* tool performs several tasks that are essential for development on Solo. These include:
 
