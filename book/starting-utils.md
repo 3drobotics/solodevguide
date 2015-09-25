@@ -66,7 +66,7 @@ You will (for now) need to run this command each time the Controller is reset. I
 
 ## Installation
 
-This section shows how to call the `solo-utils` to install other important development tools. (You must first connect to the Internet, as demonstrated in the previous section.)
+This section documents using *Solo CLI* to install various development tools. You must first connect to the Internet, as demonstrated in the previous section.
 
 ### Install *smart* repositories
 

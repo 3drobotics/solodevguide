@@ -24,7 +24,7 @@ Navigate using the sidebar or the "next page" arrows to begin.
 
 ### 2015-09-25
 
-* `solo-utils` is removed used.
+* `solo-utils` is removed.
 * The PC command line tool [*Solo CLI*](https://github.com/3drobotics/solo-cli) is now used for all examples.
 * Video output examples temporarily reduced in scope to improve reliability.
 
