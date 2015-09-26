@@ -28,6 +28,8 @@ nc 10.1.1.1 5502
 
 You can leave this open (there is no need to type into this prompt). Next, create a file `sololink.sdp` with the contents:
 
+<div class="any-code"></div>
+
 ```
 c=IN IP4 10.1.1.1
 m=video 5600 RTP/AVP 96 
