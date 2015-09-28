@@ -27,12 +27,10 @@ The libraries that are bundled are defined in the example `requirements.txt` fil
 protobuf==3.0.0a1
 requests==2.5.1
 wheel==0.24.0
-git+https://github.com/tcr3dr/mavlink@tcr-pymavlink
-git+https://github.com/dronekit/dronekit-python@tcr-nomp
+git+https://github.com/dronekit/dronekit-python@v2.0.0-beta1
 ```
 
-Note that we are installing a particular version of `pymavlink` and a particular branch of `dronekit-python`.
-
+Note that we are installing a particular branch of `dronekit-python`.
 
 
 ## Connecting to Solo
