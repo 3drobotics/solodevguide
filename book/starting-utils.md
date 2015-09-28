@@ -49,19 +49,31 @@ Usage:
 Specific information about what these commands do is given in the following sections and on the [*Solo CLI* README](https://github.com/3drobotics/solo-cli).
 
 
-## Connecting to Solo and the Internet
+## Connecting Solo to the Internet
 
-During development, you will most often want access to Solo and the Internet simultaneously. The command `solo wifi` connects your Controller to a local wifi network, allowing you to develop for Solo while also enabling connection to the outside Internet. The steps for doing so are as follows:
+The `solo wifi` command connects your Controller to a local WiFi network. Solo uses this connection (via the Controller network) to access the Internet during development and to [download and install packages](starting-installing.html#installing-packages).
 
-* Connect your PC to the Controller's WiFi network.
-* Run `solo wifi --name=<ssid> --password=<password>` command from your PC's command line. The SSID and password should be those of a local WiFi network, i.e. that of your home or your office.
-* If your PC does not yet have an Internet connection, disconnect and reconnect to Solo's WiFi network at this time.
+<aside class="tip">The development PC still connects to Solo and the Controller by their dedicated IP addresses on the Controller Network (`10.1.1.1` and `10.1.1.10`) rather than the IP of the Controller on your local WiFi network.
 
-You will now have access to the Internet on your PC, Solo, and the Controller (you can verify this by opening up a web browser and accessing any web page). You can still connect to Solo and the Controller by their dedicated IP addresses (`10.1.1.1` and `10.1.1.10`), though the Controller is also assigned its own IP on your local WiFi network.
+The Controller provides Internet access to the connected PC. This is useful if the PC WiFi connection is normally used to access the local network.</aside>
+
+The steps for using the command are:
+
+* [Connect your PC to the Controller's WiFi network](starting-network.html).
+* Run the following command from your PC's command line:
+  <div class="host-code"></div>
+
+  ```sh
+  solo wifi --name=<ssid> --password=<password>
+  ```
+  The SSID and password should be those of a local WiFi network, i.e. that of your home or your office.
+* You may need to disconnect and reconnect your PC to Solo's WiFi network in order enable Internet access (you can verify the PC connection by opening up a web browser and accessing any web page).
 
 <aside class="tip">
 You will (for now) need to run this command each time the Controller is reset. It is safe to run this command multiple times in one session.
 </aside>
+
+
 
 
 ## Installation
