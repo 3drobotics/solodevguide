@@ -43,7 +43,7 @@ Solo's root SSH password is the same for all devices. We recommend not modifying
 
 ### Optimizing SSH Access
 
-If you do not want to be prompted for a password each time you SSH into Solo, you can run `solo provision` to copy your SSH public key to Solo. See the ["solo" Command Line Tool](starting-utils.html) for more information on this tool. By copying your public key to Solo, you will no longer be prompted for your password each time you run `ssh`.
+If you do not want to be prompted for a password each time you SSH into Solo, you can run `solo provision` to copy your SSH public key to Solo (see ["solo" Command Line Tool](starting-utils.html) for more information). By copying your public key to Solo, you will no longer be prompted for your password each time you run `ssh`.
 
 You can optimize this process further by adding the following to your `~/.ssh/config`:
 
