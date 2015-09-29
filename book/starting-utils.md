@@ -51,11 +51,12 @@ Specific information about what these commands do is given in the following sect
 
 ## Connecting Solo to the Internet
 
-The `solo wifi` command connects your Controller to a local WiFi network. Solo uses this connection (via the Controller network) to access the Internet during development and to [download and install packages](starting-installing.html#installing-packages).
+The `solo wifi` command connects your Controller to your home WiFi network. Solo uses this connection (via the Controller network) to access the Internet during development and to [download and install packages](starting-installing.html#installing-packages).
 
-<aside class="tip">The development PC still connects to Solo and the Controller by their dedicated IP addresses on the Controller Network (`10.1.1.1` and `10.1.1.10`) rather than the IP of the Controller on your local WiFi network.
+<aside class="tip">The development PC still needs to connect to the Controller's WiFi network and access Solo and the Controller using their dedicated IP addresses (`10.1.1.1` and `10.1.1.10`).
 
-The Controller provides Internet access to the connected PC. This is useful if the PC WiFi connection is normally used to access the local network.</aside>
+The Controller provides Internet access to the connected PC. This is useful if the PC normally uses Wifi to connect to your home network.
+</aside>
 
 The steps for using the command are:
 
@@ -67,11 +68,12 @@ The steps for using the command are:
   solo wifi --name=<ssid> --password=<password>
   ```
   The SSID and password should be those of a local WiFi network, i.e. that of your home or your office.
+  <aside class="tip">
+  You will (for now) need to run this command each time the Controller is reset. It is safe to run this command multiple times in one session.
+  </aside>
 * You may need to disconnect and reconnect your PC to Solo's WiFi network in order enable Internet access (you can verify the PC connection by opening up a web browser and accessing any web page).
 
-<aside class="tip">
-You will (for now) need to run this command each time the Controller is reset. It is safe to run this command multiple times in one session.
-</aside>
+
 
 
 
