@@ -17,7 +17,7 @@ Solo is an [rpm](http://www.rpm.org/) based system. These packages can be manage
 These are the requirements for setting up *Smart* to work with our package repositories.
 
 * First, [install the *Solo CLI*](starting-utils.html).
-* [Connect to the Internet via `solo wifi`](starting-utils.html#connecting-to-solo-and-the-internet). This will be needed to download the package lists.
+* [Connect to the Internet via `solo wifi`](starting-utils.html#connecting-solo-to-the-internet). This will be needed to download the package lists.
 * Run `solo install-smart` to install and download the pacakge repository list.
 
 This command is only needed to be run once. From now on, Solo can download packages when an Internet connection is enabled.
