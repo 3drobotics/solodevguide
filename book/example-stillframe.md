@@ -52,16 +52,12 @@ Next, and every time we make changes to Python, we can sync our code to Solo usi
 <div class="host-code"></div>
 
 ```sh
-rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/stillframe
+solo install-pip
+solo video-acquire
+rsync -avz --exclude="*.pyc" --exclude="env" ./ root@10.1.1.10:/opt/stillframe
 ```
 
-Now SSH into Solo. Split the video feed:
-
-```sh
-solo-utils video-start
-```
-
-Finally, run the following commands to start the server:
+Now SSH into Solo and run the following commands to start the server:
 
 ```sh
 cd /opt/stillframe
