@@ -18,15 +18,9 @@ Video pipeline:
 
 You can use VLC on your computer to view live video as it is being recorded by Solo.
 
-First, we need to create a connection to Solo to enable video output. Either ensure the Solo App is open on your phone, or create a TCP connection from your command line as follows:
+First, we need to tell Solo that we want to enable video output. The easiest way to do so is to connect to Solo via Solo mobile app, which will tell Solo to start streaming video. Leave this open.
 
-<div class="host-code"></div>
-
-```
-nc 10.1.1.1 5502
-```
-
-You can leave this open (there is no need to type into this prompt). Next, create a file `sololink.sdp` with the contents:
+Next, create a file `sololink.sdp` with the contents:
 
 <div class="any-code"></div>
 
@@ -37,7 +31,7 @@ a=rtpmap:96 H264/90000
 t=0 0
 ```
 
-This file describes the RTP stream configuration for Solo's video stream. You can open this file using a video player such as [VLC](http://www.videolan.org/vlc/index.html). 
+This file describes the RTP stream configuration for Solo's video stream. Now, you can open this file using a video player such as [VLC](http://www.videolan.org/vlc/index.html).
 
 <aside class="todo">
 Show a screenshot of this working in VLC.
