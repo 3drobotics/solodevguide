@@ -27,7 +27,7 @@ The libraries that are bundled are defined in the example `requirements.txt` fil
 protobuf==3.0.0a1
 requests==2.5.1
 wheel==0.24.0
-git+https://github.com/dronekit/dronekit-python@v2.0.0-beta1
+dronekit==2.0.0rc1
 ```
 
 Note that we are installing a particular branch of `dronekit-python`.
