@@ -1,10 +1,8 @@
-from droneapi import connect
-from droneapi.lib import VehicleMode
-from pymavlink import mavutil
+from droneapi import connect, VehicleMode
 import time
 
 # Connect to UDP endpoint
-vehicle = connect('udpin:0.0.0.0:14550')
+vehicle = connect('udpin:0.0.0.0:14550', await_params=True)
 
 # Wait for parameters to accumulate.
 time.sleep(5)
