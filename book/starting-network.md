@@ -36,7 +36,9 @@ This will prompt you for Solo's root password. The default SSH root password on 
 Your SSH client will then have direct terminal access to Solo.
 
 <aside class="note">
-If you receive a 'Host Idenfiication' error, you may have previously SSH'd into a different Solo from the same computer you are currently using. You can delete your leftover SSH keys using the following commands:
+If you receive a "Host Idenification" error, you may have previously SSH'd into a different Solo from the same computer you are currently using. You can delete your leftover SSH keys using the following commands:
+
+<div class="host-code"></div>
 
 ```
 ssh-keygen -R 10.1.1.10
