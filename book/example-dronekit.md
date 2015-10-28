@@ -108,7 +108,8 @@ Next, and every time we make changes to Python, we can sync our code to Solo usi
 <div class="host-code"></div>
 
 ```sh
-rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/dkexample
+solo install-pip
+rsync -avz --exclude="*.pyc" --exclude="env" ./ root@10.1.1.10:/opt/dkexample
 ```
 
 Now SSH into Solo. Navigate to the example directory and install packages:

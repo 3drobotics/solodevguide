@@ -49,34 +49,3 @@ ssh-keygen -R 10.1.1.1
 ### Security
 
 Solo's root SSH password is the same for all devices. We recommend not modifying the SSH password. Instead, improve security on your device by [changing the WiFi SSID and password](https://3drobotics.com/kb/setting-wifi-password/) via the app.
-
-
-### Optimizing SSH Access
-
-If you do not want to be prompted for a password each time you SSH into Solo, you can run `solo provision` to copy your SSH public key to Solo (see ["solo" Command Line Tool](starting-utils.html) for more information). By copying your public key to Solo, you will no longer be prompted for your password each time you run `ssh`.
-
-You can optimize this process further by adding the following to your `~/.ssh/config`:
-
-<div class="host-code"></div>
-
-```
-Host solo 10.1.1.10
-    Hostname 10.1.1.10
-    Port 22
-    User root
-    StrictHostKeyChecking no
-    UserKnownHostsFile=/dev/null
-    IdentityFile ~/.ssh/id_rsa
-```
-
-From then on, any Solo device can be accessed by this shorthand:
-
-<div class="host-code"></div>
-
-```
-ssh solo
-```
-
-<aside class="note">
-We will be using the synonymous but explicit address `root@10.1.1.10` throughout this guide.
-</aside>

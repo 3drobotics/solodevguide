@@ -54,13 +54,13 @@ Next, you can move this entire directory over to Solo using *rsync*:
 <div class="host-code"></div>
 
 ```sh
-rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/my_python_code
+solo install-pip
+rsync -avz --exclude="*.pyc" --exclude="env" ./ root@10.1.1.10:/opt/my_python_code
 ```
 
 SSH into Solo and navigate to the newly made directory (above `/opt/my_python_code`). Make sure you have _pip_ and _virtualenv_ installed:
 
 ```
-solo-utils install-pip
 pip install virtualenv
 ```
 
