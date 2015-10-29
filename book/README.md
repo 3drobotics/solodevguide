@@ -22,6 +22,10 @@ Navigate using the sidebar or the "next page" arrows to begin.
 
 ## Changelog
 
+### 2015-10-29
+
+* Guide relicensed as [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
 ### 2015-09-25
 
 * `solo-utils` is removed.
