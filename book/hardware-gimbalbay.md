@@ -5,7 +5,7 @@ The Gimbal Bay is an extensible interface to which any “Made For Solo”-appro
 ## Electrical Interface
 There are two physical connections from the Solo to a gimbal. The Solo Gimbal cable, which primarily manages the position and recording state of the camera, and the HDMI cable which routes the video signal. 
 
-The board side connector can be found on Digikey [here](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082). The mating connector can be found here 
+The board side connector can be found on Digikey [here](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082). The mating connector can be found [here](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369). 
 
 Pin | Description
 --- | ---
