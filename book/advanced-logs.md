@@ -17,7 +17,7 @@ including Python and PyPi to be installed.</aside>
 
 ## Downloading Logs (users)
 
-Solo *users* on Mac OSX and Ubuntu (and many other Linux distributions) should get the logs using the [SCP (Secure Copy Protocol)](#downloading-using-scp-mac-linux) program. This program is installed by default on these operating systems, and can be accessed through the terminal application.
+Solo *users* on Mac OSX and Ubuntu (and many other Linux distributions) should get the logs using the [SCP](#downloading-using-scp-mac-linux) program. This program is installed by default on these operating systems, and can be accessed through the terminal application.
 
 Windows users can instead use [WinSCP](#downloading-using-winscp-windows). This allows you to copy files between Solo and the host computer using a graphical interface. 
 
@@ -27,8 +27,7 @@ A step-by-step guide for both approaches is provided below.
 
 ### Downloading using SCP (Mac/Linux)
 
-SCP is a great end-user tool for downloading the logs because it is available by default 
-from the terminal on Mac OX and many Linux distributions (including Ubuntu 14.04.3 LTS). 
+The SCP (Secure Copy Protocol) program is a great end-user tool for downloading the logs because it is available by default from the terminal on Mac OX and many Linux distributions (including Ubuntu 14.04.3 LTS). 
 
 The main steps for getting the logs are:
 
