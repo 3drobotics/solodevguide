@@ -7,7 +7,7 @@ This guide shows how to bundle Python code locally on your computer and expand i
 
 First create and navigate to a new directory on your host computer. This directory will be populated with your own Python scripts and all their dependencies. The entire directory will then be sent to Solo. 
 
-Start by creating a virtual environment on your host computer:
+Start by creating a virtual environment on your host computer (Linux/Mac OS X):
 
 <div class="host-code"></div>
 
@@ -25,7 +25,20 @@ We want to configure our environment to not compile any C extensions. We can do 
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
 ```
 
-Now you can install Python packages using `pip install`. 
+<aside class="note">
+The commands above are for Linux! Windows has slightly different commands (see the [User guide](http://virtualenv.readthedocs.org/en/latest/userguide.html)) so instead do:
+
+<div class="host-code"></div>
+
+```sh
+pip install virtualenv
+virtualenv env
+env\Scripts\activate.bat
+echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env\Lib\site-packages\distutils.pth
+```
+</aside>
+
+Now you can install Python packages into the new environment using `pip install`. 
 
 <aside class="caution">
 When modules require a C extension, they will fail silently. Test your code!
@@ -49,22 +62,34 @@ pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 
 This installs all the dependencies in `requirements.txt` as Python wheel files, which are source code packages.
 
-Next, you can move this entire directory over to Solo using *rsync*:
+Next, you can move this entire directory (except for *env*) over to Solo. The following command shows how to do this using *rsync*:
+
+<div class="host-code"></div>
+
+```sh
+rsync -avz --exclude="*.pyc" --exclude="env" ./ root@10.1.1.10:/opt/my_python_code
+```
+
+<aside class="tip">
+On Windows, you may prefer to copy the folder using a graphical tool like *WinSCP* ([download here]([WinSCP](https://winscp.net/download/winscp576setup.exe)).
+</aside>
+
+Install _pip_ on Solo (from the host computer):
 
 <div class="host-code"></div>
 
 ```sh
 solo install-pip
-rsync -avz --exclude="*.pyc" --exclude="env" ./ root@10.1.1.10:/opt/my_python_code
 ```
 
-SSH into Solo and navigate to the newly made directory (above `/opt/my_python_code`). Make sure you have _pip_ and _virtualenv_ installed:
+SSH into Solo and install _virtualenv_:
+
 
 ```
 pip install virtualenv
 ```
 
-Finally, run these commands in your Solo code directory:
+Finally, navigate to the newly made code directory (`/opt/my_python_code`) and run these commands:
 
 ```sh
 virtualenv env
