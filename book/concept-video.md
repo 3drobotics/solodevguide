@@ -21,9 +21,7 @@ nc 10.1.1.1 5502
 
 You can leave this open (there is no need to type into this prompt). Then, you can open [sololink.sdp](https://github.com/3drobotics/solodevguide/blob/master/tools/video/sololink.sdp) using VLC. This describes the RTP stream configuration that enables VLC to interpret Solo's video stream.
 
-<aside class="todo">
-Show a screenshot of this working in VLC.
-</aside>
+![](images/vlc-sdp.png)
 
 ## Configuring Solo's Video Output
 
