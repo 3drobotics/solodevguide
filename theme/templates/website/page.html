@@ -59,7 +59,7 @@
 {% endblock %}
 
 {% block javascript %}
-<script src="{{ staticBase }}/app.js"></script>
+<script src="{{ staticBase }}/website/app.js"></script>
 {% for resource in plugins.resources.js %}
     {% if resource.url %}
     <script src="{{ resource.url }}"></script>
