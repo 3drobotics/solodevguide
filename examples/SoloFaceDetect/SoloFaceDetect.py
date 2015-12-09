@@ -7,7 +7,7 @@ from Solo_Camera import SoloCamera
 
 #open HDMI-In as a video capture device
 #BE SURE YOU HAVE RUN `SOLO VIDEO ACQUIRE`
-video_capture = SoloCamera('/home/root/SoloFaceDetect/libsolocam.so')
+video_capture = SoloCamera()
 
 #HDMI-In uses a ring buffer that stops grabbing new frames once full
 #so this allows us to remove excess frames that we aren't using

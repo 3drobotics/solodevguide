@@ -3,13 +3,14 @@ from ctypes import *
 import numpy as np
 import time
 import os
+import inspect
 
-solocam = None
+script_dir =  os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))) # script directory
+solocam = CDLL(script_dir + "/libsolocam.so")
 
 def check(val):
   if val != 0:
     raise OSError("Error in solocam C call (see stderr)")
-
 
 class BUF(Structure):
   _fields_ = [("id", c_int),
@@ -21,9 +22,7 @@ class BUF(Structure):
 BUF_P = POINTER(BUF)
 
 class SoloCamera(object):
-  def __init__(self,lib_location = '/home/root/SoloFaceDetect/libsolocam.so'):
-    global solocam
-    solocam = CDLL(lib_location)
+  def __init__(self):
     os.system("modprobe mxc_v4l2_capture")
     self.ctx = c_void_p()
     check(solocam.solocam_open_hdmi(byref(self.ctx)))
