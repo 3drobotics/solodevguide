@@ -108,6 +108,18 @@ To install `pip` directly on Solo:
 solo install-pip
 ```
 
+## Downloading Logs
+
+To download logs to your host computer:
+
+<div class="host-code"></div>
+
+```
+solo logs download
+```
+
+Logs are downloaded from both solo and the controller, and copied into subdirectories **./drone** and **./controller** (respectively).
+
 
 ## Expanding the Root Partition
 

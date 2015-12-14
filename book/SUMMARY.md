@@ -25,6 +25,7 @@ This is the summary of the solodevguide.
    * [Gimbal Bay](hardware-gimbalbay.md)
 * Advanced Topics
    * [Licenses](advanced-licenses.md)
+   * [System Logs](advanced-logs.md)
    * [Faster Development](advanced-fasterdev.md)
    * [Bundling Python](advanced-python.md)
    * [Yocto Linux](advanced-linux.md)
