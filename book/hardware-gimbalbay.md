@@ -7,16 +7,16 @@ There are two physical connections from the Solo to a gimbal. The Solo Gimbal ca
 
 The board side connector can be found on Digikey [here](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082). The mating connector can be found [here](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369). 
 
-Pin | Description
---- | ---
-1 | VCC Battery
-2 | VCC 5V
-3 | GND (Gimbal)
-4 | GND (USB)
-5 | Gimbal Rx
-6 | Gimbal Tx
-7 | USB D+
-8 | USB D-
+Pin | Description | Color
+--- | --- | ---
+1 | VCC Battery | Red
+2 | VCC 5V | Yellow
+3 | GND (Gimbal) | Black
+4 | GND (USB) | Brown
+5 | Gimbal Rx | White
+6 | Gimbal Tx | Green
+7 | USB D+ | Blue
+8 | USB D- | Violet
 
 ## Hardware spec
 
