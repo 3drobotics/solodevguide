@@ -2,7 +2,7 @@ import cv2
 import sys
 import time
 import threading
-from Solo_Camera import SoloCamera
+from SoloCamera import SoloCamera
 
 
 #open HDMI-In as a video capture device
