@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Solo Webserver Example</title>
+    <style>
+
+html, body { margin: 0; padding: 0; }
+body { padding: 15px 20px; font-family: Helvetica, Arial, sans-serif; }
+pre { font-size: 1.2em; }
+
+    </style>
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/socket.io.min.js"></script>
+    <script>
+
+var socket = io.connect('//' + document.domain + ':' + location.port);
+socket.on('connect', function() {
+  socket.on('location', function (arg) {
+    $('h1').text('Current drone location:')
+    $('pre').text(JSON.stringify(arg, null, '  '));
+  });
+});
+
+    </script>
+  </head>
+  <body>
+    <h1>Waiting for connection...</h1>
+    <pre></pre>
+  </body>
+</html>

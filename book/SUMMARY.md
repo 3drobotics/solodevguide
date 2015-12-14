@@ -16,9 +16,10 @@ This is the summary of the solodevguide.
    * [System Services](concept-service.md)
    * [Video Pipeline](concept-video.md)
 * Software Examples
-   * [Using DroneKit](example-dronekit.md)
+   * [Hello World (from above)!](example-helloworld.md)
+   * [Running a Webserver](example-webserver.md)
+   * [Skywriter Controller](example-skywriter.md)
    * [Using OpenCV](example-opencv.md)
-   * [Service: Stillframe API](example-stillframe.md)
 * Hardware
    * [Accessory Port](hardware-accessorybay.md)
    * [Gimbal Bay](hardware-gimbalbay.md)
