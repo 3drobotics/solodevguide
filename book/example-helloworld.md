@@ -79,6 +79,8 @@ Because we have done the above, we are able to complete the first step in deploy
 
 First we have to package our code into an archive that can be deployed to Solo. First, connect, ensure your computer is connected to the Internet (or if you are connected to Solo, you have run `solo wifi`). Then run the following:
 
+<div class="host-code"></div>
+
 ```
 solo script pack
 ```
@@ -88,6 +90,8 @@ After some processing, this will create an archive called `solo-script.tar.gz` i
 ### `solo script run ...`
 
 Now that we have a script archive, we can run it. Connect to Solo's wifi network. Next, run:
+
+<div class="host-code"></div>
 
 ```
 solo script run helloworld.py

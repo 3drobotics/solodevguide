@@ -10,6 +10,8 @@ This can provide an alternate interface to Solo internals than just the Solo app
 
 To run the server, we're going to use a package called Flask. The requirements we are building into this package are the following:
 
+<div class="any-code"></div>
+
 ```
 Flask>=0.10
 eventlet>=0.17
@@ -21,6 +23,8 @@ This specifies that we want Flask, our webserver, DroneKit to communicate with o
 
 In our file `server.py` we have a lot of content, but we can break it down into a few smaller sections:
 
+<div class="any-code"></div>
+
 ```
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -28,6 +32,8 @@ socketio = SocketIO(app)
 ```
 
 This creates the Flask application.
+
+<div class="any-code"></div>
 
 ```
 @app.route('/')
@@ -42,6 +48,8 @@ See more in [the Flask documentation](flask.pocoo.org) about templates and route
 ### Websockets
 
 Finally, we have a long-lived thread in the `latlog` file which updates us about our vehicle's location. Every half-second, we run the command `socketio.emit` which tells all connected clients over websockets the contents of the packets.
+
+<div class="any-code"></div>
 
 ```
 def latlog(vehicle):
