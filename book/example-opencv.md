@@ -1,5 +1,11 @@
 # Using OpenCV
 
+Detect faces using the onboard camera in Solo.
+
+**NOTE:** To run this example, please `git clone` or download all the files in the [opencv folder](https://github.com/3drobotics/solodevguide/tree/master/examples/opencv) on Github.
+
+## Running a Custom OpenCV example
+
 <aside class="note">
 This example requires you to [install the package](uploading.html#installing-packages) `python-opencv`.
 </aside>

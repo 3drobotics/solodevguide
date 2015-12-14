@@ -4,7 +4,7 @@
 
 This example shows how to install the *latest* version of DroneKit into a virtual environment and run a basic script to retrieve vehicle information including position, speed, battery life, current flight mode etc.
 
-The full source code for the example is [available on Github here](https://github.com/3drobotics/solodevguide/tree/master/examples/dkexample).
+**NOTE:** To run this example, please `git clone` or download all the files in the [helloworld folder](https://github.com/3drobotics/solodevguide/tree/master/examples/helloworld) on Github.
 
 ## Installing DroneKit on Solo
 

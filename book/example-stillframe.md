@@ -1,5 +1,9 @@
 # Capturing Stills and Video
 
+**NOTE:** To run this example, please `git clone` or download all the files in the [stillframe folder](https://github.com/3drobotics/solodevguide/tree/master/examples/stillframe) on Github.
+
+## Description of the server
+
 <aside class="note">
 This example requires you to [install the packages](uploading.html#installing-packages) `gst-plugins-good-jpeg gst-plugins-base-tcp`.
 </aside>

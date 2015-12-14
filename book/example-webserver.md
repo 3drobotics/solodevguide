@@ -4,9 +4,9 @@ Building upon the Hello World! example, let's run a web server from Solo that is
 
 This can provide an alternate interface to Solo internals than just the Solo app. For example, you can create a ground control station written entirely in JavaScript and HTML, or allow a control panel for custom (or even fully autonomous) actions by Solo!
 
-## Running the server
+**NOTE:** To run this example, please `git clone` or download all the files in the [webserver folder](https://github.com/3drobotics/solodevguide/tree/master/examples/webserver) on Github.
 
-**NOTE:** To run this example, please `git clone` or download all the files in the [webserver folder](https://github.com/3drobotics/solodevguide/tree/master/examples/webserver) in this repository.
+## Using Flask
 
 To run the server, we're going to use a package called Flask. The requirements we are building into this package are the following:
 
