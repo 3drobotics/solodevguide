@@ -4,7 +4,6 @@ import time
 import threading
 from SoloCamera import SoloCamera
 
-
 #open HDMI-In as a video capture device
 #BE SURE YOU HAVE RUN `SOLO VIDEO ACQUIRE`
 video_capture = SoloCamera()
@@ -26,7 +25,6 @@ if CLEAR_EXTRA_FRAMES:
 faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 try:
-
     while True:
         start = time.time()
         # Capture a grayscale image

@@ -1,4 +1,4 @@
-# Stillframe Photo API
+# Capturing Stills and Video
 
 <aside class="note">
 This example requires you to [install the packages](uploading.html#installing-packages) `gst-plugins-good-jpeg gst-plugins-base-tcp`.

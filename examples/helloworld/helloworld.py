@@ -2,7 +2,7 @@ from dronekit import connect, VehicleMode
 import time
 import sys
 
-# Connect to UDP endpoint
+# Connect to UDP endpoint (and wait for default attributes to accumulate)
 target = sys.argv[1] if len(sys.argv) >= 2 else 'udpin:0.0.0.0:14550'
 print 'Connecting to ' + target + '...'
 vehicle = connect(target, wait_ready=True)
