@@ -115,3 +115,85 @@ aside.todo, aside.caution, aside.note, aside.tip {
     text-decoration: underline;
   }
 }
+
+#solo-header-links { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    z-index: 100;
+}
+
+@media (max-width: 800px) {
+    #solo-header-links { 
+        display: none;
+    }
+}
+
+#solo-header-links a {
+    color: white;
+    display: block;
+    float: right;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    width: 120px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#solo-header-links a:hover {
+    color: #74D800;
+}
+
+pre {
+    border-left: 30px solid #74D800 !important;
+    border-radius: 0px !important;
+    position: relative;
+    overflow: visible !important;
+}
+
+pre::before {
+    background-image: url(../images/solo-outline.png) !important;
+    background-size: 22px !important;
+    background-repeat: no-repeat;
+    background-position: center 8px;
+    position: absolute;
+    width: 30px;
+    top: 0px;
+    left: -30px;
+    z-index: 100;
+    content: " ";
+}
+
+.host-code {
+    overflow: hidden;
+    height: 0;
+}
+
+.host-code + pre {
+    border-left: 30px solid #bbb !important;
+}
+
+.host-code + pre::before {
+    background-image: none !important;
+    content: "\f109";
+    font-family: "FontAwesome";
+    font-size: 20px;
+    position: absolute;
+    width: 31px;
+    text-align: center;
+    top: 0px;
+    left: -30px;
+    color: black;
+    z-index: 100;
+}
+
+.any-code + pre {
+    border-left: 0px !important;
+    border-radius: 0px !important;
+}
+
+.any-code + pre::before {
+    display: none !important;
+}

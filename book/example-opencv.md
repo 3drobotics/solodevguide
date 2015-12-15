@@ -1,14 +1,22 @@
 # Using OpenCV
 
+Detect faces using the onboard camera in Solo.
+
+**NOTE:** To run this example, please `git clone` or download all the files in the [opencv folder](https://github.com/3drobotics/solodevguide/tree/master/examples/opencv) on Github.
+
+## Running a Custom OpenCV example
+
 <aside class="note">
 This example requires you to [install the package](uploading.html#installing-packages) `python-opencv`.
 </aside>
 
 <aside class="note">
-To run this example, run `solo-utils video-start` first to get camera access.
+To run this example, run `solo video acquire` first to get camera access.
 </aside>
 
 This example demonstrates connecting to a camera, capturing a frame, calculating the average color mean, and then displays it to the terminal in a loop. Try playing around with various colored objects to see the recognition happen in realtime.
+
+<div class="any-code"></div>
 
 ```py
 from __future__ import print_function

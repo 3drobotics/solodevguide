@@ -1,22 +1,9 @@
 # Contributing
 
-Hi! Thanks for your interest in contributing to #solodevguide
-
-If you would like to add new content, please consider these guidelines:
-
-1. If you think your addition is a core part of the development experience, please add content to README.md. (This is easiest for us to consider and edit.)
-1. If you have a long tutorial that is not part of the core development experience (let's say, a comprehensive guide on how to tune MAVProxy for running in an embedded platform) a separate `.md` file in the repository is fine.
-
-<aside class="note">
-Do not edit the Table of Contents, it is auto-generated. Add linked items under a separate `##` header in README.md and link to the content in a short sentence.
-</aside>
-
-Most importantly, don't overthink where your content should go. We're still in the development phase and we will steward all new contributions to where they should be.
-
-Ping @tcr3dr on an issue with any questions.
+Hi! Thanks for your interest in contributing to #solodevguide. Please submit a PR with any changes, additions, or new information you would like to add. Ping @tcr3dr on an issue with any questions.
 
 ## Style Guide
 
 * Tool names should be in italics. (in Markdown, use asterisks.) Example: Use *rsync* to transfer files to Solo.
-* Paths should be in code. (in Markdown, use backticks.) Example: Navigate to `/opt/solo-utils`.
+* Paths should be in code. (in Markdown, use backticks.) Example: Navigate to `/etc/solo-services`.
 * Ports should be bare. Example: The server will be launched on port 5000.

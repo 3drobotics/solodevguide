@@ -1,11 +1,15 @@
-# Stillframe Photo API
+# Capturing Stills and Video
+
+**NOTE:** To run this example, please `git clone` or download all the files in the [stillframe folder](https://github.com/3drobotics/solodevguide/tree/master/examples/stillframe) on Github.
+
+## Description of the server
 
 <aside class="note">
 This example requires you to [install the packages](uploading.html#installing-packages) `gst-plugins-good-jpeg gst-plugins-base-tcp`.
 </aside>
 
 <aside class="note">
-To run this example, run `solo-utils video-start` first to get camera access.
+To run this example, run `solo video acquire` first to get camera access.
 </aside>
 
 This example provides a RESTful API on port `8080` that can be accessed from Solo. When the HTTP endpoint is hit, it uses `gstreamer` to grab a frame from the video feed and provide it as a response. We also include an example app that allows you to grab a frame in your web browser.
@@ -30,12 +34,16 @@ Clone the [solodevguide](https://github.com/3drobotics/solodevguide) repository 
 
 In this folder, prepare your environment by running:
 
+<div class="host-code"></div>
+
 ```sh
 virtualenv env
 echo 'import sys; import distutils.core; s = distutils.core.setup; distutils.core.setup = (lambda s: (lambda **kwargs: (kwargs.__setitem__("ext_modules", []), s(**kwargs))))(s)' > env/lib/python2.7/site-packages/distutils.pth
 ```
 
 Install the Python dependencies locally, and then package them for Solo:
+
+<div class="host-code"></div>
 
 ```sh
 source ./env/bin/activate
@@ -45,17 +53,15 @@ pip wheel -r ./requirements.txt --build-option="--plat-name=py27"
 
 Next, and every time we make changes to Python, we can sync our code to Solo using *rsync*:
 
-```sh
-rsync -avz --exclude="*.pyc" --exclude="env" ./ solo:/opt/stillframe
-```
-
-Now SSH into Solo. Split the video feed:
+<div class="host-code"></div>
 
 ```sh
-solo-utils video-start
+solo install-pip
+solo video-acquire
+rsync -avz --exclude="*.pyc" --exclude="env" ./ root@10.1.1.10:/opt/stillframe
 ```
 
-Finally, run the following commands to start the server:
+Now SSH into Solo and run the following commands to start the server:
 
 ```sh
 cd /opt/stillframe

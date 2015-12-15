@@ -4,6 +4,8 @@
 
 *[rsync](https://en.wikipedia.org/wiki/Rsync)* is the preferred tool for synchronizing code and files between your desktop and Solo. To copy a file from the local filesystem to Solo:
 
+<div class="host-code"></div>
+
 ```sh
 rsync -avz local/file/path/. root@10.1.1.10:/solo/path/. 
 ```
@@ -12,29 +14,21 @@ rsync -avz local/file/path/. root@10.1.1.10:/solo/path/.
 
 Solo is an [rpm](http://www.rpm.org/) based system. These packages can be managed by the [Smart Package Manager](http://labix.org/smart/) (*Smart*), already installed on your Solo.
 
-First, [install the *solo-utils* tool](utils.html). This allows us to access the Internet, and also configures *Smart* to use the Solo package repository.
+These are the requirements for setting up *Smart* to work with our package repositories.
 
-From your shell, run the following commands:
+* First, [install the *Solo CLI*](starting-utils.html).
+* [Connect to the Internet via `solo wifi`](starting-utils.html#connecting-solo-to-the-internet). This will be needed to download the package lists.
+* Run `solo install-smart` to install and download the pacakge repository list.
 
-```sh
-solo-utils tunnel-start
-smart update
-```
+This command is only needed to be run once. From now on, Solo can download packages when an Internet connection is enabled.
 
-The first command tunnels an Internet connection to Solo through your computer. (Linux and OS X only.) The second command updates the package repository list from the server.
+When logged into Solo's terminal, you can explore some of the features of *Smart*:
 
-You can then now `smart search` and `smart install <packagename>` to install packages. You will see examples used throughout this guide.
+* `smart install <packagename>` will download and install a package from the repository.
+* `smart search <text>` will search for packages matching a given string.
 
-These packages are pre-compiled and provided by 3DR for your use. To compile other packages may require rebuilding the Yocto Linux distribution.
+You will see these commands used throughout this guide. These packages are pre-compiled and provided by 3DR for your use. To compile other packages may require [rebuilding via our Yocto Linux distribution](advanced-linux.html).
 
-<aside class="note">
-If you want to restore your package manager state to its initial state, run the following commands:
-
-```sh
-yes | smart channel --remove-all
-yes | smart channel --add rpmsys type=rpm-sys name='RPM Database'
-```
-</aside>
 
 ## Working with Python
 
@@ -48,7 +42,8 @@ Some Python libraries are "binary" dependencies. Solo does not ship a compiler (
 Provide ways of compiling code directly for Solo in the "Advanced Topics" section.
 </aside>
 
-### Installing using Solo's package manager
+
+### Installing Python packages using *Smart*
 
 Some Python libraries are provided by Solo's internal package manager. For example, `opencv` can be installed via *Smart*, which provides its own Python library. After running:
 
@@ -71,13 +66,15 @@ You can install code directly from *pip* on Solo.
 Using _pip_ on Solo installs package globally by default. Read the section below about _[virtualenv](#installing-packages-into-a-virtualenv)_ to create isolated environments of packages.
 </aside>
 
-Having installed the *solo-utils* utility, run:
+Having installed *Solo CLI* on your PC, you can initialize `pip` to work on Solo by running:
+
+<div class="host-code"></div>
 
 ```sh
-solo-utils install-pip
+solo install-pip
 ```
 
-This will install and update *pip* to the latest version. You can then install any packages you like:
+This will install and update *pip* to the latest version. After SSHing into Solo, you can then install packages directly:
 
 ```sh
 pip install requests

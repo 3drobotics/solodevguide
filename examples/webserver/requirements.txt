@@ -1,0 +1,4 @@
+Flask>=0.10
+eventlet>=0.17
+Flask-SocketIO>=1.0
+dronekit>=2.0.0,<=2.99999

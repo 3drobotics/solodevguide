@@ -1,4 +1,4 @@
-# 3DR Developer Guide
+# Solo Developer Guide
 
 This guide is published online at: http://dev.3dr.com/
 
@@ -29,4 +29,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to submit to this 
 
 ## License
 
-Don't publish or copy information from this repository. Yet.
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

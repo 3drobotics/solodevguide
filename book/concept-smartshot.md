@@ -6,7 +6,7 @@ The Smart Shot framework builds upon DroneKit, and adds support to pause and res
 
 The most important functions in the `solo.smartshot` are:
 
-* *Handling RC input.* Remapping the control sticks to performe alternate functions. For example, this is used in Cable Cam to allow the right stick to control Solo's position along the virtual cable instead of its position relative to earth.
+* *Handling RC input.* Remapping the control sticks to perform alternate functions. For example, this is used in Cable Cam to allow the right stick to control Solo's position along the virtual cable instead of its position relative to earth.
 * *Buttons.* A and B can be mapped to provide shortcuts like setting fixed waypoints or recording a position.
 * *Resume from brake.* When the pause button is pressed, the drone goes into BRAKE mode and the flight state is lost. This function is called after five seconds to restore the flight mode state and prepare the shot to continue once the user resumes controlling Solo.
 

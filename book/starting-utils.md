@@ -1,97 +1,147 @@
-# Installing "solo-utils"
+# "solo" Command Line Tool
 
-There are several scripts that we will be using throughout this tutorial that are packaged as a folder of shell scripts.
+The *Solo CLI* tool performs several tasks that are essential for development on Solo. These include:
 
-* Enables direct Internet access from Solo through the host (required to install packages on Solo).
-* Resizing the root partition.
-* Installing `runit` to manage start processes.
-* Providing access to the video stream.
+* Enabling simultaneous WiFi access to Solo and the Internet
+* Resizing the root partition
+* Installing `runit`, `pip`, and `smart` packages
+* Providing access to the video stream
+* Updating the firmware on Solo and the Controller
+* Downloading logs
 
-All of these can be performed using the `solo-utils` command.
 
-<aside class="note">
-To install *solo-utils*, you must be connected to the Internet and Solo simultaneously.</aside>
+## Installing *Solo CLI*
 
-To install, run this command on your *host* computer (you must be running OS X or Linux):
+*Solo CLI* is a command line application you install to your PC. This application can control Solo and the Controller when connected to their WiFi network. You will need *Python* and *pip* installed in order to run this utility.
+
+First connect to a WiFi network with Internet access. Run this command on your PC:
+
+<div class="host-code"></div>
 
 ```sh
-curl -fsSL -H "Accept: application/vnd.github.raw" https://bc0a42b65800ec0dd4c9127dde0cd6e98eb70012:x-oauth-basic@api.github.com/repos/3drobotics/solodevguide/contents/tools/install-solo-utils.sh | sh
+pip install -UI git+https://github.com/3drobotics/solo-cli
 ```
 
-This command needs to be run only once, though you can run it again in case of failure or wanting to update your utils. A successful install will resemble the following output:
+<aside class="note">
+On OS X and Linux, you may need to run the command as root, i.e. `sudo -H pip install -UI git+https://github.com/3drobotics/solo-cli`.
+</aside>
+
+Once installed, you should be able to run `solo` from your command line to see the list of available options. For example:
+
+<div class="host-code"></div>
+
+```sh
+$ solo
+Usage:
+  solo info
+  solo wifi --name=<n> --password=<p>
+  solo update (solo|controller|both) (latest|<version>)
+  solo revert (solo|controller|both) (latest|current|factory|<version>)
+  solo provision
+  solo resize
+  solo logs (download)
+  solo install-pip
+  solo install-smart
+  solo install-runit
+  solo video (acquire|restore)
+```
+
+Specific information about what these commands do is given in the following sections and on the [*Solo CLI* README](https://github.com/3drobotics/solo-cli).
+
+
+## Connecting Solo to the Internet
+
+The `solo wifi` command connects your Controller to your home WiFi network. Solo uses this connection (via the Controller network) to access the Internet during development and to [download and install packages](starting-installing.html#installing-packages).
+
+<aside class="tip">The development PC still needs to connect to the Controller's WiFi network and access Solo and the Controller using their dedicated IP addresses (`10.1.1.1` and `10.1.1.10`).
+
+The Controller provides Internet access to the connected PC. This is useful if the PC normally uses Wifi to connect to your home network.
+</aside>
+
+The steps for using the command are:
+
+* [Connect your PC to the Controller's WiFi network](starting-network.html).
+* Run the following command from your PC's command line:
+  <div class="host-code"></div>
+
+  ```sh
+  solo wifi --name=<ssid> --password=<password>
+  ```
+  The SSID and password should be those of a local WiFi network, i.e. that of your home or your office.
+  <aside class="tip">
+  You will (for now) need to run this command each time the Controller is reset. It is safe to run this command multiple times in one session.
+  </aside>
+* You may need to disconnect and reconnect your PC to Solo's WiFi network in order enable Internet access (you can verify the PC connection by opening up a web browser and accessing any web page).
+
+
+## Installation
+
+This section demonstrates how to install various development tools using *Solo CLI*. You must first connect to the Internet, as shown in the previous section.
+
+### Install *smart* repositories
+
+*smart* is the Solo package manager (see the [Installing Packages section](starting-installing.html#installing-packages) for more information). To install the list of repositories needed by *smart*, run:
+
+<div class="host-code"></div>
 
 ```
-checking for sshuttle....
-checking for solo-utils...
-checking rpms...
-checking for sv...
-checking for parted...
-checking for resize2fs...
-checking for resize2fs...
-checking for resize2fs...
-checking for mkfs.ext3...
-checking for lsof...
-done. solo-utils is installed and up to date.
-```
+solo install-smart
+``` 
 
-<!--
-Clone this guide:
-
-```
-git clone https://github.com/3drobotics/solodevguide
-```
-
-You can install the tools from here:
-
-```
-./solodevguide/tools/install.sh
-```
--->
-
-## Configure Tools
+### Install runit
 
 To add the *runit* script daemon (used to create new services):
 
+<div class="host-code"></div>
+
 ```
-solo-utils install-runit
+solo install-runit
 ```
+
+### Install pip
 
 To install `pip` directly on Solo:
 
-```
-solo-utils install-pip
-```
-
-## Connecting to the Internet
-
-<aside class="note">
-If you are on OS X, you must first [enable remote sharing](https://support.apple.com/kb/PH13759?locale=en_US). If you are on Windows, you will need to install an SSH server.
-</aside>
-
-Follow the prompts on first initialization to create a reverse SSH tunnel to your host computer, enabling direct Internet access from Solo:
+<div class="host-code"></div>
 
 ```
-solo-utils tunnel-start
+solo install-pip
 ```
 
-You can disable this tunnel by restarting Solo or running:
+## Downloading Logs
+
+To download logs to your host computer:
+
+<div class="host-code"></div>
 
 ```
-solo-utils tunnel-stop
+solo logs download
 ```
 
-<aside class="tip">
-Enabling the tunnel is a prerequisite for [installing software packages](uploading.html#installing-packages) on Solo using *smart*.
-</aside>
-
+Logs are downloaded from both solo and the controller, and copied into subdirectories **./drone** and **./controller** (respectively).
 
 
 ## Expanding the Root Partition
 
-To expand the root partition from 90Mb to 250Mb, you will delete and recreate your `/log` directory. Ensure you have any important data backed up. Then run:
+Solo splits its available space between a "root" partition for code and a "logs" partition. In production, the root partition on Solo is fairly small in order to maximize the space available for logs. When installing many packages or code samples, you can quickly reach the limits of space on this partition.
+
+You can use the `solo resize` option to expand the root partition from its default of 90Mb to ~600Mb.
+
+<aside class="tip">
+Resizing the partition will delete and recreate your `/log` directory. Ensure you have any important data backed up first! 
+</aside>
+
+To expand the root partition run:
+
+<div class="host-code"></div>
 
 ```
-solo-utils resize-fs
+solo resize
 ```
 
-You will have to physically reboot (power cycle) your drone after the script is complete.
+You may have to physically reboot (power cycle) your drone after the script is complete.
+
+<aside class="warning">
+Resizing the partition may occasionally fail ([bug #5](https://github.com/3drobotics/solo-cli/issues/5)). You can see this by running `df -h` on Solo and seeing if the root partition is resized, or if there is no longer a `/log` partition. The solution is simply to re-run `solo resize`. 
+</aside>
+
