@@ -34,9 +34,10 @@ Once installed, you should be able to run `solo` from your command line to see t
 $ solo
 Usage:
   solo info
-  solo wifi --name=<n> --password=<p>
-  solo update (solo|controller|both) (latest|<version>)
-  solo revert (solo|controller|both) (latest|current|factory|<version>)
+  solo wifi --name=<n> [--password=<p>]
+  solo flash (drone|controller|both) (latest|current|factory|<version>) [--clean]
+  solo flash --list
+  solo flash pixhawk <filename>
   solo provision
   solo resize
   solo logs (download)
@@ -44,6 +45,7 @@ Usage:
   solo install-smart
   solo install-runit
   solo video (acquire|restore)
+  solo script [<arg>...]  
 ```
 
 Specific information about what these commands do is given in the following sections and on the [*Solo CLI* README](https://github.com/3drobotics/solo-cli).
@@ -107,6 +109,35 @@ To install `pip` directly on Solo:
 ```
 solo install-pip
 ```
+
+## Deploying/running DroneKit scripts on Solo
+
+Use the ``solo script pack`` command to package a folder containing DroneKit-Python scripts 
+and any dependencies into an archive for deployment to Solo.  
+The host computer must be connected to the Internet, and the folder must contain a 
+**requirements.txt** file listing 
+the (PyPi) dependencies:
+
+<div class="host-code"></div>
+
+```
+solo script pack
+```
+
+If successful, the command will create an archive in the `solo-script.tar.gz` in the current directory.
+
+Deploy this archive to Solo and run a specified script using the ``solo script run <scripname>`` command. 
+The host computer must be connected to the Solo wifi network, and Solo must also be connected to the 
+Internet.
+
+For example, to deploy and run the [helloworld example](example-helloworld.html):
+
+<div class="host-code"></div>
+
+```
+solo script run helloworld.py
+```
+
 
 ## Downloading Logs
 

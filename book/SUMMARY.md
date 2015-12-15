@@ -12,10 +12,12 @@ This is the summary of the solodevguide.
    * [External Resources](starting-resources.md)
 * Concepts
    * [Architectural Overview](concept-architecture.md)
+   * [DroneKit](concept-dronekit.md)
    * [Smart Shots](concept-smartshot.md)
    * [System Services](concept-service.md)
    * [Video Pipeline](concept-video.md)
 * Software Examples
+   * [Running the Examples](example-get-started.md)
    * [Hello World (from above)!](example-helloworld.md)
    * [Running a Webserver](example-webserver.md)
    * [Skywriter Controller](example-skywriter.md)
