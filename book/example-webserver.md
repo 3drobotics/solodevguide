@@ -43,7 +43,7 @@ def index():
 
 This creates an "endpoint" at the path "/". That means when you navigate to http://10.1.1.10:5000/ on your web broswer, it will return the contents of this function to the web browser. Here, we run the function `render_template`, which looks at the file in `templates/index.html` and renders it to the browser.
 
-See more in [the Flask documentation](flask.pocoo.org) about templates and route endpoints.
+See more in [the Flask documentation](http://flask.pocoo.org/) about templates and route endpoints.
 
 ### Websockets
 
