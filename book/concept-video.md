@@ -33,9 +33,7 @@ t=0 0
 
 This file describes the RTP stream configuration for Solo's video stream. Now, you can open this file using a video player such as [VLC](http://www.videolan.org/vlc/index.html).
 
-<aside class="todo">
-Show a screenshot of this working in VLC.
-</aside>
+![](images/vlc-sdp.png)
 
 
 ## Using Solo's Video Programmatically
