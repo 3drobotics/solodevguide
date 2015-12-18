@@ -1,5 +1,4 @@
-from dronekit import connect, VehicleMode
-import time
+from dronekit import connect
 import sys
 
 # Connect to UDP endpoint (and wait for default attributes to accumulate)
@@ -22,5 +21,6 @@ print " Airspeed: %s" % vehicle.airspeed
 print " Mode: %s" % vehicle.mode.name
 print " Is Armable?: %s" % vehicle.is_armable
 print " Armed: %s" % vehicle.armed
-print ""
+
+vehicle.close()
 print "Done."

@@ -1,9 +1,12 @@
-# Bundling Python
+# Advanced Python Bundling
 
-This guide shows how to bundle Python code locally on your computer and expand it in a virtual environment ([virtualenv](starting-installing.html#installing-packages-into-a-virtualenv)) on Solo. This approach has two benefits:
+The best way to deploy and run Python code on your Solo is to use the *Solo CLI*, as [described here](concept-dronekit.html#deploying-scripts-to-solo).
+This approach uses just two simple commands to package your scripts and their dependencies, uploading the package to Solo, and running the file.
 
-1. No Internet connection or reliance on package management on Solo is needed.
-2. Packages are installed in a virtual environment, so they don't collide with the global Solo namespace.
+This guide shows the method that was used prior to introduction of *Solo CLI* packaging. It may be of interest/use to some Solo developers.
+
+
+## Manual bundling
 
 First create and navigate to a new directory on your host computer. This directory will be populated with your own Python scripts and all their dependencies. The entire directory will then be sent to Solo. 
 
