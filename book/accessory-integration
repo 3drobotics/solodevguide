@@ -1,0 +1,6 @@
+This page will be an overview on how to develop Solo accessories. The main components of integration are:
+
+1. Mount and connect to Solo Payload bay
+2. Get discovered by Sololink
+3. Create driver and UI
+4. Enable support path
