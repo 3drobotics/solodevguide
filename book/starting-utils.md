@@ -23,7 +23,20 @@ pip install -UI git+https://github.com/3drobotics/solo-cli
 ```
 
 <aside class="note">
-On OS X and Linux, you may need to run the command as root, i.e. `sudo -H pip install -UI git+https://github.com/3drobotics/solo-cli`.
+On OS X and Linux, you may need to run the command as root 
+(i.e. use `sudo pip install -UI git+https://github.com/3drobotics/solo-cli`).
+
+Alternatively, the command below can also be used to uninstall the 
+client and update to the latest version:
+
+<div class="host-code"></div>
+
+```sh
+sudo pip uninstall soloutils || true
+sudo pip uninstall solo-cli -y || true
+sudo pip install https://github.com/3drobotics/solo-cli/archive/master.zip --no-cache-dir
+```
+
 </aside>
 
 Once installed, you should be able to run `solo` from your command line to see the list of available options. For example:
