@@ -86,15 +86,54 @@ We also recommend that you install _git_, as this will be needed to get many of 
 smart install git
 ```
 
-### Installing packages into a _virtualenv_
+### Installing packages using the Solo client
 
-This section shows how to install and run packages in an isolated Python environment using  [virtualenv](https://virtualenv.pypa.io/en/latest/).
+The recommended way of working with Python and DroneKit-Python is to use the
+[Solo CLI](starting-utils.html#deployingrunning-dronekit-scripts-on-solo) 
+to package and run the script in a virtual environment.
 
 <aside class="note">
-Solo uses many globally installed packages that may be out of date (in particular, [DroneKit](example-dronekit.html)). Using _virtualenv_ means that you don't need to update the global versions; potentially disturbing native Solo code.
+Solo uses many globally installed packages that may be out of date (in particular, [DroneKit](example-dronekit.html)). Using an isolated environment means that you don't need to update the global versions; potentially disturbing native Solo code.
 </aside>
 
-First install _virtualenv_ on Solo using _pip_:
+The CLI takes care of packaging all the scripts in a folder:
+
+<div class="host-code"></div>
+
+```
+solo script pack
+```
+
+The command also packages any dependencies listed in the folder's **requirements.txt** file. A minimal
+**requirements.txt** for a dronekit app will look like this:
+
+<div class="any-code"></div>
+
+```
+dronekit>=2.0.0
+```
+
+You can then transfer the package to Solo, install it, and run it using the command:
+
+<div class="host-code"></div>
+
+```
+solo script run yourscriptname.py
+```
+
+For more information and examples see [DroneKit:Deploying scripts to Solo](concept-dronekit.html#deploying-scripts-to-solo), [Solo CLI:Deploying and Running DroneKit Scripts on Solo](starting-utils.html#deployingrunning-dronekit-scripts-on-solo) 
+and [Example:Hello World](example-helloworld.html).
+
+
+
+
+### Installing packages into a _virtualenv_
+
+The [solo client](#installing-packages-using-the-solo-client) is the easiest way to bundle and run
+a Python app into a virtual environment. It is however possible to manually perform the same tasks
+using [virtualenv](https://virtualenv.pypa.io/en/latest/).
+
+On Linux and Mac OS X, first install _virtualenv_ on Solo using _pip_:
 
 ```sh
 pip install virtualenv
@@ -114,16 +153,14 @@ source ./env/bin/activate
 
 You will notice your shell prompt changes to read `(env)root@3dr_solo:`, indicating that you are working in a _virtualenv_.
 
-Now all commands you run from your shell, including launching scripts and installing packages, will only effect this local environment. For example, you can now install a different version of *droneapi* without impacting the global version:
+Now all commands you run from your shell, including launching scripts and installing packages, will only effect this local environment. For example, you can now install a different version of *dronekit* without impacting the global version:
 
 ```sh
-pip install droneapi
+pip install dronekit
 ```
 
+The instructions for Windows are similar. The advanced topic [Python bundles](advanced-python.html) shows this process in more detail.
 
-<aside class="note">
-The advanced topic [Python bundles](advanced-python.html) shows how to bundle Python code locally on your computer and expand it in a virtual environment (*virtualenv*) on Solo. 
-</aside>
 
 <aside class="note">
 The *Smart Package Manager* is written in Python. While you are working in a *virtualenv*, you will notice that *Smart* no longer works! Run `deactivate` at any time to leave the environment.
