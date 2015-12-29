@@ -6,7 +6,7 @@ Accessory developers can attach hardware using the holes provided and connect to
 
 ## Mechanical
 
-The accessory area is roughly 7.6 cm wide x 13.3 cm long x 10.2 cm deep. 
+The accessory area is roughly 7.6 cm wide x 13.3 cm long x 10.2 cm deep.
 
 Maximum payload of the system is 700g, the 3DR Gimbal + GoPro weigh approximately 390g, leaving 310g for accessories that are meant to be used with the 3DR Gimbal.
 
@@ -32,15 +32,15 @@ The mating connector part number is [JAE SJ038252](https://jae-connectors.com/en
 The pinout of the *Accessory Port* is:
 
 Pin | Name | Description
---- | --- | --- 
+--- | --- | ---
 1. | USB D- | Negative differential data signal to iMX6 OTG USB port.
 2. | USB D+ | Positive differential data signal to iMX6 OTG USB port.
-3. | N/C | 
-4. | N/C | 
-5. | N/C |  
-6. | N/C | 
-7. | N/C |  
-8. | N/C |  
+3. | N/C |
+4. | N/C |
+5. | N/C |
+6. | N/C |
+7. | N/C |
+8. | N/C |
 9. | SER5 TX (DEBUG) | UART5 TX output from Pixhawk&trade; 2.
 10. | SER2RT | UART2 RTS output from Pixhawk&trade; 2 for flow control. Connect to device's CTS pin.
 11. | SER2Tx | UART3 RX signal to Pixhawk&trade; 2. Connect to device's TX pin. Voltage is 3.3V.
@@ -48,14 +48,14 @@ Pin | Name | Description
 13. | CANL1 | CAN bus low to the Pixhawk&trade; 2.
 14. | GND | Ground reference on Solo system.
 15. | BATT | 12V to 16.8V. Maximum combined current off bus (pins 15 and 30) is 1.1A (fuse: 1812L110/24DR). Maximum combined power 18.5W.
-16. | USB GND |  
+16. | USB GND |
 17. | +5V | 4.75V to 5.4V voltage pin for USB device. Maximum combined current off bus (pins 17 and 19) is 1.05A (fuse: ST890DTR). Maximum combined power 5.7W.
-18. | N/C |  
+18. | N/C |
 19. | +5V | 4.75V to 5.4V voltage pin for USB device. Maximum combined current off bus (pins 17 and 19) is 1.05A (fuse: ST890DTR). Maximum combined power 5.7W.
-20. | N/C |  
+20. | N/C |
 21. | GND | Ground reference on Solo system.
-22. | N/C |  
-23. | BUS ID |  
+22. | N/C |
+23. | BUS ID |
 24. | SER5 RX (DEBUG) | UART5 RX input to Pixhawk&trade; 2.
 25. | SER2CT | UART2 CTS input to Pixhawk&trade; 2 for flow control. Connect to device's RTS pin.
 26. | SER2Rx | UART3 TX signal from Pixhawk&trade; 2. Connect to device RX pin. Voltage is 3.3V.
@@ -84,7 +84,6 @@ The VCC 5V supply is also used as the backup supply for the Pixhawk&trade;. Atte
 *VCC Battery* can be used as a high-power supply for accessory hardware. The combined total current for both *VCC Battery* pins is limited to 1.1A (fuse: 1812L110/24DR) and the maximum power 18.5W.
 
 
-
 ### Accessory Breakout Board
 
 An open source reference design for a breakout board can be found [here](https://github.com/3drobotics/Pixhawk_OS_Hardware/tree/master/Accessory_Breakout_X1).
@@ -94,11 +93,25 @@ The breakout board plugs into the accessory port. The exposed side of the board 
 ![Accessory Breakout Board PCB (from below)](images/accessory_breakout_board_pcb_below.jpg)
 
 
+### Peripheral Mapping
+
+The accessory port breaks out a subset of the available peripherals of the Pixhawk2 and iMX. Here is the mapping between the different naming schemes of peripherals available on Solo.
+
+| HAL         | System       | ArduCopter Parameter  | Pixhawk2 | Solo Peripheral |
+|-------------|--------------|-----------------------|----------|-----------------|
+| px4io/sbus? | /dev/ttyS0   |                       |          |                 |
+| uartA       | /dev/ttyACM0 |                       | USB      |                 |
+| uartB       | /dev/ttyS3   | SERIAL3               | GPS      | Internal GPS    |
+| uartC       | /dev/ttyS1   | SERIAL1               | Telem1   |                 |
+| uartD       | /dev/ttyS2   | SERIAL2               | Telem2   | Acc. Port       |
+| uartE       | /dev/ttyS6   | SERIAL4               | Serial4  | Gimbal          |
+| nsh console | /dev/ttyS5   |                       | Serial5  | Acc. Port       |
+
 
 
 ## Communication Architecture
 
-The main communication channels between the Accessory Bay, Pixhawk&trade; and Companion Computer are shown below. Note that only USB is available for developer communication with Solo (the CAN and Serial/MAVLink channel is shown dashed for this reason). 
+The main communication channels between the Accessory Bay, Pixhawk&trade; and Companion Computer are shown below. Note that only USB is available for developer communication with Solo (the CAN and Serial/MAVLink channel is shown dashed for this reason).
 
 ![Accessory Bay System Architecture](images/solo_accessory_bay_system_diagram.png)
 
@@ -132,7 +145,7 @@ Use the <strong>/dev/serial/by-id/</strong> paths to access USB serial devices o
 
 ### USB Connection Speed
 
-The USB routing on the mainboard does not meet the spec for USB “High Speed” (480Mbit/s), so the maximum in-spec speed is “Full Speed" (12Mbit/s). In practice most high speed devices should work. 
+The USB routing on the mainboard does not meet the spec for USB “High Speed” (480Mbit/s), so the maximum in-spec speed is “Full Speed" (12Mbit/s). In practice most high speed devices should work.
 
 The actual throughput will depend on the device being used.
 
