@@ -48,7 +48,7 @@ The accessory port breaks out a subset of the available peripherals of the Pixha
 
 | HAL         | System       | ArduCopter Parameter  | Pixhawk2 | Solo Peripheral |
 |-------------|--------------|-----------------------|----------|-----------------|
-| px4io/sbus? | /dev/ttyS0   |                       |          |                 |
+| px4io/sbus  | /dev/ttyS0   |                       |          |                 |
 | uartA       | /dev/ttyACM0 |                       | USB      |                 |
 | uartB       | /dev/ttyS3   | SERIAL3               | GPS      | Internal GPS    |
 | uartC       | /dev/ttyS1   | SERIAL1               | Telem1   |                 |
