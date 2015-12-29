@@ -42,6 +42,20 @@ CAN - Uses the [UAVCAN](http://uavcan.org/UAVCAN) protocol and interfaces direct
 
 USB - USB Host device to the iMX6 co-processor.
 
+## Peripheral Mapping
+
+The accessory port breaks out a subset of the available peripherals of the Pixhawk2 and iMX. Here is the mapping between the different naming schemes of peripherals available on Solo. 
+
+| HAL         | System       | ArduCopter Parameter  | Pixhawk2 | Solo Peripheral |
+|-------------|--------------|-----------------------|----------|-----------------|
+| px4io/sbus? | /dev/ttyS0   |                       |          |                 |
+| uartA       | /dev/ttyACM0 |                       | USB      |                 |
+| uartB       | /dev/ttyS3   | SERIAL3               | GPS      | Internal GPS    |
+| uartC       | /dev/ttyS1   | SERIAL1               | Telem1   |                 |
+| uartD       | /dev/ttyS2   | SERIAL2               | Telem2   | Acc. Port       |
+| uartE       | /dev/ttyS6   | SERIAL4               | Serial4  | Gimbal          |
+| nsh console | /dev/ttyS5   |                       | Serial5  | Acc. Port       |
+
 ## Accessory Breakout Board
 
 An open source reference design for a breakout board can be found [here](https://github.com/3drobotics/Pixhawk_OS_Hardware/tree/master/Accessory_Breakout_X1).
