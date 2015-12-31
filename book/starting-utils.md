@@ -19,15 +19,19 @@ First connect to a WiFi network with Internet access. Run this command on your P
 <div class="host-code"></div>
 
 ```sh
-pip install -UI git+https://github.com/3drobotics/solo-cli
+pip install solo-cli
 ```
 
 <aside class="note">
-On OS X and Linux, you may need to run the command as root 
-(i.e. use `sudo pip install -UI git+https://github.com/3drobotics/solo-cli`).
+On OS X and Linux, you may need to run the command as root:
+<div class="host-code"></div>
 
-Alternatively, the command below can also be used to uninstall the 
-client and update to the latest version:
+```sh
+sudo -H pip install solo-cli
+```
+To upgrade to the latest version, append ``--upgrade`` to the above command.
+The command below provides an alternative method to update to the latest version 
+(this may be useful if the recommended approach above fails):
 
 <div class="host-code"></div>
 
