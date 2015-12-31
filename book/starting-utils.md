@@ -19,7 +19,7 @@ First connect to a WiFi network with Internet access. Run this command on your P
 <div class="host-code"></div>
 
 ```sh
-pip install solo-cli
+pip install git+https://github.com/3drobotics/solo-cli
 ```
 
 <aside class="note">
@@ -27,7 +27,7 @@ On OS X and Linux, you may need to run the command as root:
 <div class="host-code"></div>
 
 ```sh
-sudo -H pip install solo-cli
+sudo -H pip install git+https://github.com/3drobotics/solo-cli
 ```
 To upgrade to the latest version, append ``--upgrade`` to the above command.
 The command below provides an alternative method to update to the latest version 
