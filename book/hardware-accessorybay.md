@@ -31,7 +31,7 @@ Pin | Name | Description
 11. | SER2Tx | UART3 RX signal to Pixhawk 2. Connect to device's TX pin. Voltage is 3.3V.
 12. | CANH1 | CAN bus high to the Pixhawk 2.
 13. | CANL1 | CAN bus low to the Pixhawk 2.
-14. | GND |  
+14. | GND | Ground reference on Solo system.
 15. | BATT | 14V to 16.8V. PTC 1.1A fuse.
 16. | USB GND |  
 17. | +5V |  4.75 to 5.5V voltage pin for USB device. Current trip set to 1.2A.
