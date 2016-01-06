@@ -16,23 +16,39 @@ The mating connector part number is [JAE SJ038252](https://jae-connectors.com/en
 
 The pinout of the Accessory Port is:
 
-Pin | Description | Pin | Description
---- | --- | --- | ---
-1. | USB D- | 16. | USB GND
-2. | USB D+ | 17. | +5V
-3. | N/C | 18. | N/C
-4. | N/C | 19. | +5V
-5. | N/C | 20. | N/C
-6. | N/C | 21. | GND
-7. | N/C | 22. | N/C
-8. | N/C | 23. | BUS ID
-9. | SER5 TX (DEBUG) | 24. | SER5 RX (DEBUG)
-10. | SER2RT | 25. | SER2CT
-11. | SER2Tx | 26. | SER2Rx
-12. | CANH1 | 27. | 3DRID (USB ID)
-13. | CANL1 | 28. | GND
-14. | GND | 29. | GND
-15. | BATT (14.0-16.8V, 1.5A max) | 30. | BATT (14.0-16.8V, 1.5A max)
+Pin | Name | Description
+--- | --- | --- 
+1. | USB D- | Negative differential data signal to iMX6 OTG USB port.
+2. | USB D+ | Positive differential data signal to iMX6 OTG USB port.
+3. | N/C | 
+4. | N/C | 
+5. | N/C |  
+6. | N/C | 
+7. | N/C |  
+8. | N/C |  
+9. | SER5 TX (DEBUG) | UART5 TX output from Pixhawk 2.
+10. | SER2RT | UART2 RTS output from Pixhawk 2 for flow control. Connect to device's CTS pin.
+11. | SER2Tx | UART3 RX signal to Pixhawk 2. Connect to device's TX pin. Voltage is 3.3V.
+12. | CANH1 | CAN bus high to the Pixhawk 2.
+13. | CANL1 | CAN bus low to the Pixhawk 2.
+14. | GND |  
+15. | BATT | 14V to 16.8V. PTC 1.1A fuse.
+16. | USB GND |  
+17. | +5V |  4.75 to 5.5V voltage pin for USB device. Current trip set to 1.2A.
+18. | N/C |  
+19. | +5V |  4.75 to 5.5V voltage pin for USB device. Current trip set to 1.2A.
+20. | N/C |  
+21. | GND | Ground reference on Solo system.
+22. | N/C |  
+23. | BUS ID |  
+24. | SER5 RX (DEBUG) | UART5 RX input to Pixhawk 2.
+25. | SER2CT | UART2 CTS input to Pixhawk 2 for flow control. Connect to device's RTS pin.
+26. | SER2Rx | UART3 TX signal from Pixhawk 2. Connect to device RX pin. Voltage is 3.3V.
+27. | 3DRID | USB ID pin for OTG port on iMX6 OTG port	
+28. | GND | Ground reference on Solo system.
+29. | GND | Ground reference on Solo system.
+30. | BATT (14.0-16.8V, 1.5A max) | 14V to 16.8V. PTC 1.1A fuse.
+
 
 ## Communication Protocol
 
