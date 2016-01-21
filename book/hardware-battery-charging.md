@@ -2,7 +2,7 @@
 
 This topic specifies the charging interface to the Solo battery (this is needed if you want to build chargers, charging pads, etc).
 
-<aside class="tip">See the [Battery Bay](hardware-batterybay.html) page for information needed to develop alternative battery or power supply products for Solo.</aside>
+<aside class="tip">See the <a href="hardware-batterybay.html">Battery Bay</a> page for information needed to develop alternative power supply products for Solo.</aside>
 
 ## Solo Battery Specifications
 
