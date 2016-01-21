@@ -26,7 +26,7 @@ This is the summary of the solodevguide.
    * [Accessory Port](hardware-accessorybay.md)
    * [Gimbal Bay](hardware-gimbalbay.md)
    * [Battery Bay](hardware-batterybay.md)
-   * [Battery Interface](hardware-battery.md)
+   * [Battery Charger Interface](hardware-battery.md)
 * Advanced Topics
    * [Licenses](advanced-licenses.md)
    * [System Logs](advanced-logs.md)
