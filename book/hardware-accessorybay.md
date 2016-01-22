@@ -1,14 +1,24 @@
-# Accessory Port
+# Accessory Bay
+
+The *Accessory Bay* is the area behind the gimbal under the Solo that does not interfere with the 3DR Gimbal. It is intended for secondary accessories, including additional communications hardware and high power devices.
+
+Accessory developers can attach hardware using the holes provided and connect to the iMX6 (Companion computer) via USB.
 
 ## Mechanical
 
-The *Accessory Bay* is considered to be the area behind the gimbal under the Solo that does not interfere with the 3DR Gimbal. It is roughly 3" wide x 5.25" long x 4" deep. 
+The accessory area is roughly 3" wide x 5.25" long x 4" deep. 
 
 Maximum payload of the system is 700g, the 3DR Gimbal + GoPro weigh approximately 390g, leaving 310g for accessories that are meant to be used with the 3DR Gimbal.
 
 The Accessory Bay hole pattern is M2 screws in a 1.655" x 1.15" rectangular pattern. Ensure that the rectangle is not intersected by the path of the gimbal.
 
 ![Hole Pattern](https://cloud.githubusercontent.com/assets/2678765/10023369/612fcd74-6117-11e5-961d-6a9d4ffeeb35.png)
+
+
+<aside class="note">
+Accessories are permitted to cover the <a href="https://3dr.com/kb/pairing-solo-controller/">Pairing button</a>.
+</aside>
+
 
 ## Electrical
 
@@ -49,15 +59,61 @@ Pin | Name | Description
 29. | GND | Ground reference on Solo system.
 30. | BATT (14.0-16.8V, 1.5A max) | 14V to 16.8V. PTC 1.1A fuse.
 
+<aside class="caution">
+The CAN (<a href="http://uavcan.org/UAVCAN)">UAVCAN</a>) and SERIAL BUS connections to Pixhawk are "not supported" by 3DR for external developer use.
+</aside>
 
-## Communication Protocol
-
-The two primary interfaces to the *Accessory Bay* will be the CAN bus for direct integration with the flight controller and the USB port for higher-level interactions with Smart shots, DroneKit, and interactions with the Controller.
-
-CAN - Uses the [UAVCAN](http://uavcan.org/UAVCAN) protocol and interfaces directly with the Pixhawk. 
-
-USB - USB Host device to the iMX6 co-processor.
 
 ## Accessory Breakout Board
 
 An open source reference design for a breakout board can be found [here](https://github.com/3drobotics/Pixhawk_OS_Hardware/tree/master/Accessory_Breakout_X1).
+
+The breakout board plugs into the accessory port. The exposed side of the board is as shown below.
+
+![Accessory Breakout Board PCB (from below)](/images/accessory_breakout_board_pcb_below.jpg)
+
+
+## Communication Architecture
+
+The main communication channels between the Accessory Bay, Pixhawk and Companion Computer are shown below. Note that only USB is available for developer communication with Solo (the CAN and Serial/MAVLink channel is shown dashed for this reason). 
+
+![Accessory Bay System Architecture](/images/solo_accessory_bay_system_diagram.png)
+
+
+## Communication Protocol
+
+The USB OTG port is the recommended interface to the *Accessory Bay*. The port can act as either host or as a device, but typically the iMX6 acts as the host and the accessory as a connected USB device. The USB port enables interactions with Smart shots, DroneKit, and the Controller.
+
+### Supported Drivers
+
+The iMX6 kernel comes with with drivers for FTDI and CDC-ACM USB serial devices. These can, for example, be used with all official Arduino devices.
+
+### Connecting directly to the USB Port
+
+Accessories typically connect to Solo as devices. Connect `3DRID` to `GND` to set the USB port to host mode. Connect 5V, `USB D+`, `USB D-` and `GND` to the corresponding pins of the USB device.
+
+The IMX6 will connect in device mode if the 3DRBUS pin is not connected to GND. In device mode you can connect the Solo to a computer.
+
+### Connecting via an Accessory Breakout Port
+
+If you have the recommended [accessory breakout board](#accessory-breakout-board), use a jumper to connect `3DRID` to ground to set the iMX6 to host mode. Then use a [USB OTG cable](http://www.amazon.com/Micro-USB-OTG-Adapter-Cable/dp/B00D8YZ2SA)) to connect the device to the breakout board.
+
+### Accessing USB Serial devices
+
+USB Serial devices are accessed using normal Linux methods. For example, to communicate with a USB serial adapter or Arduino from Python, you could use http://pythonhosted.org/pyserial/.
+
+<aside class="tip">
+Use the <strong>/dev/serial/by-id/</strong> paths to access USB serial devices on the IMX6, as the enumeration order may change.
+</aside>
+
+
+### USB Connection Speed
+
+The USB routing on the mainboard does not meet the spec for USB “High Speed” (480Mbit/s), so the maximum in-spec speed is “Full Speed" (12Mbit/s). In practice most high speed devices should work. 
+
+The actual throughput will depend on the device being used.
+
+
+
+
+
