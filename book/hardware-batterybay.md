@@ -37,15 +37,14 @@ The connector contacts are rated for 40A on the power contacts
 
 ### Physical/Electrical Characteristics
 
-Any payloads operating in the battery bay should have approximately the same specs of the current battery:
+Any payloads operating in the battery bay should have approximately the same specs as the current battery:
 
 * 500 grams
 * Operating voltage range: 16.8 V to 12.0 V
 * Operating Temp: 0C ~ 40C
 * Discharging operating temp: -20C ~ 60C
 
-
-Solo will draw around 15A during hover. Depending on wind, payload, and maneuver, it's possible to burst up to 120A discharge
+Solo will draw around 20A during hover. Depending on wind, payload, and maneuver, it's possible to burst up to 120A discharge
 
 ### Battery Safety Features
 

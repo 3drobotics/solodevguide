@@ -11,10 +11,10 @@ The Solo battery has the following physical and electrical specifications:
 * 500 grams
 * Total capacity: 5.2 Ah (not a required spec)
 * Charge rate: 1-2C
-* Discharge rate (continuous): 5C
-* Discharge rate (peak): 10C
-* Operating voltage range: 10.0 V to 16.8 V
 * Charging temp: 0C ~ 40C
+* Discharge rate (continuous): 20A
+* Discharge rate (burst): 120A
+* Operating voltage range: 10.0 V to 16.8 V
 * Discharging operating temp: -20C ~ 60C
 
 
