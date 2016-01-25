@@ -96,9 +96,23 @@ module.exports = function (grunt) {
     });
   });
 
+  grunt.registerTask('debuggitbookfiles', 'print the contents of the gitbook website tree', function () {
+    var done = this.async();
+    var spawn = require('child_process').spawn;
+    var p = spawn('ls', ['-la', 'book/_book/gitbook/website'], {
+      cwd: __dirname
+    });
+    p.stdout.on('data', function (data) {
+      grunt.log.writeln("ls -la book/_book/gitbook/website");
+      grunt.log.writeln(data);
+      done();
+    });
+  });
+
   // Create Default Task
   grunt.registerTask('check', [
     'gitbook',
+    'debuggitbookfiles',
     'http-server:check',
     'linkChecker',
   ]);
