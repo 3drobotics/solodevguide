@@ -16,6 +16,8 @@ The diagram below is a simplified view of the main elements of the Solo architec
 
 Data lines shown in solid blue with arrows showing the direction of data flow. Power lines are shown in red. Dashed-blue data lines to payload bays indicate data lines that are not available/supported for third-party use.
 
+<!-- Diagram source is on Lucid here: https://www.lucidchart.com/documents/edit/61d4dfb6-701a-45f1-9525-a75a0d9fc8d5# -->
+
 
 
 ## Solo hardware/software stack
