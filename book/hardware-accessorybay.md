@@ -6,11 +6,11 @@ Accessory developers can attach hardware using the holes provided and connect to
 
 ## Mechanical
 
-The accessory area is roughly 3" wide x 5.25" long x 4" deep. 
+The accessory area is roughly 7.6 cm wide x 13.3 cm long x 10.2 cm deep. 
 
 Maximum payload of the system is 700g, the 3DR Gimbal + GoPro weigh approximately 390g, leaving 310g for accessories that are meant to be used with the 3DR Gimbal.
 
-The Accessory Bay hole pattern is M2 screws in a 1.655" x 1.15" rectangular pattern. Ensure that the rectangle is not intersected by the path of the gimbal.
+The Accessory Bay hole pattern is M2 screws in a 63 mm x 41 mm rectangular pattern. Ensure that the rectangle is not intersected by the path of the gimbal.
 
 ![Hole Pattern](https://cloud.githubusercontent.com/assets/2678765/10023369/612fcd74-6117-11e5-961d-6a9d4ffeeb35.png)
 
