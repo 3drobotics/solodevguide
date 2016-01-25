@@ -3,7 +3,6 @@ sudo: false
 node_js:
   - "5"
 before_script:
-  - npm install -g grunt-cli gitbook-cli
   - gitbook install book
 after_success:
   - |
