@@ -8,7 +8,14 @@ The Linux system controls high-level operation of the copter: [smart shots](conc
 
 ## Solo System Diagram
 
-<img src="images/system-diagram.png" alt="Solo System Diagram" width="500" style="margin: 0 auto; display: block">
+The diagram below is a simplified view of the main elements of the Solo architecture.
+
+<aside class="note">This diagram is simplified in order to make it easier to understand the broad scope of the system, and to highlight the main integration points for "Made for Solo" accessories. Some components and systems that are relevant only to internal developers are not shown.</aside>
+
+<img src="images/system-diagram.png" alt="Solo System Diagram" width="750" style="margin: 0 auto; display: block">
+
+Data lines shown in solid blue. Power lines are shown in red. Dashed-blue data lines to payload bays indicate data lines that are not available/supported for third-party use.
+
 
 
 ## Solo hardware/software stack
