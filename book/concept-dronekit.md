@@ -8,7 +8,7 @@ Solo uses [DroneKit-Python v1.1](http://python.dronekit.io/) internally to devel
 
 Working with DroneKit-Python is virtually the same on any platform/vehicle. Developers should read the [DroneKit-Python Documentation](http://python.dronekit.io/) in order to understand the key concepts.
 
-This topic provides a very brief introduction to the "nuances" of working with DroneKit-Python on Solo. It explains how a script should connect to Solo, how to deploy and run scripts on the device, some limitations of using DroneKit scripts (as opposed to using [Smart Shots](concept-smartshot.html)), and how to access useful platform features.
+This topic provides a very brief introduction to the "nuances" of working with DroneKit-Python on Solo. It explains how a script should connect to Solo, how to deploy and run scripts on the device, some limitations of using DroneKit scripts (as opposed to using [Smart Shots](concept-smartshot.html)), and how to access useful platform features. 
 
 <aside class="tip">
 You can try out most of the ideas presented here by [running the examples](example-get-started.html).
@@ -39,7 +39,7 @@ Other than the connection string used for Solo, all other aspects of calling the
 
 ## Deploying scripts to Solo
 
-Scripts can be deployed and run on Solo using the [Solo CLI](starting-utils.html#deploying-running-dronekit-scripts-on-solo). The CLI takes care of packaging all the scripts in a folder along with all dependencies listed in the folder's **requirements.txt** file. It can then be used to transfer the package to Solo, install it, and run a specified script in a virtual environment.
+Scripts can be deployed and run on Solo using the [Solo CLI](starting-utils.html#deployingrunning-dronekit-scripts-on-solo). The CLI takes care of packaging all the scripts in a folder along with all dependencies listed in the folder's **requirements.txt** file. It can then be used to transfer the package to Solo, install it, and run a specified script in a virtual environment.
 
 <aside class="note">
 This approach has several benefits over using Solo's "inbuilt" version of DroneKit-Python:
@@ -47,7 +47,7 @@ This approach has several benefits over using Solo's "inbuilt" version of DroneK
 1. No Internet connection or reliance on package management on Solo is needed.
 1. Packages are installed in a virtual environment, so they don't collide with the global Solo namespace.
 1. You can always use the most recent DroneKit-Python in your examples (the inbuilt version is updated less regularly).
-1. The *Solo CLI* is simple to use and will already be present developer's computers.
+1. The *Solo CLI* is simple to use and will already be present developer's computers. 
 </aside>
 
 
@@ -65,7 +65,7 @@ The command is run inside a directory which should contain all needed Python scr
    ```
 
 <aside class="tip">
-The system will install fresh copies of any listed files into the script's virtual environment on Solo. The exception is OpenCV; if this is listed then a system version will be used instead.
+The system will install fresh copies of any listed files into the script's virtual environment on Solo. The exception is OpenCV; if this is listed then a system version will be used instead. 
 </aside>
 
 Open a terminal, navigate to the directory to package, and enter the following command:
@@ -81,7 +81,7 @@ After some processing, this will create an archive called `solo-script.tar.gz` i
 
 ### solo script run ...
 
-In order to deploy the script archive and run the app, first connect to Solo's wifi network.
+In order to deploy the script archive and run the app, first connect to Solo's wifi network. 
 
 Then enter the following command to upload the script archive to Solo, unpack it and its dependencies, and then attempt to run the specified python script (`yourscriptname.py`):
 
@@ -95,7 +95,7 @@ solo script run yourscriptname.py
 
 ## Accessing Solo Features
 
-DroneKit-Python scripts can use any features of the underlying platform that are (or can be made) accessible to Python.
+DroneKit-Python scripts can use any features of the underlying platform that are (or can be made) accessible to Python. 
 
 For example, DroneKit-Python does not have any API for direct access to camera/video (though it can control the Camera gimbal). However it can use platform services to access video frames and libraries like *OpenCv* for post-processing. See [this example](example-opencv.html) for more information.
 
