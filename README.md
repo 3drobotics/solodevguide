@@ -1,6 +1,9 @@
 # Solo Developer Guide
 
-This guide is published online at: http://dev.3dr.com/
+[![Build Status](https://travis-ci.org/3drobotics/solodevguide.svg?branch=master)](https://travis-ci.org/3drobotics/solodevguide)
+[![Circle CI](https://circleci.com/gh/3drobotics/solodevguide.svg?style=svg)](https://circleci.com/gh/3drobotics/solodevguide)
+
+This guide is published online at: [dev.3dr.com](http://dev.3dr.com/)
 
 To start editing, install [GitBook](https://www.gitbook.com/) (requires Node.js):
 
