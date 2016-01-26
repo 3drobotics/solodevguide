@@ -36,6 +36,11 @@ module.exports = function (grunt) {
           maxConcurrency: 20,
           initialPort: 4000,
           supportedMimeTypes: [/html/i],
+          callback: function (crawler) {
+            crawler.addFetchCondition(function(url) {
+              return !url.path.match(/\/website\//);
+            });
+          }
         }
       }
     },
@@ -96,9 +101,21 @@ module.exports = function (grunt) {
     });
   });
 
+  grunt.registerTask('debuggitbookfiles', 'print the contents of the gitbook website tree', function () {
+    var spawn = require('child_process').spawn;
+    var p = spawn('ls', ['-la', 'book/_book/gitbook/website'], {
+      cwd: __dirname
+    });
+    p.stdout.on('data', function (data) {
+      grunt.log.writeln("ls -la book/_book/gitbook/website");
+      grunt.log.writeln(data);
+    });
+  });
+
   // Create Default Task
   grunt.registerTask('check', [
     'gitbook',
+    'debuggitbookfiles',
     'http-server:check',
     'linkChecker',
   ]);
