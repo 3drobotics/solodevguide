@@ -30,15 +30,13 @@ On OS X and Linux, you may need to run the command as root:
 sudo -H pip install git+https://github.com/3drobotics/solo-cli
 ```
 To upgrade to the latest version, append ``--upgrade`` to the above command.
-The command below provides an alternative method to update to the latest version 
+The command below provides an alternative method to update to the latest version
 (this may be useful if the recommended approach above fails):
 
 <div class="host-code"></div>
 
 ```sh
-sudo pip uninstall soloutils || true
-sudo pip uninstall solo-cli -y || true
-sudo pip install https://github.com/3drobotics/solo-cli/archive/master.zip --no-cache-dir
+sudo -H pip install -U git+https://github.com/3drobotics/solo-cli
 ```
 
 </aside>
@@ -62,7 +60,7 @@ Usage:
   solo install-smart
   solo install-runit
   solo video (acquire|restore)
-  solo script [<arg>...]  
+  solo script [<arg>...]
 ```
 
 Specific information about what these commands do is given in the following sections and on the [*Solo CLI* README](https://github.com/3drobotics/solo-cli).
@@ -105,7 +103,7 @@ This section demonstrates how to install various development tools using *Solo C
 
 ```
 solo install-smart
-``` 
+```
 
 ### Install runit
 
@@ -129,10 +127,10 @@ solo install-pip
 
 ## Deploying/running DroneKit scripts on Solo
 
-Use the ``solo script pack`` command to package a folder containing DroneKit-Python scripts 
-and any dependencies into an archive for deployment to Solo.  
-The host computer must be connected to the Internet, and the folder must contain a 
-**requirements.txt** file listing 
+Use the ``solo script pack`` command to package a folder containing DroneKit-Python scripts
+and any dependencies into an archive for deployment to Solo.
+The host computer must be connected to the Internet, and the folder must contain a
+**requirements.txt** file listing
 the (PyPi) dependencies:
 
 <div class="host-code"></div>
@@ -143,8 +141,8 @@ solo script pack
 
 If successful, the command will create an archive in the `solo-script.tar.gz` in the current directory.
 
-Deploy this archive to Solo and run a specified script using the ``solo script run <scripname>`` command. 
-The host computer must be connected to the Solo wifi network, and Solo must also be connected to the 
+Deploy this archive to Solo and run a specified script using the ``solo script run <scripname>`` command.
+The host computer must be connected to the Solo wifi network, and Solo must also be connected to the
 Internet.
 
 For example, to deploy and run the [helloworld example](example-helloworld.html):
@@ -176,7 +174,7 @@ Solo splits its available space between a "root" partition for code and a "logs"
 You can use the `solo resize` option to expand the root partition from its default of 90Mb to ~600Mb.
 
 <aside class="tip">
-Resizing the partition will delete and recreate your `/log` directory. Ensure you have any important data backed up first! 
+Resizing the partition will delete and recreate your `/log` directory. Ensure you have any important data backed up first!
 </aside>
 
 To expand the root partition run:
@@ -190,6 +188,6 @@ solo resize
 You may have to physically reboot (power cycle) your drone after the script is complete.
 
 <aside class="warning">
-Resizing the partition may occasionally fail ([bug #5](https://github.com/3drobotics/solo-cli/issues/5)). You can see this by running `df -h` on Solo and seeing if the root partition is resized, or if there is no longer a `/log` partition. The solution is simply to re-run `solo resize`. 
+Resizing the partition may occasionally fail ([bug #5](https://github.com/3drobotics/solo-cli/issues/5)). You can see this by running `df -h` on Solo and seeing if the root partition is resized, or if there is no longer a `/log` partition. The solution is simply to re-run `solo resize`.
 </aside>
 
