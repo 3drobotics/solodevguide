@@ -36,6 +36,11 @@ module.exports = function (grunt) {
           maxConcurrency: 20,
           initialPort: 4000,
           supportedMimeTypes: [/html/i],
+          callback: function (crawler) {
+            crawler.addFetchCondition(function(url) {
+              return !url.path.match(/\/website\//);
+            });
+          }
         }
       }
     },
