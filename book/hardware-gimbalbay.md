@@ -3,9 +3,9 @@
 The Gimbal Bay is an extensible interface to which any “Made For Solo”-approved 3rd party vendors can sell an attachable 3-axis gimbal and camera solution. The specifications to the Bay have been made open and freely available here to encourage the development of Solo add-ons.
 
 ## Electrical Interface
-There are two physical connections from the Solo to a gimbal. The Solo Gimbal cable, which primarily manages the position and recording state of the camera, and the HDMI cable which routes the video signal. 
+There are two physical connections from the Solo to a gimbal. The Solo Gimbal cable, which primarily manages the position and recording state of the camera, and the Micro HDMI cable which routes the video signal. 
 
-The board side connector can be found on Digikey [here](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082). The mating connector can be found [here](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369). 
+The Solo Gimbal cable terminates in a [Molex 5031490800](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369) connector. A gimbal board is connected using the corresponding [Molex 5031540890](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082) connector. 
 
 Pin | Description | Color
 --- | --- | ---
