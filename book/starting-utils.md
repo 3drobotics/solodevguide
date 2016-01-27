@@ -29,9 +29,7 @@ On OS X and Linux, you may need to run the command as root:
 ```sh
 sudo -H pip install git+https://github.com/3drobotics/solo-cli
 ```
-To upgrade to the latest version, append ``--upgrade`` to the above command.
-The command below provides an alternative method to update to the latest version
-(this may be useful if the recommended approach above fails):
+To upgrade to the latest version, append ``--upgrade`` or ``-U`` to the above command:
 
 <div class="host-code"></div>
 
