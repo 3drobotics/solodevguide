@@ -1,6 +1,10 @@
 # Gimbal Bay
 
-The Gimbal Bay is an extensible interface to which any “Made For Solo”-approved 3rd party vendors can sell an attachable 3-axis gimbal and camera solution. The specifications to the Bay have been made open and freely available here to encourage the development of Solo add-ons.
+The Gimbal Bay provides an extensible interface intended for attaching [Made For Solo](https://3dr.com/mfs/)-approved 3-axis gimbal and camera solutions.
+
+<aside class="tip">
+The Gimbal Bay can also be used for other types of Solo add-ons.
+</aside>
 
 ## Electrical Interface
 
@@ -23,6 +27,23 @@ Pin | Name | Color | Description
 8 | USB D- | Violet | Negative differential data signal to iMX6 OTG USB port.
 
 
+
+### Power Supply
+
+The Gimbal Cable supplies two different voltage sources to the Gimbal Bay:
+
+* VCC 5V (4.75V to 5.4V).  
+* VCC Battery (12V to 16.8 V). 
+
+*VCC 5V* should be used to power the camera (only). The camera must not draw more than 1A. 
+
+<aside class="note">
+The *VCC 5V* supply is also used as the backup supply for the Pixhawk. While the current is not limited, if more than 1A is used the vehicle may fail when running on backup power.
+</aside>
+
+*VCC Battery* can be used to power the gimbal or other hardware. The maximum recommended current/power is ~3A/50W. Drawing more current may damage the battery and increases the risk of accident.
+
+
 ### HDMI Micro Cable
 
 The [HDMI](https://en.wikipedia.org/wiki/HDMI) Mini connection is responsible for transferring video from the camera on the Solo to the first person view in the 3DR app. The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
@@ -39,7 +60,7 @@ Supported resolutions:
 * 720x480p25(PAL)
 
 
-## Hardware spec
+## Mechanical Interface
 
 <aside class="todo">
 This section is missing.
@@ -56,21 +77,6 @@ The Gimbal TX and Gimbal RX lines send [MAVLink](http://qgroundcontrol.org/mavli
 ### Co-processing with USB
 
 The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target. Communication between the Solo co-processor and the gimbal is not yet available for 3rd party developers.
-
-### Power Supply
-
-The Gimbal Cable supplies two different voltage sources to the Gimbal Bay:
-
-* VCC 5V (4.75V to 5.4V).  
-* VCC Battery (12V to 16.8 V). 
-
-*VCC 5V* should be used to power the camera (only). The camera must not draw more than 1A. 
-
-<aside class="note">
-The *VCC 5V* supply is also used as the backup supply for the Pixhawk. While the current is not limited, if more than 1A is used the vehicle may fail when running on backup power.
-</aside>
-
-*VCC Battery* can be used to power the gimbal or other hardware. The maximum recommended current/power is ~3A/50W. Drawing more current may damage the battery and increases the risk of accident.
 
 
 
