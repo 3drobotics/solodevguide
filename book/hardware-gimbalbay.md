@@ -3,20 +3,41 @@
 The Gimbal Bay is an extensible interface to which any “Made For Solo”-approved 3rd party vendors can sell an attachable 3-axis gimbal and camera solution. The specifications to the Bay have been made open and freely available here to encourage the development of Solo add-ons.
 
 ## Electrical Interface
-There are two physical connections from the Solo to a gimbal. The Solo Gimbal cable, which primarily manages the position and recording state of the camera, and the Micro HDMI cable which routes the video signal. 
 
-The Solo Gimbal cable terminates in a [Molex 5031490800](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369) connector. A gimbal board is connected using the corresponding [Molex 5031540890](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082) connector. 
+There are two physical connections from the Solo to a gimbal. The [Solo Gimbal Cable](#solo-gimbal-cable), which primarily manages the position and recording state of the camera, and the [HDMI Micro cable](#hdmi-micro) which routes the video signal. 
 
-Pin | Description | Color
---- | --- | ---
-1 | VCC Battery | Red
-2 | VCC 5V | Yellow
-3 | GND (Gimbal) | Black
-4 | GND (USB) | Brown
-5 | Gimbal Rx | White
-6 | Gimbal Tx | Green
-7 | USB D+ | Blue
-8 | USB D- | Violet
+
+### Solo Gimbal Cable
+
+The *Solo Gimbal cable* terminates in a [Molex 5031490800](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369) connector. A gimbal board is connected using the corresponding [Molex 5031540890](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082) connector. 
+
+Pin | Name | Color | Description
+--- | --- | --- | ---
+1 | VCC Battery | Red | 12 to 16.8 V. Max recommended current/power is ~3A/50W. Drawing additional current may damage the battery and increases the risk of accident.
+2 | VCC 5V | Yellow | 4.75 to 5.25V voltage pin for Camera (only). Current should be less than 1A.
+3 | GND (Gimbal) | Black |
+4 | GND (USB) | Brown |
+5 | Gimbal Rx | White |
+6 | Gimbal Tx | Green |
+7 | USB D+ | Blue | Positive differential data signal to iMX6 OTG USB port.
+8 | USB D- | Violet | Negative differential data signal to iMX6 OTG USB port.
+
+
+### HDMI Micro Cable
+
+The [HDMI](https://en.wikipedia.org/wiki/HDMI) Mini connection is responsible for transferring video from the camera on the Solo to the first person view in the 3DR app. The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
+
+Supported resolutions:
+
+* 1280x720p60
+* 1280x720p30
+* 720x480p60
+* 720x480p30
+* 640x480p60
+* 640x480p30
+* 1280x720p25(PAL)
+* 720x480p25(PAL)
+
 
 ## Hardware spec
 
@@ -36,32 +57,23 @@ The Gimbal TX and Gimbal RX lines send [MAVLink](http://qgroundcontrol.org/mavli
 
 The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target. Communication between the Solo co-processor and the gimbal is not yet available for 3rd party developers.
 
-### Powering the Gimbal
+### Power Supply
 
-The Gimbal Cable provides two different voltage source to the Gimbal Bay:
-VCC Battery (13.5&ndash;16.8V, 2A)
-VCC 5.35V (Regulated, ~1A)
+The Gimbal Cable supplies two different voltage sources to the Gimbal Bay:
 
-The 5.35V source should only be used to power the camera. The battery voltage is used for any other purposes.
+* VCC 5V (4.75 to 5.25V).  
+* VCC Battery (12 to 16.8 V). 
+
+*VCC 5V* should be used to power the camera (only). The camera must not draw more than 1A. 
 
 <aside class="note">
-The continuous current draw is limited by the gimbal cable despite the actual supply being capable of 25W (5A). This supply is also shared with some other functions on the copter.
+The *VCC 5V* supply is also used as the backup supply for the Pixhawk. While the current is not limited, if more than 1A is used the vehicle may fail when running on backup power.
 </aside>
 
-### HDMI Mini 
+*VCC Battery* can be used to power the gimbal or other hardware. The maximum recommended current/power is ~3A/50W. Drawing more current may damage the battery and increases the risk of accident.
 
-The [HDMI](https://en.wikipedia.org/wiki/HDMI) Mini connection is responsible for transferring video from the camera on the Solo to the first person view in the 3DR app. The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
 
-Supported resolutions:
 
-* 1280x720p60
-* 1280x720p30
-* 720x480p60
-* 720x480p30
-* 640x480p60
-* 640x480p30
-* 1280x720p25(PAL)
-* 720x480p25(PAL)
 
 ## Software Interface
 
