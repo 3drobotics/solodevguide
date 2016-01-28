@@ -22,9 +22,11 @@ Accessories are permitted to cover the <a href="https://3dr.com/kb/pairing-solo-
 
 ## Electrical
 
+### Accessory Port
+
 The mating connector part number is [JAE SJ038252](https://jae-connectors.com/en/pdf_download_exec.cfm?param=SJ038252.pdf) and can be purchased on [Mouser](http://www.mouser.com/ProductDetail/JAE-Electronics/TX24-30R-6ST-N1E/?qs=%2fha2pyFaduiqgba8kBa6TtehVWNIeLFx3lhQ48lSxiSCqywLxSV2eg%3d%3d).
 
-The pinout of the Accessory Port is:
+The pinout of the *Accessory Port* is:
 
 Pin | Name | Description
 --- | --- | --- 
@@ -42,11 +44,11 @@ Pin | Name | Description
 12. | CANH1 | CAN bus high to the Pixhawk 2.
 13. | CANL1 | CAN bus low to the Pixhawk 2.
 14. | GND | Ground reference on Solo system.
-15. | BATT | 14V to 16.8V. PTC 1.1A fuse.
+15. | BATT | 14V to 16.8V. Maximum current 1.1A (fuse: 1812L110/24DR). Maximum power 18.5W.
 16. | USB GND |  
-17. | +5V |  4.75 to 5.5V voltage pin for USB device. Current trip set to 1.2A.
+17. | +5V | 4.75V to 5.4V voltage pin for USB device. Maximum current 1.05A (fuse: ST890DTR). Maximum power 5.7W.
 18. | N/C |  
-19. | +5V |  4.75 to 5.5V voltage pin for USB device. Current trip set to 1.2A.
+19. | +5V | 4.75V to 5.4V voltage pin for USB device. Maximum current 1.05A (fuse: ST890DTR). Maximum power 5.7W.
 20. | N/C |  
 21. | GND | Ground reference on Solo system.
 22. | N/C |  
@@ -54,23 +56,41 @@ Pin | Name | Description
 24. | SER5 RX (DEBUG) | UART5 RX input to Pixhawk 2.
 25. | SER2CT | UART2 CTS input to Pixhawk 2 for flow control. Connect to device's RTS pin.
 26. | SER2Rx | UART3 TX signal from Pixhawk 2. Connect to device RX pin. Voltage is 3.3V.
-27. | 3DRID | USB ID pin for OTG port on iMX6 OTG port	
+27. | 3DRID | USB ID pin for OTG port on iMX6 OTG port
 28. | GND | Ground reference on Solo system.
 29. | GND | Ground reference on Solo system.
-30. | BATT (14.0-16.8V, 1.5A max) | 14V to 16.8V. PTC 1.1A fuse.
+30. | BATT | 14V to 16.8V. Maximum current 1.1A (fuse: 1812L110/24DR). Maximum power 18.5W.
 
-<aside class="caution">
+<aside class="note">
 The CAN (<a href="http://uavcan.org/UAVCAN)">UAVCAN</a>) and SERIAL BUS connections to Pixhawk are "not supported" by 3DR for external developer use.
 </aside>
 
 
-## Accessory Breakout Board
+### Power Supply
+
+Two voltage sources are supplied to the *Accessory Bay*:
+
+* VCC 5V (4.75V to 5.4V).
+* VCC Battery (14V to 16.8 V).
+
+*VCC 5V* should be used to power the USB device. This is current limited to 1.05A.
+<aside class="caution">
+The VCC 5V supply is also used as the backup supply for the Pixhawk. Attempting to draw more than the specified maximum current may drop the voltage, and could potentially cause a brownout.
+</aside>
+
+*VCC Battery* can be used as a high-power supply for accessory hardware. The current is limited to 1.1A (fuse: 1812L110/24DR) and the maximum power 18.5W.
+
+
+
+### Accessory Breakout Board
 
 An open source reference design for a breakout board can be found [here](https://github.com/3drobotics/Pixhawk_OS_Hardware/tree/master/Accessory_Breakout_X1).
 
 The breakout board plugs into the accessory port. The exposed side of the board is as shown below.
 
 ![Accessory Breakout Board PCB (from below)](/images/accessory_breakout_board_pcb_below.jpg)
+
+
 
 
 ## Communication Architecture
