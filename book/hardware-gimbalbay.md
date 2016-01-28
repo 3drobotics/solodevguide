@@ -13,8 +13,8 @@ The *Solo Gimbal cable* terminates in a [Molex 5031490800](http://www.digikey.co
 
 Pin | Name | Color | Description
 --- | --- | --- | ---
-1 | VCC Battery | Red | 12 to 16.8 V. Max recommended current/power is ~3A/50W. Drawing additional current may damage the battery and increases the risk of accident.
-2 | VCC 5V | Yellow | 4.75 to 5.25V voltage pin for Camera (only). Current should be less than 1A.
+1 | VCC Battery | Red | 12V to 16.8V. Max recommended current/power is ~3A/50W. Drawing additional current may damage the battery and increases the risk of accident.
+2 | VCC 5V | Yellow | 4.75V to 5.4V voltage pin for Camera (only). Current should be less than 1A.
 3 | GND (Gimbal) | Black |
 4 | GND (USB) | Brown |
 5 | Gimbal Rx | White |
@@ -61,8 +61,8 @@ The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-boar
 
 The Gimbal Cable supplies two different voltage sources to the Gimbal Bay:
 
-* VCC 5V (4.75 to 5.25V).  
-* VCC Battery (12 to 16.8 V). 
+* VCC 5V (4.75V to 5.4V).  
+* VCC Battery (12V to 16.8 V). 
 
 *VCC 5V* should be used to power the camera (only). The camera must not draw more than 1A. 
 
