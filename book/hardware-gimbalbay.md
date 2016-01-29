@@ -6,7 +6,37 @@ The Gimbal Bay provides an extensible interface intended for attaching [Made For
 The Gimbal Bay can also be used for other types of Solo add-ons.
 </aside>
 
-## Electrical Interface
+
+## Mechanical
+
+The Gimbal Bay area comprises the lower-front area of Solo, extending back as far as the accessory bay and into the vehicle body.
+
+The mechanical interface points with Solo are:
+
+* Gimbal connector plate
+* Two front clips
+* Four screws
+* HDMI and Solo Gimbal Cable
+* Keep-out zones for accessory bay
+
+We recommend that you use the *Solo Gimbal Beauty Plate* as the basis for your own connector plate, as it correctly implements the required mechanical interface points. The CAD file for the plate can be [downloaded from here](https://docs.google.com/a/3drobotics.com/uc?id=0B9l93ZUM5ooxT3lSeHhwZ3VvSmc&export=download) and a screenshot is shown below.
+
+![Solo Beauty Plate](images/solo_gimbal_bay_beauty_plate.png)
+
+The maximum payload of the system is 700g (for Camera, Gimbal and other accessories). Camera/Gimbal solutions that exceed 390g may not work with accessories that are designed to work with the 3DR Gimbal and GoPro.
+
+
+<aside class="todo">
+This section is incomplete. The following information is still missing:
+* Screws: type, positions, diameter, length, anything else
+* Keepout/reserved areas: Diagrams
+* Images/definition of the available space within the body of the vehicle.
+</aside>
+
+
+
+
+## Electrical
 
 There are two physical connections from the Solo to a gimbal. The [Solo Gimbal Cable](#solo-gimbal-cable), which primarily manages the position and recording state of the camera, and the [HDMI Micro cable](#hdmi-micro) which routes the video signal. 
 
@@ -28,7 +58,7 @@ Pin | Name | Color | Description
 
 
 
-### Power Supply
+#### Power Supply
 
 The Gimbal Cable supplies two different voltage sources to the Gimbal Bay:
 
@@ -43,6 +73,18 @@ The *VCC 5V* supply is also used as the backup supply for the Pixhawk. While the
 
 *VCC Battery* can be used to power the gimbal or other hardware. The maximum recommended current/power is ~3A/50W. Drawing more current may damage the battery and increases the risk of accident.
 
+
+#### Control over MAVLink with Serial
+
+The Gimbal TX and Gimbal RX lines send [MAVLink](http://qgroundcontrol.org/mavlink/start) data over a serial connection between the Pixhawk flight controller and the gimbal. This connection is used to both control the pitch, roll, and yaw of the gimbal motors as well as send commands over to the camera (start recording, stop recording, change modes, etc). More details on camera control can be found in the [Software Interface](#software-interface) section.
+
+#### Co-processing with USB
+
+The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target. 
+
+<aside class="note">
+Communication between the Solo co-processor and the gimbal is not yet available for 3rd party developers.
+</aside>
 
 ### HDMI Micro Cable
 
@@ -60,36 +102,20 @@ Supported resolutions:
 * 720x480p25(PAL)
 
 
-## Mechanical Interface
-
-<aside class="todo">
-This section is missing.
-</aside>
-
-## Developer spec
-
-The Gimbal Cable has three primary responsibilities:
-
-### Control over MAVLink with Serial
-
-The Gimbal TX and Gimbal RX lines send [MAVLink](http://qgroundcontrol.org/mavlink/start) data over a serial connection between the Pixhawk flight controller and the gimbal. This connection is used to both control the pitch, roll, and yaw of the gimbal motors as well as send commands over to the camera (start recording, stop recording, change modes, etc). More details on camera control can be found in the [Software Interface](#software-interface) section.
-
-### Co-processing with USB
-
-The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target. Communication between the Solo co-processor and the gimbal is not yet available for 3rd party developers.
-
-
 
 
 ## Software Interface
+
+<aside class="caution">
+The Solo software stack is not yet ready to integrate multiple types of gimbals. We are currently working on an extensible API to make it easier for third-party vendors to interface with different hardware.
+
+For development purposes we recommend using Pixhawk 1 and Copter 3.3 Ardupilot firmware.
+</aside>
 
 In order to have Solo control a gimbal, Ardupilot must know how to communicate with the gimbal. Fortunately, Ardupilot already has the ability to communicate with several types of pre-existing gimbal controllers including *SToRM32* and *Alexmos*. The custom Solo Gimbal protocol is not yet supported by any released versions of Ardupilot. 
 
 *SToRM32* is recommended as it features the most straightforward communication protocol. You can find more information about [this type of gimbal controller here](http://www.olliw.eu/storm32bgc-wiki/Main_Page) and Ardupilot integration can be [found here](http://copter.ardupilot.com/wiki/common-storm32-gimbal/).
 
-<aside class="caution">
-For development purposes, a Pixhawk 1 and Copter 3.3 Ardupilot firmware are recommended. The Solo development stack is not yet ready to integrate multiple types of gimbals so it will not work on Solo. 
-</aside>
 
 
 ### Common Gimbal Camera Control
