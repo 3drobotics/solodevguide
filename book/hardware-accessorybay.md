@@ -44,11 +44,11 @@ Pin | Name | Description
 12. | CANH1 | CAN bus high to the Pixhawk 2.
 13. | CANL1 | CAN bus low to the Pixhawk 2.
 14. | GND | Ground reference on Solo system.
-15. | BATT | 14V to 16.8V. Maximum current 1.1A (fuse: 1812L110/24DR). Maximum power 18.5W.
+15. | BATT | 12V to 16.8V. Maximum combined current off bus (pins 15 and 30) is 1.1A (fuse: 1812L110/24DR). Maximum combined power 18.5W.
 16. | USB GND |  
-17. | +5V | 4.75V to 5.4V voltage pin for USB device. Maximum current 1.05A (fuse: ST890DTR). Maximum power 5.7W.
+17. | +5V | 4.75V to 5.4V voltage pin for USB device. Maximum combined current off bus (pins 17 and 19) is 1.05A (fuse: ST890DTR). Maximum combined power 5.7W.
 18. | N/C |  
-19. | +5V | 4.75V to 5.4V voltage pin for USB device. Maximum current 1.05A (fuse: ST890DTR). Maximum power 5.7W.
+19. | +5V | 4.75V to 5.4V voltage pin for USB device. Maximum combined current off bus (pins 17 and 19) is 1.05A (fuse: ST890DTR). Maximum combined power 5.7W.
 20. | N/C |  
 21. | GND | Ground reference on Solo system.
 22. | N/C |  
@@ -59,7 +59,7 @@ Pin | Name | Description
 27. | 3DRID | USB ID pin for OTG port on iMX6 OTG port
 28. | GND | Ground reference on Solo system.
 29. | GND | Ground reference on Solo system.
-30. | BATT | 14V to 16.8V. Maximum current 1.1A (fuse: 1812L110/24DR). Maximum power 18.5W.
+30. | BATT | 12V to 16.8V. Maximum combined current off bus (pins 15 and 30) is 1.1A (fuse: 1812L110/24DR). Maximum combined power 18.5W.
 
 <aside class="note">
 The CAN (<a href="http://uavcan.org/UAVCAN)">UAVCAN</a>) and SERIAL BUS connections to Pixhawk are "not supported" by 3DR for external developer use.
@@ -71,14 +71,14 @@ The CAN (<a href="http://uavcan.org/UAVCAN)">UAVCAN</a>) and SERIAL BUS connecti
 Two voltage sources are supplied to the *Accessory Bay*:
 
 * VCC 5V (4.75V to 5.4V).
-* VCC Battery (14V to 16.8 V).
+* VCC Battery (12V to 16.8 V).
 
-*VCC 5V* should be used to power the USB device. This is current limited to 1.05A.
+*VCC 5V* should be used to power the USB device. The combined total current for both *VCC 5V* pins is limited to 1.05A (the combined current for both pins).
 <aside class="caution">
 The VCC 5V supply is also used as the backup supply for the Pixhawk. Attempting to draw more than the specified maximum current may drop the voltage, and could potentially cause a brownout.
 </aside>
 
-*VCC Battery* can be used as a high-power supply for accessory hardware. The current is limited to 1.1A (fuse: 1812L110/24DR) and the maximum power 18.5W.
+*VCC Battery* can be used as a high-power supply for accessory hardware. The combined total current for both *VCC Battery* pins is limited to 1.1A (fuse: 1812L110/24DR) and the maximum power 18.5W.
 
 
 
