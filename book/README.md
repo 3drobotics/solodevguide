@@ -22,6 +22,13 @@ Navigate using the sidebar or the "next page" arrows to begin.
 
 ## Changelog
 
+### 2016-02-01
+
+* New docs for accessory developers: [Solo Accessory Overview](starting-accessories.md), [Battery Bay](hardware-batterybay.md), [Battery Charger Interface](hardware-battery-charging.md).
+* [Gimbal](hardware-gimbalbay.md) docs updated. Added power supply information, new gimbal "Beauty Plate" CAD file, information about software integration. Corrected description of HDMI cable.
+* [Accessory Bay](hardware-accessorybay.md) docs updated. Added new power supply and communications architecture sections, along with information about how to connect to the accessory port via USB. Improved the information in the pinout.
+* [System architecture diagram](concept-architecture.md) updated. Added more detail about components, power supply, data flow.
+
 ### 2015-10-29
 
 * Guide relicensed as [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
