@@ -25,7 +25,7 @@ A step-by-step guide for both approaches is provided below.
 
 
 
-### Downloading using SCP (Mac/Linux)
+### Downloading using SCP (Mac/Linux) {#downloading-using-scp-mac-linux}
 
 SCP is a great end-user tool for downloading the logs because it is available by default
 from the terminal on Mac OX and many Linux distributions (including Ubuntu 14.04.3 LTS).
