@@ -18,7 +18,7 @@ These are the requirements for setting up *Smart* to work with our package repos
 
 * First, [install the *Solo CLI*](starting-utils.html).
 * [Connect to the Internet via `solo wifi`](starting-utils.html#connecting-solo-to-the-internet). This will be needed to download the package lists.
-* Run `solo install-smart` to install and download the pacakge repository list.
+* Run `solo install-smart` to install and download the package repository list.
 
 This command is only needed to be run once. From now on, Solo can download packages when an Internet connection is enabled.
 
