@@ -62,8 +62,8 @@ $ python -c "import cv2; print cv2.__version__"
 
 You can install code directly from *pip* on Solo. 
 
-<aside class="note">
-Using _pip_ on Solo installs package globally by default. Read the section below about _[virtualenv](#installing-packages-into-a-virtualenv)_ to create isolated environments of packages.
+<aside class="caution">
+By default, using _pip_ installs or updates packages in the **global** Python environment. We recommend that instead you [install packages into an isolated environment](#installing-packages-using-the-solo-client).
 </aside>
 
 Having installed *Solo CLI* on your PC, you can initialize `pip` to work on Solo by running:
@@ -93,10 +93,10 @@ The recommended way of working with Python and DroneKit-Python is to use the
 to package and run the script in a virtual environment.
 
 <aside class="note">
-Solo uses many globally installed packages that may be out of date (in particular, [DroneKit](example-dronekit.html)). Using an isolated environment means that you don't need to update the global versions; potentially disturbing native Solo code.
+Solo uses many globally installed packages that may be out of date (in particular, [DroneKit](example-dronekit.html)), but which cannot be updated without potentially affecting Solo's stability. Using a virtual environment allows you to safely use any package you like.
 </aside>
 
-The CLI takes care of packaging all the scripts in a folder:
+The CLI takes care of packaging all the scripts in your current folder:
 
 <div class="host-code"></div>
 
@@ -153,7 +153,7 @@ source ./env/bin/activate
 
 You will notice your shell prompt changes to read `(env)root@3dr_solo:`, indicating that you are working in a _virtualenv_.
 
-Now all commands you run from your shell, including launching scripts and installing packages, will only effect this local environment. For example, you can now install a different version of *dronekit* without impacting the global version:
+Now all commands you run from your shell, including launching scripts and installing packages, will only affect this local environment. For example, you can now install a different version of *dronekit* without impacting the global version:
 
 ```sh
 pip install dronekit
