@@ -45,7 +45,7 @@ The recommended physical characteristics are:
 * Operating Temp: 0C ~ 40C
 * Discharging operating temp: -20C ~ 60C
 
-Changing the battery weight will have a corresponding impact on the weight available for accessories. The center of gravity must remain close to the current location. We recommend battery payloads weigh about 500g.
+Changing the battery weight will have a corresponding impact on the weight available for accessories. The center of gravity must remain close to the current location.
 
 ### Electrical
 
