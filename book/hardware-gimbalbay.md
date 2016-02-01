@@ -38,7 +38,7 @@ This section is incomplete. The following information is still missing:
 
 ## Electrical
 
-There are two physical connections from the Solo to a gimbal. The [Solo Gimbal Cable](#solo-gimbal-cable), which primarily manages the position and recording state of the camera, and the [HDMI Micro cable](#hdmi-micro) which routes the video signal. 
+There are two physical connections from the Solo to a gimbal. The [Solo Gimbal Cable](#solo-gimbal-cable), which primarily manages the position and recording state of the camera, and the [HDMI Micro cable](#hdmi-micro-cable) which routes the video signal. 
 
 
 ### Solo Gimbal Cable
