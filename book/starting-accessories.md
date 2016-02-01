@@ -38,7 +38,7 @@ Information for communicating with each bay is part of individual bay documentat
 <aside class="note">
 At time of writing you can connect via USB but care needs to be taken not to interfere with other port configuration and devices.
 
-We are currently developing a framework for safe and seamless accessory discoverability, integration with apps, and update. 
+We are currently developing a framework for safe and seamless accessory discoverability, app integration, and firmware updates.
 </aside>
 
 
