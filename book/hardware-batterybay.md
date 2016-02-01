@@ -7,7 +7,7 @@ The *Battery Bay* can be used for mounting power system accessories including hi
 <aside class="caution">Battery Bay payloads must not interfere with other payload bay keepout areas.</aside>
 
 
-## Mechanical Interface Specifications
+## Mechanical Interface
 
 The *Battery Bay* mechanical interface points with Solo are:
 
@@ -21,7 +21,7 @@ We recommend you enclose your power solution using the *battery bay envelope*, a
 <aside class="note">The envelope CAD file can also be used for creating your own power supply enclosures.</aside>
 
 
-## Electrical Interface Specifications
+## Electrical Interface
 
 The electrical interface with Solo uses the following connectors:
 
@@ -35,16 +35,27 @@ The connector contacts are rated for 40A on the power contacts
 
 ## Battery Payload Requirements
 
-### Physical/Electrical Characteristics
+Battery bay payloads should have approximately the same physical and electrical characteristics as the current battery: [Solo Battery Specifications](hardware-battery-charging.html#solo-battery-specifications).
 
-Any payloads operating in the battery bay should have approximately the same specs as the current battery:
+### Physical
+
+The recommended physical characteristics are:
 
 * 500 grams
-* Operating voltage range: 16.8 V to 12.0 V
 * Operating Temp: 0C ~ 40C
 * Discharging operating temp: -20C ~ 60C
 
-Solo will draw around 20A during hover. Depending on wind, payload, and maneuver, it's possible to burst up to 120A discharge
+Changing the battery weight will have a corresponding impact on the weight available for accessories. The center of gravity must remain close to the current location.
+
+### Electrical
+
+The main physical characteristics are:
+
+* Operating voltage range: 16.8 V to 12.0 V
+* 15A draw during hover with no payload (no Gimbal/Camera or other acessories)
+* 20A draw during hover with full 700g payload
+* 120A maximum burst (depends on wind, payload, and maneuver)
+
 
 ### Battery Safety Features
 
