@@ -23,7 +23,7 @@ We recommend that you use the *Solo Gimbal Beauty Plate* as the basis for your o
 
 ![Solo Beauty Plate](images/solo_gimbal_bay_beauty_plate.png)
 
-The maximum payload of the system is 700g (for Camera, Gimbal and other accessories). Camera/Gimbal solutions that exceed 390g may not work with accessories that are designed to work with the 3DR Gimbal and GoPro.
+The maximum payload of Solo with gimbal, camera and other accessories is 700g.  Camera/Gimbal solutions that exceed the weight of the 3DR Gimbal and GoPro (390g) may not work with all accessories.
 
 
 <aside class="todo">
@@ -88,7 +88,7 @@ Communication between the Solo co-processor and the gimbal is not yet available 
 
 ### HDMI Micro Cable
 
-The [HDMI](https://en.wikipedia.org/wiki/HDMI) Mini connection is responsible for transferring video from the camera on the Solo to the first person view in the 3DR app. The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
+The [HDMI](https://en.wikipedia.org/wiki/HDMI) Micro (Type D) connection is responsible for transferring video from the camera on the Solo to the first person view in the 3DR app. The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
 
 Supported resolutions:
 
@@ -109,19 +109,19 @@ Supported resolutions:
 <aside class="caution">
 The Solo software stack is not yet ready to integrate multiple types of gimbals. We are currently working on an extensible API to make it easier for third-party vendors to interface with different hardware.
 
-For development purposes we recommend using Pixhawk 1 and Copter 3.3 Ardupilot firmware.
+For development purposes we recommend using Pixhawk 1 and Copter 3.3 ArduPilot firmware.
 </aside>
 
-In order to have Solo control a gimbal, Ardupilot must know how to communicate with the gimbal. Fortunately, Ardupilot already has the ability to communicate with several types of pre-existing gimbal controllers including *SToRM32* and *Alexmos*. The custom Solo Gimbal protocol is not yet supported by any released versions of Ardupilot. 
+In order to have Solo control a gimbal, ArduPilot must know how to communicate with the gimbal. Fortunately, ArduPilot already has the ability to communicate with several types of pre-existing gimbal controllers including *SToRM32* and *Alexmos*. The custom Solo Gimbal protocol is not yet supported by any released versions of ArduPilot. 
 
-*SToRM32* is recommended as it features the most straightforward communication protocol. You can find more information about [this type of gimbal controller here](http://www.olliw.eu/storm32bgc-wiki/Main_Page) and Ardupilot integration can be [found here](http://copter.ardupilot.com/wiki/common-storm32-gimbal/).
+*SToRM32* is recommended as it features the most straightforward communication protocol. You can find more information about [this type of gimbal controller here](http://www.olliw.eu/storm32bgc-wiki/Main_Page) and ArduPilot integration can be [found here](http://copter.ardupilot.com/wiki/common-storm32-gimbal/).
 
 
 
 ### Common Gimbal Camera Control
 There are a set of camera functions that are common amongst all gimbal/camera systems. These functions include START RECORDING/STOP RECORDING, POWER ON/OFF, & CHANGE MODES.
 
-However, 3rd party developers cannot currently take advantage of the pre-set camera-related buttons on the Solo controller because they are sent as GoPro specific commands.In addition, there is not yet a way for 3rd party developers to capture any button events on the Solo co-processor or Ardupilot.
+However, 3rd party developers cannot currently take advantage of the pre-set camera-related buttons on the Solo controller because they are sent as GoPro specific commands.In addition, there is not yet a way for 3rd party developers to capture any button events on the Solo co-processor or ArduPilot.
 
 ### Custom Gimbal Camera Control
 
