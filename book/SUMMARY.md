@@ -23,6 +23,7 @@ This is the summary of the solodevguide.
    * [Skywriter Controller](example-skywriter.md)
    * [Using OpenCV](example-opencv.md)
 * Hardware
+   * [Solo Accessory Overview](starting-accessories.md)
    * [Accessory Bay](hardware-accessorybay.md)
    * [Gimbal Bay](hardware-gimbalbay.md)
    * [Battery Bay](hardware-batterybay.md)
