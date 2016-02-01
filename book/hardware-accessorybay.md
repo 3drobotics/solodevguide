@@ -88,7 +88,7 @@ An open source reference design for a breakout board can be found [here](https:/
 
 The breakout board plugs into the accessory port. The exposed side of the board is as shown below.
 
-![Accessory Breakout Board PCB (from below)](/images/accessory_breakout_board_pcb_below.jpg)
+![Accessory Breakout Board PCB (from below)](images/accessory_breakout_board_pcb_below.jpg)
 
 
 
@@ -97,7 +97,7 @@ The breakout board plugs into the accessory port. The exposed side of the board 
 
 The main communication channels between the Accessory Bay, Pixhawk and Companion Computer are shown below. Note that only USB is available for developer communication with Solo (the CAN and Serial/MAVLink channel is shown dashed for this reason). 
 
-![Accessory Bay System Architecture](/images/solo_accessory_bay_system_diagram.png)
+![Accessory Bay System Architecture](images/solo_accessory_bay_system_diagram.png)
 
 
 ## Communication Protocol
