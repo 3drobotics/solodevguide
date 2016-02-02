@@ -38,11 +38,11 @@ Pin | Name | Description
 6. | N/C | 
 7. | N/C |  
 8. | N/C |  
-9. | SER5 TX (DEBUG) | UART5 TX output from Pixhawk 2.
-10. | SER2RT | UART2 RTS output from Pixhawk 2 for flow control. Connect to device's CTS pin.
-11. | SER2Tx | UART3 RX signal to Pixhawk 2. Connect to device's TX pin. Voltage is 3.3V.
-12. | CANH1 | CAN bus high to the Pixhawk 2.
-13. | CANL1 | CAN bus low to the Pixhawk 2.
+9. | SER5 TX (DEBUG) | UART5 TX output from Pixhawk&trade; 2.
+10. | SER2RT | UART2 RTS output from Pixhawk&trade; 2 for flow control. Connect to device's CTS pin.
+11. | SER2Tx | UART3 RX signal to Pixhawk&trade; 2. Connect to device's TX pin. Voltage is 3.3V.
+12. | CANH1 | CAN bus high to the Pixhawk&trade; 2.
+13. | CANL1 | CAN bus low to the Pixhawk&trade; 2.
 14. | GND | Ground reference on Solo system.
 15. | BATT | 12V to 16.8V. Maximum combined current off bus (pins 15 and 30) is 1.1A (fuse: 1812L110/24DR). Maximum combined power 18.5W.
 16. | USB GND |  
@@ -53,16 +53,16 @@ Pin | Name | Description
 21. | GND | Ground reference on Solo system.
 22. | N/C |  
 23. | BUS ID |  
-24. | SER5 RX (DEBUG) | UART5 RX input to Pixhawk 2.
-25. | SER2CT | UART2 CTS input to Pixhawk 2 for flow control. Connect to device's RTS pin.
-26. | SER2Rx | UART3 TX signal from Pixhawk 2. Connect to device RX pin. Voltage is 3.3V.
+24. | SER5 RX (DEBUG) | UART5 RX input to Pixhawk&trade; 2.
+25. | SER2CT | UART2 CTS input to Pixhawk&trade; 2 for flow control. Connect to device's RTS pin.
+26. | SER2Rx | UART3 TX signal from Pixhawk&trade; 2. Connect to device RX pin. Voltage is 3.3V.
 27. | 3DRID | USB ID pin for OTG port on iMX6 OTG port
 28. | GND | Ground reference on Solo system.
 29. | GND | Ground reference on Solo system.
 30. | BATT | 12V to 16.8V. Maximum combined current off bus (pins 15 and 30) is 1.1A (fuse: 1812L110/24DR). Maximum combined power 18.5W.
 
 <aside class="note">
-The CAN (<a href="http://uavcan.org/UAVCAN)">UAVCAN</a>) and SERIAL BUS connections to Pixhawk are "not supported" by 3DR for external developer use.
+The CAN (<a href="http://uavcan.org/UAVCAN)">UAVCAN</a>) and SERIAL BUS connections to Pixhawk&trade; are "not supported" by 3DR for external developer use.
 </aside>
 
 
@@ -75,7 +75,7 @@ Two voltage sources are supplied to the *Accessory Bay*:
 
 *VCC 5V* should be used to power the USB device. The combined total current for both *VCC 5V* pins is limited to 1.05A (the combined current for both pins).
 <aside class="caution">
-The VCC 5V supply is also used as the backup supply for the Pixhawk. Attempting to draw more than the specified maximum current may drop the voltage, and could potentially cause a brownout.
+The VCC 5V supply is also used as the backup supply for the Pixhawk&trade;. Attempting to draw more than the specified maximum current may drop the voltage, and could potentially cause a brownout.
 </aside>
 
 *VCC Battery* can be used as a high-power supply for accessory hardware. The combined total current for both *VCC Battery* pins is limited to 1.1A (fuse: 1812L110/24DR) and the maximum power 18.5W.
@@ -95,7 +95,7 @@ The breakout board plugs into the accessory port. The exposed side of the board 
 
 ## Communication Architecture
 
-The main communication channels between the Accessory Bay, Pixhawk and Companion Computer are shown below. Note that only USB is available for developer communication with Solo (the CAN and Serial/MAVLink channel is shown dashed for this reason). 
+The main communication channels between the Accessory Bay, Pixhawk&trade; and Companion Computer are shown below. Note that only USB is available for developer communication with Solo (the CAN and Serial/MAVLink channel is shown dashed for this reason). 
 
 ![Accessory Bay System Architecture](images/solo_accessory_bay_system_diagram.png)
 
