@@ -64,3 +64,7 @@ It is up to the power system manufacturer to make sure all safety and regulatory
 ## Communication Protocol
 
 Solo uses the [standard SMBUS spec](https://drive.google.com/open?id=0B9l93ZUM5ooxXzZWT3FMdktaNjNGWDV6M0tQUDhwWWgtNEFB) for communicating with the battery. To interface with the battery it is best to implement the full specification.
+
+The required SMBus connector is shown in the image below. The connector has 3 contacts across the top and bottom: the top contacts are connected to SCL/Clock, the bottom contacts are SDA/Data. The battery and SMBus must share a common ground.
+
+![Solo Battery and SMBus Connectors](/images/solo_battery_charger_interface.png)
