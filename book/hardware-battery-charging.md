@@ -18,14 +18,12 @@ The Solo battery has the following physical and electrical specifications:
 * Discharging operating temp: -20C ~ 60C
 
 
-## Mechanical Interface Specifications
+## Mechanical Interface
 
-The charger must be able to physically connect to the battery (the available space for the connector is bounded by the top cover off the battery).
-
-![Solo Battery Charger Connection](/images/solo_battery_charger_interface.jpg)
+The charger must be able to physically connect to the battery (the available space for the connector is bounded by the top cover of the battery (see [figure below](#fig4.5.1)).
 
 
-## Electrical Interface Specifications
+## Electrical Interface
 
 The electrical interface with the Solo battery uses the following connectors:
 
@@ -36,8 +34,10 @@ The electrical interface with the Solo battery uses the following connectors:
 The connector contacts are rated for 40A on the power contacts.
 
 
-
-
 ## Communication Protocol
 
 Solo uses the [standard SMBUS spec](https://drive.google.com/open?id=0B9l93ZUM5ooxXzZWT3FMdktaNjNGWDV6M0tQUDhwWWgtNEFB) for communicating with the battery. To interface with the battery it is best to implement the full specification.
+
+The SMBus connector is shown in the image below. The connector has 3 contacts across the top and bottom: the top contacts are connected to SCL/Clock, the bottom contacts are SDA/Data. The battery and SMBus must share a common ground.
+
+![Solo Battery and SMBus Connectors](/images/solo_battery_charger_interface.png)
