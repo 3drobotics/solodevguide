@@ -40,4 +40,4 @@ Solo uses the [standard SMBUS spec](https://drive.google.com/open?id=0B9l93ZUM5o
 
 The SMBus connector is shown in the image below. The connector has 3 contacts across the top and bottom: the top contacts are connected to SCL/Clock, the bottom contacts are SDA/Data. The battery and SMBus must share a common ground.
 
-![Solo Battery and SMBus Connectors](/images/solo_battery_charger_interface.png)
+![Solo Battery and SMBus Connectors](/images/solo_battery_charger_interface.jpg)
