@@ -17,21 +17,63 @@ The mechanical interface points with Solo are:
 * Two front clips
 * Four screws
 * HDMI and Solo Gimbal Cable
-* Keep-out zones for accessory bay
+* Keep-out zones for the *Accessory Bay*
+* Gimbal Bay cavity
 
-We recommend that you use the *Solo Gimbal Beauty Plate* as the basis for your own connector plate, as it correctly implements the required mechanical interface points. The CAD file for the plate can be [downloaded from here](https://docs.google.com/a/3drobotics.com/uc?id=0B9l93ZUM5ooxT3lSeHhwZ3VvSmc&export=download) and a screenshot is shown below.
+### Gimbal Bay Body Pan
+
+The 3DR Gimbal Bay Body Pan (as used for the 3DR Gimbal) is shown below. Third-party gimbals will need to use a plate with the same relative fastener positions. 
+
+![Gimbal Bay Body Pan Hole and Faster Locations](images/gimbalbay-plate.png)
+
+The gimbal will require isolation from copter structural modes. Gimbals that use a similar damper system to the 3DR Gimbal may also need the same damper hole spacing.
+
+We recommend that you use the *Solo Gimbal Beauty Plate* as the starting point for your own plate, as it correctly implements the required mechanical interface points. The CAD file for the plate can be [downloaded from here](https://docs.google.com/a/3drobotics.com/uc?id=0B9l93ZUM5ooxT3lSeHhwZ3VvSmc&export=download) and a screenshot is shown below.
 
 ![Solo Beauty Plate](images/solo_gimbal_bay_beauty_plate.png)
 
-The maximum payload of Solo with gimbal, camera and other accessories is 700g.  Camera/Gimbal solutions that exceed the weight of the 3DR Gimbal and GoPro (390g) may not work with all accessories.
+<aside class="todo">
+Add:
+* Screws: type, positions, diameter, length.
+</aside>
 
+
+### Gimbal Bay Cavity and Camera Position
+
+The space within the Gimbal Bay cavity is extremely limited. It is important to allow sufficient clearance for gimbal movement as shown in the diagram below. 
+
+![Gimbal Bay Body Cavity](images/gimbalbay-cavity.png)
+
+Ensure that the camera is in an appropriate position to avoid propellers in the frame during pitch maneuvers (maximum copter pitch angle = 38°).
 
 <aside class="todo">
-This section is incomplete. The following information is still missing:
-* Screws: type, positions, diameter, length, anything else
+Add:
 * Keepout/reserved areas: Diagrams
-* Images/definition of the available space within the body of the vehicle.
+* More detailed envelope diagram of the bay cavity
 </aside>
+
+
+### Gimbal Payload Requirements
+
+The recommended payload requirements are:
+
+* Gimbal + camera weight<sup>*</sup>: 390grams
+* Maximum pitch: -130 to +45 deg
+* Maximum roll: +/- 40 deg
+* Maximum yaw: +/- 25 deg
+
+The gimbal should operate effectively within the following environmental conditions:
+
+* Altitude: -30 to +3650 metres MSL (&asymp; -100 to +12,000 ft)
+* Operating Temperature: -18°C to 55°C (&asymp; 0°F to 130°F)
+* Transportation Temperature: -40°C to 66°C (&asymp; -40°F to 150°F)
+* Operating Temperature Humidity: 10%-80% relative humidity (non-condensing) 
+* Transportation Temperature Humidity: 5%-95% relative humidity 
+* Wind Loading: 0-25kts, from any direction 
+
+<sup>*</sup> The maximum payload of Solo with gimbal, camera and other accessories is 700g.  Camera/Gimbal solutions that exceed the weight of the 3DR Gimbal and GoPro (390g) may not work with all accessories.
+
+
 
 
 
@@ -88,7 +130,7 @@ Communication between the Solo co-processor and the gimbal is not yet available 
 
 ### HDMI Micro Cable
 
-The [HDMI](https://en.wikipedia.org/wiki/HDMI) Micro (Type D) connection is responsible for transferring video from the camera on the Solo to the first person view in the 3DR app. The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
+The [HDMI](https://en.wikipedia.org/wiki/HDMI) Micro (Type D 19P) cable transfers video from the camera to Solo's i.MX6 Companion Computer (from which it is sent to the first person view in the Solo app). The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.
 
 Supported resolutions:
 
@@ -106,16 +148,28 @@ Supported resolutions:
 
 ## Software Interface
 
+Communication between Solo and gimbal is done using MAVlink Protocol over Serial. Messages are used for
+
+* Pointing the gimbal/vehicle (pitch control and Region of Interest)
+* Solo sensor communication (IMU data from Pixhawk 2 to gimbal) 
+* Firmware bootloading from companion computer 
+* Camera control
+
 <aside class="caution">
 The Solo software stack is not yet ready to integrate multiple types of gimbals. We are currently working on an extensible API to make it easier for third-party vendors to interface with different hardware.
 
-For development purposes we recommend using Pixhawk 1 and Copter 3.3 ArduPilot firmware.
+For development purposes we recommend using Pixhawk 1 and Copter 3.3 ArduPilot firmware. 
 </aside>
+
+<aside class="note">
+The rest of this document covers topics related to using Pixhawk 1 and Copter 3.3 ArduPilot firmware.
+</aside>
+
+### Gimbals supported by Pixhawk 1/Copter 3.3
 
 In order to have Solo control a gimbal, ArduPilot must know how to communicate with the gimbal. Fortunately, ArduPilot already has the ability to communicate with several types of pre-existing gimbal controllers including *SToRM32* and *Alexmos*. The custom Solo Gimbal protocol is not yet supported by any released versions of ArduPilot. 
 
 *SToRM32* is recommended as it features the most straightforward communication protocol. You can find more information about [this type of gimbal controller here](http://www.olliw.eu/storm32bgc-wiki/Main_Page) and ArduPilot integration can be [found here](http://copter.ardupilot.com/wiki/common-storm32-gimbal/).
-
 
 
 ### Common Gimbal Camera Control
