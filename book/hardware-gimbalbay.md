@@ -80,7 +80,11 @@ The Gimbal TX and Gimbal RX lines send [MAVLink](http://qgroundcontrol.org/mavli
 
 #### Co-processing with USB
 
-The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target. 
+The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target.
+
+<aside class="note">
+USB2.0 data rates might not be achievable via the Gimbal Bay USB interface.
+</aside>
 
 <aside class="note">
 Communication between the Solo co-processor and the gimbal is not yet available for 3rd party developers.
