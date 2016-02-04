@@ -25,19 +25,21 @@ The charger must be able to physically connect to the battery (the available spa
 
 ## Electrical Interface
 
-The electrical interface with the Solo battery uses the following connectors:
+The electrical interface with Solo uses the following connectors:
 
-* Battery side female connector is a Molex 171090-0048 ([PDF](https://drive.google.com/open?id=0B9l93ZUM5ooxMU0xM3h5MzNsMjVBV3NjYU9DSEdyZE5FQWhR)). This is a custom connector that can only be purchased in minimum orders of 1,000 units.
+* Battery side connector (female) is a Molex 171090-0048 ([PDF](https://drive.google.com/open?id=0B9l93ZUM5ooxMU0xM3h5MzNsMjVBV3NjYU9DSEdyZE5FQWhR)). This is a custom connector that can only be purchased in minimum orders of 1,000 units.
 
-* Charger side male connector is a Molex 171088-0048 ([PDF](https://drive.google.com/open?id=0B9l93ZUM5ooxblFVOVhuY2JwMExjd3FnYjgzZmNsNy1ialAw))
+* Solo / charger side connector (male) is a Molex 171088-0048 ([PDF](https://drive.google.com/open?id=0B9l93ZUM5ooxblFVOVhuY2JwMExjd3FnYjgzZmNsNy1ialAw))
+
+The battery interface has 3 prongs with 4 contacts. The SMBus connector has 2 contacts: SCL (top) and SDA (bottom) on the top-most prong.  The Battery `+` and `-` are the bottom 2 prongs. The battery and SMBus must share a common ground.
 
 The connector contacts are rated for 40A on the power contacts.
+
+![Solo / Battery charger side male connector (Molex 171088-0048)](images/solo_battery_connector_male.png)
+
+![Battery side female connector (Molex 171090-0048)](images/solo_battery_charger_interface.jpg)
 
 
 ## Communication Protocol
 
 Solo uses the [standard SMBUS spec](https://drive.google.com/open?id=0B9l93ZUM5ooxXzZWT3FMdktaNjNGWDV6M0tQUDhwWWgtNEFB) for communicating with the battery. To interface with the battery it is best to implement the full specification.
-
-The SMBus connector is shown in the image below. The connector has 3 contacts across the top and bottom: the top contacts are connected to SCL/Clock, the bottom contacts are SDA/Data. The battery and SMBus must share a common ground.
-
-![Solo Battery and SMBus Connectors](images/solo_battery_charger_interface.jpg)
