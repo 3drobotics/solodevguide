@@ -20,7 +20,7 @@
     "grunt-contrib-requirejs": "0.4.1",
     "grunt-gitbook": "^1.5.0",
     "grunt-http-server": "^1.10.0",
-    "grunt-link-checker": "^0.1.0",
+    "grunt-link-checker": "3drobotics/grunt-link-checker",
     "mocha": "2.2.1",
     "should": "5.2.0"
   },
