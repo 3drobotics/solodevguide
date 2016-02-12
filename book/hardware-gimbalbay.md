@@ -43,7 +43,7 @@ There are two physical connections from the Solo to a gimbal. The [Solo Gimbal C
 
 ### Solo Gimbal Cable
 
-The *Solo Gimbal cable* terminates in a [Molex 5031490800](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369) connector. A gimbal board is connected using the corresponding [Molex 5031540890](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082) connector. 
+The *Solo Gimbal cable* terminates in a [Molex 5031490800](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369) ([alt link](http://www.findchips.com/search/5031490800)) connector. A gimbal board is connected using the corresponding [Molex 5031540890](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082) ([alt link](http://www.findchips.com/search/5031540890)) connector. 
 
 Pin | Name | Color | Description
 --- | --- | --- | ---
