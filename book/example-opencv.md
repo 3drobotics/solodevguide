@@ -7,7 +7,7 @@ Detect faces using the onboard camera in Solo.
 ## Running a Custom OpenCV example
 
 <aside class="note">
-This example requires you to [install the package](uploading.html#installing-packages) `python-opencv`.
+This example requires you to [install the package](starting-installing.html#installing-python-packages-using-smart) `python-opencv`.
 </aside>
 
 <aside class="note">
