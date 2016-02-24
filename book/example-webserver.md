@@ -14,12 +14,11 @@ To run the server, we're going to use a package called Flask. The requirements w
 
 ```
 Flask>=0.10
-eventlet>=0.17
 Flask-SocketIO>=1.0
 dronekit>=2.0.0,<=2.99999
 ```
 
-This specifies that we want Flask, our webserver, DroneKit to communicate with our vehicle, and then two more packages: `eventlet` and `Flask-SocketIO` which allow us to use websockets to talk to a web browser.
+"Flask" will be used to serve web requests.  "dronekit" allows "Flask" to communicate with our vehicle.  "Flask-SocketIO" allows us to use websockets to talk to a web browser.
 
 In our file `server.py` we have a lot of content, but we can break it down into a few smaller sections:
 
@@ -41,7 +40,7 @@ def index():
     return render_template('index.html')
 ```
 
-This creates an "endpoint" at the path "/". That means when you navigate to http://10.1.1.10:5000/ on your web browser, it will return the contents of this function to the web browser. Here, we run the function `render_template`, which looks at the file in `templates/index.html` and renders it to the browser.
+This creates an "endpoint" at the path "/". That means when you navigate to http://10.1.1.10:8080/ on your web browser, it will return the contents of this function to the web browser. Here, we run the function `render_template`, which looks at the file in `templates/index.html` and renders it to the browser.
 
 See more in [the Flask documentation](http://flask.pocoo.org/) about templates and route endpoints.
 
@@ -54,7 +53,7 @@ Finally, we have a long-lived thread in the `latlog` file which updates us about
 ```
 def latlog(vehicle):
     while True:
-        eventlet.sleep(.5)
+        time.sleep(.5)
         loc = vehicle.location.global_frame
         if loc:
             socketio.emit('location', {
