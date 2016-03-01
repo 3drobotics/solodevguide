@@ -26,7 +26,7 @@ The 3DR Gimbal Bay Body Pan (as used for the 3DR Gimbal) is shown below. Third-p
 
 ![Gimbal Bay Body Pan Hole and Faster Locations](images/gimbalbay-plate.png)
 
-The gimbal will require isolation from copter structural modes. Gimbals that use a similar damper system to the 3DR Gimbal may also need the same damper hole spacing.
+The gimbal will require isolation from copter structural/vibrational modes. Gimbals that use a similar damper system to the 3DR Gimbal may also need the same damper hole spacing.
 
 We recommend that you use the *Solo Gimbal Beauty Plate* as the starting point for your own plate, as it correctly implements the required mechanical interface points. The CAD file for the plate can be [downloaded from here](https://docs.google.com/a/3drobotics.com/uc?id=0B9l93ZUM5ooxT3lSeHhwZ3VvSmc&export=download) and a screenshot is shown below.
 
