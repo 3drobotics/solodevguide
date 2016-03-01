@@ -85,7 +85,7 @@ There are two physical connections from the Solo to a gimbal. The [Solo Gimbal C
 
 ### Solo Gimbal Cable
 
-The *Solo Gimbal cable* terminates in a [Molex 5031490800](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369) connector. A gimbal board is connected using the corresponding [Molex 5031540890](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082) connector. 
+The *Solo Gimbal cable* terminates in a [Molex 5031490800](http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369) ([alt link](http://www.findchips.com/search/5031490800)) connector. A gimbal board is connected using the corresponding [Molex 5031540890](http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082) ([alt link](http://www.findchips.com/search/5031540890)) connector. 
 
 Pin | Name | Color | Description
 --- | --- | --- | ---
@@ -122,7 +122,11 @@ The Gimbal TX and Gimbal RX lines send [MAVLink](http://qgroundcontrol.org/mavli
 
 #### Co-processing with USB
 
-The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target. 
+The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target.
+
+<aside class="note">
+USB2.0 data rates might not be achievable via the Gimbal Bay USB interface.
+</aside>
 
 <aside class="note">
 Communication between the Solo co-processor and the gimbal is not yet available for 3rd party developers.
