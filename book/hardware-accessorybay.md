@@ -14,10 +14,13 @@ The Accessory Bay hole pattern is M2 screws in a 63 mm x 41 mm rectangular patte
 
 ![Hole Pattern](https://cloud.githubusercontent.com/assets/2678765/10023369/612fcd74-6117-11e5-961d-6a9d4ffeeb35.png)
 
-
 <aside class="note">
 Accessories are permitted to cover the <a href="https://3dr.com/kb/pairing-solo-controller/">Pairing button</a>.
 </aside>
+
+The diagram below shows the position of the accessory port.
+
+![Accessory Bay diagram with Connector](./images/accessory_bay_with_port.png)
 
 
 ## Electrical
