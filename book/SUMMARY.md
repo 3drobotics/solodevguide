@@ -20,7 +20,6 @@ This is the summary of the solodevguide.
    * [Running the Examples](example-get-started.md)
    * [Hello World (from above)!](example-helloworld.md)
    * [Running a Webserver](example-webserver.md)
-   * [Skywriter Controller](example-skywriter.md)
    * [Using OpenCV](example-opencv.md)
 * Hardware
    * [Solo Accessory Overview](starting-accessories.md)
