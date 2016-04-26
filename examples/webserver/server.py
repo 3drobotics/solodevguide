@@ -1,9 +1,11 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
-import eventlet
 import dronekit
 import sys
 import socket
+import threading
+import time
+import signal
 
 # Allow us to reuse sockets after the are bound.
 # http://stackoverflow.com/questions/25535975/release-python-flask-port-when-script-is-terminated
@@ -24,7 +26,7 @@ def index():
 
 def latlog(vehicle):
     while True:
-        eventlet.sleep(.5)
+        time.sleep(.5)
         loc = vehicle.location.global_frame
         if loc:
             socketio.emit('location', {
@@ -39,5 +41,6 @@ if __name__ == '__main__':
     target = sys.argv[1] if len(sys.argv) >= 2 else '127.0.0.1:14550'
     print 'Connecting to ' + target + '...'
     vehicle = dronekit.connect(target)
-    eventlet.spawn(latlog, vehicle)
-    socketio.run(app)
+    vehiclethread = threading.Thread(target=latlog, args=(vehicle,))
+    vehiclethread.start()
+    socketio.run(app, host="0.0.0.0", port=8080)
