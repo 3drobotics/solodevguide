@@ -9,9 +9,9 @@ The most important functions in the `solo.smartshot` are:
 * _Handling RC input._ Remapping the control sticks to perform alternate functions. For example, this is used in Cable Cam to allow the right stick to control Solo's position along the virtual cable instead of its position relative to earth.
 * _Buttons._ A and B can be mapped to provide shortcuts like setting fixed waypoints or recording a position.
 
-Since there isn't a framework to implement custom Smart Shots, to intall a custom Smart Shot, you must override an existing flight mode. In this example, our custom Smart Shot called AutoPan, will override the Sport Flight Mode.
+Since there isn't a framework to implement custom Smart Shots, to intall a custom Smart Shot, you must override an existing flight mode. In this example, our custom Smart Shot called AutoPan, will automatically yaw the Solo in 45 degreee increments and take a picture at each heading. It will override the Sport Flight Mode.
 
-Prerequisites
+\*\*Prerequisites:\*\*
 
 * Enable Advanced Flight Modes
 * Map Sport to Button A or Button B
@@ -57,7 +57,27 @@ MODE_NAMES = {
     }
 ```
 
-**Step 2. Modify shotManager.py**
+**Step 2. Modify shots.py**
+
+shots.py contains the definition of shots. Add and Autopan constant and add the constant to the SHOT\_NAMES array.
+
+```
+APP_SHOT_RECORD = 4
+APP_SHOT_FOLLOW = 5
+APP_SHOT_AUTOPAN = 6
+
+# NULL terminated for sending to Artoo
+SHOT_NAMES = {
+    APP_SHOT_NONE : "FLY\0",
+    APP_SHOT_SELFIE : "Selfie\0",
+    APP_SHOT_ORBIT : "Orbit\0",
+    APP_SHOT_CABLECAM : "Cable Cam\0",
+    APP_SHOT_FOLLOW : "Follow\0",
+    APP_SHOT_PANO : "Pano\0"
+}
+```
+
+**Step 3. Modify shotManager.py**
 
 shotManager.py manages the SmartShots. Add an import for your custom smart shot, add an entry to handleButtons function to handle the button press mapped to your custom smart shot, and an entry to the triggerShot function the handleButtons function trigger the smart shot.
 
@@ -70,6 +90,7 @@ import orbit
 import autopan
 import RCRemapper
 import selfie
+...
 ```
 
 Add an entry to the handleButtons function to handle the button press mapped to Autopan.
@@ -83,7 +104,7 @@ def handleButtons(self):
                     # see what the button is mapped to
                     (shot, mode) = self.buttonManager.getFreeButtonMapping(button)
 
-                    # hack to get pano
+                    # hack to get autopan
                     if (mode == 13):
                         logger.log("hack - mode: %s" % modes.MODE_NAMES[mode])
                         shot = shots.APP_SHOT_AUTOPAN
@@ -108,7 +129,9 @@ def triggerShot(self, shot):
     ...
 ```
 
-TBD
+Step 4. Add your custom smart shot dronekit-python script.
+
+This example SmartShot, AutoPan will yaw the Solo and take a picture at each heading.
 
 ```py
 import solo
