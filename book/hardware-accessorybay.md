@@ -128,7 +128,7 @@ The iMX6 kernel comes with with drivers for FTDI and CDC-ACM USB serial devices.
 
 Accessories typically connect to Solo as devices. Connect `3DRID` to `GND` to set the USB port to host mode. Connect 5V, `USB D+`, `USB D-` and `GND` to the corresponding pins of the USB device.
 
-The IMX6 will connect in device mode if the 3DRBUS pin is not connected to GND. In device mode you can connect the Solo to a computer.
+The IMX6 will connect in device mode if the `3DRID` pin is not connected to GND. In device mode you can connect the Solo to a computer.
 
 ### Connecting via an Accessory Breakout Port
 
