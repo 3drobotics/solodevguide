@@ -50,4 +50,4 @@ ssh-keygen -R 10.1.1.1
 
 ### Security
 
-Solo's root SSH password is the same for all devices. We recommend not modifying the SSH password. Instead, improve security on your device by [changing the WiFi SSID and password](https://3drobotics.com/kb/setting-wifi-password/) via the app.
+Solo's root SSH password is the same for all devices. We recommend not modifying the SSH password, as the [solo cli](starting-utils.html) will no longer be able to connect. Instead, improve security on your device by [changing the WiFi SSID and password](https://3drobotics.com/kb/setting-wifi-password/) via the app.

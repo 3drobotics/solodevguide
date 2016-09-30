@@ -1,4 +1,5 @@
 {
+  "gitbook": "2.x.x",
   "title": "3DR Solo Development Guide",
   "description": "Guide for development of hardware and software for Solo.",
   "plugins":[
