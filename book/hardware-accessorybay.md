@@ -43,7 +43,7 @@ Pin | Name | Description
 8. | N/C |
 9. | SER5 TX (DEBUG) | UART5 TX output from Pixhawk&trade; 2.
 10. | SER2RT | UART2 RTS output from Pixhawk&trade; 2 for flow control. Connect to device's CTS pin.
-11. | SER2Tx | UART3 RX signal to Pixhawk&trade; 2. Connect to device's TX pin. Voltage is 3.3V.
+11. | SER2Tx | UART2 RX signal to Pixhawk&trade; 2. Connect to device's TX pin. Voltage is 3.3V.
 12. | CANH1 | CAN bus high to the Pixhawk&trade; 2.
 13. | CANL1 | CAN bus low to the Pixhawk&trade; 2.
 14. | GND | Ground reference on Solo system.
@@ -58,7 +58,7 @@ Pin | Name | Description
 23. | BUS ID |
 24. | SER5 RX (DEBUG) | UART5 RX input to Pixhawk&trade; 2.
 25. | SER2CT | UART2 CTS input to Pixhawk&trade; 2 for flow control. Connect to device's RTS pin.
-26. | SER2Rx | UART3 TX signal from Pixhawk&trade; 2. Connect to device RX pin. Voltage is 3.3V.
+26. | SER2Rx | UART2 TX signal from Pixhawk&trade; 2. Connect to device RX pin. Voltage is 3.3V.
 27. | 3DRID | USB ID pin for OTG port on iMX6 OTG port
 28. | GND | Ground reference on Solo system.
 29. | GND | Ground reference on Solo system.
