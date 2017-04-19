@@ -60,6 +60,11 @@ Usage:
   solo video (acquire|restore)
   solo script [<arg>...]
 ```
+If you get an "ImportError: No module named virtualenv" run 
+
+```sh
+sudo pip install virtualenv
+```
 
 Specific information about what these commands do is given in the following sections and on the [*Solo CLI* README](https://github.com/3drobotics/solo-cli).
 
