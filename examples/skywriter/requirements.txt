@@ -1,0 +1,2 @@
+dronekit
+git+https://github.com/djnugent/dronedirect

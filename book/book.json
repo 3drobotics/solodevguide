@@ -1,0 +1,19 @@
+{
+  "title": "3DR Solo Development Guide",
+  "description": "Guide for development of hardware and software for Solo.",
+  "plugins":[
+    "scrollablecode",
+    "anchors",
+    "-mathjax",
+    "image-captions"
+  ],
+  "links": {
+    "sharing": {
+      "google": false,
+      "facebook": false,
+      "twitter": false,
+      "all": false
+    }
+  },
+  "theme": "./theme"
+}

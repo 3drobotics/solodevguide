@@ -1,0 +1,734 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Skywriter Controller | 3DR Solo Development Guide</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/website/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Custom JS -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/kramed.min.js"></script>
+        <script src="/js/website.js"></script>
+
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-scrollablecode/scrollablecode.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./example-opencv.html" />
+    
+    
+    <link rel="prev" href="./example-webserver.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <h1 id="solo-header">
+        <a href="/"><img src="/images/3dr.svg" height="20"> <span>Solo Development Guide</span></a>
+    </h1>
+
+    <div id="solo-header-links">
+        <a href="https://discuss.dronekit.io/c/solo-development">Forums</a>
+        <a href="https://github.com/3drobotics/solodevguide">Github</a>
+        <a href="https://www.hackster.io/3dr/projects">Projects</a>
+    </div>
+
+    <div class="book" data-level="3.4" data-basepath="." data-revision="Mon Mar 07 2016 22:21:28 GMT+0000 (UTC)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Getting Started</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="starting-network.html">
+            
+                
+                    <a href="./starting-network.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Accessing Solo
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="starting-utils.html">
+            
+                
+                    <a href="./starting-utils.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        &quot;solo&quot; Command Line Tool
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="starting-installing.html">
+            
+                
+                    <a href="./starting-installing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Installing Files and Code
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="starting-troubleshooting.html">
+            
+                
+                    <a href="./starting-troubleshooting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Troubleshooting
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="starting-rules.html">
+            
+                
+                    <a href="./starting-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Rules and Advice
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="starting-contributing.html">
+            
+                
+                    <a href="./starting-contributing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Contributing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="starting-resources.html">
+            
+                
+                    <a href="./starting-resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        External Resources
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Concepts</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="concept-architecture.html">
+            
+                
+                    <a href="./concept-architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Architectural Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="concept-dronekit.html">
+            
+                
+                    <a href="./concept-dronekit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        DroneKit
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="concept-smartshot.html">
+            
+                
+                    <a href="./concept-smartshot.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Smart Shots
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="concept-service.html">
+            
+                
+                    <a href="./concept-service.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        System Services
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="concept-video.html">
+            
+                
+                    <a href="./concept-video.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Video Pipeline
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Software Examples</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="example-get-started.html">
+            
+                
+                    <a href="./example-get-started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Running the Examples
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="example-helloworld.html">
+            
+                
+                    <a href="./example-helloworld.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Hello World (from above)!
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="example-webserver.html">
+            
+                
+                    <a href="./example-webserver.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Running a Webserver
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.4" data-path="example-skywriter.html">
+            
+                
+                    <a href="./example-skywriter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Skywriter Controller
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="example-opencv.html">
+            
+                
+                    <a href="./example-opencv.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Using OpenCV
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Hardware</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="starting-accessories.html">
+            
+                
+                    <a href="./starting-accessories.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Solo Accessory Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="hardware-accessorybay.html">
+            
+                
+                    <a href="./hardware-accessorybay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Accessory Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="hardware-gimbalbay.html">
+            
+                
+                    <a href="./hardware-gimbalbay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Gimbal Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="hardware-batterybay.html">
+            
+                
+                    <a href="./hardware-batterybay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Battery Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="hardware-battery-charging.html">
+            
+                
+                    <a href="./hardware-battery-charging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Battery Charger Interface
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Advanced Topics</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="advanced-licenses.html">
+            
+                
+                    <a href="./advanced-licenses.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Licenses
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="advanced-logs.html">
+            
+                
+                    <a href="./advanced-logs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        System Logs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="advanced-fasterdev.html">
+            
+                
+                    <a href="./advanced-fasterdev.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        Faster Development
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="advanced-python.html">
+            
+                
+                    <a href="./advanced-python.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Bundling Python
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="advanced-linux.html">
+            
+                
+                    <a href="./advanced-linux.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Yocto Linux
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+    <a href="https://github.com/3drobotics/solodevguide/edit/master/book/example-skywriter.md" class="btn pull-left" aria-label="EDIT_TOGGLE" target="_blank"><i class="fa fa-pencil-square-o"></i></a>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+    
+
+
+    <!-- Title -->
+    <!--
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >3DR Solo Development Guide</a>
+    </h1>
+    -->
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="skywriter"><a name="skywriter" class="plugin-anchor" href="#skywriter"><span class="fa fa-link"></span></a>Skywriter</h1>
+<p>Move solo around using high-level directional commands.</p>
+<p><strong>NOTE:</strong> To run this example, please <code>git clone</code> or download all the files in the <a href="https://github.com/3drobotics/solodevguide/tree/master/examples/skywriter" target="_blank">skywriter folder</a> on Github.</p>
+<h2 id="highlevel-directional-commands"><a name="highlevel-directional-commands" class="plugin-anchor" href="#highlevel-directional-commands"><span class="fa fa-link"></span></a>High-level directional commands</h2>
+<p>DroneDirect is a library that exposes several high-level methods:</p>
+<p>...</p>
+<h2 id="todo"><a name="todo" class="plugin-anchor" href="#todo"><span class="fa fa-link"></span></a>TODO</h2>
+<p>This</p>
+
+                    
+                    </section>
+                
+                
+
+                    <div class="page-inner-footer">
+                      3DR Developer guide copyright &copy; 2015 3D Robotics, the source for this guide is available on <a href="https://github.com/3drobotics/solodevguide" target="_blank">Github</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./example-webserver.html" class="navigation navigation-prev " aria-label="Previous page: Running a Webserver"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./example-opencv.html" class="navigation navigation-next " aria-label="Next page: Using OpenCV"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/website/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"scrollablecode":{},"anchors":{},"image-captions":{"variable_name":"_pictures"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+
+    <!-- Google Analytics -->
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39974306-5', 'auto');
+ga('send', 'pageview');
+    </script>
+</html>

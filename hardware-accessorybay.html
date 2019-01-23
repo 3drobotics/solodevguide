@@ -1,0 +1,997 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Accessory Bay | 3DR Solo Development Guide</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/website/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Custom JS -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/kramed.min.js"></script>
+        <script src="/js/website.js"></script>
+
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-scrollablecode/scrollablecode.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./hardware-gimbalbay.html" />
+    
+    
+    <link rel="prev" href="./starting-accessories.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <h1 id="solo-header">
+        <a href="/"><img src="/images/3dr.svg" height="20"> <span>Solo Development Guide</span></a>
+    </h1>
+
+    <div id="solo-header-links">
+        <a href="https://discuss.dronekit.io/c/solo-development">Forums</a>
+        <a href="https://github.com/3drobotics/solodevguide">Github</a>
+        <a href="https://www.hackster.io/3dr/projects">Projects</a>
+    </div>
+
+    <div class="book" data-level="4.2" data-basepath="." data-revision="Tue Apr 26 2016 20:25:43 GMT+0000 (UTC)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Getting Started</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="starting-network.html">
+            
+                
+                    <a href="./starting-network.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Accessing Solo
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="starting-utils.html">
+            
+                
+                    <a href="./starting-utils.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        &quot;solo&quot; Command Line Tool
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="starting-installing.html">
+            
+                
+                    <a href="./starting-installing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Installing Files and Code
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="starting-troubleshooting.html">
+            
+                
+                    <a href="./starting-troubleshooting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Troubleshooting
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="starting-rules.html">
+            
+                
+                    <a href="./starting-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Rules and Advice
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="starting-contributing.html">
+            
+                
+                    <a href="./starting-contributing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Contributing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="starting-resources.html">
+            
+                
+                    <a href="./starting-resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        External Resources
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Concepts</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="concept-architecture.html">
+            
+                
+                    <a href="./concept-architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Architectural Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="concept-dronekit.html">
+            
+                
+                    <a href="./concept-dronekit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        DroneKit
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="concept-smartshot.html">
+            
+                
+                    <a href="./concept-smartshot.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Smart Shots
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="concept-service.html">
+            
+                
+                    <a href="./concept-service.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        System Services
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="concept-video.html">
+            
+                
+                    <a href="./concept-video.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Video Pipeline
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Software Examples</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="example-get-started.html">
+            
+                
+                    <a href="./example-get-started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Running the Examples
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="example-helloworld.html">
+            
+                
+                    <a href="./example-helloworld.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Hello World (from above)!
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="example-webserver.html">
+            
+                
+                    <a href="./example-webserver.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Running a Webserver
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="example-opencv.html">
+            
+                
+                    <a href="./example-opencv.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Using OpenCV
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Hardware</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="starting-accessories.html">
+            
+                
+                    <a href="./starting-accessories.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Solo Accessory Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="hardware-accessorybay.html">
+            
+                
+                    <a href="./hardware-accessorybay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Accessory Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="hardware-gimbalbay.html">
+            
+                
+                    <a href="./hardware-gimbalbay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Gimbal Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="hardware-batterybay.html">
+            
+                
+                    <a href="./hardware-batterybay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Battery Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="hardware-battery-charging.html">
+            
+                
+                    <a href="./hardware-battery-charging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Battery Charger Interface
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Advanced Topics</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="advanced-licenses.html">
+            
+                
+                    <a href="./advanced-licenses.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Licenses
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="advanced-logs.html">
+            
+                
+                    <a href="./advanced-logs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        System Logs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="advanced-fasterdev.html">
+            
+                
+                    <a href="./advanced-fasterdev.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        Faster Development
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="advanced-python.html">
+            
+                
+                    <a href="./advanced-python.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Bundling Python
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="advanced-linux.html">
+            
+                
+                    <a href="./advanced-linux.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Yocto Linux
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+    <a href="https://github.com/3drobotics/solodevguide/edit/master/book/hardware-accessorybay.md" class="btn pull-left" aria-label="EDIT_TOGGLE" target="_blank"><i class="fa fa-pencil-square-o"></i></a>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+    
+
+
+    <!-- Title -->
+    <!--
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >3DR Solo Development Guide</a>
+    </h1>
+    -->
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="accessory-bay"><a name="accessory-bay" class="plugin-anchor" href="#accessory-bay"><span class="fa fa-link"></span></a>Accessory Bay</h1>
+<p>The <em>Accessory Bay</em> is the area behind the gimbal under the Solo that does not interfere with the 3DR Gimbal. It is intended for secondary accessories, including additional communications hardware and high power devices.</p>
+<p>Accessory developers can attach hardware using the holes provided and connect to the iMX6 (Companion computer) via USB.</p>
+<h2 id="mechanical"><a name="mechanical" class="plugin-anchor" href="#mechanical"><span class="fa fa-link"></span></a>Mechanical</h2>
+<p>The accessory area is roughly 7.6 cm wide x 13.3 cm long x 10.2 cm deep.</p>
+<p>Maximum payload of the system is 700g, the 3DR Gimbal + GoPro weigh approximately 390g, leaving 310g for accessories that are meant to be used with the 3DR Gimbal.</p>
+<p>The Accessory Bay hole pattern is M2 screws in a 63 mm x 41 mm rectangular pattern. Ensure that the rectangle is not intersected by the path of the gimbal.</p>
+<figure id="fig4.2.1"><img src="https://cloud.githubusercontent.com/assets/2678765/10023369/612fcd74-6117-11e5-961d-6a9d4ffeeb35.png" alt="Hole Pattern"><figcaption>Figure: Hole Pattern</figcaption></figure>
+<aside class="note">
+Accessories are permitted to cover the <a href="https://3dr.com/kb/pairing-solo-controller/" target="_blank">Pairing button</a>.
+</aside>
+
+<p>The diagram below shows the position of the accessory port.</p>
+<figure id="fig4.2.2"><img src="images/accessory_bay_with_port.png" alt="Accessory Bay diagram with Connector"><figcaption>Figure: Accessory Bay diagram with Connector</figcaption></figure>
+<h2 id="electrical"><a name="electrical" class="plugin-anchor" href="#electrical"><span class="fa fa-link"></span></a>Electrical</h2>
+<h3 id="accessory-port"><a name="accessory-port" class="plugin-anchor" href="#accessory-port"><span class="fa fa-link"></span></a>Accessory Port</h3>
+<p>The mating connector part number is <a href="https://jae-connectors.com/en/pdf_download_exec.cfm?param=SJ038252.pdf" target="_blank">JAE SJ038252</a> and can be purchased on <a href="http://www.mouser.com/ProductDetail/JAE-Electronics/TX24-30R-6ST-N1E/?qs=%2fha2pyFaduiqgba8kBa6TtehVWNIeLFx3lhQ48lSxiSCqywLxSV2eg%3d%3d" target="_blank">Mouser</a>.</p>
+<p>The pinout of the <em>Accessory Port</em> is:</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>USB D-</td>
+<td>Negative differential data signal to iMX6 OTG USB port.</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>USB D+</td>
+<td>Positive differential data signal to iMX6 OTG USB port.</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>5.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>6.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>7.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>8.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>9.</td>
+<td>SER5 TX (DEBUG)</td>
+<td>UART5 TX output from Pixhawk&#x2122; 2.</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>SER2RT</td>
+<td>UART2 RTS output from Pixhawk&#x2122; 2 for flow control. Connect to device&apos;s CTS pin.</td>
+</tr>
+<tr>
+<td>11.</td>
+<td>SER2Tx</td>
+<td>UART3 RX signal to Pixhawk&#x2122; 2. Connect to device&apos;s TX pin. Voltage is 3.3V.</td>
+</tr>
+<tr>
+<td>12.</td>
+<td>CANH1</td>
+<td>CAN bus high to the Pixhawk&#x2122; 2.</td>
+</tr>
+<tr>
+<td>13.</td>
+<td>CANL1</td>
+<td>CAN bus low to the Pixhawk&#x2122; 2.</td>
+</tr>
+<tr>
+<td>14.</td>
+<td>GND</td>
+<td>Ground reference on Solo system.</td>
+</tr>
+<tr>
+<td>15.</td>
+<td>BATT</td>
+<td>12V to 16.8V. Maximum combined current off bus (pins 15 and 30) is 1.1A (fuse: 1812L110/24DR). Maximum combined power 18.5W.</td>
+</tr>
+<tr>
+<td>16.</td>
+<td>USB GND</td>
+<td></td>
+</tr>
+<tr>
+<td>17.</td>
+<td>+5V</td>
+<td>4.75V to 5.4V voltage pin for USB device. Maximum combined current off bus (pins 17 and 19) is 1.05A (fuse: ST890DTR). Maximum combined power 5.7W.</td>
+</tr>
+<tr>
+<td>18.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>19.</td>
+<td>+5V</td>
+<td>4.75V to 5.4V voltage pin for USB device. Maximum combined current off bus (pins 17 and 19) is 1.05A (fuse: ST890DTR). Maximum combined power 5.7W.</td>
+</tr>
+<tr>
+<td>20.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>21.</td>
+<td>GND</td>
+<td>Ground reference on Solo system.</td>
+</tr>
+<tr>
+<td>22.</td>
+<td>N/C</td>
+<td></td>
+</tr>
+<tr>
+<td>23.</td>
+<td>BUS ID</td>
+<td></td>
+</tr>
+<tr>
+<td>24.</td>
+<td>SER5 RX (DEBUG)</td>
+<td>UART5 RX input to Pixhawk&#x2122; 2.</td>
+</tr>
+<tr>
+<td>25.</td>
+<td>SER2CT</td>
+<td>UART2 CTS input to Pixhawk&#x2122; 2 for flow control. Connect to device&apos;s RTS pin.</td>
+</tr>
+<tr>
+<td>26.</td>
+<td>SER2Rx</td>
+<td>UART3 TX signal from Pixhawk&#x2122; 2. Connect to device RX pin. Voltage is 3.3V.</td>
+</tr>
+<tr>
+<td>27.</td>
+<td>3DRID</td>
+<td>USB ID pin for OTG port on iMX6 OTG port</td>
+</tr>
+<tr>
+<td>28.</td>
+<td>GND</td>
+<td>Ground reference on Solo system.</td>
+</tr>
+<tr>
+<td>29.</td>
+<td>GND</td>
+<td>Ground reference on Solo system.</td>
+</tr>
+<tr>
+<td>30.</td>
+<td>BATT</td>
+<td>12V to 16.8V. Maximum combined current off bus (pins 15 and 30) is 1.1A (fuse: 1812L110/24DR). Maximum combined power 18.5W.</td>
+</tr>
+</tbody>
+</table>
+<aside class="note">
+The CAN (<a href="http://uavcan.org/UAVCAN)" target="_blank">UAVCAN</a>) and SERIAL BUS connections to Pixhawk&#x2122; are &quot;not supported&quot; by 3DR for external developer use.
+</aside>
+
+
+<h3 id="power-supply"><a name="power-supply" class="plugin-anchor" href="#power-supply"><span class="fa fa-link"></span></a>Power Supply</h3>
+<p>Two voltage sources are supplied to the <em>Accessory Bay</em>:</p>
+<ul>
+<li>VCC 5V (4.75V to 5.4V).</li>
+<li>VCC Battery (12V to 16.8 V).</li>
+</ul>
+<p><em>VCC 5V</em> should be used to power the USB device. The combined total current for both <em>VCC 5V</em> pins is limited to 1.05A (the combined current for both pins).</p>
+<aside class="caution">
+The VCC 5V supply is also used as the backup supply for the Pixhawk&#x2122;. Attempting to draw more than the specified maximum current may drop the voltage, and could potentially cause a brownout.
+</aside>
+
+<p><em>VCC Battery</em> can be used as a high-power supply for accessory hardware. The combined total current for both <em>VCC Battery</em> pins is limited to 1.1A (fuse: 1812L110/24DR) and the maximum power 18.5W.</p>
+<h3 id="accessory-breakout-board"><a name="accessory-breakout-board" class="plugin-anchor" href="#accessory-breakout-board"><span class="fa fa-link"></span></a>Accessory Breakout Board</h3>
+<p>An open source reference design for a breakout board can be found <a href="https://github.com/3drobotics/Pixhawk_OS_Hardware/tree/master/Accessory_Breakout_X1" target="_blank">here</a>.</p>
+<p>The breakout board plugs into the accessory port. The exposed side of the board is as shown below.</p>
+<figure id="fig4.2.3"><img src="images/accessory_breakout_board_pcb_below.jpg" alt="Accessory Breakout Board PCB (from below)"><figcaption>Figure: Accessory Breakout Board PCB (from below)</figcaption></figure>
+<h3 id="peripheral-mapping"><a name="peripheral-mapping" class="plugin-anchor" href="#peripheral-mapping"><span class="fa fa-link"></span></a>Peripheral Mapping</h3>
+<p>The accessory port breaks out a subset of the available peripherals of the Pixhawk2 and iMX. Here is the mapping between the different naming schemes of peripherals available on Solo.</p>
+<table>
+<thead>
+<tr>
+<th>HAL</th>
+<th>System</th>
+<th>ArduCopter Parameter</th>
+<th>Pixhawk2</th>
+<th>Solo Peripheral</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>px4io/sbus</td>
+<td>/dev/ttyS0</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>uartA</td>
+<td>/dev/ttyACM0</td>
+<td></td>
+<td>USB</td>
+<td></td>
+</tr>
+<tr>
+<td>uartB</td>
+<td>/dev/ttyS3</td>
+<td>SERIAL3</td>
+<td>GPS</td>
+<td>Internal GPS</td>
+</tr>
+<tr>
+<td>uartC</td>
+<td>/dev/ttyS1</td>
+<td>SERIAL1</td>
+<td>Telem1</td>
+<td></td>
+</tr>
+<tr>
+<td>uartD</td>
+<td>/dev/ttyS2</td>
+<td>SERIAL2</td>
+<td>Telem2</td>
+<td>Acc. Port</td>
+</tr>
+<tr>
+<td>uartE</td>
+<td>/dev/ttyS6</td>
+<td>SERIAL4</td>
+<td>Serial4</td>
+<td>Gimbal</td>
+</tr>
+<tr>
+<td>nsh console</td>
+<td>/dev/ttyS5</td>
+<td></td>
+<td>Serial5</td>
+<td>Acc. Port</td>
+</tr>
+</tbody>
+</table>
+<h2 id="communication-architecture"><a name="communication-architecture" class="plugin-anchor" href="#communication-architecture"><span class="fa fa-link"></span></a>Communication Architecture</h2>
+<p>The main communication channels between the Accessory Bay, Pixhawk&#x2122; and Companion Computer are shown below. Note that only USB is available for developer communication with Solo (the CAN and Serial/MAVLink channel is shown dashed for this reason).</p>
+<figure id="fig4.2.4"><img src="images/solo_accessory_bay_system_diagram.png" alt="Accessory Bay System Architecture"><figcaption>Figure: Accessory Bay System Architecture</figcaption></figure>
+<h2 id="communication-protocol"><a name="communication-protocol" class="plugin-anchor" href="#communication-protocol"><span class="fa fa-link"></span></a>Communication Protocol</h2>
+<p>The USB OTG port is the recommended interface to the <em>Accessory Bay</em>. The port can act as either host or as a device, but typically the iMX6 acts as the host and the accessory as a connected USB device. The USB port enables interactions with Smart shots, DroneKit, and the Controller.</p>
+<h3 id="supported-drivers"><a name="supported-drivers" class="plugin-anchor" href="#supported-drivers"><span class="fa fa-link"></span></a>Supported Drivers</h3>
+<p>The iMX6 kernel comes with with drivers for FTDI and CDC-ACM USB serial devices. These can, for example, be used with all official Arduino devices.</p>
+<h3 id="connecting-directly-to-the-usb-port"><a name="connecting-directly-to-the-usb-port" class="plugin-anchor" href="#connecting-directly-to-the-usb-port"><span class="fa fa-link"></span></a>Connecting directly to the USB Port</h3>
+<p>Accessories typically connect to Solo as devices. Connect <code>3DRID</code> to <code>GND</code> to set the USB port to host mode. Connect 5V, <code>USB D+</code>, <code>USB D-</code> and <code>GND</code> to the corresponding pins of the USB device.</p>
+<p>The IMX6 will connect in device mode if the 3DRBUS pin is not connected to GND. In device mode you can connect the Solo to a computer.</p>
+<h3 id="connecting-via-an-accessory-breakout-port"><a name="connecting-via-an-accessory-breakout-port" class="plugin-anchor" href="#connecting-via-an-accessory-breakout-port"><span class="fa fa-link"></span></a>Connecting via an Accessory Breakout Port</h3>
+<p>If you have the recommended <a href="#accessory-breakout-board">accessory breakout board</a>, use a jumper to connect <code>3DRID</code> to ground to set the iMX6 to host mode. Then use a <a href="http://www.amazon.com/Micro-USB-OTG-Adapter-Cable/dp/B00D8YZ2SA" target="_blank">USB OTG cable</a>) to connect the device to the breakout board.</p>
+<h3 id="accessing-usb-serial-devices"><a name="accessing-usb-serial-devices" class="plugin-anchor" href="#accessing-usb-serial-devices"><span class="fa fa-link"></span></a>Accessing USB Serial devices</h3>
+<p>USB Serial devices are accessed using normal Linux methods. For example, to communicate with a USB serial adapter or Arduino from Python, you could use <a href="http://pythonhosted.org/pyserial/" target="_blank">http://pythonhosted.org/pyserial/</a>.</p>
+<aside class="tip">
+Use the <strong>/dev/serial/by-id/</strong> paths to access USB serial devices on the IMX6, as the enumeration order may change.
+</aside>
+
+
+<h3 id="usb-connection-speed"><a name="usb-connection-speed" class="plugin-anchor" href="#usb-connection-speed"><span class="fa fa-link"></span></a>USB Connection Speed</h3>
+<p>The USB routing on the mainboard does not meet the spec for USB &#x201C;High Speed&#x201D; (480Mbit/s), so the maximum in-spec speed is &#x201C;Full Speed&quot; (12Mbit/s). In practice most high speed devices should work.</p>
+<p>The actual throughput will depend on the device being used.</p>
+
+                    
+                    </section>
+                
+                
+
+                    <div class="page-inner-footer">
+                      3DR Developer guide copyright &copy; 2015 3D Robotics, the source for this guide is available on <a href="https://github.com/3drobotics/solodevguide" target="_blank">Github</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./starting-accessories.html" class="navigation navigation-prev " aria-label="Previous page: Solo Accessory Overview"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./hardware-gimbalbay.html" class="navigation navigation-next " aria-label="Next page: Gimbal Bay"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/website/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"scrollablecode":{},"anchors":{},"image-captions":{"variable_name":"_pictures"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+
+    <!-- Google Analytics -->
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39974306-5', 'auto');
+ga('send', 'pageview');
+    </script>
+</html>

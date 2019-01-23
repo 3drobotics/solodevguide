@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="{{ language }}" {% if options.direction == "rtl" %}dir="rtl"{% endif %}>
+    {{ htmlSnippet("html:start")|default("", true)|safe }}
+    <head>
+        {{ htmlSnippet("head:start")|default("", true)|safe }}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{% block title %}{% endblock %}</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="generator" content="GitBook {{ gitbook.version }}">
+        {% if options.author %}<meta name="author" content="{{ options.author }}">{% endif %}
+        {% if options.isbn %}<meta name="identifier" content="{{ options.isbn }}" scheme="ISBN">{% endif %}
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ staticBase }}/website/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Custom JS -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/kramed.min.js"></script>
+        <script src="/js/website.js"></script>
+
+        {% block style %}{% endblock %}
+        {% block head %}{% endblock %}
+        {{ htmlSnippet("head:end")|default("", true)|safe }}
+    </head>
+    <body>
+        {{ htmlSnippet("body:start")|default("", true)|safe }}
+        {% block content %}{% endblock %}
+        {% block javascript %}{% endblock %}
+        {{ htmlSnippet("body:end")|default("", true)|safe }}
+    </body>
+    {{ htmlSnippet("html:end")|default("", true)|safe }}
+
+    <!-- Google Analytics -->
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39974306-5', 'auto');
+ga('send', 'pageview');
+    </script>
+</html>

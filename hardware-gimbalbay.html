@@ -1,0 +1,976 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Gimbal Bay | 3DR Solo Development Guide</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/website/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Custom JS -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/kramed.min.js"></script>
+        <script src="/js/website.js"></script>
+
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-scrollablecode/scrollablecode.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./hardware-batterybay.html" />
+    
+    
+    <link rel="prev" href="./hardware-accessorybay.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <h1 id="solo-header">
+        <a href="/"><img src="/images/3dr.svg" height="20"> <span>Solo Development Guide</span></a>
+    </h1>
+
+    <div id="solo-header-links">
+        <a href="https://discuss.dronekit.io/c/solo-development">Forums</a>
+        <a href="https://github.com/3drobotics/solodevguide">Github</a>
+        <a href="https://www.hackster.io/3dr/projects">Projects</a>
+    </div>
+
+    <div class="book" data-level="4.3" data-basepath="." data-revision="Tue Apr 26 2016 20:25:43 GMT+0000 (UTC)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Getting Started</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="starting-network.html">
+            
+                
+                    <a href="./starting-network.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Accessing Solo
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="starting-utils.html">
+            
+                
+                    <a href="./starting-utils.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        &quot;solo&quot; Command Line Tool
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="starting-installing.html">
+            
+                
+                    <a href="./starting-installing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Installing Files and Code
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="starting-troubleshooting.html">
+            
+                
+                    <a href="./starting-troubleshooting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Troubleshooting
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="starting-rules.html">
+            
+                
+                    <a href="./starting-rules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Rules and Advice
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="starting-contributing.html">
+            
+                
+                    <a href="./starting-contributing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Contributing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="starting-resources.html">
+            
+                
+                    <a href="./starting-resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        External Resources
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Concepts</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="concept-architecture.html">
+            
+                
+                    <a href="./concept-architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Architectural Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="concept-dronekit.html">
+            
+                
+                    <a href="./concept-dronekit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        DroneKit
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="concept-smartshot.html">
+            
+                
+                    <a href="./concept-smartshot.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Smart Shots
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="concept-service.html">
+            
+                
+                    <a href="./concept-service.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        System Services
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="concept-video.html">
+            
+                
+                    <a href="./concept-video.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Video Pipeline
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Software Examples</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="example-get-started.html">
+            
+                
+                    <a href="./example-get-started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Running the Examples
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="example-helloworld.html">
+            
+                
+                    <a href="./example-helloworld.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Hello World (from above)!
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="example-webserver.html">
+            
+                
+                    <a href="./example-webserver.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Running a Webserver
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="example-opencv.html">
+            
+                
+                    <a href="./example-opencv.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Using OpenCV
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Hardware</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="starting-accessories.html">
+            
+                
+                    <a href="./starting-accessories.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Solo Accessory Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="hardware-accessorybay.html">
+            
+                
+                    <a href="./hardware-accessorybay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Accessory Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.3" data-path="hardware-gimbalbay.html">
+            
+                
+                    <a href="./hardware-gimbalbay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Gimbal Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="hardware-batterybay.html">
+            
+                
+                    <a href="./hardware-batterybay.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Battery Bay
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="hardware-battery-charging.html">
+            
+                
+                    <a href="./hardware-battery-charging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Battery Charger Interface
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+                
+                    <span style="opacity: 1; border-bottom: 1px solid #ddd; font-weight: bold; margin-top: 0.5em;">Advanced Topics</span>
+                
+            
+            
+            <ul class="articles" style="padding-left: 0">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="advanced-licenses.html">
+            
+                
+                    <a href="./advanced-licenses.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Licenses
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="advanced-logs.html">
+            
+                
+                    <a href="./advanced-logs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        System Logs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="advanced-fasterdev.html">
+            
+                
+                    <a href="./advanced-fasterdev.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        Faster Development
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="advanced-python.html">
+            
+                
+                    <a href="./advanced-python.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Bundling Python
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="advanced-linux.html">
+            
+                
+                    <a href="./advanced-linux.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Yocto Linux
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+    <a href="https://github.com/3drobotics/solodevguide/edit/master/book/hardware-gimbalbay.md" class="btn pull-left" aria-label="EDIT_TOGGLE" target="_blank"><i class="fa fa-pencil-square-o"></i></a>
+
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+    
+
+
+    <!-- Title -->
+    <!--
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >3DR Solo Development Guide</a>
+    </h1>
+    -->
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="gimbal-bay"><a name="gimbal-bay" class="plugin-anchor" href="#gimbal-bay"><span class="fa fa-link"></span></a>Gimbal Bay</h1>
+<p>The Gimbal Bay provides an extensible interface intended for attaching <a href="https://3dr.com/mfs/" target="_blank">Made For Solo</a>-approved 3-axis gimbal and camera solutions.</p>
+<aside class="tip">
+The Gimbal Bay can also be used for other types of Solo add-ons.
+</aside>
+
+
+<h2 id="mechanical"><a name="mechanical" class="plugin-anchor" href="#mechanical"><span class="fa fa-link"></span></a>Mechanical</h2>
+<p>The Gimbal Bay area comprises the lower-front area of Solo, extending back as far as the accessory bay and into the vehicle body.</p>
+<p>The mechanical interface points with Solo are:</p>
+<ul>
+<li>Gimbal connector plate</li>
+<li>Two front clips</li>
+<li>Four screws</li>
+<li>HDMI and Solo Gimbal Cable</li>
+<li>Keep-out zones for the <em>Accessory Bay</em></li>
+<li>Gimbal Bay cavity</li>
+</ul>
+<h3 id="gimbal-bay-body-pan"><a name="gimbal-bay-body-pan" class="plugin-anchor" href="#gimbal-bay-body-pan"><span class="fa fa-link"></span></a>Gimbal Bay Body Pan</h3>
+<p>The 3DR Gimbal Bay Body Pan (as used for the 3DR Gimbal) is shown below. Third-party gimbals will need to use a plate with the same relative fastener positions. </p>
+<figure id="fig4.3.1"><img src="images/gimbalbay-plate.png" alt="Gimbal Bay Body Pan Hole and Faster Locations"><figcaption>Figure: Gimbal Bay Body Pan Hole and Faster Locations</figcaption></figure>
+<p>The gimbal will require isolation from copter structural/vibrational modes. Gimbals that use a similar damper system to the 3DR Gimbal may also need the same damper hole spacing.</p>
+<p>We recommend that you use the <em>Solo Gimbal Beauty Plate</em> as the starting point for your own plate, as it correctly implements the required mechanical interface points. The CAD file for the plate can be <a href="https://docs.google.com/a/3drobotics.com/uc?id=0B9l93ZUM5ooxT3lSeHhwZ3VvSmc&amp;export=download" target="_blank">downloaded from here</a> and a screenshot is shown below.</p>
+<figure id="fig4.3.2"><img src="images/solo_gimbal_bay_beauty_plate.png" alt="Solo Beauty Plate"><figcaption>Figure: Solo Beauty Plate</figcaption></figure>
+<aside class="todo">
+Add:
+* Screws: type, positions, diameter, length.
+</aside>
+
+
+<h3 id="gimbal-bay-cavity-and-camera-position"><a name="gimbal-bay-cavity-and-camera-position" class="plugin-anchor" href="#gimbal-bay-cavity-and-camera-position"><span class="fa fa-link"></span></a>Gimbal Bay Cavity and Camera Position</h3>
+<p>The space within the Gimbal Bay cavity is extremely limited. It is important to allow sufficient clearance for gimbal movement as shown in the diagram below. </p>
+<figure id="fig4.3.3"><img src="images/gimbalbay-cavity.png" alt="Gimbal Bay Body Cavity"><figcaption>Figure: Gimbal Bay Body Cavity</figcaption></figure>
+<p>Ensure that the camera is in an appropriate position to avoid propellers in the frame during pitch maneuvers (maximum copter pitch angle = 38&#xB0;).</p>
+<aside class="todo">
+Add:
+* Keepout/reserved areas: Diagrams
+* More detailed envelope diagram of the bay cavity
+</aside>
+
+
+<h3 id="gimbal-payload-requirements"><a name="gimbal-payload-requirements" class="plugin-anchor" href="#gimbal-payload-requirements"><span class="fa fa-link"></span></a>Gimbal Payload Requirements</h3>
+<p>The recommended payload requirements are:</p>
+<ul>
+<li>Gimbal + camera weight<sup>*</sup>: 390grams</li>
+<li>Maximum pitch: -130 to +45 deg</li>
+<li>Maximum roll: +/- 40 deg</li>
+<li>Maximum yaw: +/- 25 deg</li>
+</ul>
+<p>The gimbal should operate effectively within the following environmental conditions:</p>
+<ul>
+<li>Altitude: -30 to +3650 metres MSL (&#x2248; -100 to +12,000 ft)</li>
+<li>Operating Temperature: -18&#xB0;C to 55&#xB0;C (&#x2248; 0&#xB0;F to 130&#xB0;F)</li>
+<li>Transportation Temperature: -40&#xB0;C to 66&#xB0;C (&#x2248; -40&#xB0;F to 150&#xB0;F)</li>
+<li>Operating Temperature Humidity: 10%-80% relative humidity (non-condensing) </li>
+<li>Transportation Temperature Humidity: 5%-95% relative humidity </li>
+<li>Wind Loading: 0-25kts, from any direction </li>
+</ul>
+<p><sup>*</sup> The maximum payload of Solo with gimbal, camera and other accessories is 700g.  Camera/Gimbal solutions that exceed the weight of the 3DR Gimbal and GoPro (390g) may not work with all accessories.</p>
+<h2 id="electrical"><a name="electrical" class="plugin-anchor" href="#electrical"><span class="fa fa-link"></span></a>Electrical</h2>
+<p>There are two physical connections from the Solo to a gimbal. The <a href="#solo-gimbal-cable">Solo Gimbal Cable</a>, which primarily manages the position and recording state of the camera, and the <a href="#hdmi-micro-cable">HDMI Micro cable</a> which routes the video signal. </p>
+<h3 id="solo-gimbal-cable"><a name="solo-gimbal-cable" class="plugin-anchor" href="#solo-gimbal-cable"><span class="fa fa-link"></span></a>Solo Gimbal Cable</h3>
+<p>The <em>Solo Gimbal cable</em> terminates in a <a href="http://www.digikey.com/product-detail/en/5031490800/5031490800-ND/3071369" target="_blank">Molex 5031490800</a> (<a href="http://www.findchips.com/search/5031490800" target="_blank">alt link</a>) connector. A gimbal board is connected using the corresponding <a href="http://www.digikey.com/product-detail/en/5031540890/5031540890-ND/2819082" target="_blank">Molex 5031540890</a> (<a href="http://www.findchips.com/search/5031540890" target="_blank">alt link</a>) connector. </p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Name</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>VCC Battery</td>
+<td>Red</td>
+<td>12V to 16.8V. Max recommended current/power is ~3A/50W. Drawing additional current may damage the battery and increases the risk of accident.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>VCC 5V</td>
+<td>Yellow</td>
+<td>4.75V to 5.4V voltage pin for Camera (only). Current should be less than 1A.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>GND (Gimbal)</td>
+<td>Black</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>GND (USB)</td>
+<td>Brown</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Gimbal Rx</td>
+<td>White</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Gimbal Tx</td>
+<td>Green</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>USB D+</td>
+<td>Blue</td>
+<td>Positive differential data signal to iMX6 OTG USB port.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>USB D-</td>
+<td>Violet</td>
+<td>Negative differential data signal to iMX6 OTG USB port.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="power-supply"><a name="power-supply" class="plugin-anchor" href="#power-supply"><span class="fa fa-link"></span></a>Power Supply</h4>
+<p>The Gimbal Cable supplies two different voltage sources to the Gimbal Bay:</p>
+<ul>
+<li>VCC 5V (4.75V to 5.4V).  </li>
+<li>VCC Battery (12V to 16.8 V). </li>
+</ul>
+<p><em>VCC 5V</em> should be used to power the camera (only). The camera must not draw more than 1A. </p>
+<aside class="note">
+The *VCC 5V* supply is also used as the backup supply for the Pixhawk. While the current is not limited, if more than 1A is used the vehicle may fail when running on backup power.
+</aside>
+
+<p><em>VCC Battery</em> can be used to power the gimbal or other hardware. The maximum recommended current/power is ~3A/50W. Drawing more current may damage the battery and increases the risk of accident.</p>
+<h4 id="control-over-mavlink-with-serial"><a name="control-over-mavlink-with-serial" class="plugin-anchor" href="#control-over-mavlink-with-serial"><span class="fa fa-link"></span></a>Control over MAVLink with Serial</h4>
+<p>The Gimbal TX and Gimbal RX lines send <a href="http://qgroundcontrol.org/mavlink/start" target="_blank">MAVLink</a> data over a serial connection between the Pixhawk flight controller and the gimbal. This connection is used to both control the pitch, roll, and yaw of the gimbal motors as well as send commands over to the camera (start recording, stop recording, change modes, etc). More details on camera control can be found in the <a href="#software-interface">Software Interface</a> section.</p>
+<h4 id="coprocessing-with-usb"><a name="coprocessing-with-usb" class="plugin-anchor" href="#coprocessing-with-usb"><span class="fa fa-link"></span></a>Co-processing with USB</h4>
+<p>The Gimbal Cable provides a USB 2.0 interface with the iMX6 co-processor on-board Solo. This interface should be used for firmware updating and can optionally be used for any sort of additional processing. For example, you can pull a still from the camera, transfer it to the co-processor, and search the image for pre-defined target.</p>
+<aside class="note">
+USB2.0 data rates might not be achievable via the Gimbal Bay USB interface.
+</aside>
+
+<aside class="note">
+Communication between the Solo co-processor and the gimbal is not yet available for 3rd party developers.
+</aside>
+
+<h3 id="hdmi-micro-cable"><a name="hdmi-micro-cable" class="plugin-anchor" href="#hdmi-micro-cable"><span class="fa fa-link"></span></a>HDMI Micro Cable</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/HDMI" target="_blank">HDMI</a> Micro (Type D 19P) cable transfers video from the camera to Solo&apos;s i.MX6 Companion Computer (from which it is sent to the first person view in the Solo app). The HDMI connection does not have the audio pins connected. The video feed supports up to 1080p resolution at 60 frames per second.</p>
+<p>Supported resolutions:</p>
+<ul>
+<li>1280x720p60</li>
+<li>1280x720p30</li>
+<li>720x480p60</li>
+<li>720x480p30</li>
+<li>640x480p60</li>
+<li>640x480p30</li>
+<li>1280x720p25(PAL)</li>
+<li>720x480p25(PAL)</li>
+</ul>
+<h2 id="software-interface"><a name="software-interface" class="plugin-anchor" href="#software-interface"><span class="fa fa-link"></span></a>Software Interface</h2>
+<p>Communication between Solo and gimbal is done using MAVlink Protocol over Serial. Messages are used for</p>
+<ul>
+<li>Pointing the gimbal/vehicle (pitch control and Region of Interest)</li>
+<li>Solo sensor communication (IMU data from Pixhawk 2 to gimbal) </li>
+<li>Firmware bootloading from companion computer </li>
+<li>Camera control</li>
+</ul>
+<aside class="caution">
+The Solo software stack is not yet ready to integrate multiple types of gimbals. We are currently working on an extensible API to make it easier for third-party vendors to interface with different hardware.
+
+For development purposes we recommend using Pixhawk 1 and Copter 3.3 ArduPilot firmware. 
+</aside>
+
+<aside class="note">
+The rest of this document covers topics related to using Pixhawk 1 and Copter 3.3 ArduPilot firmware.
+</aside>
+
+<h3 id="gimbals-supported-by-pixhawk-1copter-33"><a name="gimbals-supported-by-pixhawk-1copter-33" class="plugin-anchor" href="#gimbals-supported-by-pixhawk-1copter-33"><span class="fa fa-link"></span></a>Gimbals supported by Pixhawk 1/Copter 3.3</h3>
+<p>In order to have Solo control a gimbal, ArduPilot must know how to communicate with the gimbal. Fortunately, ArduPilot already has the ability to communicate with several types of pre-existing gimbal controllers including <em>SToRM32</em> and <em>Alexmos</em>. The custom Solo Gimbal protocol is not yet supported by any released versions of ArduPilot. </p>
+<p><em>SToRM32</em> is recommended as it features the most straightforward communication protocol. You can find more information about <a href="http://www.olliw.eu/storm32bgc-wiki/Main_Page" target="_blank">this type of gimbal controller here</a> and ArduPilot integration can be <a href="http://copter.ardupilot.com/wiki/common-storm32-gimbal/" target="_blank">found here</a>.</p>
+<h3 id="common-gimbal-camera-control"><a name="common-gimbal-camera-control" class="plugin-anchor" href="#common-gimbal-camera-control"><span class="fa fa-link"></span></a>Common Gimbal Camera Control</h3>
+<p>There are a set of camera functions that are common amongst all gimbal/camera systems. These functions include START RECORDING/STOP RECORDING, POWER ON/OFF, &amp; CHANGE MODES.</p>
+<p>However, 3rd party developers cannot currently take advantage of the pre-set camera-related buttons on the Solo controller because they are sent as GoPro specific commands.In addition, there is not yet a way for 3rd party developers to capture any button events on the Solo co-processor or ArduPilot.</p>
+<h3 id="custom-gimbal-camera-control"><a name="custom-gimbal-camera-control" class="plugin-anchor" href="#custom-gimbal-camera-control"><span class="fa fa-link"></span></a>Custom Gimbal Camera Control</h3>
+<p><code>COMMAND_LONG</code> is the recommended MAVLink command for any unique, custom camera or gimbal functionality:</p>
+<table>
+<thead>
+<tr>
+<th>Byte index</th>
+<th>Value Size (bytes)</th>
+<th>Value Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>Param 1</td>
+<td>{DEPENDENT ON COMMAND}</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>Param 2</td>
+<td>{DEPENDENT ON COMMAND}</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>Param 3</td>
+<td>{DEPENDENT ON COMMAND}</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4</td>
+<td>Param 4</td>
+<td>{DEPENDENT ON COMMAND}</td>
+</tr>
+<tr>
+<td>16</td>
+<td>4</td>
+<td>Param 5</td>
+<td>{DEPENDENT ON COMMAND}</td>
+</tr>
+<tr>
+<td>20</td>
+<td>4</td>
+<td>Param 6</td>
+<td>{DEPENDENT ON COMMAND}</td>
+</tr>
+<tr>
+<td>24</td>
+<td>4</td>
+<td>Param 7</td>
+<td>{DEPENDENT ON COMMAND}</td>
+</tr>
+<tr>
+<td>28</td>
+<td>2</td>
+<td>MAV_COMMAND (User defined command)</td>
+<td>{DEPENDENT ON USE CASE}</td>
+</tr>
+<tr>
+<td>30</td>
+<td>1</td>
+<td>Target System</td>
+<td>0</td>
+</tr>
+<tr>
+<td>31</td>
+<td>1</td>
+<td>Target Component</td>
+<td>MAV_COMP_ID_GIMBAL</td>
+</tr>
+<tr>
+<td>32</td>
+<td>1</td>
+<td>Confirmation Number</td>
+<td>Nth time packet was sent</td>
+</tr>
+</tbody>
+</table>
+<p><code>COMMAND_LONG</code> essentially gives MAVLink consumers the ability to define their own commands without worrying about whether it already exists in the MAVLink spec or if other developers are writing a conflicting spec. It is essentially a packet within a packet. 3rd party developers can define their own commands (<code>MAV_COMMAND</code>, byte 28 above) and up to 7 parameters to send along with that command. Their application can capture the <code>COMMAND_LONG</code> packet header and then parse the custom <code>MAV_COMMAND</code> identifier to route the packet to the appropriate handler.</p>
+
+                    
+                    </section>
+                
+                
+
+                    <div class="page-inner-footer">
+                      3DR Developer guide copyright &copy; 2015 3D Robotics, the source for this guide is available on <a href="https://github.com/3drobotics/solodevguide" target="_blank">Github</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./hardware-accessorybay.html" class="navigation navigation-prev " aria-label="Previous page: Accessory Bay"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./hardware-batterybay.html" class="navigation navigation-next " aria-label="Next page: Battery Bay"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/website/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"scrollablecode":{},"anchors":{},"image-captions":{"variable_name":"_pictures"},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+
+    <!-- Google Analytics -->
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39974306-5', 'auto');
+ga('send', 'pageview');
+    </script>
+</html>
